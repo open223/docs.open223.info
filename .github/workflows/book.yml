@@ -1,38 +1,34 @@
 # https://github.com/executablebooks/github-action-demo/blob/master/.github/workflows/book.yml
 name: deploy-book
 
-# Only run this when the master branch changes
 on:
   push:
     branches:
-    - master
+    - main
 
 # This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
-    # Install dependencies
-    - name: Set up Python 3.7
-      uses: actions/setup-python@v1
+    - uses: actions/setup-python@v4
       with:
-        python-version: 3.7
+        python-version: 3.11
 
-    - name: Install dependencies
+    - name: install dependencies
       run: |
         pip install -r requirements.txt
 
-
-    # Build the book
-    - name: Build the book
+    - name: build jupyter book
       run: |
         jupyter-book build .
 
     # Push the book's HTML to github-pages
     - name: GitHub Pages action
-      uses: peaceiris/actions-gh-pages@v3.5.9
+      uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./_build/html
