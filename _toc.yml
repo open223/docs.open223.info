@@ -20,4 +20,3 @@ parts:
 - caption: Examples
   chapters:
   - file: examples/model.md
-  
