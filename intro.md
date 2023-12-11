@@ -23,11 +23,14 @@ AHU-- contains -->Fan
 AHU-- contains -->HeatingCoil
 Fan-- connectedTo -->HeatingCoil
 ```
+
 ```mermaid
 ---
 title: Figure 2b. Triples as TTL textual format
 ---
+graph LR
 ```
+
 ```
 @prefix ex: <http://example.org/> .
     
