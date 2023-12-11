@@ -4,6 +4,37 @@ ASHRAE standard 223P is a proposed standard that formally defines knowledge conc
 
 Standard 223P uses the resource description framework (RDF) to describe metadata for a building using a subject-predicate-object triple model, otherwise known as a directed, labeled graph model. This model allows us to define how different entities related to building systems (devices, data points, zones, ducts, etc) are related to each other. The subject and object define two entities and the predicate defines how they are related. For example, an air handling unit may contain a fan. This would be described in a 223P model as AHU (subject) contains (predicate) Fan (object) as shown in Figure 1. (Brick does a good job of describing RDF for building people, perhaps  we link some documentation)? 
 
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js"></script>
+    </head>
+	 
+<body>
+ <pre><code class="language-mermaid">graph LR
+A--&gt;B
+</code></pre>
+
+<div class="mermaid">graph LR
+A--&gt;B
+</div>
+	
+</body>
+<script>
+var config = {
+    startOnLoad:true,
+    theme: 'forest',
+    flowchart:{
+            useMaxWidth:false,
+            htmlLabels:true
+        }
+};
+mermaid.initialize(config);
+window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+</script>
+
+</html>
+
 ```mermaid
 ---
 title: Figure 1. Simple Triple
