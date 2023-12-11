@@ -34,6 +34,7 @@ subgraph BottomSection
     ex:AHU ex:contains ex:HeatingCoil .
     ex:Fan ex:connectedTo ex:HeatingCoil .
     end
+```
 
 Figure 2. Triples two ways. Shown as a diagram (top) and using a sample of the TTL textual format (bottom).
 For more information about the standard itself, check the 223p publication document (will this be available?) and website (link). 
