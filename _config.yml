@@ -44,19 +44,3 @@ repository:
 sphinx:
   extra_extensions:
     - sphinxcontrib.mermaid
-
-
-# HTML-specific settings
-html:
-  use_repository_button: true
-  use_issues_button: true
-
-# LaTeX-specific settings
-
-
-# Launch button settings
-repository:
-  url: https://github.com/open223/docs.open223.info
-  branch: main
-
-# Advanced and power-user settings
