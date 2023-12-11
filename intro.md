@@ -26,7 +26,7 @@ Fan-- connectedTo -->HeatingCoil
 
 <div align="center">
     
-# Figure 2b. Triples as diagram (top) and TTL text (bottom)
+### Figure 2b. Triples as diagram (top) and TTL text (bottom)
 
 </div>
 
