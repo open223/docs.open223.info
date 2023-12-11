@@ -12,16 +12,6 @@ graph LR
     AHU-- contains -->Fan
 ```
 
-also trying in sphinx format
-
-```{mermaid}
----
-title: Figure 1. Simple Triple
----
-graph LR
-    AHU-- contains -->Fan
-```
-
 There are many figures depicting snippets of 223P models in this user guide. These figures should be read as a series of triples, rather than as a flow chart. Figure 1 shows an example of a 223P model. The direction of the arrow indicates how the subject relates to the object. In the case of Figure 1, the AHU is the subject, and it relates to the Fan using the predicate contains. Triples are generally textualized using the Terse RDF Triple Language (TTL) (cite). Figure 2 shows an example of a series of triples both as a picture and as text in TTL format.  (should maybe make the figure in top braid since many others in this user guide will be in that style) 
 
 ```mermaid
