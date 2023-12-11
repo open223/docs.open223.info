@@ -11,3 +11,7 @@ parts:
 - caption: Guides
   chapters:
   - file: guides/user_guide.md
+- caption: Reference
+  chapters:
+  - file: reference/RDF.md
+  - file: reference/SHACL.md
