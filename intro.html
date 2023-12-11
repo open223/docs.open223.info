@@ -169,6 +169,11 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="guides/user_guide.html">User Guide</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="reference/RDF.html">Basics of RDF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/SHACL.html">Basics of SHACL</a></li>
+</ul>
 
     </div>
 </nav></div>
@@ -380,35 +385,6 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="open223-documentation-jupyter-book-badge">
 <h1>Open223 Documentation <a class="reference external" href="https://open223.github.io/docs.open223.info/"><img alt="Jupyter Book Badge" src="https://jupyterbook.org/badge.svg" /></a><a class="headerlink" href="#open223-documentation-jupyter-book-badge" title="Permalink to this heading">#</a></h1>
 <p>ASHRAE standard 223P is a proposed standard that formally defines knowledge concepts for representing building system information such as the connections between (pieces of) mechanical equipment, spaces within a building, and their measurement and control points. It is a metadata schema (semantic ontology?) that defines the modeling constructs and rules needed to construct semantically interoperable, machine-readable semantic models that provide software applications the ability to determine essential information about the meaning and context of building data to support the deployment of various advanced features such as advanced building controls, fault detection and diagnostics, and automated commissioning.</p>
-<p>Standard 223P uses the resource description framework (RDF) to describe metadata for a building using a subject-predicate-object triple model, otherwise known as a directed, labeled graph model. This model allows us to define how different entities related to building systems (devices, data points, zones, ducts, etc) are related to each other. The subject and object define two entities and the predicate defines how they are related. For example, an air handling unit may contain a fan. This would be described in a 223P model as AHU (subject) contains (predicate) Fan (object) as shown in Figure 1. (Brick does a good job of describing RDF for building people, perhaps  we link some documentation)?</p>
-<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>---
-title: Figure 1. Simple Triple
----
-graph LR
-    AHU-- contains --&gt;Fan
-</pre></div>
-</div>
-<p>There are many figures depicting snippets of 223P models in this user guide. These figures should be read as a series of triples, rather than as a flow chart. Figure 1 shows an example of a 223P model. The direction of the arrow indicates how the subject relates to the object. In the case of Figure 1, the AHU is the subject, and it relates to the Fan using the predicate contains. Triples are generally textualized using the Terse RDF Triple Language (TTL) (cite). Figure 2 shows an example of a series of triples both as a picture and as text in TTL format.  (should maybe make the figure in top braid since many others in this user guide will be in that style)</p>
-<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>---
-title: Figure 2a. Triples as diagram 
----
-graph LR
-AHU-- contains --&gt;Fan
-AHU-- contains --&gt;HeatingCoil
-Fan-- connectedTo --&gt;HeatingCoil
-</pre></div>
-</div>
-<div align="center">
-<p><span style="font-size: larger;">Figure 2b. Triples as TTL textual format (bottom)</span></p>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@prefix</span> <span class="n">ex</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">urn</span><span class="p">:</span><span class="n">example</span><span class="o">/&gt;</span> <span class="o">.</span>
-<span class="nd">@prefix</span> <span class="n">s223</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">data</span><span class="o">.</span><span class="n">ashrae</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">standard223</span><span class="c1">#&gt; .</span>
-
-    <span class="n">ex</span><span class="p">:</span><span class="n">AHU</span> <span class="n">s223</span><span class="p">:</span><span class="n">contains</span> <span class="n">ex</span><span class="p">:</span><span class="n">Fan</span> <span class="o">.</span>
-    <span class="n">ex</span><span class="p">:</span><span class="n">AHU</span> <span class="n">s223</span><span class="p">:</span><span class="n">contains</span> <span class="n">ex</span><span class="p">:</span><span class="n">HeatingCoil</span> <span class="o">.</span>
-    <span class="n">ex</span><span class="p">:</span><span class="n">Fan</span> <span class="n">s223</span><span class="p">:</span><span class="n">connectedTo</span> <span class="n">ex</span><span class="p">:</span><span class="n">HeatingCoil</span> <span class="o">.</span>
-</pre></div>
-</div>
 <p>For more information about the standard itself, check the 223p publication document (will this be available?) and website (link).
 Maybe mention external references/bacnet, though that has a section later
 Beyond just the RDF representation, Standard 223 uses the SHACL (Shapes Constraint Language) (ref. <a class="reference external" href="https://www.w3.org/TR/shacl/">https://www.w3.org/TR/shacl/</a>) to specify the conformance requirements for using the defined classes and predicates in allowed ways. These requirements are specified using SHACL validation rules.</p>
@@ -424,6 +400,13 @@ Beyond just the RDF representation, Standard 223 uses the SHACL (Shapes Constrai
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="guides/user_guide.html">User Guide</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="reference/RDF.html">Basics of RDF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/SHACL.html">Basics of SHACL</a></li>
 </ul>
 </div>
 </section>

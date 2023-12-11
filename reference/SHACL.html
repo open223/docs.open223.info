@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Model Creation &#8212; Open223 Documentation</title>
+    <title>Basics of SHACL &#8212; Open223 Documentation</title>
   
   
   
@@ -62,11 +62,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/model_creation';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/SHACL';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="User Guide" href="../guides/user_guide.html" />
-    <link rel="prev" title="Open223 Documentation" href="../intro.html" />
+    <link rel="prev" title="Basics of RDF" href="RDF.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -163,17 +162,17 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Model Creation</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/model_creation.html">Model Creation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../guides/user_guide.html">User Guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../reference/RDF.html">Basics of RDF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reference/SHACL.html">Basics of SHACL</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="RDF.html">Basics of RDF</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Basics of SHACL</a></li>
 </ul>
 
     </div>
@@ -245,7 +244,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/open223/docs.open223.info/issues/new?title=Issue%20on%20page%20%2Ftutorials/model_creation.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/open223/docs.open223.info/issues/new?title=Issue%20on%20page%20%2Freference/SHACL.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -275,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/tutorials/model_creation.md" target="_blank"
+      <li><a href="../_sources/reference/SHACL.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -346,7 +345,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -357,11 +358,20 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Model Creation</h1>
+    <h1>Basics of SHACL</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shacl-validation-rules">SHACL Validation Rules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shacl-inference-rules">SHACL Inference Rules</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -371,8 +381,24 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="model-creation">
-<h1>Model Creation<a class="headerlink" href="#model-creation" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="basics-of-shacl">
+<h1>Basics of SHACL<a class="headerlink" href="#basics-of-shacl" title="Permalink to this heading">#</a></h1>
+<p>ASHRAE Standard 223P utilizes SHACL for validation and inference. Both validation and inference play a role in creating complete and correct models. Validation ensures that information within the model conforms to rules in the standard, while inference adds information to the graph when a rule’s conditions are met.</p>
+<section id="shacl-validation-rules">
+<h2>SHACL Validation Rules<a class="headerlink" href="#shacl-validation-rules" title="Permalink to this heading">#</a></h2>
+<p><em>Technical Description:</em> These rules are constraints defined in a SHACL shape that are applied to RDF data to ensure it adheres to specific structural and semantic requirements. They are essentially conditions the data must satisfy to be valid according to the defined shape.</p>
+<p><em>Process:</em> Validation rules involve checking properties, types, value ranges, patterns, and other aspects of data nodes against specified criteria in the SHACL shapes. If a node in the RDF graph violates any of these constraints, it is flagged as non-compliant.</p>
+<p><em>Example:</em> Suppose you have a SHACL shape that defines a Person class. The validation rules might specify that each Person must have a name (of datatype string) and an age (of datatype integer and greater than 0). The validation process will check each instance of Person in your RDF data against these rules and identify any instances that don’t conform.</p>
+<p>Further, Standard 223 uses SHACL inference rules (both TripleRules and SPARQLRules, part of SHACL Advanced Features)(ref. <a class="reference external" href="https://w3c.github.io/shacl/shacl-af/">https://w3c.github.io/shacl/shacl-af/</a>).</p>
+</section>
+<section id="shacl-inference-rules">
+<h2>SHACL Inference Rules<a class="headerlink" href="#shacl-inference-rules" title="Permalink to this heading">#</a></h2>
+<p><em>Technical Description:</em> SHACL inference rules are used to derive or infer new RDF triples based on existing data that is logically implied but not explicitly stated.</p>
+<p><em>Process:</em> Inference rules typically use conditions to match certain patterns in the data, and new triples are created when these conditions are met. These rules can add valuable information to a dataset, make implicit relationships explicit, and enhance data interconnectivity.</p>
+<p><em>Example:</em> Consider a dataset describing books and authors. You might have a rule stating, “If a person has written a book, they can be inferred to have the role of an author.” In SHACL, this could be a rule that, upon finding a triple like [:hasWritten :someBook], automatically adds a new triple [:hasRole :Author]. Thus, if John has written “Book A” (expressed as [:John :hasWritten :BookA]), the rule would infer and add [:John :hasRole :Author].
+One important example of SHACL inferencing is in deriving the family of relations between Equipment, ConnectionPoints, and Connections from the base s223:cnx relation (see section on Connections in the standard). It is worth noting that in the S223 standard, SHACL inference rules are used only to add new relations between existing entities and not to define new entities. This avoids the complex issue of ensuring unique identifiers (URIs) for new entities.
+Models can be validated using BuildingMOTIF and TopBraid Composer. The SHACL reasoners that power these tools, PySHACL and the TopBraid reasoner, are also available for use independently of the platforms.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -388,7 +414,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./tutorials"
+            path: "./reference"
         },
         predefinedOutput: true
     }
@@ -406,22 +432,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../intro.html"
+       href="RDF.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Open223 Documentation </p>
+        <p class="prev-next-title">Basics of RDF</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="../guides/user_guide.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">User Guide</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -429,6 +446,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shacl-validation-rules">SHACL Validation Rules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shacl-inference-rules">SHACL Inference Rules</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
