@@ -41,3 +41,6 @@ repository:
   branch: main
 
 # Advanced and power-user settings
+sphinx:
+  extra_extensions:
+    - sphinxcontrib.mermaid
