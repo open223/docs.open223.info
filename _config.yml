@@ -11,7 +11,21 @@ execute:
   execute_notebooks: force
 
 # Parse and render settings
-
+parse:
+  myst_enable_extensions:  # default extensions to enable in the myst parser. See https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
+    # - amsmath
+    - colon_fence
+    # - deflist
+    - dollarmath
+    # - html_admonition
+    # - html_image
+    - linkify
+    # - replacements
+    # - smartquotes
+    - substitution
+    - tasklist
+  myst_url_schemes: [mailto, http, https] # URI schemes that will be recognised as external URLs in Markdown links
+  myst_dmath_double_inline: true  # Allow display math ($$) within an inline context
 
 # HTML-specific settings
 html:
@@ -27,8 +41,3 @@ repository:
   branch: main
 
 # Advanced and power-user settings
-
-# adding sphinx support for mermaid
-sphinx:
-  extra_extensions:
-    - sphinxcontrib.mermaid
