@@ -16,23 +16,27 @@ There are many figures depicting snippets of 223P models in this user guide. The
 
 ```mermaid
 ---
-title: Figure 2. Triples as diagram (top) and TTL text (bottom)
+title: Figure 2a. Triples as diagram 
 ---
 graph LR
-
-subgraph Diagram
-direction LR
 AHU-- contains -->Fan
 AHU-- contains -->HeatingCoil
 Fan-- connectedTo -->HeatingCoil
-end
-subgraph Triples
-code
-ex:AHU ex:contains ex:Fan .
-ex:AHU ex:contains ex:HeatingCoil .
-ex:Fan ex:connectedTo ex:HeatingCoil .
-end
 ```
+```mermaid
+---
+title: Figure 2b. Triples as TTL textual format
+---
+```
+```
+@prefix ex: <http://example.org/> .
+    
+    ex:AHU ex:contains ex:Fan .
+    ex:AHU ex:contains ex:HeatingCoil .
+    ex:Fan ex:connectedTo ex:HeatingCoil .
+```
+
+
 
 Figure 2. Triples two ways. Shown as a diagram (top) and using a sample of the TTL textual format (bottom).
 For more information about the standard itself, check the 223p publication document (will this be available?) and website (link). 
