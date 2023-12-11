@@ -29,12 +29,14 @@ Fan-- connectedTo -->HeatingCoil
 # Figure 2b. Triples as diagram (top) and TTL text (bottom)
 
 </div>
+
 ```
-@prefix ex: <http://example.org/> .
-    
-    ex:AHU ex:contains ex:Fan .
-    ex:AHU ex:contains ex:HeatingCoil .
-    ex:Fan ex:connectedTo ex:HeatingCoil .
+@prefix ex: <urn:example/> .
+@prefix s223: <http://data.ashrae.org/standard223#> .
+
+    ex:AHU s223:contains ex:Fan .
+    ex:AHU s223:contains ex:HeatingCoil .
+    ex:Fan s223:connectedTo ex:HeatingCoil .
 ```
 
 
