@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Model Creation" href="tutorials/model_creation.html" />
+    <link rel="next" title="Basics of RDF" href="reference/RDF.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -161,18 +161,24 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="tutorials/model_creation.html">Model Creation</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="guides/user_guide.html">User Guide</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="reference/RDF.html">Basics of RDF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reference/SHACL.html">Basics of SHACL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/SPARQL.html">Querying Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/tools.html">Tools for Working with ASHRAE 223P</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="guides/design-patterns.html">Modeling Design Patterns</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tutorials/model_creation.html">Creating a Model</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="examples/model.html">Example model</a></li>
 </ul>
 
     </div>
@@ -391,22 +397,30 @@ Beyond just the RDF representation, Standard 223 uses the SHACL (Shapes Constrai
 <section id="table-of-contents">
 <h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/model_creation.html">Model Creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/RDF.html">Basics of RDF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/SHACL.html">Basics of SHACL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/SPARQL.html">Querying Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/tools.html">Tools for Working with ASHRAE 223P</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="guides/user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/design-patterns.html">Modeling Design Patterns</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="reference/RDF.html">Basics of RDF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reference/SHACL.html">Basics of SHACL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/model_creation.html">Creating a Model</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/model.html">Example model</a></li>
 </ul>
 </div>
 </section>
@@ -443,11 +457,11 @@ Beyond just the RDF representation, Standard 223 uses the SHACL (Shapes Constrai
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="tutorials/model_creation.html"
+       href="reference/RDF.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Model Creation</p>
+        <p class="prev-next-title">Basics of RDF</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

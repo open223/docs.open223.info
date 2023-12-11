@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Creating a Model &#8212; Open223 Documentation</title>
+    <title>Tools for Working with ASHRAE 223P &#8212; Open223 Documentation</title>
   
   
   
@@ -62,11 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/model_creation';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/tools';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Example model" href="../examples/model.html" />
-    <link rel="prev" title="Modeling Design Patterns" href="../guides/design-patterns.html" />
+    <link rel="next" title="Modeling Design Patterns" href="../guides/design-patterns.html" />
+    <link rel="prev" title="Querying Models" href="SPARQL.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -163,19 +163,19 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../reference/RDF.html">Basics of RDF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reference/SHACL.html">Basics of SHACL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reference/SPARQL.html">Querying Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reference/tools.html">Tools for Working with ASHRAE 223P</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="RDF.html">Basics of RDF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SHACL.html">Basics of SHACL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SPARQL.html">Querying Models</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tools for Working with ASHRAE 223P</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../guides/design-patterns.html">Modeling Design Patterns</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Creating a Model</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/model_creation.html">Creating a Model</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
 <ul class="nav bd-sidenav">
@@ -251,7 +251,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/open223/docs.open223.info/issues/new?title=Issue%20on%20page%20%2Ftutorials/model_creation.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/open223/docs.open223.info/issues/new?title=Issue%20on%20page%20%2Freference/tools.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -281,7 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/tutorials/model_creation.md" target="_blank"
+      <li><a href="../_sources/reference/tools.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -363,7 +363,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Creating a Model</h1>
+    <h1>Tools for Working with ASHRAE 223P</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -377,19 +377,19 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="creating-a-model">
-<h1>Creating a Model<a class="headerlink" href="#creating-a-model" title="Permalink to this heading">#</a></h1>
-<p>There are several tooling options available to create ASHRAE 223P models. BuildingMOTIF and Bob both have been used in the development of the standard to create models. They encapsulate 223P design patterns into higher level components that simplify the process of building 223P models and enable the use of scripts to build and edit models. Bob uses python classes, while BuildingMOTIF uses templates. Both of these tools have tutorials to help users get started.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="tools-for-working-with-ashrae-223p">
+<h1>Tools for Working with ASHRAE 223P<a class="headerlink" href="#tools-for-working-with-ashrae-223p" title="Permalink to this heading">#</a></h1>
+<p>The standard is built on Semantic Web technology, and there are many open-source and proprietary tools available to enable creation and validation of 223P models. A selection of several tools are as follows:
+BuildingMOTIF:</p>
 <ul class="simple">
-<li><p>BuildingMOTIF: link</p></li>
-<li><p>Bob: link</p></li>
+<li><p><strong>SI-builder (Bob)</strong>: This tool has been developed in Python and used in the development of the standard to simplify the creation of 223P building models. It uses an extensive class structure defining data points, equipment, and spaces in terms of 223P modeling constructs, and enables the creation of models using python scripts.</p></li>
+<li><p><strong>RDFLib/PySHACL</strong>:  BuildingMOTIF and SI-builder provide user-friendly methods to build and validate 223P models. They both utilize the python libraries RDFLib and PySHACL. RDFLib is a Python library for working with RDF, and it provides functionalities for creating, parsing, querying, and manipulating RDF graphs. PySHACL is a Python library that provides implementation for SHACL validation and inference.</p></li>
+<li><p><strong>TopBraid Composer</strong>:TopBraid Composer is a comprehensive Semantic Web modeling tool that supports the development and visualization of RDF-based ontologies and semantic models. It has been used in the development of the standard and offers both free and paid versions. It also provides an API for utilizing its SHACL validation, which is based on Apache Jena. Apache Jena also provides other tools for interacting with graph data</p></li>
+<li><p><strong>GraphDB</strong>: GraphDB is a triplestore that provides storage and query capabilities for RDF data. It provides support for SPARQL querying as well as visualization and exploration of semantic models.</p></li>
+<li><p><strong>Neo4J</strong>: TODO Should reach out to christian about that</p></li>
+<li><p><strong>pyVis</strong>: TODO What other visualization tools are available?</p></li>
 </ul>
-<p>There are several other free tools available to manually create 223P models. For example RDFLib is a widely used tool for working with RDF data in python. This tool is also often used to query and edit models. Alternatively, the tool TopBraid composer can be used to create building models in a graphical environment</p>
-<ul class="simple">
-<li><p>RDFLib</p></li>
-<li><p>TopBraid Composer</p></li>
-</ul>
-<p>The 223P documentation and website (Open223) TODO will also help model developers identify the correct classes and relationships to use when constructing or reading a 223P model. 223P defines each class using SHACL rules, which also automate validation of models to ensure they have been made in accordance with the standar.</p>
+<p>There are other tools available, but the above list may serve as a place to start.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -405,7 +405,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./tutorials"
+            path: "./reference"
         },
         predefinedOutput: true
     }
@@ -423,20 +423,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../guides/design-patterns.html"
+       href="SPARQL.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Modeling Design Patterns</p>
+        <p class="prev-next-title">Querying Models</p>
       </div>
     </a>
     <a class="right-next"
-       href="../examples/model.html"
+       href="../guides/design-patterns.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Example model</p>
+        <p class="prev-next-title">Modeling Design Patterns</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
