@@ -26,7 +26,7 @@ Fan-- connectedTo -->HeatingCoil
 
 <div align="center">
     
-#### Figure 2b. Triples as diagram (top) and TTL text (bottom)
+<span style="font-size: larger;">Figure 2b. Triples as TTL textual format (bottom)</span>
 
 </div>
 
@@ -39,9 +39,6 @@ Fan-- connectedTo -->HeatingCoil
     ex:Fan s223:connectedTo ex:HeatingCoil .
 ```
 
-
-
-Figure 2. Triples two ways. Shown as a diagram (top) and using a sample of the TTL textual format (bottom).
 For more information about the standard itself, check the 223p publication document (will this be available?) and website (link). 
 Maybe mention external references/bacnet, though that has a section later
 Beyond just the RDF representation, Standard 223 uses the SHACL (Shapes Constraint Language) (ref. https://www.w3.org/TR/shacl/) to specify the conformance requirements for using the defined classes and predicates in allowed ways. These requirements are specified using SHACL validation rules.
