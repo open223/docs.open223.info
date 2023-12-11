@@ -5,19 +5,23 @@
 format: jb-book
 root: intro
 parts:
+- caption: Explanation
+  chapters:
+  - file: explanation/RDF.md
+  - file: explanation/SHACL.md
+  - file: explanation/SPARQL.md
+  - file: explanation/tools.md
 - caption: Reference
   chapters:
-  - file: reference/RDF.md
-  - file: reference/SHACL.md
-  - file: reference/SPARQL.md
-  - file: reference/tools.md
+  - file: reference/Explore Open223
 - caption: Guides
   chapters:
   - file: guides/design-patterns.md
 - caption: Tutorials
   chapters:
   - file: tutorials/model_creation.md
+  - file: tutorials/querying.md
 - caption: Examples
   chapters:
   - file: examples/model.md
-  
+

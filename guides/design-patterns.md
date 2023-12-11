@@ -1,4 +1,4 @@
-# Modeling Design Patterns
+# Model Creation
 
 TODO Section on design patterns here
 This could also be reference, if we just want to treat them as examples of how 223P models are constructed
