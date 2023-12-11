@@ -25,7 +25,9 @@ Fan-- connectedTo -->HeatingCoil
 ```
 
 <div align="center">
+    
 # Figure 2b. Triples as diagram (top) and TTL text (bottom)
+
 </div>
 ```
 @prefix ex: <http://example.org/> .
