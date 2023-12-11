@@ -44,3 +44,5 @@ repository:
 sphinx:
   extra_extensions:
     - sphinxcontrib.mermaid
+  config:
+    html_extra_path: ['model_vis']
