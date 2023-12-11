@@ -20,20 +20,18 @@ title: Figure 2. Triples as diagram (top) and TTL text (bottom)
 ---
 graph LR
 
-subgraph TopSection
-    AHU-- contains -->Fan
-    AHU-- contains -->HeatingCoil
-    Fan-- connectedTo -->HeatingCoil
+subgraph Diagram
+direction LR
+AHU-- contains -->Fan
+AHU-- contains -->HeatingCoil
+Fan-- connectedTo -->HeatingCoil
 end
-
-subgraph BottomSection
-    code
-    @prefix ex: <http://example.org/> .
-    
-    ex:AHU ex:contains ex:Fan .
-    ex:AHU ex:contains ex:HeatingCoil .
-    ex:Fan ex:connectedTo ex:HeatingCoil .
-    end
+subgraph Triples
+code
+ex:AHU ex:contains ex:Fan .
+ex:AHU ex:contains ex:HeatingCoil .
+ex:Fan ex:connectedTo ex:HeatingCoil .
+end
 ```
 
 Figure 2. Triples two ways. Shown as a diagram (top) and using a sample of the TTL textual format (bottom).
