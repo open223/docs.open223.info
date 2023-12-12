@@ -1,7 +1,11 @@
 # Ontology
 
-To explore the ASHRAE 223P Ontology, we recommend using the [Open223 Explorer](https://explore.open223.info/).
+Ontology files available for download
 
-The TODO page presents a tutorial on how to use this website. 
+Model
 
-TODO we can walk through the standard files here as well if we need to. 
+Vocab 
+
+Inference 
+
+Validation

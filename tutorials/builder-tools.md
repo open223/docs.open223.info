@@ -1,3 +1,5 @@
-# Using Bob
+# Using Model Building Tools
 
-Should we have this here? Just link to bmotif for now?
+Link to Bob with description (and note that it's not yet complete)
+
+Link to BMOTIF 

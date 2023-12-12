@@ -1,3 +1,3 @@
-# Querying How To
+# Using Query Open223
 
-Do we want a tutorial for using gabes querying website? 
+How to use the querying site
