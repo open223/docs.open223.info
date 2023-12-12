@@ -26,3 +26,8 @@ parts:
   - file: reference/tools.md
   - file: reference/open-223.md
   - file: reference/example-models.md
+- caption: Example Models
+  chapters:
+  - file: examples/lbnl-example.md
+  - file: examples/G36-4-1.md
+  - file: examples/G36-4-2.md
