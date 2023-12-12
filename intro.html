@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Basics of RDF" href="reference/RDF.html" />
+    <link rel="next" title="Introduction to ASHRAE 223P" href="explanation/223p.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -161,24 +161,30 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Explanation</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="reference/RDF.html">Basics of RDF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reference/SHACL.html">Basics of SHACL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reference/SPARQL.html">Querying Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reference/tools.html">Tools for Working with ASHRAE 223P</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="guides/design-patterns.html">Modeling Design Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explanation/223p.html">Introduction to ASHRAE 223P</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explanation/supporting-tech.html">Semantic Web Technologies</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="tutorials/model_creation.html">Creating a Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/223-explore.html">Using Open223 Explorer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/223-query.html">Using Query Open223</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/builder-tools.html">Using Model Building Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/rdflib-pyshacl.html">How to Create, Validate, and Query using RDFLib and PySHACL</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="examples/model.html">Example model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/how-to-model.html">How to Model Core Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/how-to-telemetry.html">How to Access Telemtry Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/how-to-extend.html">How to Extend 223P</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="reference/supporting-links.html">Links to Documentation of Supporting Technology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/tools.html">Tools for Working with ASHRAE 223P</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/open-223.html">Ontology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/example-models.html">Example Models</a></li>
 </ul>
 
     </div>
@@ -390,37 +396,128 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="open223-documentation-jupyter-book-badge">
 <h1>Open223 Documentation <a class="reference external" href="https://open223.github.io/docs.open223.info/"><img alt="Jupyter Book Badge" src="https://jupyterbook.org/badge.svg" /></a><a class="headerlink" href="#open223-documentation-jupyter-book-badge" title="Permalink to this heading">#</a></h1>
-<p>ASHRAE standard 223P is a proposed standard that formally defines knowledge concepts for representing building system information such as the connections between (pieces of) mechanical equipment, spaces within a building, and their measurement and control points. It is a metadata schema (semantic ontology?) that defines the modeling constructs and rules needed to construct semantically interoperable, machine-readable semantic models that provide software applications the ability to determine essential information about the meaning and context of building data to support the deployment of various advanced features such as advanced building controls, fault detection and diagnostics, and automated commissioning.</p>
-<p>For more information about the standard itself, check the 223p publication document (will this be available?) and website (link).
-Maybe mention external references/bacnet, though that has a section later
-Beyond just the RDF representation, Standard 223 uses the SHACL (Shapes Constraint Language) (ref. <a class="reference external" href="https://www.w3.org/TR/shacl/">https://www.w3.org/TR/shacl/</a>) to specify the conformance requirements for using the defined classes and predicates in allowed ways. These requirements are specified using SHACL validation rules.</p>
+<p>ASHRAE standard 223P is a proposed standard that formally defines knowledge concepts for representing building system information such as the connections between mechanical equipment, spaces within a building, and their measurement and control points. It is a metadata schema and semantic ontology that defines the modeling constructs and rules needed to construct semantically interoperable, machine-readable semantic models that provide software applications the ability to determine essential information about the meaning and context of building data to support the deployment of various advanced features such as advanced building controls, fault detection and diagnostics, and automated commissioning.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Publication document is not yet publicly published</p>
+</div>
+</aside>
+<p>For more information about the standard itself, please use the published standard document.</p>
+<p>The purpose of this user guide is to serve as a brief overview on how to interact with ASHRAE Standard 223P. The guide is designed to prime users with a basic understanding of the standard and several essential processes to 223P usage including building, validating, and querying 223P models. It also introduces some relevant tools and sample use cases to enable individuals to begin experimenting with the proposed standard.</p>
+<p>Using Diataxis Framework: <a class="reference external" href="https://diataxis.fr/">https://diataxis.fr/</a></p>
+<p>TODO: Delete when complete</p>
+<p>Document Flow</p>
+<ul class="simple">
+<li><p>Main Page</p>
+<ul>
+<li><p>Purpose of User Guide</p></li>
+</ul>
+</li>
+<li><p>Explanation</p>
+<ul>
+<li><p>Introduce 223P and classes at a high level</p></li>
+<li><p>Supporting Technologies</p>
+<ul>
+<li><p>RDF</p></li>
+<li><p>SHACL (inference and validation)</p></li>
+<li><p>SPARQL</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Tutorials</p>
+<ul>
+<li><p>Using 223 Explore</p></li>
+<li><p>Using Query 223</p></li>
+<li><p>Tutorials for Model Creation Tools</p>
+<ul>
+<li><p>Link to BMotif</p></li>
+<li><p>link to Bob</p></li>
+<li><p>TopBraid Composer</p></li>
+</ul>
+</li>
+<li><p>Using RDFLib and PySHACL (or topbraid) to Create, Query, and Validate</p></li>
+</ul>
+</li>
+<li><p>Guides</p>
+<ul>
+<li><p>How to Model</p>
+<ul>
+<li><p>Connectivity</p>
+<ul>
+<li><p>Mediums</p></li>
+</ul>
+</li>
+<li><p>Containment</p></li>
+<li><p>FunctionBlocks and Controllers</p></li>
+<li><p>Sensors and Actuators</p></li>
+<li><p>Properties and Aspects</p></li>
+</ul>
+</li>
+<li><p>How to Access Telemtry Data</p></li>
+<li><p>BACnet as example</p></li>
+<li><p>How to Extend the Standard</p>
+<ul>
+<li><p>Describing G36</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Reference</p>
+<ul>
+<li><p>Supporting Technologies References</p>
+<ul>
+<li><p>Links documentation to SHACL, RDFS, RDF, SPARQL, etc.</p></li>
+</ul>
+</li>
+<li><p>Publication document?</p></li>
+<li><p>Available Tools</p></li>
+<li><p>Open 223</p>
+<ul>
+<li><p>Explore 223</p></li>
+<li><p>Query 223</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Example Models
+- Bullets with quick description of each model and a link</p></li>
+</ul>
 <section id="table-of-contents">
 <h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Explanation</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="reference/RDF.html">Basics of RDF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reference/SHACL.html">Basics of SHACL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reference/SPARQL.html">Querying Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reference/tools.html">Tools for Working with ASHRAE 223P</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="guides/design-patterns.html">Modeling Design Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explanation/223p.html">Introduction to ASHRAE 223P</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explanation/supporting-tech.html">Semantic Web Technologies</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/model_creation.html">Creating a Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/223-explore.html">Using Open223 Explorer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/223-query.html">Using Query Open223</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/builder-tools.html">Using Model Building Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/rdflib-pyshacl.html">How to Create, Validate, and Query using RDFLib and PySHACL</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="examples/model.html">Example model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/how-to-model.html">How to Model Core Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/how-to-telemetry.html">How to Access Telemtry Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/how-to-extend.html">How to Extend 223P</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="reference/supporting-links.html">Links to Documentation of Supporting Technology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/tools.html">Tools for Working with ASHRAE 223P</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/open-223.html">Ontology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/example-models.html">Example Models</a></li>
 </ul>
 </div>
 </section>
@@ -457,11 +554,11 @@ Beyond just the RDF representation, Standard 223 uses the SHACL (Shapes Constrai
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="reference/RDF.html"
+       href="explanation/223p.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Basics of RDF</p>
+        <p class="prev-next-title">Introduction to ASHRAE 223P</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

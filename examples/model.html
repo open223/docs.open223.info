@@ -65,7 +65,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'examples/model';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Creating a Model" href="../tutorials/model_creation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -161,24 +160,30 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Explanation</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../reference/RDF.html">Basics of RDF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reference/SHACL.html">Basics of SHACL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reference/SPARQL.html">Querying Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reference/tools.html">Tools for Working with ASHRAE 223P</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../guides/design-patterns.html">Modeling Design Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explanation/223p.html">Introduction to ASHRAE 223P</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explanation/supporting-tech.html">Semantic Web Technologies</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/model_creation.html">Creating a Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/223-explore.html">Using Open223 Explorer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/223-query.html">Using Query Open223</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/builder-tools.html">Using Model Building Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/rdflib-pyshacl.html">How to Create, Validate, and Query using RDFLib and PySHACL</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Example model</a></li>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../guides/how-to-model.html">How to Model Core Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/how-to-telemetry.html">How to Access Telemtry Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/how-to-extend.html">How to Extend 223P</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reference/supporting-links.html">Links to Documentation of Supporting Technology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/tools.html">Tools for Working with ASHRAE 223P</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/open-223.html">Ontology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/example-models.html">Example Models</a></li>
 </ul>
 
     </div>
@@ -378,8 +383,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="example-model">
 <h1>Example model<a class="headerlink" href="#example-model" title="Permalink to this heading">#</a></h1>
-<iframe src="../model_vis/G36-4-1-pyvis.html" width="800" height="600"></iframe>
-<p><a class="reference download internal" download="" href="../_downloads/fafcdb897127e5c7b5f03c75f6d26dca/G36-4-1-pyvis.html"><span class="xref download myst">A different page</span></a></p>
+<p>Vis of a model, description of a model, description of queries, etc.</p>
+<iframe src="../_static/G36-4-1-pyvis.html" width="800" height="800"></iframe>
 </section>
 
     <script type="text/x-thebe-config">
@@ -412,15 +417,6 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../tutorials/model_creation.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Creating a Model</p>
-      </div>
-    </a>
 </div>
                 </footer>
               
