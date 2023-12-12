@@ -1,0 +1,1 @@
+# How to Create, Validate, and Query using RDFLib and PySHACL

@@ -6,6 +6,50 @@ For more information about the standard itself, check the 223p publication docum
 Maybe mention external references/bacnet, though that has a section later
 Beyond just the RDF representation, Standard 223 uses the SHACL (Shapes Constraint Language) (ref. https://www.w3.org/TR/shacl/) to specify the conformance requirements for using the defined classes and predicates in allowed ways. These requirements are specified using SHACL validation rules.
 
+Using Diataxis Framework: https://diataxis.fr/
+
+TODO: Delete this in favor of table of contents
+
+Document Flow
+- Main Page
+  - Purpose of User Guide 
+- Explanation
+  - Introduce 223P and classes at a high level
+  - Supporting Technologies
+     - RDF
+     - SHACL (inference and validation)
+     - SPARQL
+- Tutorials 
+ - Using 223 Explore
+ - Using Query 223
+ - Tutorials for Model Creation Tools
+     - Link to BMotif
+     - link to Bob 
+     - TopBraid Composer 
+ - Using RDFLib and PySHACL (or topbraid) to Create, Query, and Validate
+- Guides
+ - How to Model
+  - may want substructure
+   - Connectivity
+        - Mediums 
+   - Containment
+   - FunctionBlocks and Controllers
+   - Sensors and Actuators
+   - Properties and Aspects
+ - How to Access Telemtry Data
+  - BACnet as example
+ - How to Extend the Standard
+  - Describing G36
+- Reference
+ - Supporting Technologies References
+     - Links documentation to SHACL, RDFS, RDF, SPARQL, etc.
+ - Publication document? 
+ - Available Tools
+ - Open 223
+     - Explore 223
+     - Query 223
+ - Example Models
+     - Bullets with quick description of each model and a link
 
 ## Table of Contents
 ```{tableofcontents}
