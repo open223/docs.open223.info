@@ -1,0 +1,146 @@
+@prefix bldg: <urn:ex/> .
+@prefix s223: <http://data.ashrae.org/standard223#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix qudtqk: <http://qudt.org/vocab/quantitykind/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+
+bldg: a owl:Ontology .
+
+bldg:cold-deck-damper-actuator a s223:Actuator ;
+    s223:actuates bldg:cold-deck-damper ;
+    s223:commandedByProperty bldg:cold-deck-damper-command .
+
+bldg:discharge-air-flow-sensor a s223:Sensor ;
+    s223:hasObservationLocation bldg:out ;
+    s223:observes bldg:discharge-air-flow .
+
+bldg:dual-duct-terminal-unit-with-discharge-sensor a s223:DualDuctTerminal,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#DualDuctTerminalWithDischargeSensor> ;
+    s223:cnx bldg:cold-deck-in,
+        bldg:hot-deck-in,
+        bldg:out ;
+    s223:contains bldg:cold-deck-damper,
+        bldg:hot-deck-damper,
+        bldg:junction .
+
+bldg:hot-deck-damper-actuator a s223:Actuator ;
+    s223:actuates bldg:hot-deck-damper ;
+    s223:commandedByProperty bldg:hot-deck-damper-command .
+
+bldg:cold-deck-damper-in a s223:InletConnectionPoint ;
+    s223:cnx bldg:duct-before-cold-deck-damper ;
+    s223:hasMedium s223:Medium-Air ;
+    s223:mapsTo bldg:cold-deck-in .
+
+bldg:cold-deck-damper-out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:duct-after-cold-deck-damper ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:cold-deck-damper-position a s223:QuantifiableObservableProperty ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+bldg:cold-deck-in-connection a s223:Connection ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:duct-before-cold-deck-damper a s223:Connection,
+        s223:Duct ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:duct-before-hot-deck-damper a s223:Connection,
+        s223:Duct ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:hot-deck-damper-in a s223:InletConnectionPoint ;
+    s223:cnx bldg:duct-before-hot-deck-damper ;
+    s223:hasMedium s223:Medium-Air ;
+    s223:mapsTo bldg:hot-deck-in .
+
+bldg:hot-deck-damper-out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:duct-after-hot-deck-damper ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:hot-deck-damper-position a s223:QuantifiableObservableProperty ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+bldg:hot-deck-in-connection a s223:Connection ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:junction a s223:Junction ;
+    s223:cnx bldg:junction-in-1,
+        bldg:junction-in-2,
+        bldg:junction-out ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:junction-in-1 a s223:InletConnectionPoint ;
+    s223:cnx bldg:duct-after-hot-deck-damper ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:junction-in-2 a s223:InletConnectionPoint ;
+    s223:cnx bldg:duct-after-cold-deck-damper ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:junction-out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:out-connection ;
+    s223:hasMedium s223:Medium-Air ;
+    s223:mapsTo bldg:out .
+
+bldg:cold-deck-damper a s223:Damper,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
+    s223:cnx bldg:cold-deck-damper-in,
+        bldg:cold-deck-damper-out ;
+    s223:hasProperty bldg:cold-deck-damper-command,
+        bldg:cold-deck-damper-position ;
+    s223:hasRole s223:Role-Cooling,
+        s223:Role-Supply .
+
+bldg:cold-deck-damper-command a s223:QuantifiableActuatableProperty ;
+    s223:hasAspect s223:EnumerationKind-Position ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+bldg:cold-deck-in a s223:InletConnectionPoint ;
+    s223:cnx bldg:cold-deck-in-connection ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:discharge-air-flow a s223:QuantifiableObservableProperty ;
+    s223:hasRole s223:Role-Discharge ;
+    qudt:hasQuantityKind qudtqk:VolumeFlowRate ;
+    qudt:hasUnit unit:FT3-PER-MIN .
+
+bldg:duct-after-cold-deck-damper a s223:Connection,
+        s223:Duct ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:duct-after-hot-deck-damper a s223:Connection,
+        s223:Duct ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:hot-deck-damper a s223:Damper,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
+    s223:cnx bldg:hot-deck-damper-in,
+        bldg:hot-deck-damper-out ;
+    s223:hasProperty bldg:hot-deck-damper-command,
+        bldg:hot-deck-damper-position ;
+    s223:hasRole s223:Role-Heating,
+        s223:Role-Supply .
+
+bldg:hot-deck-damper-command a s223:QuantifiableActuatableProperty ;
+    s223:hasAspect s223:EnumerationKind-Position ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+bldg:hot-deck-in a s223:InletConnectionPoint ;
+    s223:cnx bldg:hot-deck-in-connection ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:out-connection a s223:Connection ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:out-connection ;
+    s223:hasMedium s223:Medium-Air ;
+    s223:hasProperty bldg:discharge-air-flow .
+

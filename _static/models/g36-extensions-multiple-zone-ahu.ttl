@@ -1,0 +1,591 @@
+@prefix bldg: <urn:ex/> .
+@prefix s223: <http://data.ashrae.org/standard223#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix qudtqk: <http://qudt.org/vocab/quantitykind/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+
+bldg: a owl:Ontology .
+
+bldg:clg-coil-valve-actuator a s223:Actuator ;
+    s223:actuates bldg:clg-coil-valve ;
+    s223:commandedByProperty bldg:clg-coil-valve-command .
+
+bldg:ea-damper-actuator a s223:Actuator ;
+    s223:actuates bldg:ea-damper ;
+    s223:commandedByProperty bldg:ea-damper-command .
+
+bldg:economizer-oa-damper-actuator a s223:Actuator ;
+    s223:actuates bldg:economizer-oa-damper ;
+    s223:commandedByProperty bldg:economizer-oa-damper-command .
+
+bldg:filter-differential-pressure-sensor a s223:DifferentialSensor,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#DifferentialPressureSensor> ;
+    s223:hasObservationLocation bldg:filter-in,
+        bldg:filter-out ;
+    s223:hasObservationLocationHigh bldg:filter-in ;
+    s223:hasObservationLocationLow bldg:filter-out ;
+    s223:observes bldg:filter-differential-pressure .
+
+bldg:heat-coil-air-temp-sensor a s223:Sensor ;
+    s223:hasObservationLocation bldg:duct-after-htg-coil ;
+    s223:observes bldg:heat-coil-air-temp .
+
+bldg:htg-coil-valve-actuator a s223:Actuator ;
+    s223:actuates bldg:htg-coil-valve ;
+    s223:commandedByProperty bldg:htg-coil-valve-command .
+
+bldg:ma-temp-sensor a s223:Sensor ;
+    s223:hasObservationLocation bldg:filter-in ;
+    s223:observes bldg:ma-temp .
+
+bldg:minimum-oa-damper-actuator a s223:Actuator ;
+    s223:actuates bldg:minimum-oa-damper ;
+    s223:commandedByProperty bldg:minimum-oa-damper-command .
+
+bldg:multiple-zone-ahu a s223:AirHandlingUnit,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#MultiZoneVAVAirHandlingUnit> ;
+    s223:cnx bldg:ea-out,
+        bldg:oa-in,
+        bldg:ra-in,
+        bldg:sa-out ;
+    s223:contains bldg:clg-coil,
+        bldg:clg-coil-valve,
+        bldg:ea-damper,
+        bldg:economizer-oa-damper,
+        bldg:filter,
+        bldg:htg-coil,
+        bldg:htg-coil-valve,
+        bldg:minimum-oa-damper,
+        bldg:outside-air-junction,
+        bldg:outside-supply-junction,
+        bldg:ra-damper,
+        bldg:ra-fan,
+        bldg:return-exhaust-junction,
+        bldg:sa-fan .
+
+bldg:oa-flow-measurement-station a s223:Sensor ;
+    s223:hasObservationLocation bldg:minimum-oa-damper-out ;
+    s223:observes bldg:oa-flow .
+
+bldg:oa-temp-sensor a s223:Sensor ;
+    s223:hasObservationLocation bldg:minimum-oa-damper-out ;
+    s223:observes bldg:oa-temp .
+
+bldg:ra-damper-actuator a s223:Actuator ;
+    s223:actuates bldg:ra-damper ;
+    s223:commandedByProperty bldg:ra-damper-command .
+
+bldg:ra-fan-static-pressure-sensor a s223:Sensor ;
+    s223:hasObservationLocation bldg:duct-after-ra-fan ;
+    s223:observes bldg:ra-fan-discharge-static-pressure .
+
+bldg:ra-flow-sensor a s223:Sensor ;
+    s223:hasObservationLocation bldg:ra-fan ;
+    s223:observes bldg:ra-flow .
+
+bldg:ra-temp-sensor a s223:Sensor ;
+    s223:hasObservationLocation bldg:ra-in ;
+    s223:observes bldg:ra-temp .
+
+bldg:sa-flow-sensor a s223:Sensor ;
+    s223:hasObservationLocation bldg:sa-fan ;
+    s223:observes bldg:sa-flow .
+
+bldg:sa-temp-sensor a s223:Sensor ;
+    s223:hasObservationLocation bldg:sa-out ;
+    s223:observes bldg:sa-temp .
+
+bldg:supply-duct-static-pressure-sensor a s223:Sensor ;
+    s223:hasObservationLocation bldg:sa-out-connection ;
+    s223:observes bldg:supply-duct-static-pressure .
+
+bldg:clg-coil a s223:CoolingCoil,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#ChilledWaterCoil> ;
+    s223:cnx bldg:clg-coil-air-in,
+        bldg:clg-coil-air-out,
+        bldg:clg-coil-water-in,
+        bldg:clg-coil-water-out ;
+    s223:hasRole s223:Role-Cooling .
+
+bldg:clg-coil-air-in a s223:InletConnectionPoint ;
+    s223:cnx bldg:duct-after-htg-coil ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:clg-coil-air-out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:duct-after-clg-coil ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:clg-coil-valve-in a s223:InletConnectionPoint ;
+    s223:cnx bldg:pipe-chilled-water-return-before-valve ;
+    s223:hasMedium s223:Medium-Water .
+
+bldg:clg-coil-valve-out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:pipe-chilled-water-return-after-valve ;
+    s223:hasMedium s223:Medium-Water .
+
+bldg:clg-coil-valve-position a s223:QuantifiableObservableProperty ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+bldg:clg-coil-water-in a s223:InletConnectionPoint ;
+    s223:cnx bldg:pipe-chilled-water-return-after-valve ;
+    s223:hasMedium s223:Medium-Water .
+
+bldg:clg-coil-water-out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:pipe-chilled-water-supply ;
+    s223:hasMedium s223:Medium-Water .
+
+bldg:ea-damper-in a s223:InletConnectionPoint ;
+    s223:cnx bldg:duct-before-ea-damper ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:ea-damper-out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:ea-out-connection ;
+    s223:hasMedium s223:Medium-Air ;
+    s223:mapsTo bldg:ea-out .
+
+bldg:ea-damper-position a s223:QuantifiableObservableProperty ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+bldg:economizer-oa-damper-in a s223:InletConnectionPoint ;
+    s223:cnx bldg:duct-before-economizer-oa-damper ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:economizer-oa-damper-out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:duct-after-economizer-oa-damper ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:economizer-oa-damper-position a s223:QuantifiableObservableProperty ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+bldg:filter a s223:Filter,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#Filter> ;
+    s223:cnx bldg:filter-in,
+        bldg:filter-out ;
+    s223:hasProperty bldg:filter-differential-pressure .
+
+bldg:htg-coil a s223:HeatingCoil,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterCoil> ;
+    s223:cnx bldg:htg-coil-air-in,
+        bldg:htg-coil-air-out,
+        bldg:htg-coil-water-in,
+        bldg:htg-coil-water-out ;
+    s223:hasRole s223:Role-Heating .
+
+bldg:htg-coil-air-in a s223:InletConnectionPoint ;
+    s223:cnx bldg:duct-after-filter ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:htg-coil-air-out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:duct-after-htg-coil ;
+    s223:hasMedium s223:Medium-Air ;
+    s223:hasProperty bldg:heat-coil-air-temp .
+
+bldg:htg-coil-valve-in a s223:InletConnectionPoint ;
+    s223:cnx bldg:pipe-hot-water-return-before-valve ;
+    s223:hasMedium s223:Medium-Water .
+
+bldg:htg-coil-valve-out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:pipe-hot-water-return-after-valve ;
+    s223:hasMedium s223:Medium-Water .
+
+bldg:htg-coil-valve-position a s223:QuantifiableObservableProperty ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+bldg:htg-coil-water-in a s223:InletConnectionPoint ;
+    s223:cnx bldg:pipe-hot-water-return-after-valve ;
+    s223:hasMedium s223:Medium-Water .
+
+bldg:htg-coil-water-out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:pipe-hot-water-supply ;
+    s223:hasMedium s223:Medium-Water .
+
+bldg:minimum-oa-damper-in a s223:InletConnectionPoint ;
+    s223:cnx bldg:duct-before-minimum-oa-damper ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:minimum-oa-damper-position a s223:QuantifiableObservableProperty ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+bldg:outside-air-junction a s223:Junction ;
+    s223:cnx bldg:outside-air-junction-in,
+        bldg:outside-air-junction-out-1,
+        bldg:outside-air-junction-out-2 ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:outside-air-junction-in a s223:InletConnectionPoint ;
+    s223:cnx bldg:oa-in-connection ;
+    s223:hasMedium s223:Medium-Air ;
+    s223:mapsTo bldg:oa-in .
+
+bldg:outside-air-junction-out-1 a s223:OutletConnectionPoint ;
+    s223:cnx bldg:duct-before-minimum-oa-damper ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:outside-air-junction-out-2 a s223:OutletConnectionPoint ;
+    s223:cnx bldg:duct-before-economizer-oa-damper ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:outside-supply-junction a s223:Junction ;
+    s223:cnx bldg:outside-supply-junction-in-1,
+        bldg:outside-supply-junction-in-2,
+        bldg:outside-supply-junction-in-3,
+        bldg:outside-supply-junction-out ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:outside-supply-junction-in-1 a s223:InletConnectionPoint ;
+    s223:cnx bldg:duct-after-ra-damper ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:outside-supply-junction-in-2 a s223:InletConnectionPoint ;
+    s223:cnx bldg:duct-after-minimum-oa-damper ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:outside-supply-junction-in-3 a s223:InletConnectionPoint ;
+    s223:cnx bldg:duct-after-economizer-oa-damper ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:outside-supply-junction-out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:duct-before-filter ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:pipe-chilled-water-return-before-valve a s223:Connection,
+        s223:Pipe ;
+    s223:hasMedium s223:Medium-Water .
+
+bldg:pipe-chilled-water-supply a s223:Connection,
+        s223:Pipe ;
+    s223:hasMedium s223:Medium-Water .
+
+bldg:pipe-hot-water-return-before-valve a s223:Connection,
+        s223:Pipe ;
+    s223:hasMedium s223:Medium-Water .
+
+bldg:pipe-hot-water-supply a s223:Connection,
+        s223:Pipe ;
+    s223:hasMedium s223:Medium-Water .
+
+bldg:ra-damper-in a s223:InletConnectionPoint ;
+    s223:cnx bldg:duct-before-ra-damper ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:ra-damper-out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:duct-after-ra-damper ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:ra-damper-position a s223:QuantifiableObservableProperty ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+bldg:ra-fan-in a s223:InletConnectionPoint ;
+    s223:cnx bldg:ra-in-connection ;
+    s223:hasMedium s223:Medium-Air ;
+    s223:mapsTo bldg:ra-in .
+
+bldg:ra-fan-out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:duct-after-ra-fan ;
+    s223:hasMedium s223:Medium-Air ;
+    s223:hasProperty bldg:ra-fan-discharge-static-pressure .
+
+bldg:ra-fan-speed-cmd a s223:QuantifiableActuatableProperty ;
+    s223:hasAspect s223:EnumerationKind-Speed ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+bldg:ra-fan-start-cmd a s223:EnumeratedActuatableProperty ;
+    s223:hasEnumerationKind s223:EnumerationKind-OnOff .
+
+bldg:ra-fan-start-status a s223:EnumeratedObservableProperty ;
+    s223:hasEnumerationKind s223:EnumerationKind-OnOff .
+
+bldg:return-exhaust-junction a s223:Junction ;
+    s223:cnx bldg:return-exhaust-junction-in,
+        bldg:return-exhaust-junction-out-1,
+        bldg:return-exhaust-junction-out-2 ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:return-exhaust-junction-in a s223:InletConnectionPoint ;
+    s223:cnx bldg:duct-after-ra-fan ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:return-exhaust-junction-out-1 a s223:OutletConnectionPoint ;
+    s223:cnx bldg:duct-before-ea-damper ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:return-exhaust-junction-out-2 a s223:OutletConnectionPoint ;
+    s223:cnx bldg:duct-before-ra-damper ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:sa-fan-in a s223:InletConnectionPoint ;
+    s223:cnx bldg:duct-after-clg-coil ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:sa-fan-out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:sa-out-connection ;
+    s223:hasMedium s223:Medium-Air ;
+    s223:mapsTo bldg:sa-out .
+
+bldg:sa-fan-speed-cmd a s223:QuantifiableActuatableProperty ;
+    s223:hasAspect s223:EnumerationKind-Speed ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+bldg:sa-fan-start-cmd a s223:EnumeratedActuatableProperty ;
+    s223:hasEnumerationKind s223:EnumerationKind-OnOff .
+
+bldg:sa-fan-start-status a s223:EnumeratedObservableProperty ;
+    s223:hasEnumerationKind s223:EnumerationKind-OnOff .
+
+bldg:clg-coil-valve a s223:Valve,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#ChilledWaterValve> ;
+    s223:cnx bldg:clg-coil-valve-in,
+        bldg:clg-coil-valve-out ;
+    s223:hasMedium s223:Water-ChilledWater ;
+    s223:hasProperty bldg:clg-coil-valve-command,
+        bldg:clg-coil-valve-position .
+
+bldg:clg-coil-valve-command a s223:QuantifiableActuatableProperty ;
+    s223:hasAspect s223:EnumerationKind-Position ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+bldg:duct-after-clg-coil a s223:Connection,
+        s223:Duct ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:duct-after-economizer-oa-damper a s223:Connection,
+        s223:Duct ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:duct-after-filter a s223:Connection,
+        s223:Duct ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:duct-after-minimum-oa-damper a s223:Connection,
+        s223:Duct ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:duct-after-ra-damper a s223:Connection,
+        s223:Duct ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:duct-before-ea-damper a s223:Connection,
+        s223:Duct ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:duct-before-economizer-oa-damper a s223:Connection,
+        s223:Duct ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:duct-before-filter a s223:Connection,
+        s223:Duct ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:duct-before-minimum-oa-damper a s223:Connection,
+        s223:Duct ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:duct-before-ra-damper a s223:Connection,
+        s223:Duct ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:ea-damper a s223:Damper,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
+    s223:cnx bldg:ea-damper-in,
+        bldg:ea-damper-out ;
+    s223:hasProperty bldg:ea-damper-command,
+        bldg:ea-damper-position ;
+    s223:hasRole s223:Role-Exhaust .
+
+bldg:ea-damper-command a s223:QuantifiableActuatableProperty ;
+    s223:hasAspect s223:EnumerationKind-Position ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+bldg:ea-out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:ea-out-connection ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:ea-out-connection a s223:Connection ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:economizer-oa-damper a s223:Damper,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
+    s223:cnx bldg:economizer-oa-damper-in,
+        bldg:economizer-oa-damper-out ;
+    s223:hasProperty bldg:economizer-oa-damper-command,
+        bldg:economizer-oa-damper-position ;
+    s223:hasRole s223:Role-Economizer .
+
+bldg:economizer-oa-damper-command a s223:QuantifiableActuatableProperty ;
+    s223:hasAspect s223:EnumerationKind-Position ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+bldg:filter-differential-pressure a s223:QuantifiableObservableProperty ;
+    qudt:hasQuantityKind qudtqk:Pressure ;
+    qudt:hasUnit unit:IN_H2O .
+
+bldg:heat-coil-air-temp a s223:QuantifiableObservableProperty ;
+    qudt:hasQuantityKind qudtqk:Temperature ;
+    qudt:hasUnit unit:DEG_C .
+
+bldg:htg-coil-valve a s223:Valve,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve> ;
+    s223:cnx bldg:htg-coil-valve-in,
+        bldg:htg-coil-valve-out ;
+    s223:hasMedium s223:Water-HotWater ;
+    s223:hasProperty bldg:htg-coil-valve-command,
+        bldg:htg-coil-valve-position .
+
+bldg:htg-coil-valve-command a s223:QuantifiableActuatableProperty ;
+    s223:hasAspect s223:EnumerationKind-Position ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+bldg:ma-temp a s223:QuantifiableObservableProperty ;
+    qudt:hasQuantityKind qudtqk:Temperature ;
+    qudt:hasUnit unit:DEG_C .
+
+bldg:minimum-oa-damper a s223:Damper,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
+    s223:cnx bldg:minimum-oa-damper-in,
+        bldg:minimum-oa-damper-out ;
+    s223:hasProperty bldg:minimum-oa-damper-command,
+        bldg:minimum-oa-damper-position ;
+    s223:hasRole s223:Role-Outside .
+
+bldg:minimum-oa-damper-command a s223:QuantifiableActuatableProperty ;
+    s223:hasAspect s223:EnumerationKind-Position ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+bldg:oa-flow a s223:QuantifiableObservableProperty ;
+    qudt:hasQuantityKind qudtqk:VolumeFlowRate ;
+    qudt:hasUnit unit:FT3-PER-MIN .
+
+bldg:oa-in a s223:InletConnectionPoint ;
+    s223:cnx bldg:oa-in-connection ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:oa-in-connection a s223:Connection ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:oa-temp a s223:QuantifiableObservableProperty ;
+    s223:hasAspect s223:Role-Outside ;
+    qudt:hasQuantityKind qudtqk:Temperature ;
+    qudt:hasUnit unit:DEG_C .
+
+bldg:pipe-chilled-water-return-after-valve a s223:Connection,
+        s223:Pipe ;
+    s223:hasMedium s223:Medium-Water .
+
+bldg:pipe-hot-water-return-after-valve a s223:Connection,
+        s223:Pipe ;
+    s223:hasMedium s223:Medium-Water .
+
+bldg:ra-damper a s223:Damper,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
+    s223:cnx bldg:ra-damper-in,
+        bldg:ra-damper-out ;
+    s223:hasProperty bldg:ra-damper-command,
+        bldg:ra-damper-position ;
+    s223:hasRole s223:Role-Return .
+
+bldg:ra-damper-command a s223:QuantifiableActuatableProperty ;
+    s223:hasAspect s223:EnumerationKind-Position ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+bldg:ra-fan a s223:Fan,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#FanWithVFD> ;
+    s223:cnx bldg:ra-fan-in,
+        bldg:ra-fan-out ;
+    s223:hasProperty bldg:ra-fan-speed-cmd,
+        bldg:ra-fan-start-cmd,
+        bldg:ra-fan-start-status,
+        bldg:ra-flow ;
+    s223:hasRole s223:Role-Return .
+
+bldg:ra-fan-discharge-static-pressure a s223:QuantifiableObservableProperty ;
+    qudt:hasQuantityKind qudtqk:Pressure ;
+    qudt:hasUnit unit:IN_H2O .
+
+bldg:ra-flow a s223:QuantifiableObservableProperty ;
+    qudt:hasQuantityKind qudtqk:VolumeFlowRate ;
+    qudt:hasUnit unit:FT3-PER-MIN .
+
+bldg:ra-in-connection a s223:Connection ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:ra-temp a s223:QuantifiableObservableProperty ;
+    s223:hasAspect s223:Role-Return ;
+    qudt:hasQuantityKind qudtqk:Temperature ;
+    qudt:hasUnit unit:DEG_C .
+
+bldg:sa-fan a s223:Fan,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#FanWithVFD> ;
+    s223:cnx bldg:sa-fan-in,
+        bldg:sa-fan-out ;
+    s223:hasProperty bldg:sa-fan-speed-cmd,
+        bldg:sa-fan-start-cmd,
+        bldg:sa-fan-start-status,
+        bldg:sa-flow ;
+    s223:hasRole s223:Role-Supply .
+
+bldg:sa-flow a s223:QuantifiableObservableProperty ;
+    qudt:hasQuantityKind qudtqk:VolumeFlowRate ;
+    qudt:hasUnit unit:FT3-PER-MIN .
+
+bldg:sa-temp a s223:QuantifiableObservableProperty ;
+    s223:hasAspect s223:Role-Supply ;
+    qudt:hasQuantityKind qudtqk:Temperature ;
+    qudt:hasUnit unit:DEG_C .
+
+bldg:supply-duct-static-pressure a s223:QuantifiableObservableProperty ;
+    s223:hasAspect s223:Role-Supply ;
+    qudt:hasQuantityKind qudtqk:Pressure ;
+    qudt:hasUnit unit:IN_H2O .
+
+bldg:duct-after-htg-coil a s223:Connection,
+        s223:Duct ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:duct-after-ra-fan a s223:Connection,
+        s223:Duct ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:filter-out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:duct-after-filter ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:minimum-oa-damper-out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:duct-after-minimum-oa-damper ;
+    s223:hasMedium s223:Medium-Air ;
+    s223:hasProperty bldg:oa-flow,
+        bldg:oa-temp .
+
+bldg:ra-in a s223:InletConnectionPoint ;
+    s223:cnx bldg:ra-in-connection ;
+    s223:hasMedium s223:Medium-Air ;
+    s223:hasProperty bldg:ra-temp .
+
+bldg:sa-out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:sa-out-connection ;
+    s223:hasMedium s223:Medium-Air ;
+    s223:hasProperty bldg:sa-temp,
+        bldg:supply-duct-static-pressure .
+
+bldg:sa-out-connection a s223:Connection ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:filter-in a s223:InletConnectionPoint ;
+    s223:cnx bldg:duct-before-filter ;
+    s223:hasMedium s223:Medium-Air ;
+    s223:hasProperty bldg:ma-temp .
+

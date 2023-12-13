@@ -1,0 +1,77 @@
+@prefix bldg: <urn:ex/> .
+@prefix s223: <http://data.ashrae.org/standard223#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix qudtqk: <http://qudt.org/vocab/quantitykind/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+
+bldg: a owl:Ontology .
+
+bldg:damper-actuator a s223:Actuator ;
+    s223:actuates bldg:damper ;
+    s223:commandedByProperty bldg:damper-command .
+
+bldg:discharge-air-flow-sensor a s223:Sensor ;
+    s223:hasObservationLocation bldg:out ;
+    s223:observes bldg:discharge-air-flow .
+
+bldg:vav-cooling-only a s223:SingleDuctTerminal,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#VAV> ;
+    s223:cnx bldg:in,
+        bldg:out ;
+    s223:contains bldg:damper .
+
+bldg:damper-in a s223:InletConnectionPoint ;
+    s223:cnx bldg:duct-before-damper ;
+    s223:hasMedium s223:Medium-Air ;
+    s223:mapsTo bldg:in .
+
+bldg:damper-out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:duct-after-damper ;
+    s223:hasMedium s223:Medium-Air ;
+    s223:mapsTo bldg:out .
+
+bldg:damper-position a s223:QuantifiableObservableProperty ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+bldg:duct-after-damper a s223:Connection,
+        s223:Duct ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:duct-before-damper a s223:Connection,
+        s223:Duct ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:in-connection a s223:Connection ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:out-connection a s223:Connection ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:damper a s223:Damper,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
+    s223:cnx bldg:damper-in,
+        bldg:damper-out ;
+    s223:hasProperty bldg:damper-command,
+        bldg:damper-position .
+
+bldg:damper-command a s223:QuantifiableActuatableProperty ;
+    s223:hasAspect s223:EnumerationKind-Position ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+bldg:discharge-air-flow a s223:QuantifiableObservableProperty ;
+    s223:hasAspect s223:Role-Discharge ;
+    qudt:hasQuantityKind qudtqk:VolumeFlowRate ;
+    qudt:hasUnit unit:FT3-PER-MIN .
+
+bldg:in a s223:InletConnectionPoint ;
+    s223:cnx bldg:in-connection ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:out-connection ;
+    s223:hasMedium s223:Medium-Air ;
+    s223:hasProperty bldg:discharge-air-flow .
+

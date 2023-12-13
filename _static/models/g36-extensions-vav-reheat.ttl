@@ -1,0 +1,164 @@
+@prefix bldg: <urn:ex/> .
+@prefix s223: <http://data.ashrae.org/standard223#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix qudtqk: <http://qudt.org/vocab/quantitykind/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+
+bldg: a owl:Ontology .
+
+bldg:damper-actuator a s223:Actuator ;
+    s223:actuates bldg:damper ;
+    s223:commandedByProperty bldg:damper-command .
+
+bldg:discharge-air-flow-sensor a s223:Sensor ;
+    s223:hasObservationLocation bldg:air-in ;
+    s223:observes bldg:discharge-air-flow .
+
+bldg:discharge-air-temp-sensor a s223:Sensor ;
+    s223:hasObservationLocation bldg:air-out ;
+    s223:observes bldg:discharge-air-temp .
+
+bldg:reheat-coil-valve-actuator a s223:Actuator ;
+    s223:actuates bldg:reheat-coil-valve ;
+    s223:commandedByProperty bldg:reheat-coil-valve-command .
+
+bldg:vav-reheat a s223:SingleDuctTerminal,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#VAVWithReheat> ;
+    s223:cnx bldg:air-in,
+        bldg:air-out,
+        bldg:hot-water-in,
+        bldg:hot-water-out ;
+    s223:contains bldg:damper,
+        bldg:reheat-coil,
+        bldg:reheat-coil-valve .
+
+bldg:damper-in a s223:InletConnectionPoint ;
+    s223:cnx bldg:air-in-connection ;
+    s223:hasMedium s223:Medium-Air ;
+    s223:mapsTo bldg:air-in .
+
+bldg:damper-out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:duct-after-damper ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:damper-position a s223:QuantifiableObservableProperty ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+bldg:reheat-coil a s223:HeatingCoil,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterCoil> ;
+    s223:cnx bldg:reheat-coil-air-in,
+        bldg:reheat-coil-air-out,
+        bldg:reheat-coil-water-in,
+        bldg:reheat-coil-water-out ;
+    s223:hasRole s223:Role-Heating .
+
+bldg:reheat-coil-air-in a s223:InletConnectionPoint ;
+    s223:cnx bldg:duct-after-damper ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:reheat-coil-air-out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:air-out-connection ;
+    s223:hasMedium s223:Medium-Air ;
+    s223:mapsTo bldg:air-out .
+
+bldg:reheat-coil-valve-in a s223:InletConnectionPoint ;
+    s223:cnx bldg:pipe-hot-water-return-before-valve ;
+    s223:hasMedium s223:Medium-Water .
+
+bldg:reheat-coil-valve-out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:hot-water-out-connection ;
+    s223:hasMedium s223:Medium-Water ;
+    s223:mapsTo bldg:hot-water-out .
+
+bldg:reheat-coil-valve-position a s223:QuantifiableObservableProperty ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+bldg:reheat-coil-water-in a s223:InletConnectionPoint ;
+    s223:cnx bldg:hot-water-in-connection ;
+    s223:hasMedium s223:Medium-Water ;
+    s223:mapsTo bldg:hot-water-in .
+
+bldg:reheat-coil-water-out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:pipe-hot-water-return-before-valve ;
+    s223:hasMedium s223:Medium-Water .
+
+bldg:air-in-connection a s223:Connection,
+        s223:Duct ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:air-out-connection a s223:Connection,
+        s223:Duct ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:damper a s223:Damper,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
+    s223:cnx bldg:damper-in,
+        bldg:damper-out ;
+    s223:hasProperty bldg:damper-command,
+        bldg:damper-position .
+
+bldg:damper-command a s223:QuantifiableActuatableProperty ;
+    s223:hasAspect s223:EnumerationKind-Position ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+bldg:discharge-air-flow a s223:QuantifiableObservableProperty ;
+    s223:hasAspect s223:Role-Discharge ;
+    qudt:hasQuantityKind qudtqk:VolumeFlowRate ;
+    qudt:hasUnit unit:FT3-PER-MIN .
+
+bldg:discharge-air-temp a s223:QuantifiableObservableProperty ;
+    s223:hasAspect s223:Role-Discharge ;
+    qudt:hasQuantityKind qudtqk:Temperature ;
+    qudt:hasUnit unit:DEG_C .
+
+bldg:duct-after-damper a s223:Connection,
+        s223:Duct ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:hot-water-in a s223:InletConnectionPoint ;
+    s223:cnx bldg:hot-water-in-connection ;
+    s223:hasMedium s223:Medium-Water .
+
+bldg:hot-water-in-connection a s223:Connection,
+        s223:Pipe ;
+    s223:hasMedium s223:Medium-Water .
+
+bldg:hot-water-out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:hot-water-out-connection ;
+    s223:hasMedium s223:Medium-Water .
+
+bldg:hot-water-out-connection a s223:Connection,
+        s223:Pipe ;
+    s223:hasMedium s223:Medium-Water .
+
+bldg:pipe-hot-water-return-before-valve a s223:Connection,
+        s223:Pipe ;
+    s223:hasMedium s223:Medium-Water .
+
+bldg:reheat-coil-valve a s223:Valve,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve> ;
+    s223:cnx bldg:reheat-coil-valve-in,
+        bldg:reheat-coil-valve-out ;
+    s223:hasMedium s223:Water-HotWater ;
+    s223:hasProperty bldg:reheat-coil-valve-command,
+        bldg:reheat-coil-valve-position .
+
+bldg:reheat-coil-valve-command a s223:QuantifiableActuatableProperty ;
+    s223:hasAspect s223:EnumerationKind-Position ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+bldg:air-in a s223:InletConnectionPoint ;
+    s223:cnx bldg:air-in-connection ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:air-out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:air-out-connection ;
+    s223:hasMedium s223:Medium-Air ;
+    s223:hasProperty bldg:discharge-air-flow,
+        bldg:discharge-air-temp .
+
