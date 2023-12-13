@@ -46,3 +46,7 @@ sphinx:
     - sphinxcontrib.mermaid
   config:
     html_extra_path: ['model_vis']
+
+
+only_build_toc_files: true
+exclude_patterns: [.venv/*]

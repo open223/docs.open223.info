@@ -28,6 +28,7 @@ parts:
   - file: reference/example-models.md
 - caption: Example Models
   chapters:
+  - file: examples/NREL-example.md
   - file: examples/lbnl-example.md
   - file: examples/G36-4-1.md
   - file: examples/G36-4-2.md
