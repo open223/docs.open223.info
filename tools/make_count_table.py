@@ -38,7 +38,9 @@ for root_class in root_classes:
                 continue
             # if the subclass is the same as the root class, then it is a direct instance
             # and we use a blank "subclass" string but only if there are no other subclasses
-            if subclass == root_class_uri and len(all_subclasses) == 1:
+            if subclass == root_class_uri:
+                if len(all_subclasses) > 1:
+                    continue
                 subclass = ''
             # Increment the count
             class_counts[root_class][str(subclass)] += 1

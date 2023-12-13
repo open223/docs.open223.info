@@ -20,14 +20,12 @@ This is an example building provided by the National Renewable Energy Laboratory
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [TerminalUnit](https://explore.open223.info/s223/TerminalUnit.html) | 9 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [Filter](https://explore.open223.info/s223/Filter.html) | 4 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [Damper](https://explore.open223.info/s223/Damper.html) | 4 |
-| [Equipment](https://explore.open223.info/s223/Equipment.html) | [Equipment](https://explore.open223.info/s223/Equipment.html) | 3 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [HeatExchanger](https://explore.open223.info/s223/HeatExchanger.html) | 2 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [HeatRecoveryCoil](https://explore.open223.info/s223/HeatRecoveryCoil.html) | 2 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [AirHandlingUnit](https://explore.open223.info/s223/AirHandlingUnit.html) | 1 |
 | [Connection](https://explore.open223.info/s223/Connection.html) | [Duct](https://explore.open223.info/s223/Duct.html) | 57 |
 | [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [OutletConnectionPoint](https://explore.open223.info/s223/OutletConnectionPoint.html) | 196 |
 | [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [InletConnectionPoint](https://explore.open223.info/s223/InletConnectionPoint.html) | 187 |
-| [PhysicalSpace](https://explore.open223.info/s223/PhysicalSpace.html) | [PhysicalSpace](https://explore.open223.info/s223/PhysicalSpace.html) | 15 |
 | [DomainSpace](https://explore.open223.info/s223/DomainSpace.html) | [](https://explore.open223.info/s223/.html) | 15 |
 | [Zone](https://explore.open223.info/s223/Zone.html) | [](https://explore.open223.info/s223/.html) | 3 |
 | [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableObservableProperty](https://explore.open223.info/s223/QuantifiableObservableProperty.html) | 381 |
