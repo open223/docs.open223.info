@@ -21,9 +21,6 @@ Document Flow
 - Explanation
     - Introduce 223P and classes at a high level
     - Supporting Technologies
-        - RDF
-        - SHACL (inference and validation)
-        - SPARQL
 - Tutorials 
     - Using 223 Explore
     - Using Query 223
