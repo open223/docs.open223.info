@@ -17,7 +17,7 @@ Insert image of left hand tab
 
 The classes tab organizes the classes of the standard based on their class hierarchy. One can click on the class name to view a description of the class and its constraints, or click on the "+" to the left of the class name to view all the subclasses of that class. For example, all 223P classes are a subclass of s223:Concept, and can be accessed by clicking the "+" to the left of "Concept". 
 
-TODO insert first image 
+TODO insert image
 
 Additionally all links highlighted in yellow on a given class page can be used to navigate to a description of that class or property. 
 
