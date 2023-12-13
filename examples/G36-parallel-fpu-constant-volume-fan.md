@@ -5,7 +5,7 @@ This is an example Parallel Fan Powered Unit With Constant Fan provided by the A
 ## Downloads
 
 - [Turtle file](../_static/models/g36-extensions-parallel-fpu-constant-volume-fan.ttl)
-g36-extensions-parallel-fpu-constant-volume-fan.ttl
+
 ## Figure
 
 A figure of this piece of equipment is shown in the image below [1]:
