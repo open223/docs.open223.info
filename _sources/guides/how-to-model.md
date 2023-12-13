@@ -1,3 +1,4 @@
+(how-to-model)=
 # How to Model Core Concepts
 
 TODO Section on design patterns here
