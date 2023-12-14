@@ -36,6 +36,11 @@ html:
 
 
 # Launch button settings
+launch_buttons:
+  notebook_interface        : classic
+  binderhub_url             : "https://mybinder.org"
+  thebe                     : true
+
 repository:
   url: https://github.com/open223/docs.open223.info
   branch: main
