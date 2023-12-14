@@ -5,6 +5,9 @@
 format: jb-book
 root: intro
 parts:
+- caption: Explanation
+  chapters:
+  - file: explanation/223p.md
 - caption: Tutorials
   chapters:
   - file: tutorials/223-explore.md
@@ -16,16 +19,13 @@ parts:
   - file: guides/how-to-model.md
   - file: guides/how-to-telemetry.md
   - file: guides/how-to-extend.md
-- caption: Explanation
-  chapters:
-  - file: explanation/223p.md
-  - file: explanation/supporting-tech.md
 - caption: Reference
   chapters:
   - file: reference/supporting-links.md
   - file: reference/tools.md
   - file: reference/open-223.md
   - file: reference/example-models.md
+  - file: reference/supporting-tech.md
 - caption: Example Models
   chapters:
   - file: examples/lbnl-example.md
