@@ -18,20 +18,6 @@ TODO: Delete when complete
 Document Flow
 - Main Page
   - Purpose of User Guide 
-- Explanation
-    - Introduce 223P and classes at a high level
-    - Supporting Technologies
-
-- Reference
-    - Supporting Technologies References
-        - Links documentation to SHACL, RDFS, RDF, SPARQL, etc.
-    - Publication document? 
-    - Available Tools
-    - Open 223
-        - Explore 223
-        - Query 223
- - Example Models
-        - Bullets with quick description of each model and a link
 
 ## Table of Contents
 ```{tableofcontents}
