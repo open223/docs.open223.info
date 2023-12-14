@@ -1,4 +1,4 @@
-# ASHRAE 223P User Documentation [![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://open223.github.io/docs.open223.info/)
+# ASHRAE Standard 223P User Documentation [![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://open223.github.io/docs.open223.info/)
 
 The purpose of this site is to provide documentation for users of the *proposed* ASHRAE Standard 223, ***Designation and Classification of Semantic Tags for Building Data***.
 
