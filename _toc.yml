@@ -25,7 +25,7 @@ parts:
   - file: reference/tools.md
   - file: reference/open-223.md
   - file: reference/example-models.md
-  - file: explanation/supporting-tech.md
+  - file: reference/supporting-tech.md
 - caption: Example Models
   chapters:
   - file: examples/lbnl-example.md
