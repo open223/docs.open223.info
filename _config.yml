@@ -1,7 +1,7 @@
 # https://jupyterbook.org/en/stable/customize/config.html
 
 # Book settings
-title: Open223 Documentation
+title: ASHRAE Standard 223P User Documentation
 author: ""
 copyright: ""
 logo: ""
@@ -32,10 +32,17 @@ html:
   use_repository_button: true
   use_issues_button: true
 
+  announcement              : " 🏗️ this site is under active development ⚠️"
+
 # LaTeX-specific settings
 
 
 # Launch button settings
+launch_buttons:
+  notebook_interface        : classic
+  binderhub_url             : "https://mybinder.org"
+  thebe                     : true
+
 repository:
   url: https://github.com/open223/docs.open223.info
   branch: main

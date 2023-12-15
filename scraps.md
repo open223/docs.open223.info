@@ -1,15 +1,3 @@
-# Semantic Web Technologies
-
-ASHRAE 223P utilizes semantic information tools that provide explicit meaning to data to facilitate machine understanding and interaction. These Semantic Web technologies collectively empower the creation of machine-readable, interconnected, and interoperable data. By adopting RDF for data representation, SHACL for defining constraints, SPARQL for querying, and Turtle for human-friendly syntax, 223P enables automated understanding, integration, and analysis of information across diverse building systems. Each of these technologies are introduced below and described in greater depth in this section. 
-
-- Resource Description Framework (RDF): At the core of the Semantic Web is RDF, a standard for representing and exchanging data in a machine-readable format. RDF provides a simple, flexible model based on triples, where each triple consists of a subject, predicate, and object. This structure forms the foundation for expressing relationships and connections between resources on the web, creating a powerful graph-based data model.
-
-- Shapes Constraint Language (SHACL): SHACL is a language for describing and validating the structure and constraints of RDF graphs. It allows developers and data modelers to define rules, or "shapes," that specify the expected structure and characteristics of RDF data. SHACL plays a critical role in ensuring data integrity, providing a means to express and enforce constraints on RDF graphs, which is particularly valuable in the context of semantic modeling for building systems and related data.
-
-- SPARQL (SPARQL Protocol and RDF Query Language): SPARQL is a query language designed specifically for querying RDF data. It enables users to retrieve, manipulate, and analyze information stored in RDF graphs. SPARQL queries are expressive and powerful, allowing for the extraction of meaningful insights from complex and interconnected semantic data. It serves as a crucial tool for developers, analysts, and researchers working with Semantic Web technologies.
-
-- Terse RDF Triple Language (Turtle - TTL): Turtle is a textual syntax for expressing RDF data in a compact and human-readable format. It provides a way to represent RDF triples more concisely than XML-based alternatives. Turtle is widely used for writing and sharing RDF data, providing a clear and efficient means of communication in both development and deployment scenarios.
-
 ## Basics of RDF 
 
 Standard 223P uses the resource description framework (RDF) to describe metadata for a building using a subject-predicate-object triple model, otherwise known as a directed, labeled graph model. This model allows us to define how different entities related to building systems (devices, data points, zones, ducts, etc) are related to each other. The subject and object define two entities and the predicate defines how they are related. For example, an air handling unit may contain a fan. This would be described in a 223P model as AHU (subject) contains (predicate) Fan (object) as shown in Figure 1. (Brick does a good job of describing RDF for building people, perhaps  we link some documentation)? 
@@ -26,6 +14,7 @@ graph LR
 graph LR
     AHU-- contains -->Fan
 ```
+TODO: put later in design pattern section 
 
 There are many figures depicting snippets of 223P models in this user guide. These figures should be read as a series of triples, rather than as a flow chart. Figure 1 shows an example of a 223P model. The direction of the arrow indicates how the subject relates to the object. In the case of Figure 1, the AHU is the subject, and it relates to the Fan using the predicate contains. Triples are generally textualized using the Terse RDF Triple Language (TTL) (cite). Figure 2 shows an example of a series of triples both as a picture and as text in TTL format.  (should maybe make the figure in top braid since many others in this user guide will be in that style) 
 
