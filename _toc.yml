@@ -10,9 +10,6 @@ parts:
   - file: explanation/223p.md
 - caption: Tutorials
   chapters:
-  - file: tutorials/223-explore.md
-  - file: tutorials/223-query.md
-  - file: tutorials/builder-tools.md
   - file: tutorials/rdflib-pyshacl.md
 - caption: Guides
   chapters:
@@ -21,11 +18,8 @@ parts:
   - file: guides/how-to-extend.md
 - caption: Reference
   chapters:
-  - file: reference/supporting-links.md
-  - file: reference/tools.md
-  - file: reference/open-223.md
-  - file: reference/example-models.md
-  - file: reference/supporting-tech.md
+  - file: reference/open223-resources.md
+  - file: reference/other-resources.md
 - caption: Example Models
   chapters:
   - file: examples/lbnl-example.md
