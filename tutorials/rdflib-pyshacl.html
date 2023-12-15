@@ -495,18 +495,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">rdflib</span> <span class="kn">import</span> <span class="n">Graph</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">rdflib.namespace</span> <span class="kn">import</span> <span class="n">RDF</span><span class="p">,</span> <span class="n">RDFS</span><span class="p">,</span> <span class="n">Namespace</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Define namespaces</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;rdflib&#39;
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="creating-a-graph-and-loading-the-model">
@@ -518,6 +506,70 @@ document.write(`
 <span class="n">g</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">()</span>
 <span class="n">g</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;TODO Update Link&#39;</span><span class="p">,</span> <span class="nb">format</span> <span class="o">=</span> <span class="s1">&#39;ttl&#39;</span><span class="p">)</span>
 <span class="n">g</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;TODO Update Link for ontology&#39;</span><span class="p">,</span> <span class="nb">format</span> <span class="o">=</span> <span class="s1">&#39;ttl&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>file:///home/runner/work/docs.open223.info/docs.open223.info/TODO Update Link does not look like a valid URI, trying to serialize this will break.
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Create an RDF graph and load model</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">g</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">()</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">g</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;TODO Update Link&#39;</span><span class="p">,</span> <span class="nb">format</span> <span class="o">=</span> <span class="s1">&#39;ttl&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">g</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;TODO Update Link for ontology&#39;</span><span class="p">,</span> <span class="nb">format</span> <span class="o">=</span> <span class="s1">&#39;ttl&#39;</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/rdflib/graph.py:1468,</span> in <span class="ni">Graph.parse</span><span class="nt">(self, source, publicID, format, location, file, data, **args)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1373</span> <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1374</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1375</span>     <span class="n">source</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1383</span>     <span class="o">**</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1384</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Graph&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1385</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1386</span><span class="sd">     Parse an RDF source adding the resulting triples to the Graph.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1387</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1465</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1466</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1468</span>     <span class="n">source</span> <span class="o">=</span> <span class="n">create_input_source</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1469</span>         <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1470</span>         <span class="n">publicID</span><span class="o">=</span><span class="n">publicID</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1471</span>         <span class="n">location</span><span class="o">=</span><span class="n">location</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1472</span>         <span class="n">file</span><span class="o">=</span><span class="n">file</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1473</span>         <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1474</span>         <span class="nb">format</span><span class="o">=</span><span class="nb">format</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1475</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1476</span>     <span class="k">if</span> <span class="nb">format</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1477</span>         <span class="nb">format</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">content_type</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/rdflib/parser.py:401,</span> in <span class="ni">create_input_source</span><span class="nt">(source, publicID, location, file, data, format)</span>
+<span class="g g-Whitespace">    </span><span class="mi">394</span>         <span class="k">assert</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">395</span>         <span class="k">assert</span> <span class="n">source</span> <span class="ow">is</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">396</span>     <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">397</span>         <span class="n">absolute_location</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">398</span>         <span class="n">auto_close</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">399</span>         <span class="n">file</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">400</span>         <span class="n">input_source</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">401</span>     <span class="p">)</span> <span class="o">=</span> <span class="n">_create_input_source_from_location</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">402</span>         <span class="n">file</span><span class="o">=</span><span class="n">file</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">403</span>         <span class="nb">format</span><span class="o">=</span><span class="nb">format</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">404</span>         <span class="n">input_source</span><span class="o">=</span><span class="n">input_source</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">405</span>         <span class="n">location</span><span class="o">=</span><span class="n">location</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">406</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">408</span> <span class="k">if</span> <span class="n">file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">409</span>     <span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/rdflib/parser.py:461,</span> in <span class="ni">_create_input_source_from_location</span><span class="nt">(file, format, input_source, location)</span>
+<span class="g g-Whitespace">    </span><span class="mi">459</span> <span class="k">if</span> <span class="n">absolute_location</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;file:///&quot;</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">460</span>     <span class="n">filename</span> <span class="o">=</span> <span class="n">url2pathname</span><span class="p">(</span><span class="n">absolute_location</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;file:///&quot;</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="p">))</span>
+<span class="ne">--&gt; </span><span class="mi">461</span>     <span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">462</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">463</span>     <span class="n">input_source</span> <span class="o">=</span> <span class="n">URLInputSource</span><span class="p">(</span><span class="n">absolute_location</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/home/runner/work/docs.open223.info/docs.open223.info/TODO Update Link&#39;
 </pre></div>
 </div>
 </div>
