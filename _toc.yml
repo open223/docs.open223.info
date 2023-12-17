@@ -8,6 +8,8 @@ parts:
 - caption: Explanation
   chapters:
   - file: explanation/223p.md
+  - file: explanation/what-is-modeled.md
+  - file: explanation/definitions.md
 - caption: Tutorials
   chapters:
   - file: tutorials/rdflib-pyshacl.md
