@@ -1,0 +1,88 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 172, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Create an RDF graph and load model
+g = Graph()
+g.parse('TODO Update Link', format = 'ttl')
+g.parse('TODO Update Link for ontology', format = 'ttl')
+------------------
+
+----- stderr -----
+file:///home/runner/work/docs.open223.info/docs.open223.info/TODO Update Link does not look like a valid URI, trying to serialize this will break.
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+Cell [0;32mIn[2], line 3[0m
+[1;32m      1[0m [38;5;66;03m# Create an RDF graph and load model[39;00m
+[1;32m      2[0m g [38;5;241m=[39m Graph()
+[0;32m----> 3[0m [43mg[49m[38;5;241;43m.[39;49m[43mparse[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mTODO Update Link[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;28;43mformat[39;49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43mttl[39;49m[38;5;124;43m'[39;49m[43m)[49m
+[1;32m      4[0m g[38;5;241m.[39mparse([38;5;124m'[39m[38;5;124mTODO Update Link for ontology[39m[38;5;124m'[39m, [38;5;28mformat[39m [38;5;241m=[39m [38;5;124m'[39m[38;5;124mttl[39m[38;5;124m'[39m)
+
+File [0;32m/opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/rdflib/graph.py:1468[0m, in [0;36mGraph.parse[0;34m(self, source, publicID, format, location, file, data, **args)[0m
+[1;32m   1373[0m [38;5;28;01mdef[39;00m [38;5;21mparse[39m(
+[1;32m   1374[0m     [38;5;28mself[39m,
+[1;32m   1375[0m     source: Optional[
+[0;32m   (...)[0m
+[1;32m   1383[0m     [38;5;241m*[39m[38;5;241m*[39margs: Any,
+[1;32m   1384[0m ) [38;5;241m-[39m[38;5;241m>[39m [38;5;124m"[39m[38;5;124mGraph[39m[38;5;124m"[39m:
+[1;32m   1385[0m [38;5;250m    [39m[38;5;124;03m"""[39;00m
+[1;32m   1386[0m [38;5;124;03m    Parse an RDF source adding the resulting triples to the Graph.[39;00m
+[1;32m   1387[0m 
+[0;32m   (...)[0m
+[1;32m   1465[0m 
+[1;32m   1466[0m [38;5;124;03m    """[39;00m
+[0;32m-> 1468[0m     source [38;5;241m=[39m [43mcreate_input_source[49m[43m([49m
+[1;32m   1469[0m [43m        [49m[43msource[49m[38;5;241;43m=[39;49m[43msource[49m[43m,[49m
+[1;32m   1470[0m [43m        [49m[43mpublicID[49m[38;5;241;43m=[39;49m[43mpublicID[49m[43m,[49m
+[1;32m   1471[0m [43m        [49m[43mlocation[49m[38;5;241;43m=[39;49m[43mlocation[49m[43m,[49m
+[1;32m   1472[0m [43m        [49m[43mfile[49m[38;5;241;43m=[39;49m[43mfile[49m[43m,[49m
+[1;32m   1473[0m [43m        [49m[43mdata[49m[38;5;241;43m=[39;49m[43mdata[49m[43m,[49m
+[1;32m   1474[0m [43m        [49m[38;5;28;43mformat[39;49m[38;5;241;43m=[39;49m[38;5;28;43mformat[39;49m[43m,[49m
+[1;32m   1475[0m [43m    [49m[43m)[49m
+[1;32m   1476[0m     [38;5;28;01mif[39;00m [38;5;28mformat[39m [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[1;32m   1477[0m         [38;5;28mformat[39m [38;5;241m=[39m source[38;5;241m.[39mcontent_type
+
+File [0;32m/opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/rdflib/parser.py:401[0m, in [0;36mcreate_input_source[0;34m(source, publicID, location, file, data, format)[0m
+[1;32m    394[0m         [38;5;28;01massert[39;00m data [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m
+[1;32m    395[0m         [38;5;28;01massert[39;00m source [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m
+[1;32m    396[0m     (
+[1;32m    397[0m         absolute_location,
+[1;32m    398[0m         auto_close,
+[1;32m    399[0m         file,
+[1;32m    400[0m         input_source,
+[0;32m--> 401[0m     ) [38;5;241m=[39m [43m_create_input_source_from_location[49m[43m([49m
+[1;32m    402[0m [43m        [49m[43mfile[49m[38;5;241;43m=[39;49m[43mfile[49m[43m,[49m
+[1;32m    403[0m [43m        [49m[38;5;28;43mformat[39;49m[38;5;241;43m=[39;49m[38;5;28;43mformat[39;49m[43m,[49m
+[1;32m    404[0m [43m        [49m[43minput_source[49m[38;5;241;43m=[39;49m[43minput_source[49m[43m,[49m
+[1;32m    405[0m [43m        [49m[43mlocation[49m[38;5;241;43m=[39;49m[43mlocation[49m[43m,[49m
+[1;32m    406[0m [43m    [49m[43m)[49m
+[1;32m    408[0m [38;5;28;01mif[39;00m file [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[1;32m    409[0m     [38;5;28;01mif[39;00m TYPE_CHECKING:
+
+File [0;32m/opt/hostedtoolcache/Python/3.11.7/x64/lib/python3.11/site-packages/rdflib/parser.py:461[0m, in [0;36m_create_input_source_from_location[0;34m(file, format, input_source, location)[0m
+[1;32m    459[0m [38;5;28;01mif[39;00m absolute_location[38;5;241m.[39mstartswith([38;5;124m"[39m[38;5;124mfile:///[39m[38;5;124m"[39m):
+[1;32m    460[0m     filename [38;5;241m=[39m url2pathname(absolute_location[38;5;241m.[39mreplace([38;5;124m"[39m[38;5;124mfile:///[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124m/[39m[38;5;124m"[39m))
+[0;32m--> 461[0m     file [38;5;241m=[39m [38;5;28;43mopen[39;49m[43m([49m[43mfilename[49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mrb[39;49m[38;5;124;43m"[39;49m[43m)[49m
+[1;32m    462[0m [38;5;28;01melse[39;00m:
+[1;32m    463[0m     input_source [38;5;241m=[39m URLInputSource(absolute_location, [38;5;28mformat[39m)
+
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: '/home/runner/work/docs.open223.info/docs.open223.info/TODO Update Link'
+
