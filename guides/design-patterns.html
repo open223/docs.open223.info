@@ -172,7 +172,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/rdflib-pyshacl.html">How to Load, Validate, Update, and Query 223P models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/model_exploration.html">Model Exploration</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides</span></p>
 <ul class="nav bd-sidenav">
@@ -391,17 +391,7 @@ document.write(`
 <h1>Modeling Design Patterns<a class="headerlink" href="#modeling-design-patterns" title="Permalink to this heading">#</a></h1>
 <p>TODO Section on design patterns here
 This could also be reference, if we just want to treat them as examples of how 223P models are constructed</p>
-<p>Several modeling tools such as BuildingMOTIF and Bob enable modelers to easily reuse design patterns in their models. Both of these tools have pre-existing templates that allow developers to model at a higher level. However, buildings are unique and developers may need to model pieces of equipment that are not already represented in 223P model creation tools.</p>
-<p>This section guides developers on modeling connectivity and describing the topology between equipment. The topology diagram below illustrates various concepts and relations relevant to establishing connections. Building upon this general diagram, the following sections will detail incremental changes and provide examples to illustrate the progression of complexity. As shown in the topology diagram, predicates are defined at different levels of abstraction. This diagram demonstrates how various concepts in the standard describe connectivity between two Connectables. Some predicates are exclusive to connections between Connectable and ConnectionPoints, such as hasConnectionPoint, while others only apply between ConnectionPoints and Connections, like connectsAt. However, the generic “cnx” relation can describe connectivity between any concept involved, including Connectable, Connection, and ConnectionPoint. It’s crucial to note that all other predicates can be inferred from the “cnx” predicate.</p>
-<p><img alt="TopologyDiagram" src="../_images/guides-TopologyDiagram.png" /></p>
-<p>In this example, we demonstrate a straightforward use case: creating the initial element of a connection. This involves attaching the Connectable (Equipment) “A9.return-fan” to its inlet and outlet ConnectionPoints using the “cnx” relation.</p>
-<p><img alt="BasicCnx" src="../_images/guides-BasicCnx.png" /></p>
-<p>The following scenario illustrates the connectivity between the equipment “A-9.return-fan” and “A-9.exhaust_air_damper.” The “cnx” sequence originates from the equipment “A-9.return-fan,” extends to its outlet connection point “A9.return-fan.airOutlet,” and connects to the Connection “A-9.return-air” between the two pieces of equipment. It then continues to the neighboring equipment’s inlet connection point “A-9.exhaust_air_damper.airInlet.” The inferred relation in this graph is “connected,” which is non-directional.</p>
-<p><img alt="Connection1" src="../_images/guides-Connection1.png" /></p>
-<p><img alt="Connection2" src="../_images/guides-Connection2.png" /></p>
-<p><img alt="Containment" src="../_images/guides-Containment.png" />
-<img alt="UserSwitch" src="../_images/guides-UserSwitch.png" />
-<img alt="DumbSwitch" src="../_images/guides-DumbSwitch.png" /></p>
+<p>Several modeling tools such as BuildingMOTIF and Bob enable modelers to easily reuse design patterns in their models. Both of these tools have pre-existing templates that allow developers to model at a higher level. However, buildings are unique and developers may need to model pieces of equipment that are not already represented in 223P model creation tools. This section shows developers how to model several pieces of equipment. These can be used as a how-to-guide for modeling the piece of equipment in question, or as an example of how 223P models are designed that can be applied to new models.</p>
 </section>
 
     <script type="text/x-thebe-config">
