@@ -11,63 +11,65 @@ kernelspec:
   name: python3
 ---
 
-# How to Load, Validate, Update, and Query 223P models
+# Model Exploration
 
-The purpose of this tutorial is to show a basic workflow for using 223P models. This workflow may be accomplished using a variety of tools, but to demonstrate these basic processes, the open-source python libraries RDFLib and PySHACL are used. This workflow assumes that you have basic familiarity with RDF graphs and 223P. 
+```{note}
+The purpose of this tutorial is to explore a model by learning the following:
+1. Parsing (loading) an existing model
+2. Querying an existing model.
+```
 
-## Creating or Loading a 223P Model
+For this tutorial, we'll use an existing equipment model of a variable air volume (VAV) terminal unit with cooling only from section 4.1 of ASHRAE Guideline 36-2021. This and other example models are available from [Open223 Models](open223-resources).
 
-It is recommended that model developers use the (model building tools)[builder-tools] or potentially other existing (open-source or commercial products)[tools] to create 223P models. Creating a 223P model means representing the information present in a target buidling using 223P constructs. The result of each of these model building tools should be a 223P model in ttl or another format, that can be shared with other developers and used. 
+## Model Parsing
 
-For this tutorial an example equipment model for a Variable Air Volume Box is loaded into RDFLib (link G36 model) to show some of the key processes for using a 223P model. There are several key parts of creating a 223P model that are broken-down in this tutorial. For more on how to use RDFLib, please visit the RDFLib documentation. 
-
-### Namespace definition 
-
-Your model should be created with its own namespace. A namespace is a mechanism used to uniquely identify and distinguish terms, such as classes, properties, and individuals, within an RDF graph to avoid naming conflicts between terms from different sources.
-
-The namespaces for any other vocabolaries or ontologies (such as 223P, RDFS, or QUDT) should also be defined or brought into the script so that these vocabularies can be easily used. Some namespaces, such as RDF and RDFS, are already defined in RDFLib and can be imported. 
+First, we'll create a new empty graph then parse (load) an existing graph into it using the Python RDFLib library.
 
 ```{code-cell}
 from rdflib import Graph
-from rdflib.namespace import RDF, RDFS, Namespace
 
-# Define namespaces
-EX = Namespace("urn:example/")
-QUDT = Namespace("http://qudt.org/schema/qudt#")
-S223 = Namespace('http://data.ashrae.org/standard223#')
+# Create a Graph
+g = Graph()
+
+# Parse in an RDF file hosted on the Internet
+g.parse("https://raw.githubusercontent.com/open223/models.open223.info/main/models/guideline36-2021-4-1.ttl", format="ttl")
 ```
 
-### Creating a Graph and Loading the Model
-
-Now a graph can be created and the example model can be loaded. Multiple models can easily be loaded into the same graph. For example, this graph can be loaded with the 223P ontology to allow inferencing and validation. If separate building models were made by different stakeholders, they could also be easily loaded together. Once a model and the ontology are loaded into the graph, the model may be validated, queried, or updated. 
+Next, we'll explore the model's size by printing the number of triples in it.
 
 ```{code-cell}
-# Create an RDF graph and load model
-g = Graph()
-g.parse('TODO Update Link', format = 'ttl')
-g.parse('TODO Update Link for ontology', format = 'ttl')
+# Print the number of "triples" in the Graph
+print(f"Graph g has {len(g)} statements.")
 ```
 
-## Validating the Model 
+Finally, we'll print the contents of the model since it's not that large.
 
+```{code-cell}
+# Print out the entire Graph in the RDF Turtle format
+print(g.serialize(format="turtle"))
+```
 
-Now that the graph and ontology is loaded you can validate ... 
+## Model Querying
 
+After exploring the model to get a sense for what it contains, let's query the model for all the VAV terminal's points, which are instances of the following classes:
 
-Validation helps ensures that the model has been constructed correctly. For example, ConnectionPoints have a validation rule that checks that they have been connected. This validation is just a warning, and does not have to be corrected for this tutorial as we are using a model snippet of an isolated system...
+[Open223 Explore links](open223-resources):
+- [QuantifiableActuatableProperty](https://explore.open223.info/s223/QuantifiableActuatableProperty.html)
+- [QuantifiableObservableProperty](https://explore.open223.info/s223/QuantifiableObservableProperty.html)
 
-Inference also adds essential information such as the additional connection relationships shared between devices within the system... 
+```{code-cell}
+# Query the data in g using SPARQL
+q = """
+PREFIX s223: <http://data.ashrae.org/standard223#>
 
-## Querying the Model
+SELECT ?obj WHERE {
+  { ?obj a s223:QuantifiableActuatableProperty . }
+  	UNION
+  { ?obj a s223:QuantifiableObservableProperty . }
+}
+"""
 
-Now that the model is loaded and validated, SPARQL queries can be used to identify data within the model. RDFLib has many other methods of managing models in addition to SPARQL, these are detailed in the RDFLib documentatino (link)
-
-## Updating the Model
-
-SPARQL can not only be used to query, but it can be used to update. Here is an example of a query that updates the model ...
-
-
-
-
-
-
+# Apply the query to the graph and iterate through results
+for r in g.query(q):
+    print(r)
+```
