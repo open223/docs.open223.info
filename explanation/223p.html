@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'explanation/223p';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="What is Modeled" href="what-is-modeled.html" />
+    <link rel="next" title="How to Load, Validate, Update, and Query 223P models" href="../tutorials/rdflib-pyshacl.html" />
     <link rel="prev" title="ASHRAE Standard 223P User Documentation" href="../intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -171,8 +171,6 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Explanation</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">ASHRAE Standard 223P</a></li>
-<li class="toctree-l1"><a class="reference internal" href="what-is-modeled.html">What is Modeled</a></li>
-<li class="toctree-l1"><a class="reference internal" href="definitions.html">Definitions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
@@ -389,7 +387,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-graph-data-concepts">Using Graph Data Concepts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#p-top-level-classes">223P Top Level Classes</a></li>
 </ul>
             </nav>
         </div>
@@ -403,15 +401,41 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ashrae-standard-223p">
 <h1>ASHRAE Standard 223P<a class="headerlink" href="#ashrae-standard-223p" title="Permalink to this heading">#</a></h1>
-<p>Standard 223P defines modeling constructs for use in creating a machine-readable representation of building systems, the building spaces that they serve, and the measurement and control points used to provide a safe and comfortable environment for the building occupants. The standard can be considered a toolkit of components and rules for using them to create a semantic model of a particular building or campus of buildings. The resulting model provides a way for software applications to determine the relationships between the mechanical equipment in the building (i.e., AHU 1 gets chilled water from CH 3 and provides conditioned air to VAV Boxes 12 through 15 serving rooms on the third floor) and the meaning of measurements that are available (i.e., T16 is a temperature sensor measuring the temperature of the air stream exiting AHU 1). This facilitates the implementation of advanced features like automated fault detection and diagnostics, supervisory controls, automated commissioning, and more.</p>
-<section id="using-graph-data-concepts">
-<h2>Using Graph Data Concepts<a class="headerlink" href="#using-graph-data-concepts" title="Permalink to this heading">#</a></h2>
-<p>Standard 223P is represented using the Resource Description Framework (RDF). RDF is a general method for representic semantic information in the form of a triple, which consists of a subject, a predicate, and an object. The subject and object define two entities, which are an instance of some class, and the predicate defines how they are related. A collection of these triples make up a graph. The ASHRAE 223P standard defines classes and relationships relevant to the building space that can then be used to build a multi-graph representing a specific building or group of buildings. For more information about RDF and the other semantic technologies used by the standard, please look at the <span class="xref myst">reference section</span>.</p>
-<p>To create a semantic model of your building using Standard 223P, you create instances that represent the entities in your building, and define them using the classes and relationships defined or referenced by Standard 223P. For example, you may be creating a model of a building in which your air handling unit (ahu-1) contains a fan (fan-1). Your air handling unit (ahu-1) would be modeled as an instance of the 223P class s223:AirHandlingUnit, which describes the general class of things resembling Air Handling Units. Similarly, your fan (fan-1) would be an instance of the 223P class s223:Fan. The idea of containment is defined using the 223P relationship s223:contains, so your air handling unit would relate to your fan using the relationship s223:contains. The relationship between an instance and a class is defined using the RDF relationship rdf:type, so your ahu and fan would relate to s223:AirHandlingUnit and s223:Fan using the relation rdf:type. This example is shown in Figure 1.</p>
-<div align="center">
-<img src="../_static/ex-1.svg" alt="Alt text" style="max-width:100%; height:auto;">
-<p><span style="font-size: medium;">Figure 1. 223P Modeling Example</span></p>
-</div>
+<p>Standard 223P provides a comprehensive approach to applying semantic formalisms for representing building automation system data and relationships between associated entities such as equipment, physical spaces, and zones. The primary purpose is to enable software applications to automate the discovery and understanding of information related to building systems. This facilitates the development of advanced tools and applications for building analytics and supports the creation of digital twins and optimization of energy usage within building systems. Specific functionalities include automated fault detection, diagnostics, building system commissioning, and interactions with smart grids.</p>
+<p>The standard provides a machine-readable representation of building systems, their associated spaces, and key measurement/control points that can be used to construct semantic models for individual buildings or entire capmuses. It rigorously defines the concepts of the standard using validation and inference rules, helping to ensure that models are created correctly and will be interoperable. This is accomplished using various semantic web technologies, further described in the <a class="reference internal" href="../reference/other-resources.html#other-resources"><span class="std std-ref">reference section</span></a>. The notions of entities, classes, relationships, and graphs are required to understand the standard, and are defined below.</p>
+<p>Definitions</p>
+<!-- borrowed from brick since we use similar terms-->
+<ul class="simple">
+<li><p><strong>Entity:</strong> An entity is an abstraction of any physical, logical or virtual item; the actual “things” in a building. Examples are mechanical equipment such as air handling units, luminaires, spatial elements like rooms, or the area of these rooms served by certain mechanical equipment. Virtual and logical entities may represent the various data points in a BAS system, such as sensing and actuation points, as well as basic representations of controls.</p></li>
+<li><p><strong>Class:</strong> A named category with intensional meaning (a definition) used for grouping entities.
+Classes are organized into a hierarchy, and entities are an instance of a given class. Classes are defined using SHACL shapes ensuring that they are instantiated correctly.</p></li>
+<li><p><strong>Relationship:</strong> Defines the nature of a link between two related entities.
+Examples of relationships are <em>encapsulation</em> (one entity is contained within another), <em>sequence</em> (one entity takes effect before another in some process) and <em>instantiation</em> (one entity’s type is given by another entity).</p></li>
+<li><p><strong>Graph:</strong> An abstract organizational data structure representing a set of entities (nodes) and relationships (edges) described in triple-structure. 223P models are represented by a directed, labeled graph. We recommend reading the <a class="reference external" href="https://en.wikipedia.org/wiki/Graph_(abstract_data_type)">Wikipedia page on the abstract graph data structure</a>.</p></li>
+<li><p><strong>A 223P model:</strong> A 223P model is a digital representation of a building that utilizes the 223P standard. This means that elements of a particular buidling are represented using instances of the classes defined by the 223P standard and use relationships as defined by the rules present in the standard. 223P leverages the semantic web technologies, allowing easy integration with other types of models that utilize RDF.</p></li>
+</ul>
+<section id="p-top-level-classes">
+<h2>223P Top Level Classes<a class="headerlink" href="#p-top-level-classes" title="Permalink to this heading">#</a></h2>
+<p>The 223P standard defines several high level concepts, represented as classes, that are subclassed and composed to create 223P models. All entities in a 223P model are an instance of these classes or one of their subclasses. See the <a class="reference internal" href="../reference/open223-resources.html#open223-resources"><span class="std std-ref">Open223 Resources</span></a> for resources that support working with 223 models.</p>
+<ul class="simple">
+<li><p><strong>Connectable:</strong> An abstract class representing a thing that can be connected via ConnectionPoints and Connections.</p></li>
+<li><p><strong>Connection:</strong> A modeling construct for representing a physical thing (e.g., pipe, duct, wire) that connects and conveys a medium between two Connectable things.</p></li>
+<li><p><strong>ConnectionPoint:</strong> An abstract modeling construct representing the point where one Connectable thing connects to another.</p></li>
+<li><p><strong>Domain:</strong> A categorization of building service or specialization used to characterize equipment or spaces (e.g., HVAC, lighting, plumbing).</p></li>
+<li><p><strong>Connectable:</strong> This is the top level entity that defines the classes that may be connected via ConnectionPoints and Connections. There are three major sub-classes of connectable</p>
+<ul>
+<li><p><strong>DomainSpace:</strong> A portion or entirety of a PhysicalSpace associated with a Domain. Often a DomainSpace is served by a particular piece of equipment, like a single VAV Box, and thus they can be connected to equipment. Multiple DomainSpaces controlled similarly can be grouped together, forming a Zone.</p></li>
+<li><p><strong>Equipment:</strong> A modeling construct used to represent a mechanical device designed to accomplish a specific task (e.g. pump, fan, heat exchanger, luminaire, temperature sensor, flow meter). Equipment may contain and connect to other equipment, allowing detailed modeling of mechanical systems. Certain pieces of equipment (i.e. Sensors, Actuators, Controllers) may have unique relationships to properties to define how they act on the properties of other entities.</p></li>
+<li><p><strong>Junction:</strong> A Junction is a modeling construct used to represent important branching points within a Connection.</p></li>
+</ul>
+</li>
+<li><p><strong>PhysicalSpace:</strong> An architectural concept representing a room, floor, or any physical space in a building. These PhysicalSpaces (e.g. a floor) can contain other PhysicalSpaces (e.g. a room).</p></li>
+<li><p><strong>System:</strong> A task-oriented collection of interacting or interrelated Equipment defined by the modeler.</p></li>
+<li><p><strong>Zone:</strong> A collection of DomainSpaces grouped together based on building services or controls.</p></li>
+<li><p><strong>Properties:</strong> Properties often represent the actuation and measurement points within a buidling. They may be associated with real-time data. They also may define the attributes of other entities (e.g. Equipment, DomainSpaces, Zones). They can be further contextualized using enumerations.</p></li>
+<li><p><strong>Enumerations:</strong> The standard uses enumerations to convey groups of useful values for describing attributes of Properties, Equipment, and other things in the model. For example, the enumeration <code class="docutils literal notranslate"><span class="pre">Role-Cooling</span></code> describes that the equipment in question provides cooling.</p></li>
+<li><p><strong>FunctionBlock:</strong> Is used to model transfer and/or transformation of information (e.g. control algorithms). It has relations to input properties and output properties, that represent input and output data. The actual algorithms that perform the transformations are not described in 223P, and can be described using standard 231P.</p></li>
+</ul>
 </section>
 </section>
 
@@ -455,11 +479,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="what-is-modeled.html"
+       href="../tutorials/rdflib-pyshacl.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">What is Modeled</p>
+        <p class="prev-next-title">How to Load, Validate, Update, and Query 223P models</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -478,7 +502,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-graph-data-concepts">Using Graph Data Concepts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#p-top-level-classes">223P Top Level Classes</a></li>
 </ul>
   </nav></div>
 
