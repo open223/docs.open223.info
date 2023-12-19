@@ -7,8 +7,8 @@ root: intro
 parts:
 - caption: Explanation
   chapters:
-  - file: explanation/s223-introduction.md
-  - file: explanation/s223-overview.md
+  - file: explanation/223-introduction.md
+  - file: explanation/223-overview.md
 - caption: Tutorials
   chapters:
   - file: tutorials/model_exploration.md
