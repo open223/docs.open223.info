@@ -12,10 +12,11 @@ Standard 223 is represented using the Resource Description Framework (RDF). RDF 
 
 To create a semantic model of your building using Standard 223, you create instances that represent the entities in your building, and define them using the classes and relationships defined or referenced by Standard 223. For example, you may be creating a model of a building in which your air handling unit (ahu-1) contains a fan (fan-1). Your air handling unit (ahu-1) would be modeled as an instance of the 223 class [`s223:AirHandlingUnit`](https://explore.open223.info/s223/AirHandlingUnit.html), which describes the general class of things resembling Air Handling Units. Similarly, your fan (fan-1) would be an instance of the 223 class [`s223:Fan`](https://explore.open223.info/s223/Fan.html). The idea of containment is defined using the 223 relationship [`s223:contains`](https://explore.open223.info/s223/contains.html), so your air handling unit would relate to your fan using the relationship `s223:contains`. The relationship between an instance and a class is defined using the RDF relationship rdf:type, so your ahu and fan would relate to `s223:AirHandlingUnit` and `s223:Fan` using the relation rdf:type. This example is shown in Figure 1. 
 
-<div align="center">
-    
+```{image} _static/images/ex-1.svg
+:align: center
+```
 
-<img src="_static/images/ex-1.svg" alt="Alt text" style="max-width:100%; height:auto;">
+<div align="center">
 
 <span style="font-size: medium;">Figure 1. 223 Modeling Example</span>
 
@@ -32,12 +33,13 @@ This standard provides well defined classes used to describe entities relevant t
 This standard can be used to describe the topology of the equipment and spaces in a building, but not the geometric details. Topology refers to the way entities are connected and how some media (e.g. water, air, or electricity) is conveyed between them. There are several different classes used to describe which entities participate in connections and how they cßonnect. This describe [Connectables](https://explore.open223.info/s223/Connectable.html), which include the entities that are capable of connecting to each other; [ConnectionPoints](https://explore.open223.info/s223/ConnectionPoint.html), which model where Connectables can be connected; and [Connections](https://explore.open223.info/s223/Connection.html), which describe physical things through which the medium is conveyed, like pipes or ducts. These [Mediums](https://explore.open223.info/s223/Substance-Medium.html) (e.g. gas, electricity, water) are defined by the standard. There are also multiple relation used to describe the details of these connections, and how the multiple entities involved in a connection relate to each other. Figure 2 summarizes these relations. Though there are many relations to describe different perspectives of a connection, these do not all need to be manually added to the model. If [`s223:cnx`](https://explore.open223.info/s223/cnx.html) is added, the rest can be automatically added to the model through the process of [inference](model-inference). 
 
 
+```{image} _static/images/connection-relationships.png
+:align: center
+:width: 700px
+```
+
 <div align="center">
-    
-
-<img src="_static/images/connection-relationships.png" style="max-width:100%; height:auto;">
-
-<span style="font-size: medium;">Figure 2. Relations expressing different perspecties of connection </span>
+<span style="font-size: medium;">Figure 2. Relations expressing different perspectives of connection </span>
 </div>
 
 

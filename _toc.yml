@@ -8,6 +8,7 @@ parts:
 - caption: Explanation
   chapters:
   - file: explanation/223-introduction.md
+  - file: explanation/definitions.md
   - file: explanation/223-overview.md
 - caption: Tutorials
   chapters:
