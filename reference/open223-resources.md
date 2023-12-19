@@ -30,7 +30,7 @@ For example, all 223 classes are a subclass of `s223:Concept`, and can be access
 
 The **Definition** section describes what relations *instances* of the class must have.
 The **Properties** section below lists all of the relation constraints the class as inherited, including: which of those relations are optional (marked with a `?`), can happen 0 or more times (marked with a `*`), must happen
-at least once (marked with a `+`), or are necessary (no additional markings, like in the screenshot above).
+at least once (marked with a `+`), or are necessary (no additional markings, like in the image above).
 Additionally all links highlighted in yellow on a given class page can be used to navigate to a description of that class or property.
 
 The definitions listed on the Explore tool are *not* definitive but instead capture common usage; refer to the standard for the full and complete definition.
