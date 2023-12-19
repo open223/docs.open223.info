@@ -643,7 +643,7 @@ By keeping the ontology graph separate from the model graph, we can more easily 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Graph identifier=N8b23aeee3fde4aebad9fb2acb84be876 (&lt;class &#39;rdflib.graph.Graph&#39;&gt;)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Graph identifier=Nc8ecea755d5c4fd7a61df8f269d59e6e (&lt;class &#39;rdflib.graph.Graph&#39;&gt;)&gt;
 </pre></div>
 </div>
 </div>
@@ -682,7 +682,7 @@ and our 223 graph (<em>shape graph</em> in PySHACL parlance).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The model now contains 115 triples
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The model now contains 105 triples
 </pre></div>
 </div>
 </div>
@@ -711,134 +711,124 @@ tutorial for how to access and interpret this report.</p>
 
 &lt;urn:ex/&gt; a owl:Ontology .
 
+&lt;urn:ex/damper-actuator&gt; a ns1:Actuator ;
+    ns1:actuates &lt;urn:ex/damper&gt; ;
+    ns1:cnx _:n358dca64452a4ad3b63a2d8fd53f97fdb599,
+        _:n358dca64452a4ad3b63a2d8fd53f97fdb601 ;
+    ns1:commandedByProperty &lt;urn:ex/damper-command&gt; ;
+    ns1:connected _:n358dca64452a4ad3b63a2d8fd53f97fdb589,
+        _:n358dca64452a4ad3b63a2d8fd53f97fdb604 ;
+    ns1:connectedThrough _:n358dca64452a4ad3b63a2d8fd53f97fdb591 ;
+    ns1:hasConnectionPoint _:n358dca64452a4ad3b63a2d8fd53f97fdb595 ;
+    ns1:hasProperty _:n358dca64452a4ad3b63a2d8fd53f97fdb220 .
+
+&lt;urn:ex/discharge-air-flow-sensor&gt; a ns1:Sensor ;
+    ns1:cnx _:n358dca64452a4ad3b63a2d8fd53f97fdb599,
+        _:n358dca64452a4ad3b63a2d8fd53f97fdb601 ;
+    ns1:connected _:n358dca64452a4ad3b63a2d8fd53f97fdb589,
+        _:n358dca64452a4ad3b63a2d8fd53f97fdb604 ;
+    ns1:connectedThrough _:n358dca64452a4ad3b63a2d8fd53f97fdb591 ;
+    ns1:hasConnectionPoint _:n358dca64452a4ad3b63a2d8fd53f97fdb595 ;
+    ns1:hasObservationLocation &lt;urn:ex/out&gt; ;
+    ns1:hasProperty _:n358dca64452a4ad3b63a2d8fd53f97fdb220 ;
+    ns1:observes &lt;urn:ex/discharge-air-flow&gt; .
+
+&lt;urn:ex/vav-cooling-only&gt; a ns1:SingleDuctTerminal,
+        &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#VAV&gt; ;
+    ns1:cnx _:n358dca64452a4ad3b63a2d8fd53f97fdb599,
+        _:n358dca64452a4ad3b63a2d8fd53f97fdb601,
+        &lt;urn:ex/in&gt;,
+        &lt;urn:ex/out&gt; ;
+    ns1:connected _:n358dca64452a4ad3b63a2d8fd53f97fdb589,
+        _:n358dca64452a4ad3b63a2d8fd53f97fdb604 ;
+    ns1:connectedThrough _:n358dca64452a4ad3b63a2d8fd53f97fdb591 ;
+    ns1:contains &lt;urn:ex/damper&gt; ;
+    ns1:hasConnectionPoint _:n358dca64452a4ad3b63a2d8fd53f97fdb595 ;
+    ns1:hasProperty _:n358dca64452a4ad3b63a2d8fd53f97fdb220 .
+
 &lt;urn:ex/damper-in&gt; a ns1:InletConnectionPoint ;
     ns1:cnx &lt;urn:ex/duct-before-damper&gt; ;
     ns1:hasMedium ns1:Medium-Air ;
-    ns1:hasProperty _:n01aee022d9e3405f9cf79ce3461bd6ceb220 ;
+    ns1:hasProperty _:n358dca64452a4ad3b63a2d8fd53f97fdb220 ;
     ns1:mapsTo &lt;urn:ex/in&gt; .
 
 &lt;urn:ex/damper-out&gt; a ns1:OutletConnectionPoint ;
     ns1:cnx &lt;urn:ex/duct-after-damper&gt; ;
     ns1:hasMedium ns1:Medium-Air ;
-    ns1:hasProperty _:n01aee022d9e3405f9cf79ce3461bd6ceb220 ;
+    ns1:hasProperty _:n358dca64452a4ad3b63a2d8fd53f97fdb220 ;
     ns1:mapsTo &lt;urn:ex/out&gt; .
 
 &lt;urn:ex/damper-position&gt; a ns1:QuantifiableObservableProperty ;
-    ns1:hasProperty _:n01aee022d9e3405f9cf79ce3461bd6ceb220 ;
+    ns1:hasProperty _:n358dca64452a4ad3b63a2d8fd53f97fdb220 ;
     ns2:hasQuantityKind &lt;http://qudt.org/vocab/quantitykind/DimensionlessRatio&gt; ;
     ns2:hasUnit &lt;http://qudt.org/vocab/unit/PERCENT&gt; .
 
 &lt;urn:ex/duct-after-damper&gt; a ns1:Connection,
         ns1:Duct ;
-    ns1:cnx _:n01aee022d9e3405f9cf79ce3461bd6ceb561,
-        _:n01aee022d9e3405f9cf79ce3461bd6ceb563 ;
-    ns1:connectsAt _:n01aee022d9e3405f9cf79ce3461bd6ceb566 ;
+    ns1:cnx _:n358dca64452a4ad3b63a2d8fd53f97fdb561,
+        _:n358dca64452a4ad3b63a2d8fd53f97fdb563 ;
+    ns1:connectsAt _:n358dca64452a4ad3b63a2d8fd53f97fdb566 ;
     ns1:hasMedium ns1:Medium-Air ;
-    ns1:hasProperty _:n01aee022d9e3405f9cf79ce3461bd6ceb220 .
+    ns1:hasProperty _:n358dca64452a4ad3b63a2d8fd53f97fdb220 .
 
 &lt;urn:ex/duct-before-damper&gt; a ns1:Connection,
         ns1:Duct ;
-    ns1:cnx _:n01aee022d9e3405f9cf79ce3461bd6ceb561,
-        _:n01aee022d9e3405f9cf79ce3461bd6ceb563 ;
-    ns1:connectsAt _:n01aee022d9e3405f9cf79ce3461bd6ceb566 ;
+    ns1:cnx _:n358dca64452a4ad3b63a2d8fd53f97fdb561,
+        _:n358dca64452a4ad3b63a2d8fd53f97fdb563 ;
+    ns1:connectsAt _:n358dca64452a4ad3b63a2d8fd53f97fdb566 ;
     ns1:hasMedium ns1:Medium-Air ;
-    ns1:hasProperty _:n01aee022d9e3405f9cf79ce3461bd6ceb220 .
+    ns1:hasProperty _:n358dca64452a4ad3b63a2d8fd53f97fdb220 .
 
 &lt;urn:ex/in-connection&gt; a ns1:Connection ;
-    ns1:cnx _:n01aee022d9e3405f9cf79ce3461bd6ceb561,
-        _:n01aee022d9e3405f9cf79ce3461bd6ceb563 ;
-    ns1:connectsAt _:n01aee022d9e3405f9cf79ce3461bd6ceb566 ;
+    ns1:cnx _:n358dca64452a4ad3b63a2d8fd53f97fdb561,
+        _:n358dca64452a4ad3b63a2d8fd53f97fdb563 ;
+    ns1:connectsAt _:n358dca64452a4ad3b63a2d8fd53f97fdb566 ;
     ns1:hasMedium ns1:Medium-Air ;
-    ns1:hasProperty _:n01aee022d9e3405f9cf79ce3461bd6ceb220 .
+    ns1:hasProperty _:n358dca64452a4ad3b63a2d8fd53f97fdb220 .
 
 &lt;urn:ex/out-connection&gt; a ns1:Connection ;
-    ns1:cnx _:n01aee022d9e3405f9cf79ce3461bd6ceb561,
-        _:n01aee022d9e3405f9cf79ce3461bd6ceb563 ;
-    ns1:connectsAt _:n01aee022d9e3405f9cf79ce3461bd6ceb566 ;
+    ns1:cnx _:n358dca64452a4ad3b63a2d8fd53f97fdb561,
+        _:n358dca64452a4ad3b63a2d8fd53f97fdb563 ;
+    ns1:connectsAt _:n358dca64452a4ad3b63a2d8fd53f97fdb566 ;
     ns1:hasMedium ns1:Medium-Air ;
-    ns1:hasProperty _:n01aee022d9e3405f9cf79ce3461bd6ceb220 .
+    ns1:hasProperty _:n358dca64452a4ad3b63a2d8fd53f97fdb220 .
+
+&lt;urn:ex/damper&gt; a ns1:Damper,
+        &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#Damper&gt; ;
+    ns1:cnx _:n358dca64452a4ad3b63a2d8fd53f97fdb599,
+        _:n358dca64452a4ad3b63a2d8fd53f97fdb601,
+        &lt;urn:ex/damper-in&gt;,
+        &lt;urn:ex/damper-out&gt; ;
+    ns1:connected _:n358dca64452a4ad3b63a2d8fd53f97fdb589,
+        _:n358dca64452a4ad3b63a2d8fd53f97fdb604 ;
+    ns1:connectedThrough _:n358dca64452a4ad3b63a2d8fd53f97fdb591 ;
+    ns1:hasConnectionPoint _:n358dca64452a4ad3b63a2d8fd53f97fdb595 ;
+    ns1:hasProperty _:n358dca64452a4ad3b63a2d8fd53f97fdb220,
+        &lt;urn:ex/damper-command&gt;,
+        &lt;urn:ex/damper-position&gt; .
 
 &lt;urn:ex/damper-command&gt; a ns1:QuantifiableActuatableProperty ;
     ns1:hasAspect ns1:EnumerationKind-Position ;
-    ns1:hasProperty _:n01aee022d9e3405f9cf79ce3461bd6ceb220 ;
+    ns1:hasProperty _:n358dca64452a4ad3b63a2d8fd53f97fdb220 ;
     ns2:hasQuantityKind &lt;http://qudt.org/vocab/quantitykind/DimensionlessRatio&gt; ;
     ns2:hasUnit &lt;http://qudt.org/vocab/unit/PERCENT&gt; .
 
 &lt;urn:ex/discharge-air-flow&gt; a ns1:QuantifiableObservableProperty ;
     ns1:hasAspect ns1:Role-Discharge ;
-    ns1:hasProperty _:n01aee022d9e3405f9cf79ce3461bd6ceb220 ;
+    ns1:hasProperty _:n358dca64452a4ad3b63a2d8fd53f97fdb220 ;
     ns2:hasQuantityKind &lt;http://qudt.org/vocab/quantitykind/VolumeFlowRate&gt; ;
     ns2:hasUnit &lt;http://qudt.org/vocab/unit/FT3-PER-MIN&gt; .
 
 &lt;urn:ex/in&gt; a ns1:InletConnectionPoint ;
     ns1:cnx &lt;urn:ex/in-connection&gt; ;
     ns1:hasMedium ns1:Medium-Air ;
-    ns1:hasProperty _:n01aee022d9e3405f9cf79ce3461bd6ceb220 .
-
-&lt;urn:ex/vav-cooling-only&gt; a ns1:SingleDuctTerminal,
-        &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#VAV&gt; ;
-    ns1:cnx _:n01aee022d9e3405f9cf79ce3461bd6ceb599,
-        _:n01aee022d9e3405f9cf79ce3461bd6ceb601,
-        &lt;urn:ex/in&gt;,
-        &lt;urn:ex/out&gt; ;
-    ns1:connected _:n01aee022d9e3405f9cf79ce3461bd6ceb589,
-        _:n01aee022d9e3405f9cf79ce3461bd6ceb604,
-        &lt;urn:ex/damper-actuator&gt;,
-        &lt;urn:ex/discharge-air-flow-sensor&gt; ;
-    ns1:connectedThrough _:n01aee022d9e3405f9cf79ce3461bd6ceb591 ;
-    ns1:contains &lt;urn:ex/damper&gt; ;
-    ns1:hasConnectionPoint _:n01aee022d9e3405f9cf79ce3461bd6ceb595 ;
-    ns1:hasProperty _:n01aee022d9e3405f9cf79ce3461bd6ceb220 .
-
-&lt;urn:ex/damper-actuator&gt; a ns1:Actuator ;
-    ns1:actuates &lt;urn:ex/damper&gt; ;
-    ns1:cnx _:n01aee022d9e3405f9cf79ce3461bd6ceb599,
-        _:n01aee022d9e3405f9cf79ce3461bd6ceb601 ;
-    ns1:commandedByProperty &lt;urn:ex/damper-command&gt; ;
-    ns1:connected _:n01aee022d9e3405f9cf79ce3461bd6ceb589,
-        _:n01aee022d9e3405f9cf79ce3461bd6ceb604,
-        &lt;urn:ex/damper&gt;,
-        &lt;urn:ex/discharge-air-flow-sensor&gt;,
-        &lt;urn:ex/vav-cooling-only&gt; ;
-    ns1:connectedThrough _:n01aee022d9e3405f9cf79ce3461bd6ceb591 ;
-    ns1:hasConnectionPoint _:n01aee022d9e3405f9cf79ce3461bd6ceb595 ;
-    ns1:hasProperty _:n01aee022d9e3405f9cf79ce3461bd6ceb220 .
-
-&lt;urn:ex/discharge-air-flow-sensor&gt; a ns1:Sensor ;
-    ns1:cnx _:n01aee022d9e3405f9cf79ce3461bd6ceb599,
-        _:n01aee022d9e3405f9cf79ce3461bd6ceb601 ;
-    ns1:connected _:n01aee022d9e3405f9cf79ce3461bd6ceb589,
-        _:n01aee022d9e3405f9cf79ce3461bd6ceb604,
-        &lt;urn:ex/damper&gt;,
-        &lt;urn:ex/damper-actuator&gt;,
-        &lt;urn:ex/vav-cooling-only&gt; ;
-    ns1:connectedThrough _:n01aee022d9e3405f9cf79ce3461bd6ceb591 ;
-    ns1:hasConnectionPoint _:n01aee022d9e3405f9cf79ce3461bd6ceb595 ;
-    ns1:hasObservationLocation &lt;urn:ex/out&gt; ;
-    ns1:hasProperty _:n01aee022d9e3405f9cf79ce3461bd6ceb220 ;
-    ns1:observes &lt;urn:ex/discharge-air-flow&gt; .
+    ns1:hasProperty _:n358dca64452a4ad3b63a2d8fd53f97fdb220 .
 
 &lt;urn:ex/out&gt; a ns1:OutletConnectionPoint ;
     ns1:cnx &lt;urn:ex/out-connection&gt; ;
     ns1:hasMedium ns1:Medium-Air ;
-    ns1:hasProperty _:n01aee022d9e3405f9cf79ce3461bd6ceb220,
+    ns1:hasProperty _:n358dca64452a4ad3b63a2d8fd53f97fdb220,
         &lt;urn:ex/discharge-air-flow&gt; .
-
-&lt;urn:ex/damper&gt; a ns1:Damper,
-        &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#Damper&gt; ;
-    ns1:cnx _:n01aee022d9e3405f9cf79ce3461bd6ceb599,
-        _:n01aee022d9e3405f9cf79ce3461bd6ceb601,
-        &lt;urn:ex/damper-in&gt;,
-        &lt;urn:ex/damper-out&gt; ;
-    ns1:connected _:n01aee022d9e3405f9cf79ce3461bd6ceb589,
-        _:n01aee022d9e3405f9cf79ce3461bd6ceb604,
-        &lt;urn:ex/damper-actuator&gt;,
-        &lt;urn:ex/discharge-air-flow-sensor&gt; ;
-    ns1:connectedThrough _:n01aee022d9e3405f9cf79ce3461bd6ceb591 ;
-    ns1:hasConnectionPoint _:n01aee022d9e3405f9cf79ce3461bd6ceb595 ;
-    ns1:hasProperty _:n01aee022d9e3405f9cf79ce3461bd6ceb220,
-        &lt;urn:ex/damper-command&gt;,
-        &lt;urn:ex/damper-position&gt; .
 </pre></div>
 </div>
 </div>
@@ -865,10 +855,8 @@ We can see that the query returns results this time.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/damper connected to n01aee022d9e3405f9cf79ce3461bd6ceb604
-urn:ex/damper connected to urn:ex/discharge-air-flow-sensor
-urn:ex/damper connected to n01aee022d9e3405f9cf79ce3461bd6ceb589
-urn:ex/damper connected to urn:ex/damper-actuator
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/damper connected to n358dca64452a4ad3b63a2d8fd53f97fdb604
+urn:ex/damper connected to n358dca64452a4ad3b63a2d8fd53f97fdb589
 </pre></div>
 </div>
 </div>
