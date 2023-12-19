@@ -12,7 +12,8 @@ parts:
   - file: explanation/definitions.md
 - caption: Tutorials
   chapters:
-  - file: tutorials/rdflib-pyshacl.md
+  - file: tutorials/model_exploration.md
+  - file: tutorials/model_inference.md
 - caption: Guides
   chapters:
   - file: guides/how-to-model.md
@@ -22,8 +23,3 @@ parts:
   chapters:
   - file: reference/open223-resources.md
   - file: reference/other-resources.md
-- caption: Example Models
-  chapters:
-  - file: examples/lbnl-example.md
-  - file: examples/G36-4-1.md
-  - file: examples/G36-4-2.md
