@@ -11,7 +11,7 @@ On each page you will find the following:
 - short description of what is being modeled
 - supplementary materials and/or diagrams, where applicable
 - download links for the model (both Turtle and JSON-LD are provided)
-- links to example queries against the model; queries are hosted on the [Open223 query page](https://query.open223.info)
+- links to example queries against the model; queries are hosted on Open223 Query (see link below)
 - a table of entities found inside the model
 
 ## [Open223 Explore](https://explore.open223.info/)
@@ -21,7 +21,7 @@ The Explore tool divides the ontology up across four tabs.
 
 ![](_static/images/explore-tabs.png)
 
-#### Classes
+### Classes
 The classes tab organizes the classes of the standard based on their class hierarchy.
 One can click on the class name to view a description of the class and its constraints, or click on the "+" to the left of the class name to view all the subclasses of that class.
 For example, all 223 classes are a subclass of `s223:Concept`, and can be accessed by clicking the "+" to the left of "Concept".
@@ -30,18 +30,18 @@ For example, all 223 classes are a subclass of `s223:Concept`, and can be access
 
 The **Definition** section describes what relations *instances* of the class must have.
 The **Properties** section below lists all of the relation constraints the class as inherited, including: which of those relations are optional (marked with a `?`), can happen 0 or more times (marked with a `*`), must happen
-at least once (marked with a `+`), or are necessary (no additional markings, like in the screenshot above).
+at least once (marked with a `+`), or are necessary (no additional markings, like in the image above).
 Additionally all links highlighted in yellow on a given class page can be used to navigate to a description of that class or property.
 
 The definitions listed on the Explore tool are *not* definitive but instead capture common usage; refer to the standard for the full and complete definition.
 
-#### Properties
+### Properties
 The properties tab organizes the *relations* of the standard and its dependencies.
 Clicking on a relation shows which classe are in the domain and range of the relation, if available.
 
 ![](_static/images/explore-properties-connectedTo.png)
 
-#### Ontologies and Files
+### Ontologies and Files
 
 These last two tabs list *all* properties, concepts, classes, etc defined in each ontology loaded into the tool.
 This currently includes 223 as well as its dependencies (e.g., QUDT).
@@ -56,12 +56,12 @@ There are three dropdowns in the top-left corner of the page:
 Two of these determine which 223 model you want to query:
 
 - You can **upload your own graph** by choosing a local Turtle file to upload or by referencing one by URL on the web
-- You can select an **example 223P model** from the dropdown menu. Each of these models contains a copy of 223 and has had SHACL inference applied to it
+- You can select an **example 223 model** from the dropdown menu. Each of these models contains a copy of 223 and has had SHACL inference applied to it
 
 The last dropdown contains a set of example queries against 223 models. Select a query from the dropdown to populate the query box.
 You can also edit the query box directly to express a SPARQL query.
 
-Click the black triangle in the query window to execute the query against the currently loaded model.
+Click the ▶️ in the query window to execute the query against the currently loaded model.
 
 ![](_static/images/query-open223-query.png)
 
