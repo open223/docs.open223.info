@@ -61,7 +61,7 @@ Two of these determine which 223 model you want to query:
 The last dropdown contains a set of example queries against 223 models. Select a query from the dropdown to populate the query box.
 You can also edit the query box directly to express a SPARQL query.
 
-Click the black triangle in the query window to execute the query against the currently loaded model.
+Click the ▶️ in the query window to execute the query against the currently loaded model.
 
 ![](/_static/images/query-open223-query.png)
 
