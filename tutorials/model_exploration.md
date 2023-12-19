@@ -32,7 +32,7 @@ from rdflib import Graph
 g = Graph()
 
 # Parse in an RDF file hosted on the Internet
-g.parse("https://raw.githubusercontent.com/open223/models.open223.info/main/models/guideline36-2021-4-1.ttl", format="ttl")
+g.parse("https://models.open223.info/guideline36-2021-4-1.ttl", format="ttl")
 ```
 
 Next, we'll explore the model's size by printing the number of triples in it.
@@ -51,7 +51,7 @@ print(g.serialize(format="turtle"))
 
 ## Model Querying
 
-After exploring the model to get a sense for what it contains, let's query the model for all the VAV terminal's points, which are instances of the following classes:
+After exploring the model to get a sense for what it contains, let's query the model using RDFLib (this can also be done with [Open223 Query](open223-resources)). For this tutorial, we'll query the model for all the VAV terminal's points, which are instances of the following classes:
 
 [Open223 Explore links](open223-resources):
 - [QuantifiableActuatableProperty](https://explore.open223.info/s223/QuantifiableActuatableProperty.html)
