@@ -62,9 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/model-exploration';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/model_exploration';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How to Model Core Concepts" href="../guides/how-to-model.html" />
+    <link rel="prev" title="ASHRAE Standard 223P" href="../explanation/223p.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -171,8 +173,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../explanation/223p.html">ASHRAE Standard 223P</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="model_exploration.html">Model Exploration</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Model Exploration</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides</span></p>
 <ul class="nav bd-sidenav">
@@ -236,6 +238,55 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/open223/docs.open223.info/main?urlpath=tree/tutorials/model_exploration.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -261,7 +312,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/open223/docs.open223.info/issues/new?title=Issue%20on%20page%20%2Ftutorials/model-exploration.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/open223/docs.open223.info/issues/new?title=Issue%20on%20page%20%2Ftutorials/model_exploration.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -291,7 +342,24 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/tutorials/model-exploration.md" target="_blank"
+      <li><a href="../_sources/tutorials/model_exploration.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../_sources/tutorials/model_exploration.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -362,7 +430,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -378,6 +448,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-parsing">Model Parsing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-querying">Model Querying</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -389,7 +468,176 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="model-exploration">
 <h1>Model Exploration<a class="headerlink" href="#model-exploration" title="Permalink to this heading">#</a></h1>
-<p>Pyvis can be used to explore models</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The purpose of this tutorial is to explore a model by learning the following:</p>
+<ol class="arabic simple">
+<li><p>Parsing (loading) an existing model</p></li>
+<li><p>Querying an existing model.</p></li>
+</ol>
+</div>
+<p>For this tutorial, we’ll use an existing equipment model of a variable air volume (VAV) terminal unit with cooling only from section 4.1 of ASHRAE Guideline 36-2021. This and other example models are available from <a class="reference internal" href="../reference/open223-resources.html#open223-resources"><span class="std std-ref">Open223 Models</span></a>.</p>
+<section id="model-parsing">
+<h2>Model Parsing<a class="headerlink" href="#model-parsing" title="Permalink to this heading">#</a></h2>
+<p>First, we’ll create a new empty graph then parse (load) an existing graph into it using the Python RDFLib library.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rdflib</span> <span class="kn">import</span> <span class="n">Graph</span>
+
+<span class="c1"># Create a Graph</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">()</span>
+
+<span class="c1"># Parse in an RDF file hosted on the Internet</span>
+<span class="n">g</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;https://models.open223.info/guideline36-2021-4-1.ttl&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;ttl&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Graph identifier=Ne8af5f9e46a24df3bf6766f4f107deb6 (&lt;class &#39;rdflib.graph.Graph&#39;&gt;)&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, we’ll explore the model’s size by printing the number of triples in it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the number of &quot;triples&quot; in the Graph</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Graph g has </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">g</span><span class="p">)</span><span class="si">}</span><span class="s2"> statements.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph g has 54 statements.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, we’ll print the contents of the model since it’s not that large.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print out the entire Graph in the RDF Turtle format</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;turtle&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>@prefix bldg: &lt;urn:ex/&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
+@prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
+@prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
+@prefix unit: &lt;http://qudt.org/vocab/unit/&gt; .
+
+bldg: a owl:Ontology .
+
+bldg:damper-actuator a s223:Actuator ;
+    s223:actuates bldg:damper ;
+    s223:commandedByProperty bldg:damper-command .
+
+bldg:discharge-air-flow-sensor a s223:Sensor ;
+    s223:hasObservationLocation bldg:out ;
+    s223:observes bldg:discharge-air-flow .
+
+bldg:vav-cooling-only a s223:SingleDuctTerminal,
+        &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#VAV&gt; ;
+    s223:cnx bldg:in,
+        bldg:out ;
+    s223:contains bldg:damper .
+
+bldg:damper-in a s223:InletConnectionPoint ;
+    s223:cnx bldg:duct-before-damper ;
+    s223:hasMedium s223:Medium-Air ;
+    s223:mapsTo bldg:in .
+
+bldg:damper-out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:duct-after-damper ;
+    s223:hasMedium s223:Medium-Air ;
+    s223:mapsTo bldg:out .
+
+bldg:damper-position a s223:QuantifiableObservableProperty ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+bldg:duct-after-damper a s223:Connection,
+        s223:Duct ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:duct-before-damper a s223:Connection,
+        s223:Duct ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:in-connection a s223:Connection ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:out-connection a s223:Connection ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:damper a s223:Damper,
+        &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#Damper&gt; ;
+    s223:cnx bldg:damper-in,
+        bldg:damper-out ;
+    s223:hasProperty bldg:damper-command,
+        bldg:damper-position .
+
+bldg:damper-command a s223:QuantifiableActuatableProperty ;
+    s223:hasAspect s223:EnumerationKind-Position ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+bldg:discharge-air-flow a s223:QuantifiableObservableProperty ;
+    s223:hasAspect s223:Role-Discharge ;
+    qudt:hasQuantityKind qudtqk:VolumeFlowRate ;
+    qudt:hasUnit unit:FT3-PER-MIN .
+
+bldg:in a s223:InletConnectionPoint ;
+    s223:cnx bldg:in-connection ;
+    s223:hasMedium s223:Medium-Air .
+
+bldg:out a s223:OutletConnectionPoint ;
+    s223:cnx bldg:out-connection ;
+    s223:hasMedium s223:Medium-Air ;
+    s223:hasProperty bldg:discharge-air-flow .
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="model-querying">
+<h2>Model Querying<a class="headerlink" href="#model-querying" title="Permalink to this heading">#</a></h2>
+<p>After exploring the model to get a sense for what it contains, let’s query the model using RDFLib (this can also be done with <a class="reference internal" href="../reference/open223-resources.html#open223-resources"><span class="std std-ref">Open223 Query</span></a>). For this tutorial, we’ll query the model for all the VAV terminal’s points, which are instances of the following classes:</p>
+<p><a class="reference internal" href="../reference/open223-resources.html#open223-resources"><span class="std std-ref">Open223 Explore links</span></a>:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://explore.open223.info/s223/QuantifiableActuatableProperty.html">QuantifiableActuatableProperty</a></p></li>
+<li><p><a class="reference external" href="https://explore.open223.info/s223/QuantifiableObservableProperty.html">QuantifiableObservableProperty</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Query the data in g using SPARQL</span>
+<span class="n">q</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">PREFIX s223: &lt;http://data.ashrae.org/standard223#&gt;</span>
+
+<span class="s2">SELECT ?obj WHERE {</span>
+<span class="s2">  { ?obj a s223:QuantifiableActuatableProperty . }</span>
+<span class="s2">  	UNION</span>
+<span class="s2">  { ?obj a s223:QuantifiableObservableProperty . }</span>
+<span class="s2">}</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="c1"># Apply the query to the graph and iterate through results</span>
+<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(rdflib.term.URIRef(&#39;urn:ex/damper-command&#39;),)
+(rdflib.term.URIRef(&#39;urn:ex/damper-position&#39;),)
+(rdflib.term.URIRef(&#39;urn:ex/discharge-air-flow&#39;),)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -422,12 +670,45 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../explanation/223p.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">ASHRAE Standard 223P</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../guides/how-to-model.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">How to Model Core Concepts</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-parsing">Model Parsing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-querying">Model Querying</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
