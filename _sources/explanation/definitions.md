@@ -2,7 +2,7 @@
 (definitions)=
 # Definitions and Concepts 
 
-Understanding this explanation section depends on knowing the defintions of several concepts. More can be learned about these concepts from the resources linked in the [reference section](open223-resources).
+To understand the explanations in this chapter it is important to know the defintions of several concepts. More can be learned about these concepts from the resources linked in the [reference section](open223-resources).
 
 ## Graph Data Concepts
 
