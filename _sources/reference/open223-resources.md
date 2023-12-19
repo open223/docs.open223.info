@@ -21,7 +21,7 @@ The Explore tool divides the ontology up across four tabs.
 
 ![](/_static/images/explore-tabs.png)
 
-#### Classes
+### Classes
 The classes tab organizes the classes of the standard based on their class hierarchy.
 One can click on the class name to view a description of the class and its constraints, or click on the "+" to the left of the class name to view all the subclasses of that class.
 For example, all 223 classes are a subclass of `s223:Concept`, and can be accessed by clicking the "+" to the left of "Concept".
