@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Open223 Resources &#8212; ASHRAE Standard 223P User Documentation</title>
+    <title>Model Inference &#8212; ASHRAE Standard 223P User Documentation</title>
   
   
   
@@ -62,11 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/open223-resources';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/model_inference';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Other Resources" href="other-resources.html" />
-    <link rel="prev" title="How to Extend 223P" href="../guides/how-to-extend.html" />
+    <link rel="next" title="How to Model Core Concepts" href="../guides/how-to-model.html" />
+    <link rel="prev" title="How to Load, Validate, Update, and Query 223P models" href="rdflib-pyshacl.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,9 +173,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../explanation/223p.html">ASHRAE Standard 223P</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/rdflib-pyshacl.html">How to Load, Validate, Update, and Query 223P models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/model_inference.html">Model Inference</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="rdflib-pyshacl.html">How to Load, Validate, Update, and Query 223P models</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Model Inference</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides</span></p>
 <ul class="nav bd-sidenav">
@@ -184,9 +184,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../guides/how-to-extend.html">How to Extend 223P</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Open223 Resources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="other-resources.html">Other Resources</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reference/open223-resources.html">Open223 Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/other-resources.html">Other Resources</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Example Models</span></p>
 <ul class="nav bd-sidenav">
@@ -239,6 +239,55 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/open223/docs.open223.info/main?urlpath=tree/tutorials/model_inference.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -264,7 +313,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/open223/docs.open223.info/issues/new?title=Issue%20on%20page%20%2Freference/open223-resources.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/open223/docs.open223.info/issues/new?title=Issue%20on%20page%20%2Ftutorials/model_inference.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -294,7 +343,24 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/reference/open223-resources.md" target="_blank"
+      <li><a href="../_sources/tutorials/model_inference.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../_sources/tutorials/model_inference.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -378,7 +444,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Open223 Resources</h1>
+    <h1>Model Inference</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -388,19 +454,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open223-models">Open223 Models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open223-explore">Open223 Explore</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#navigation">Navigation</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open223-query">Open223 Query</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open223-defs">Open223 Defs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-shacl-rules">What are SHACL Rules?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-parsing">Model Parsing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-223-ontology">Loading the 223 Ontology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-inference-rules">Applying Inference Rules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-new-model">Using the New Model</a></li>
 </ul>
             </nav>
         </div>
@@ -412,40 +470,115 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="open223-resources">
-<span id="id1"></span><h1>Open223 Resources<a class="headerlink" href="#open223-resources" title="Permalink to this heading">#</a></h1>
-<p>The <a class="reference external" href="https://github.com/open223">Open223 GitHub organization</a> was created in conjunction with the ASHRAE Standard 223 project committee to develop resources to support the use of Standard. However, it is not an official ASHRAE product or a part of the standard.</p>
-<section id="open223-models">
-<h2><a class="reference external" href="https://models.open223.info/">Open223 Models</a><a class="headerlink" href="#open223-models" title="Permalink to this heading">#</a></h2>
-<p>This site contains the canonical sources for example models.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="model-inference">
+<h1>Model Inference<a class="headerlink" href="#model-inference" title="Permalink to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The purpose of this tutorial is to show how SHACL inference applied to a 223 model can
+make models easier to write and query. Specifically, this tutorial will teach the following:</p>
+<ol class="arabic simple">
+<li><p>How to load SHACL inference rules defined in the 223 ontology into memory</p></li>
+<li><p>How to apply SHACL inference rules to a 223 model to add all “implied” triples</p></li>
+</ol>
+</div>
+<p>For this tutorial, we’ll use an existing equipment model of a variable air volume (VAV) terminal unit with cooling only from section 4.1 of ASHRAE Guideline 36-2021.
+This and other example models are available from <a class="reference internal" href="../reference/open223-resources.html#open223-resources"><span class="std std-ref">Open223 Models</span></a>.</p>
+<section id="what-are-shacl-rules">
+<h2>What are SHACL Rules?<a class="headerlink" href="#what-are-shacl-rules" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://www.w3.org/TR/shacl-af/#rules">SHACL rules</a> which add implied information to graphs if certain conditions are met, i.e. if certain triples exist in the source graph.
+The process of applying rules to an input model to generate new information (triples) is called <em>inference</em>.
+Inference makes models easier to write because the model author does not have to manually include all the triples necessary to support the desired queries;
+instead, some of those useful triples can be added “automatically” to the model through the use of inferencing.
+One way to think of inference is a way of normalizing a 223 model.
+Inference assures that the expected properties, types, and other annotations are present so that consumers of the model can make more assumptions about what information will be contained within the graph.</p>
 </section>
-<section id="open223-explore">
-<h2><a class="reference external" href="https://explore.open223.info/">Open223 Explore</a><a class="headerlink" href="#open223-explore" title="Permalink to this heading">#</a></h2>
-<p>This page hosts autogenerated documentation of the 223P ontology, emphasizing the availability and correct use of concepts and properties defined by the ontology.</p>
-<section id="navigation">
-<h3>Navigation<a class="headerlink" href="#navigation" title="Permalink to this heading">#</a></h3>
-<p>This section will describe how to navigate the site, which allows one to traverse the standard. It uses a hierarchical structure based on classes within the standard for navigation. This section will describe how to use this page to explore standard 223P.</p>
-<p>This section is organized based on the tabs on the left hand side of the explore page. It will describe how to use this website to explore standard 223P.</p>
-<p>Insert image of left hand tab</p>
-<section id="classes">
-<h4>Classes<a class="headerlink" href="#classes" title="Permalink to this heading">#</a></h4>
-<p>The classes tab organizes the classes of the standard based on their class hierarchy. One can click on the class name to view a description of the class and its constraints, or click on the “+” to the left of the class name to view all the subclasses of that class. For example, all 223P classes are a subclass of s223:Concept, and can be accessed by clicking the “+” to the left of “Concept”.</p>
-<p>TODO insert image</p>
-<p>Additionally all links highlighted in yellow on a given class page can be used to navigate to a description of that class or property.</p>
-<section id="definition">
-<h5>Definition<a class="headerlink" href="#definition" title="Permalink to this heading">#</a></h5>
-<p>This definition provides a description of what the class is meant to represent. It does not fully describe how to use the class in a model. To undersand how to use a class in the model, you should reference example design patterns TODO,</p>
+<section id="model-parsing">
+<h2>Model Parsing<a class="headerlink" href="#model-parsing" title="Permalink to this heading">#</a></h2>
+<p>First, we’ll create a new empty graph then parse (load) an existing graph into it using the Python RDFLib library.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rdflib</span> <span class="kn">import</span> <span class="n">Graph</span>
+<span class="c1"># Create a Graph</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">()</span>
+<span class="c1"># Parse in an RDF file hosted on the Internet</span>
+<span class="n">model</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;https://models.open223.info/guideline36-2021-4-1.ttl&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;ttl&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The model contains </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">model</span><span class="p">)</span><span class="si">}</span><span class="s2"> triples&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The model contains 54 triples
+</pre></div>
+</div>
+</div>
+</div>
 </section>
+<section id="loading-the-223-ontology">
+<h2>Loading the 223 Ontology<a class="headerlink" href="#loading-the-223-ontology" title="Permalink to this heading">#</a></h2>
+<p>The 223 ontology contains the rules we will use for inference.
+We will load the 223 ontology into a separate graph from the model.
+This is mostly for maintenance: it is easy enough to merge two graphs together into one, but it is much harder to factor them out again.
+By keeping the ontology graph separate from the model graph, we can more easily maintain and version those graphs individually.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rdflib</span> <span class="kn">import</span> <span class="n">Graph</span>
+<span class="c1"># Create a Graph</span>
+<span class="n">s223</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">()</span>
+<span class="c1"># Parse in a recent copy of the 223 ontology</span>
+<span class="n">s223</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;https://query.open223.info/ontologies/223p.ttl&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Graph identifier=Nbd433e44595047179d8ab613eaa129f5 (&lt;class &#39;rdflib.graph.Graph&#39;&gt;)&gt;
+</pre></div>
+</div>
+</div>
+</div>
 </section>
+<section id="applying-inference-rules">
+<h2>Applying Inference Rules<a class="headerlink" href="#applying-inference-rules" title="Permalink to this heading">#</a></h2>
+<p>To apply inference rules, we need an <em>inference engine</em>.
+This is a piece of software which knows how to properly interpret and apply the SHACL rules defined in an ontology.
+There are multiple closed-source and open-source implementations of SHACL available; some of these are listed on <a class="reference internal" href="../reference/other-resources.html#other-resources"><span class="std std-ref">this page</span></a>
+Below, we will be using the open-source <a class="reference external" href="https://github.com/RDFLib/pySHACL">PySHACL</a> library.</p>
+<p>We import the PySHACL library and then invoke the <code class="docutils literal notranslate"><span class="pre">validate</span></code> function on our model graph (<em>data graph</em> in PySHACL parlance)
+and our 223 graph (<em>shape graph</em> in PySHACL parlance).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyshacl</span>
+
+<span class="n">pyshacl</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="n">model</span><span class="p">,</span>
+    <span class="n">shacl_graph</span><span class="o">=</span><span class="n">s223</span><span class="p">,</span>     <span class="c1"># pass in the 223 graph object here</span>
+    <span class="n">ont_graph</span><span class="o">=</span><span class="n">s223</span><span class="p">,</span>       <span class="c1"># pass in the 223 graph object here</span>
+    <span class="n">allow_infos</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>     <span class="c1"># don&#39;t fail if we get an INFO message</span>
+    <span class="n">allow_warnings</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># don&#39;t fail if we get a WARNING message</span>
+    <span class="n">abort_on_first</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="c1"># allow errors to happen during execution</span>
+    <span class="n">advanced</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>        <span class="c1"># allow SHACL rules to execute</span>
+    <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span>          <span class="c1"># update the &#39;model&#39; object with the inferred triples</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The model now contains </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">model</span><span class="p">)</span><span class="si">}</span><span class="s2"> triples&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The model now contains 3770 triples
+</pre></div>
+</div>
+</div>
+</div>
+<p>This may take a few minutes to run, depending on the size of your model.
+If the PySHACL library is too slow, we recommend looking at alternate open-source implementations
+like <a class="reference external" href="https://github.com/TopQuadrant/shacl">TopQuadrant’s Java-based implementation</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">pyshacl.validate</span></code> function returns a SHACL validation report which can be used to fix
+the model and make it compatible with the 223 ontology. See the [Model Validation[(model_validation)
+tutorial for how to access and interpret this report.</p>
+</div>
 </section>
-</section>
-<section id="open223-query">
-<h2><a class="reference external" href="https://query.open223.info/">Open223 Query</a><a class="headerlink" href="#open223-query" title="Permalink to this heading">#</a></h2>
-<p>This page provides client-side SPARQL query processing using Oxigraph. It contains several example 223 models and several example queries.</p>
-</section>
-<section id="open223-defs">
-<h2><a class="reference external" href="https://defs.open223.info/">Open223 Defs</a><a class="headerlink" href="#open223-defs" title="Permalink to this heading">#</a></h2>
-<p>This page provides a set of <a class="reference external" href="https://www.w3.org/submissions/CBD/">concise bounded descriptions (CBDs)</a> of 223 concepts, rules, shapes, and entities with permalinks referenced by the 223 standard document.</p>
+<section id="using-the-new-model">
+<h2>Using the New Model<a class="headerlink" href="#using-the-new-model" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -462,7 +595,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./reference"
+            path: "./tutorials"
         },
         predefinedOutput: true
     }
@@ -480,20 +613,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../guides/how-to-extend.html"
+       href="rdflib-pyshacl.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">How to Extend 223P</p>
+        <p class="prev-next-title">How to Load, Validate, Update, and Query 223P models</p>
       </div>
     </a>
     <a class="right-next"
-       href="other-resources.html"
+       href="../guides/how-to-model.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Other Resources</p>
+        <p class="prev-next-title">How to Model Core Concepts</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -512,19 +645,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open223-models">Open223 Models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open223-explore">Open223 Explore</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#navigation">Navigation</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open223-query">Open223 Query</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open223-defs">Open223 Defs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-shacl-rules">What are SHACL Rules?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-parsing">Model Parsing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-223-ontology">Loading the 223 Ontology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-inference-rules">Applying Inference Rules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-new-model">Using the New Model</a></li>
 </ul>
   </nav></div>
 
