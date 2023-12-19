@@ -25,12 +25,12 @@ This and other example models are available from [Open223 Models](open223-resour
 
 ## What are SHACL Rules?
 
-[SHACL rules](https://www.w3.org/TR/shacl-af/#rules) which add implied information to graphs if certain conditions are met, i.e. if certain triples exist in the source graph.
+[SHACL rules](https://www.w3.org/TR/shacl-af/#rules) add implied information to graphs if certain conditions are met, i.e. if certain triples exist in the source graph.
 The process of applying rules to an input model to generate new information (triples) is called *inference*.
 Inference makes models easier to write because the model author does not have to manually include all the triples necessary to support the desired queries;
 instead, some of those useful triples can be added "automatically" to the model through the use of inferencing.
 One way to think of inference is a way of normalizing a 223 model.
-Inference assures that the expected properties, types, and other annotations are present so that consumers of the model can make more assumptions about what information will be contained within the graph.
+Inference assures that the expected properties, types, and other annotations are present so that consumers of the model can make assumptions about what information will be contained within the graph.
 
 ## Model Parsing
 
