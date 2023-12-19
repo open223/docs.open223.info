@@ -1,7 +1,8 @@
-# ASHRAE Standard 223
+# 223 Introduction
 
-Standard 223 defines modeling constructs for use in creating a machine-readable representation of building systems, the building spaces that they serve, and the measurement and control points used to provide a safe and comfortable environment for the building occupants. The standard can be considered a toolkit of components and rules for using them to create a semantic model of a particular building or campus of buildings. The resulting model provides a way for software applications to determine the relationships between the mechanical equipment in the building (i.e., AHU 1 gets chilled water from CH 3 and provides conditioned air to VAV Boxes 12 through 15 serving rooms on the third floor) and the meaning of measurements that are available (i.e., T16 is a temperature sensor measuring the temperature of the air stream exiting AHU 1). This facilitates the implementation of advanced features in buildings 
-<!-- like automated fault detection and diagnostics, supervisory controls, automated commissioning, and more. --> 
+The Purpose and Scope from from the current standard are provided below to introduce it to users. For more information about the standard, please see the published document [^1].
+
+[^1]: TODO link to public review.
 
 >1 PURPOSE
 The purpose of this standard is to define formal knowledge concepts and a methodology to apply them to create interoperable, machine-readable semantic frameworks for representing building automation and control data, and other building system information
@@ -15,18 +16,54 @@ This standard provides a comprehensive way to apply semantic formalisms to repre
 >5. smart grid interactions.
 
 
+(definitions)=
+## Definitions 
 
-## Using Graph Data Concepts
+Understanding this explanation section depends on knowing the defintions of several concepts. More can be learned about these concepts from the resources linked in the [reference section](open223-resources).
 
-Standard 223 is represented using the Resource Description Framework (RDF). RDF is a general method for representic semantic information in the form of a triple, which consists of a subject, a predicate, and an object. The subject and object define two entities, which are an instance of some class, and the predicate defines how they are related. A collection of these triples make up a graph. The ASHRAE 223 standard defines classes and relationships relevant to the building space that can then be used to build a multi-graph representing a specific building or group of buildings. For more information about RDF and the other semantic technologies used by the standard, please look at the [reference section](other-references).
+### Graph Data Concepts
 
-To create a semantic model of your building using Standard 223, you create instances that represent the entities in your building, and define them using the classes and relationships defined or referenced by Standard 223. For example, you may be creating a model of a building in which your air handling unit (ahu-1) contains a fan (fan-1). Your air handling unit (ahu-1) would be modeled as an instance of the 223 class [`s223:AirHandlingUnit`](https://explore.open223.info/s223/AirHandlingUnit.html), which describes the general class of things resembling Air Handling Units. Similarly, your fan (fan-1) would be an instance of the 223 class [`s223:Fan`](https://explore.open223.info/s223/Fan.html). The idea of containment is defined using the 223 relationship [`s223:contains`](https://explore.open223.info/s223/contains.html), so your air handling unit would relate to your fan using the relationship `s223:contains`. The relationship between an instance and a class is defined using the RDF relationship rdf:type, so your ahu and fan would relate to `s223:AirHandlingUnit` and `s223:Fan` using the relation rdf:type. This example is shown in Figure 1. 
+ - **Entity:** An entity is an abstraction of the physical "things" in a building. Examples are mechanical equipment such as air handling units, luminaires, spatial elements like rooms, or the area of these rooms served by certain mechanical equipment.
 
-<div align="center">
-    
+ - **Class:** A named category with intensional meaning (a definition) used for grouping entities.
+Classes are organized into a hierarchy, and entities are an instance of a given class. Classes are defined using SHACL shapes ensuring that they are instantiated correctly.
 
-<img src="../_static/ex-1.svg" alt="Alt text" style="max-width:100%; height:auto;">
+ - **Relationship:** Defines the nature of a link between two related entities.
+Examples of relationships are *encapsulation* (one entity is contained within another), *sequence* (one entity takes effect before another in some process) and *instantiation* (one entity's type is given by another entity).
 
-<span style="font-size: medium;">Figure 1. 223 Modeling Example</span>
+- **Relation:** A predicate (RDF property) used to describe a given relationship.
+Examples of a relation are the 223 relation `s223:contains`, which relationship between two pieces of equipment in which one contains another.  
 
-</div>
+ - **Graph:** An abstract organizational data structure representing a set of entities (nodes) and relationships (edges) described in triple-structure. 223 models are represented by a directed, labeled graph, and use the RDF standard. We recommend reading the [Wikipedia page on the abstract graph data structure](https://en.wikipedia.org/wiki/Graph_(abstract_data_type)) for more information.
+
+ - **A 223 Semantic Model:** A 223 model is a digital representation of a building in RDF graph structure that utilizes the 223 standard. This means that elements of a particular buidling are represented using instances of the classes defined by the 223 standard and use relationships as defined by the rules present in the standard. 223 leverages the semantic web technologies, allowing easy integration with other types of models that utilize RDF.
+
+### 223 Top Level Classes
+
+The 223 standard defines a hierarchy of classes used to define the entities within a buidling. This section provides a basic definition of the classes at the top level of the hierarchy to help users understand what the standard aims to represent, which is described in the [overview](223-overview). 
+
+ - **Connection:** A modeling construct for representing a physical thing (e.g., pipe, duct, wire) that connects and conveys a medium between two Connectable things.
+
+ - **ConnectionPoint:** An abstract modeling construct representing the point where one Connectable thing connects to another.
+
+ - **Domain:** A categorization of building service or specialization used to characterize equipment or spaces (e.g., HVAC, lighting, plumbing).
+
+ - **Connectable:** This is the top level entity that defines the classes that may be connected via ConnectionPoints and Connections. There are three major sub-classes of connectable
+
+    - **DomainSpace:** A portion or entirety of a PhysicalSpace associated with a Domain. Often a DomainSpace is served by a particular piece of equipment, like a single VAV Box, and thus they can be connected to equipment. Multiple DomainSpaces controlled similarly can be grouped together, forming a Zone.
+
+    - **Equipment:** A modeling construct used to represent a mechanical device designed to accomplish a specific task (e.g. pump, fan, heat exchanger, luminaire, temperature sensor, flow meter). Equipment may contain and connect to other equipment, allowing detailed modeling of mechanical systems. Certain pieces of equipment (i.e. Sensors, Actuators, Controllers) may have unique relationships to properties to define how they act on the properties of other entities.
+
+    - **Junction:** A Junction is a modeling construct used to represent important branching points within a Connection.
+
+ - **PhysicalSpace:** An architectural concept representing a room, floor, or any physical space in a building. These PhysicalSpaces (e.g. a floor) can contain other PhysicalSpaces (e.g. a room).
+
+ - **System:** A task-oriented collection of interacting or interrelated Equipment defined by the modeler.
+
+ - **Zone:** A collection of DomainSpaces grouped together based on building services or controls.
+
+ - **Properties:** Properties often represent the actuation and measurement points within a buidling. They may be associated with real-time data. They also may define the attributes of other entities (e.g. Equipment, DomainSpaces, Zones). They can be further contextualized using enumerations.
+
+ - **Enumerations:** The standard uses enumerations to convey groups of useful values for describing attributes of Properties, Equipment, and other things in the model. For example, the enumeration `Role-Cooling` describes that the equipment in question provides cooling.
+
+ - **FunctionBlock:** Is used to model transfer and/or transformation of information (e.g. control algorithms). It has relations to input properties and output properties, that represent input and output data. The actual algorithms that perform the transformations are not described in 223, and can be described using standard 231.
