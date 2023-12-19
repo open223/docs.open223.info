@@ -35,7 +35,7 @@ Additionally all links highlighted in yellow on a given class page can be used t
 
 The definitions listed on the Explore tool are *not* definitive but instead capture common usage; refer to the standard for the full and complete definition.
 
-#### Properties
+### Properties
 The properties tab organizes the *relations* of the standard and its dependencies.
 Clicking on a relation shows which classe are in the domain and range of the relation, if available.
 
