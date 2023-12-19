@@ -15,12 +15,9 @@ The proposed standard is not yet available for public review.
 ```
 ````
 
-> ***Designation and Classification of Semantic Tags for Building Data***
->
-
 The documentation uses Diataxis[^1] as a framework for its structure, which is organized into the following sections.
 
-[^2]: https://diataxis.fr/
+[^1]: https://diataxis.fr/
 
 ## Table of Contents
 ```{tableofcontents}

@@ -15,7 +15,7 @@ To create a semantic model of your building using Standard 223, you create insta
 <div align="center">
     
 
-<img src="../_static/images/ex-1.svg" alt="Alt text" style="max-width:100%; height:auto;">
+<img src="_static/images/ex-1.svg" alt="Alt text" style="max-width:100%; height:auto;">
 
 <span style="font-size: medium;">Figure 1. 223 Modeling Example</span>
 
@@ -35,7 +35,7 @@ This standard can be used to describe the topology of the equipment and spaces i
 <div align="center">
     
 
-<img src="../_static/images/connection-relationships.png" style="max-width:100%; height:auto;">
+<img src="_static/images/connection-relationships.png" style="max-width:100%; height:auto;">
 
 <span style="font-size: medium;">Figure 2. Relations expressing different perspecties of connection </span>
 </div>
