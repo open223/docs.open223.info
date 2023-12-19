@@ -10,7 +10,7 @@ parts:
   - file: explanation/223p.md
 - caption: Tutorials
   chapters:
-  - file: tutorials/rdflib-pyshacl.md
+  - file: tutorials/model_exploration.md
   - file: tutorials/model_inference.md
 - caption: Guides
   chapters:
