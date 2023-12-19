@@ -41,7 +41,7 @@ Clicking on a relation shows which classe are in the domain and range of the rel
 
 ![](/_static/images/explore-properties-connectedTo.png)
 
-#### Ontologies and Files
+### Ontologies and Files
 
 These last two tabs list *all* properties, concepts, classes, etc defined in each ontology loaded into the tool.
 This currently includes 223 as well as its dependencies (e.g., QUDT).
