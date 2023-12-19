@@ -20,8 +20,3 @@ parts:
   chapters:
   - file: reference/open223-resources.md
   - file: reference/other-resources.md
-- caption: Example Models
-  chapters:
-  - file: examples/lbnl-example.md
-  - file: examples/G36-4-1.md
-  - file: examples/G36-4-2.md
