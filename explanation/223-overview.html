@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Model Exploration" href="../tutorials/model_exploration.html" />
-    <link rel="prev" title="223 Introduction" href="223-introduction.html" />
+    <link rel="prev" title="Definitions and Concepts" href="definitions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -170,7 +170,8 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Explanation</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="223-introduction.html">223 Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="223-introduction.html">Purpose and Scope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="definitions.html">Definitions and Concepts</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">223 Overview</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
@@ -406,13 +407,12 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="overview">
 <span id="id1"></span><h1>223 Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h1>
 <p>This standard allows users to create semantic models that describe the many entities in their buildings that are relevant to the use cases described in (the landing page)[landing-page]. An entity is an abstraction of any physical, logical or virtual item; the actual “things” in a building. Examples are mechanical equipment such as air handling units, luminaires, spatial elements like rooms, the area of these rooms served by certain mechanical equipment, or the zones these rooms may be grouped into based on how the equipment is controlled.</p>
-<p>There is a huge amount of information about the many entities within a building that you may want to model. This section will explain what information you should represent in a 223 model and the 223 modeling constructs you will use to do so. Descriptions assume you have some familiarity with RDF graph data and know the <a class="reference internal" href="223-introduction.html#definitions"><span class="std std-ref">definitions of key terms used in this section</span></a>.</p>
+<p>There is a huge amount of information about the many entities within a building that you may want to model. This section will explain what information you should represent in a 223 model and the 223 modeling constructs you will use to do so. Descriptions assume you have some familiarity with RDF graph data and know the <a class="reference internal" href="definitions.html#definitions"><span class="std std-ref">definitions of key terms used in this section</span></a>.</p>
 <section id="using-graph-data-concepts">
 <h2>Using Graph Data Concepts<a class="headerlink" href="#using-graph-data-concepts" title="Permalink to this heading">#</a></h2>
 <p>Standard 223 is represented using the Resource Description Framework (RDF). RDF is a general method for representic semantic information in the form of a triple, which consists of a subject, a predicate, and an object. The subject and object define two entities, which are an instance of some class, and the predicate defines how they are related. A collection of these triples make up a graph. The ASHRAE 223 standard defines classes and relationships relevant to the building space that can then be used to build a multi-graph representing a specific building or group of buildings. For more information about RDF and the other semantic technologies used by the standard, please look at the <a class="reference internal" href="../reference/other-resources.html#other-resources"><span class="std std-ref">reference section</span></a>.</p>
 <p>To create a semantic model of your building using Standard 223, you create instances that represent the entities in your building, and define them using the classes and relationships defined or referenced by Standard 223. For example, you may be creating a model of a building in which your air handling unit (ahu-1) contains a fan (fan-1). Your air handling unit (ahu-1) would be modeled as an instance of the 223 class <a class="reference external" href="https://explore.open223.info/s223/AirHandlingUnit.html"><code class="docutils literal notranslate"><span class="pre">s223:AirHandlingUnit</span></code></a>, which describes the general class of things resembling Air Handling Units. Similarly, your fan (fan-1) would be an instance of the 223 class <a class="reference external" href="https://explore.open223.info/s223/Fan.html"><code class="docutils literal notranslate"><span class="pre">s223:Fan</span></code></a>. The idea of containment is defined using the 223 relationship <a class="reference external" href="https://explore.open223.info/s223/contains.html"><code class="docutils literal notranslate"><span class="pre">s223:contains</span></code></a>, so your air handling unit would relate to your fan using the relationship <code class="docutils literal notranslate"><span class="pre">s223:contains</span></code>. The relationship between an instance and a class is defined using the RDF relationship rdf:type, so your ahu and fan would relate to <code class="docutils literal notranslate"><span class="pre">s223:AirHandlingUnit</span></code> and <code class="docutils literal notranslate"><span class="pre">s223:Fan</span></code> using the relation rdf:type. This example is shown in Figure 1.</p>
-<div align="center">
-<img src="_static/images/ex-1.svg" alt="Alt text" style="max-width:100%; height:auto;">
+<img alt="../_images/ex-1.svg" class="align-center" src="../_images/ex-1.svg" /><div align="center">
 <p><span style="font-size: medium;">Figure 1. 223 Modeling Example</span></p>
 </div>
 </section>
@@ -425,9 +425,9 @@ document.write(`
 <section id="topology">
 <h3>Topology<a class="headerlink" href="#topology" title="Permalink to this heading">#</a></h3>
 <p>This standard can be used to describe the topology of the equipment and spaces in a building, but not the geometric details. Topology refers to the way entities are connected and how some media (e.g. water, air, or electricity) is conveyed between them. There are several different classes used to describe which entities participate in connections and how they cßonnect. This describe <a class="reference external" href="https://explore.open223.info/s223/Connectable.html">Connectables</a>, which include the entities that are capable of connecting to each other; <a class="reference external" href="https://explore.open223.info/s223/ConnectionPoint.html">ConnectionPoints</a>, which model where Connectables can be connected; and <a class="reference external" href="https://explore.open223.info/s223/Connection.html">Connections</a>, which describe physical things through which the medium is conveyed, like pipes or ducts. These <a class="reference external" href="https://explore.open223.info/s223/Substance-Medium.html">Mediums</a> (e.g. gas, electricity, water) are defined by the standard. There are also multiple relation used to describe the details of these connections, and how the multiple entities involved in a connection relate to each other. Figure 2 summarizes these relations. Though there are many relations to describe different perspectives of a connection, these do not all need to be manually added to the model. If <a class="reference external" href="https://explore.open223.info/s223/cnx.html"><code class="docutils literal notranslate"><span class="pre">s223:cnx</span></code></a> is added, the rest can be automatically added to the model through the process of <a class="reference internal" href="../tutorials/model_inference.html#model-inference"><span class="std std-ref">inference</span></a>.</p>
+<a class="reference internal image-reference" href="../_images/connection-relationships.png"><img alt="../_images/connection-relationships.png" class="align-center" src="../_images/connection-relationships.png" style="width: 700px;" /></a>
 <div align="center">
-<img src="_static/images/connection-relationships.png" style="max-width:100%; height:auto;">
-<p><span style="font-size: medium;">Figure 2. Relations expressing different perspecties of connection </span></p>
+<span style="font-size: medium;">Figure 2. Relations expressing different perspectives of connection </span>
 </div>
 <p>(TODO: If there is a good example in Guides, this should link to it)</p>
 </section>
@@ -478,12 +478,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="223-introduction.html"
+       href="definitions.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">223 Introduction</p>
+        <p class="prev-next-title">Definitions and Concepts</p>
       </div>
     </a>
     <a class="right-next"

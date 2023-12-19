@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>223 Introduction &#8212; ASHRAE Standard 223P User Documentation</title>
+    <title>Purpose and Scope &#8212; ASHRAE Standard 223P User Documentation</title>
   
   
   
@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'explanation/223-introduction';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="223 Overview" href="223-overview.html" />
+    <link rel="next" title="Definitions and Concepts" href="definitions.html" />
     <link rel="prev" title="ASHRAE Standard 223P User Documentation" href="../intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -170,7 +170,8 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Explanation</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">223 Introduction</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Purpose and Scope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="definitions.html">Definitions and Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="223-overview.html">223 Overview</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
@@ -373,7 +374,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>223 Introduction</h1>
+    <h1>Purpose and Scope</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -383,11 +384,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">Definitions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-data-concepts">Graph Data Concepts</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#top-level-classes">223 Top Level Classes</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">1 PURPOSE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scope">2 SCOPE</a></li>
 </ul>
             </nav>
         </div>
@@ -399,14 +397,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
-<h1>223 Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h1>
-<p>The Purpose and Scope from from the current standard are provided below to introduce it to users. For more information about the standard, please see the published document <a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
-<blockquote>
-<div><p>1 PURPOSE
-The purpose of this standard is to define formal knowledge concepts and a methodology to apply them to create interoperable, machine-readable semantic frameworks for representing building automation and control data, and other building system information</p>
-<p>2 SCOPE
-This standard provides a comprehensive way to apply semantic formalisms to represent the context of building system data and relationships between the associated building mechanical system components so that software applications can find and understand the information in an automated way. It is intended to facilitate the development and implementation of building analytics tools and enterprise knowledge applications that can implement many building system functions, including:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="purpose-and-scope">
+<h1>Purpose and Scope<a class="headerlink" href="#purpose-and-scope" title="Permalink to this heading">#</a></h1>
+<p>The Purpose and Scope from from the current standard are provided below to introduce it to users. For more information about the standard, please see the published document <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+<section id="purpose">
+<h2>1 PURPOSE<a class="headerlink" href="#purpose" title="Permalink to this heading">#</a></h2>
+<p>The purpose of this standard is to define formal knowledge concepts and a methodology to apply them to create interoperable, machine-readable semantic frameworks for representing building automation and control data, and other building system information</p>
+</section>
+<section id="scope">
+<h2>2 SCOPE<a class="headerlink" href="#scope" title="Permalink to this heading">#</a></h2>
+<p>This standard provides a comprehensive way to apply semantic formalisms to represent the context of building system data and relationships between the associated building mechanical system components so that software applications can find and understand the information in an automated way. It is intended to facilitate the development and implementation of building analytics tools and enterprise knowledge applications that can implement many building system functions, including:</p>
 <ol class="arabic simple">
 <li><p>automated fault detection and diagnostics,</p></li>
 <li><p>building system commissioning,</p></li>
@@ -414,51 +414,11 @@ This standard provides a comprehensive way to apply semantic formalisms to repre
 <li><p>optimization of energy use, and</p></li>
 <li><p>smart grid interactions.</p></li>
 </ol>
-</div></blockquote>
-<section id="definitions">
-<span id="id2"></span><h2>Definitions<a class="headerlink" href="#definitions" title="Permalink to this heading">#</a></h2>
-<p>Understanding this explanation section depends on knowing the defintions of several concepts. More can be learned about these concepts from the resources linked in the <a class="reference internal" href="../reference/open223-resources.html#open223-resources"><span class="std std-ref">reference section</span></a>.</p>
-<section id="graph-data-concepts">
-<h3>Graph Data Concepts<a class="headerlink" href="#graph-data-concepts" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Entity:</strong> An entity is an abstraction of the physical “things” in a building. Examples are mechanical equipment such as air handling units, luminaires, spatial elements like rooms, or the area of these rooms served by certain mechanical equipment.</p></li>
-<li><p><strong>Class:</strong> A named category with intensional meaning (a definition) used for grouping entities.
-Classes are organized into a hierarchy, and entities are an instance of a given class. Classes are defined using SHACL shapes ensuring that they are instantiated correctly.</p></li>
-<li><p><strong>Relationship:</strong> Defines the nature of a link between two related entities.
-Examples of relationships are <em>encapsulation</em> (one entity is contained within another), <em>sequence</em> (one entity takes effect before another in some process) and <em>instantiation</em> (one entity’s type is given by another entity).</p></li>
-<li><p><strong>Relation:</strong> A predicate (RDF property) used to describe a given relationship.
-Examples of a relation are the 223 relation <code class="docutils literal notranslate"><span class="pre">s223:contains</span></code>, which relationship between two pieces of equipment in which one contains another.</p></li>
-<li><p><strong>Graph:</strong> An abstract organizational data structure representing a set of entities (nodes) and relationships (edges) described in triple-structure. 223 models are represented by a directed, labeled graph, and use the RDF standard. We recommend reading the <a class="reference external" href="https://en.wikipedia.org/wiki/Graph_(abstract_data_type)">Wikipedia page on the abstract graph data structure</a> for more information.</p></li>
-<li><p><strong>A 223 Semantic Model:</strong> A 223 model is a digital representation of a building in RDF graph structure that utilizes the 223 standard. This means that elements of a particular buidling are represented using instances of the classes defined by the 223 standard and use relationships as defined by the rules present in the standard. 223 leverages the semantic web technologies, allowing easy integration with other types of models that utilize RDF.</p></li>
-</ul>
-</section>
-<section id="top-level-classes">
-<h3>223 Top Level Classes<a class="headerlink" href="#top-level-classes" title="Permalink to this heading">#</a></h3>
-<p>The 223 standard defines a hierarchy of classes used to define the entities within a buidling. This section provides a basic definition of the classes at the top level of the hierarchy to help users understand what the standard aims to represent, which is described in the <a class="reference internal" href="223-overview.html#overview"><span class="std std-ref">overview</span></a>.</p>
-<ul class="simple">
-<li><p><strong>Connection:</strong> A modeling construct for representing a physical thing (e.g., pipe, duct, wire) that connects and conveys a medium between two Connectable things.</p></li>
-<li><p><strong>ConnectionPoint:</strong> An abstract modeling construct representing the point where one Connectable thing connects to another.</p></li>
-<li><p><strong>Domain:</strong> A categorization of building service or specialization used to characterize equipment or spaces (e.g., HVAC, lighting, plumbing).</p></li>
-<li><p><strong>Connectable:</strong> This is the top level entity that defines the classes that may be connected via ConnectionPoints and Connections. There are three major sub-classes of connectable</p>
-<ul>
-<li><p><strong>DomainSpace:</strong> A portion or entirety of a PhysicalSpace associated with a Domain. Often a DomainSpace is served by a particular piece of equipment, like a single VAV Box, and thus they can be connected to equipment. Multiple DomainSpaces controlled similarly can be grouped together, forming a Zone.</p></li>
-<li><p><strong>Equipment:</strong> A modeling construct used to represent a mechanical device designed to accomplish a specific task (e.g. pump, fan, heat exchanger, luminaire, temperature sensor, flow meter). Equipment may contain and connect to other equipment, allowing detailed modeling of mechanical systems. Certain pieces of equipment (i.e. Sensors, Actuators, Controllers) may have unique relationships to properties to define how they act on the properties of other entities.</p></li>
-<li><p><strong>Junction:</strong> A Junction is a modeling construct used to represent important branching points within a Connection.</p></li>
-</ul>
-</li>
-<li><p><strong>PhysicalSpace:</strong> An architectural concept representing a room, floor, or any physical space in a building. These PhysicalSpaces (e.g. a floor) can contain other PhysicalSpaces (e.g. a room).</p></li>
-<li><p><strong>System:</strong> A task-oriented collection of interacting or interrelated Equipment defined by the modeler.</p></li>
-<li><p><strong>Zone:</strong> A collection of DomainSpaces grouped together based on building services or controls.</p></li>
-<li><p><strong>Properties:</strong> Properties often represent the actuation and measurement points within a buidling. They may be associated with real-time data. They also may define the attributes of other entities (e.g. Equipment, DomainSpaces, Zones). They can be further contextualized using enumerations.</p></li>
-<li><p><strong>Enumerations:</strong> The standard uses enumerations to convey groups of useful values for describing attributes of Properties, Equipment, and other things in the model. For example, the enumeration <code class="docutils literal notranslate"><span class="pre">Role-Cooling</span></code> describes that the equipment in question provides cooling.</p></li>
-<li><p><strong>FunctionBlock:</strong> Is used to model transfer and/or transformation of information (e.g. control algorithms). It has relations to input properties and output properties, that represent input and output data. The actual algorithms that perform the transformations are not described in 223, and can be described using standard 231.</p></li>
-</ul>
 <hr class="footnotes docutils" />
-<aside class="footnote brackets" id="id3" role="note">
+<aside class="footnote brackets" id="id2" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p>TODO link to public review.</p>
 </aside>
-</section>
 </section>
 </section>
 
@@ -502,11 +462,11 @@ Examples of a relation are the 223 relation <code class="docutils literal notran
       </div>
     </a>
     <a class="right-next"
-       href="223-overview.html"
+       href="definitions.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">223 Overview</p>
+        <p class="prev-next-title">Definitions and Concepts</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -525,11 +485,8 @@ Examples of a relation are the 223 relation <code class="docutils literal notran
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">Definitions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-data-concepts">Graph Data Concepts</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#top-level-classes">223 Top Level Classes</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">1 PURPOSE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scope">2 SCOPE</a></li>
 </ul>
   </nav></div>
 
