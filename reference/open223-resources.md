@@ -11,7 +11,7 @@ On each page you will find the following:
 - short description of what is being modeled
 - supplementary materials and/or diagrams, where applicable
 - download links for the model (both Turtle and JSON-LD are provided)
-- links to example queries against the model; queries are hosted on the [Open223 query page](https://query.open223.info)
+- links to example queries against the model; queries are hosted on Open223 Query (see link below)
 - a table of entities found inside the model
 
 ## [Open223 Explore](https://explore.open223.info/)
