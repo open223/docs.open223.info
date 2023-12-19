@@ -45,6 +45,33 @@ model.parse("https://models.open223.info/guideline36-2021-4-1.ttl", format="ttl"
 print(f"The model contains {len(model)} triples")
 ```
 
+<details>
+<summary>Turtle representation of the model (pre-inference)</summary>
+
+```{code-cell}
+print(model.serialize())
+```
+
+</details>
+
+### Testing the Model (Failed Query)
+
+Below, we try to run a simple query on our model which asks what the damper in the terminal unit is connected to.
+The `s223:connected` relationship does not exist in the pre-inference model, so this query will not return results.
+
+```{code-cell}
+parts_query = """
+PREFIX bldg: <urn:ex/>
+PREFIX s223: <http://data.ashrae.org/standard223#>
+SELECT ?parts WHERE {
+    bldg:vav-cooling-only s223:contains ?damper .
+    ?damper s223:connected ?parts
+}"""
+
+for row in model.query(parts_query):
+    print('\t'.join(row))
+```
+
 ## Loading the 223 Ontology
 
 The 223 ontology contains the rules we will use for inference.
@@ -73,15 +100,22 @@ and our 223 graph (*shape graph* in PySHACL parlance).
 ```{code-cell}
 import pyshacl
 
+# skolemizing the s223 graph lets us remove blank nodes after inference
+skolemized_s223 = s223.skolemize()
+
 pyshacl.validate(model,
-    shacl_graph=s223,     # pass in the 223 graph object here
-    ont_graph=s223,       # pass in the 223 graph object here
+    shacl_graph=skolemized_s223,     # pass in the 223 graph object here
+    ont_graph=skolemized_s223,       # pass in the 223 graph object here
     allow_infos=True,     # don't fail if we get an INFO message
     allow_warnings=True,  # don't fail if we get a WARNING message
     abort_on_first=False, # allow errors to happen during execution
     advanced=True,        # allow SHACL rules to execute
     inplace=True          # update the 'model' object with the inferred triples
 )
+# remove the skolemized s223 graph from the model
+model -= skolemized_s223
+# de-skolemize the ret of the model
+model = model.de_skolemize()
 print(f"The model now contains {len(model)} triples")
 ```
 
@@ -89,13 +123,37 @@ This may take a few minutes to run, depending on the size of your model.
 If the PySHACL library is too slow, we recommend looking at alternate open-source implementations
 like [TopQuadrant's Java-based implementation](https://github.com/TopQuadrant/shacl).
 
+We can see from the print statement that several triples have been added to the model.
 
 ```{note}
-The `pyshacl.validate` function returns a SHACL validation report which can be used to fix
-the model and make it compatible with the 223 ontology. See the [Model Validation[(model_validation)
+The `pyshacl.validate` function actually returns a SHACL validation report which can be used to fix
+the model and make it compatible with the 223 ontology. See the [Model Validation](model_validation)
 tutorial for how to access and interpret this report.
 ```
 
+<details>
+<summary>Turtle representation of the model (post-inference)</summary>
+
+```{code-cell}
+print(model.serialize())
+```
+
+</details>
+
 ## Using the New Model
 
+To demonstrate that the model contains new triples, we can try re-running the query from before.
+We can see that the query returns results this time.
 
+```{code-cell}
+query = """
+PREFIX bldg: <urn:ex/>
+PREFIX s223: <http://data.ashrae.org/standard223#>
+SELECT ?damper ?part WHERE {
+    bldg:vav-cooling-only s223:contains ?damper .
+    ?damper s223:connected ?part
+}"""
+
+for row in model.query(query):
+    print(f"{row.get('damper')} connected to {row.get('part')}")
+```
