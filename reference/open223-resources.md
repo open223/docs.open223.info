@@ -56,7 +56,7 @@ There are three dropdowns in the top-left corner of the page:
 Two of these determine which 223 model you want to query:
 
 - You can **upload your own graph** by choosing a local Turtle file to upload or by referencing one by URL on the web
-- You can select an **example 223P model** from the dropdown menu. Each of these models contains a copy of 223 and has had SHACL inference applied to it
+- You can select an **example 223 model** from the dropdown menu. Each of these models contains a copy of 223 and has had SHACL inference applied to it
 
 The last dropdown contains a set of example queries against 223 models. Select a query from the dropdown to populate the query box.
 You can also edit the query box directly to express a SPARQL query.
