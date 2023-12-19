@@ -11,6 +11,7 @@ parts:
 - caption: Tutorials
   chapters:
   - file: tutorials/rdflib-pyshacl.md
+  - file: tutorials/model_inference.md
 - caption: Guides
   chapters:
   - file: guides/how-to-model.md

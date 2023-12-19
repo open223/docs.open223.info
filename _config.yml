@@ -53,3 +53,5 @@ sphinx:
     - sphinxcontrib.mermaid
   config:
     html_extra_path: ['model_vis']
+
+exclude_patterns: [.venv/*]
