@@ -28,6 +28,9 @@ This example describes the notation of containment in the standard. VAVBox1 cont
 The next three examples showcase how FunctionBlocks, as logical constructs, are implemented in the standard. The following example demonstrates how a luminaire can be controlled based on motion occupancy sensing. The LuminaireLogic FunctionBlock takes motion as an input property and provides the luminaire command as the output to the luminaire.
 
 ![UserSwitch](images/guides-UserSwitch.png)
+
+The next case examines a scenario where the luminaire logic encapsulated in FunctionBlock1 takes an input that is not a property observed by a sensor. Users can provide input through the "UserSwitch" property. This could be an on/off switch other than the physical switch connected to the luminaire.
+
 ![DumbSwitch](images/guides-DumbSwitch.png)
 
 
