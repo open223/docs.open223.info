@@ -10,7 +10,7 @@ kernelspec:
   language: python
   name: python3
 ---
-(model-inference)=
+
 # Model Inference
 
 ```{note}

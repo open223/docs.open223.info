@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Purpose and Scope" href="explanation/223-introduction.html" />
+    <link rel="next" title="ASHRAE Standard 223P" href="explanation/223p.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -169,10 +169,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Explanation</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="explanation/223-introduction.html">Purpose and Scope</a></li>
-<li class="toctree-l1"><a class="reference internal" href="explanation/definitions.html">Definitions and Concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="explanation/graph-structure.html">223 Graph Structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="explanation/223-overview.html">223 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explanation/223p.html">ASHRAE Standard 223P</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
@@ -181,9 +178,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="guides/how-to-model.html">How to Model Core Concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guides/how-to-telemetry.html">How to Access Telemtry Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guides/how-to-extend.html">How to Extend 223P</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/design-patterns.html">Modeling Design Patterns</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="nav bd-sidenav">
@@ -399,13 +394,13 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ashrae-standard-223p-user-documentation-jupyter-book-badge">
-<span id="landing-page"></span><h1>ASHRAE Standard 223P User Documentation <a class="reference external" href="https://open223.github.io/docs.open223.info/"><img alt="Jupyter Book Badge" src="https://jupyterbook.org/badge.svg" /></a><a class="headerlink" href="#ashrae-standard-223p-user-documentation-jupyter-book-badge" title="Permalink to this heading">#</a></h1>
+<h1>ASHRAE Standard 223P User Documentation <a class="reference external" href="https://open223.github.io/docs.open223.info/"><img alt="Jupyter Book Badge" src="https://jupyterbook.org/badge.svg" /></a><a class="headerlink" href="#ashrae-standard-223p-user-documentation-jupyter-book-badge" title="Permalink to this heading">#</a></h1>
 <p>The purpose of this site is to provide documentation for users of the <em>proposed</em> ASHRAE Standard 223, <em><strong>Designation and Classification of Semantic Tags for Building Data</strong></em>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This site is developed in conjunction with the ASHRAE Standard 223 project committee. However, it is not an official ASHRAE product or a part of the standard.</p>
 </div>
-<p>Standard 223 defines modeling constructs for use in creating a machine-readable representation of building systems, the building spaces that they serve, and the measurement and control points used to provide a safe and comfortable environment for the building occupants. The standard can be considered a toolkit of components and rules for using them to create a semantic model of a particular building or campus of buildings. The resulting model provides a way for software applications to determine the relationships between the mechanical equipment in the building (i.e., AHU 1 gets chilled water from CH 3 and provides conditioned air to VAV Boxes 12 through 15 serving rooms on the third floor) and the meaning of measurements that are available (i.e., T16 is a temperature sensor measuring the temperature of the air stream exiting AHU 1). This facilitates the implementation of advanced features in buildings like automated fault detection and diagnostics, supervisory controls, automated commissioning, and more.</p>
+<p>The Purpose and Scope from from the current standard are provided below to introduce it to users. For more information about the standard, please see the published document <a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition important">
@@ -413,16 +408,27 @@ document.write(`
 <p>The proposed standard is not yet available for public review.</p>
 </div>
 </aside>
-<p>The documentation uses Diataxis<a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> as a framework for its structure, which is organized into the following sections.</p>
+<blockquote>
+<div><p><em><strong>Designation and Classification of Semantic Tags for Building Data</strong></em></p>
+<p>1 PURPOSE
+The purpose of this standard is to define formal knowledge concepts and a methodology to apply them to create interoperable, machine-readable semantic frameworks for representing building automation and control data, and other building system information</p>
+<p>2 SCOPE
+This standard provides a comprehensive way to apply semantic formalisms to represent the context of building system data and relationships between the associated building mechanical system components so that software applications can find and understand the information in an automated way. It is intended to facilitate the development and implementation of building analytics tools and enterprise knowledge applications that can implement many building system functions, including:</p>
+<ol class="arabic simple">
+<li><p>automated fault detection and diagnostics,</p></li>
+<li><p>building system commissioning,</p></li>
+<li><p>digital twins</p></li>
+<li><p>optimization of energy use, and</p></li>
+<li><p>smart grid interactions.</p></li>
+</ol>
+</div></blockquote>
+<p>The documentation uses Diataxis<a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> as a framework for its structure, which is organized into the following sections.</p>
 <section id="table-of-contents">
 <h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Explanation</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="explanation/223-introduction.html">Purpose and Scope</a></li>
-<li class="toctree-l1"><a class="reference internal" href="explanation/definitions.html">Definitions and Concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="explanation/graph-structure.html">223 Graph Structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="explanation/223-overview.html">223 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explanation/223p.html">ASHRAE Standard 223P</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -435,9 +441,7 @@ document.write(`
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="guides/how-to-model.html">How to Model Core Concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guides/how-to-telemetry.html">How to Access Telemtry Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guides/how-to-extend.html">How to Extend 223P</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/design-patterns.html">Modeling Design Patterns</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -448,8 +452,12 @@ document.write(`
 </ul>
 </div>
 <hr class="footnotes docutils" />
-<aside class="footnote brackets" id="id2" role="note">
+<aside class="footnote brackets" id="id3" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>TODO link to public review.</p>
+</aside>
+<aside class="footnote brackets" id="id4" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://diataxis.fr/">https://diataxis.fr/</a></p>
 </aside>
 </section>
@@ -486,11 +494,11 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="explanation/223-introduction.html"
+       href="explanation/223p.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Purpose and Scope</p>
+        <p class="prev-next-title">ASHRAE Standard 223P</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
