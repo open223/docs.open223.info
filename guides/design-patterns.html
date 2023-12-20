@@ -394,8 +394,9 @@ document.write(`
 <p>This next scenario builds upon the previous one and provides additional details about the inferred relations between different instances in this example. For instance, the “hasConnectionPoint” relation between “A-9.return-fan” and “A-9.return-fan.airOutlet” has been inferred based on the “cnx” relation between them. Similarly, the “connectsAt” relation has been established between “A-9.return-air” and “A-9.exhaust_air_damper.airInlet” based on the “cnx” relation between these entities.</p>
 <p><img alt="Connection2" src="../_images/guides-Connection2.png" /></p>
 <p>This example describes the notation of containment in the standard. VAVBox1 contains two pieces of equipment: VAVBox1HeatingCoil and VAVBox1MotorizedDamper. Note that these two pieces of equipment are internally connected (as shown by the vertical purple line between them). Also, their connection points map to the inlet and outlet connection points of their container (VAVBox1) using the relation ‘mapsTo.’ This indicates that any incoming connection flow to VAVBox1 will lead to the damper, and any outgoing one will stem from the heating coil.</p>
-<p><img alt="Containment" src="../_images/guides-Containment.png" />
-<img alt="UserSwitch" src="../_images/guides-UserSwitch.png" />
+<p><img alt="Containment" src="../_images/guides-Containment.png" /></p>
+<p>The next three examples showcase how FunctionBlocks, as logical constructs, are implemented in the standard. The following example demonstrates how a luminaire can be controlled based on motion occupancy sensing. The LuminaireLogic FunctionBlock takes motion as an input property and provides the luminaire command as the output to the luminaire.</p>
+<p><img alt="UserSwitch" src="../_images/guides-UserSwitch.png" />
 <img alt="DumbSwitch" src="../_images/guides-DumbSwitch.png" /></p>
 </section>
 
