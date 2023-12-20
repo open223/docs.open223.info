@@ -14,9 +14,7 @@ parts:
   - file: tutorials/model_inference.md
 - caption: Guides
   chapters:
-  - file: guides/how-to-model.md
-  - file: guides/how-to-telemetry.md
-  - file: guides/how-to-extend.md
+  - file: guides/design-patterns.md
 - caption: Reference
   chapters:
   - file: reference/open223-resources.md
