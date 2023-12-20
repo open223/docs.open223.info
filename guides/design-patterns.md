@@ -23,6 +23,10 @@ This next scenario builds upon the previous one and provides additional details 
 This example describes the notation of containment in the standard. VAVBox1 contains two pieces of equipment: VAVBox1HeatingCoil and VAVBox1MotorizedDamper. Note that these two pieces of equipment are internally connected (as shown by the vertical purple line between them). Also, their connection points map to the inlet and outlet connection points of their container (VAVBox1) using the relation 'mapsTo.' This indicates that any incoming connection flow to VAVBox1 will lead to the damper, and any outgoing one will stem from the heating coil.
 
 ![Containment](images/guides-Containment.png)
+
+
+The next three examples showcase how FunctionBlocks, as logical constructs, are implemented in the standard. The following example demonstrates how a luminaire can be controlled based on motion occupancy sensing. The LuminaireLogic FunctionBlock takes motion as an input property and provides the luminaire command as the output to the luminaire.
+
 ![UserSwitch](images/guides-UserSwitch.png)
 ![DumbSwitch](images/guides-DumbSwitch.png)
 
