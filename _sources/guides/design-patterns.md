@@ -29,7 +29,7 @@ The next three examples showcase how FunctionBlocks, as logical constructs, are 
 
 ![UserSwitch](images/guides-UserSwitch.png)
 
-The next case examines a scenario where the luminaire logic encapsulated in FunctionBlock1 takes an input that is not a property observed by a sensor. Users can provide input through the "UserSwitch" property. This could be an on/off switch other than the physical switch connected to the luminaire.
+The next case examines a scenario where the luminaire logic encapsulated in "FunctionBlock1" takes an input that is not a property observed by a sensor. Users can provide input through the "UserSwitch" property. This could be an on/off switch other than the physical switch connected to the luminaire.
 
 ![DumbSwitch](images/guides-DumbSwitch.png)
 
