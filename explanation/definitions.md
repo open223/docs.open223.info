@@ -6,20 +6,20 @@ To understand the explanations in this chapter it is important to know the defin
 
 ## Graph Data Concepts
 
- - **Entity:** An entity is an abstraction of the physical "things" in a building. Examples are mechanical equipment such as air handling units, luminaires, spatial elements like rooms, or the area of these rooms served by certain mechanical equipment.
+ - **Entity:** An entity is an abstraction of the actual "things" in a building. For example, mechanical equipment such as air handling units, luminaires, spatial elements like rooms, the area of these rooms served by certain mechanical equipment, or the zones these areas may be grouped into based on how the equipment is controlled.
 
  - **Class:** A named category with intensional meaning (a definition) used for grouping entities.
 Classes are organized into a hierarchy, and entities are an instance of a given class. Classes are defined using SHACL shapes ensuring that they are instantiated correctly.
 
  - **Relationship:** Defines the nature of a link between two related entities.
-Examples of relationships are *encapsulation* (one entity is contained within another), *sequence* (one entity takes effect before another in some process) and *instantiation* (one entity's type is given by another entity).
+Examples of relationships are *encapsulation* (one entity is contained within another), *sequence* (one entity takes effect before another in some process) and *instantiation* (one entity's type is given by another).
 
 - **Relation:** A predicate (RDF property) used to describe a given relationship.
-Examples of a relation are the 223 relation `s223:contains`, which relationship between two pieces of equipment in which one contains another.  
+Examples of a relation are the 223 relation `s223:contains`, which defines the relationship between two pieces of equipment in which one contains another.  
 
  - **Graph:** An abstract organizational data structure representing a set of entities (nodes) and relationships (edges) described in triple-structure. 223 models are represented by a directed, labeled graph, and use the RDF standard. We recommend reading the [Wikipedia page on the abstract graph data structure](https://en.wikipedia.org/wiki/Graph_(abstract_data_type)) for more information.
 
- - **A 223 Semantic Model:** A 223 model is a digital representation of a building in RDF graph structure that utilizes the 223 standard. This means that elements of a particular buidling are represented using instances of the classes defined by the 223 standard and use relationships as defined by the rules present in the standard. 223 leverages the semantic web technologies, allowing easy integration with other types of models that utilize RDF.
+ - **A 223 Model:** A 223 model is a digital representation of a building in RDF graph structure that uses the 223 standard. This means that elements of the building are represented using the modeling constructs defined in the standard. The standard leverages semantic web technologies, allowing easy integration with other types of models based on RDF.
 
 ## 223 Top Level Classes
 
