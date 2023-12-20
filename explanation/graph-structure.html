@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Definitions and Concepts &#8212; ASHRAE Standard 223P User Documentation</title>
+    <title>223 Graph Structure &#8212; ASHRAE Standard 223P User Documentation</title>
   
   
   
@@ -62,11 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'explanation/definitions';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'explanation/graph-structure';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="223 Graph Structure" href="graph-structure.html" />
-    <link rel="prev" title="Purpose and Scope" href="223-introduction.html" />
+    <link rel="next" title="223 Overview" href="223-overview.html" />
+    <link rel="prev" title="Definitions and Concepts" href="definitions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -171,8 +171,8 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Explanation</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="223-introduction.html">Purpose and Scope</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Definitions and Concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="graph-structure.html">223 Graph Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="definitions.html">Definitions and Concepts</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">223 Graph Structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="223-overview.html">223 Overview</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
@@ -261,7 +261,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/open223/docs.open223.info/issues/new?title=Issue%20on%20page%20%2Fexplanation/definitions.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/open223/docs.open223.info/issues/new?title=Issue%20on%20page%20%2Fexplanation/graph-structure.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -291,7 +291,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/explanation/definitions.md" target="_blank"
+      <li><a href="../_sources/explanation/graph-structure.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -362,9 +362,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -375,20 +373,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Definitions and Concepts</h1>
+    <h1>223 Graph Structure</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-data-concepts">Graph Data Concepts</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-level-classes">223 Top Level Classes</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -398,46 +387,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="definitions-and-concepts">
-<span id="definitions"></span><h1>Definitions and Concepts<a class="headerlink" href="#definitions-and-concepts" title="Permalink to this heading">#</a></h1>
-<p>To understand the explanations in this chapter it is important to know the defintions of several concepts. More can be learned about these concepts from the resources linked in the <a class="reference internal" href="../reference/open223-resources.html#open223-resources"><span class="std std-ref">reference section</span></a>.</p>
-<section id="graph-data-concepts">
-<h2>Graph Data Concepts<a class="headerlink" href="#graph-data-concepts" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p><strong>Entity:</strong> An entity is an abstraction of the actual “things” in a building. For example, mechanical equipment such as air handling units, luminaires, spatial elements like rooms, the area of these rooms served by certain mechanical equipment, or the zones these areas may be grouped into based on how the equipment is controlled.</p></li>
-<li><p><strong>Class:</strong> A named category with intensional meaning (a definition) used for grouping entities.
-Classes are organized into a hierarchy, and entities are an instance of a given class. Classes are defined using SHACL shapes ensuring that they are instantiated correctly.</p></li>
-<li><p><strong>Relationship:</strong> Defines the nature of a link between two related entities.
-Examples of relationships are <em>encapsulation</em> (one entity is contained within another), <em>sequence</em> (one entity takes effect before another in some process) and <em>instantiation</em> (one entity’s type is given by another).</p></li>
-<li><p><strong>Relation:</strong> A predicate (RDF property) used to describe a given relationship.
-Examples of a relation are the 223 relation <code class="docutils literal notranslate"><span class="pre">s223:contains</span></code>, which defines the relationship between two pieces of equipment in which one contains another.</p></li>
-<li><p><strong>Graph:</strong> An abstract organizational data structure representing a set of entities (nodes) and relationships (edges) described in triple-structure. 223 models are represented by a directed, labeled graph, and use the RDF standard. We recommend reading the <a class="reference external" href="https://en.wikipedia.org/wiki/Graph_(abstract_data_type)">Wikipedia page on the abstract graph data structure</a> for more information.</p></li>
-<li><p><strong>A 223 Model:</strong> A 223 model is a digital representation of a building in RDF graph structure that uses the 223 standard. This means that elements of the building are represented using the modeling constructs defined in the standard. The standard leverages semantic web technologies, allowing easy integration with other types of models based on RDF.</p></li>
-</ul>
-</section>
-<section id="top-level-classes">
-<h2>223 Top Level Classes<a class="headerlink" href="#top-level-classes" title="Permalink to this heading">#</a></h2>
-<p>The 223 standard defines a hierarchy of classes used to define the entities within a buidling. This section provides a basic definition of the classes at the top level of the hierarchy to help users understand what the standard aims to represent, which is described in the <a class="reference internal" href="223-overview.html#overview"><span class="std std-ref">overview</span></a>.</p>
-<ul class="simple">
-<li><p><strong>Connection:</strong> A modeling construct for representing a physical thing (e.g., pipe, duct, wire) that connects and conveys a medium between two Connectable things.</p></li>
-<li><p><strong>ConnectionPoint:</strong> An abstract modeling construct representing the point where one Connectable thing connects to another.</p></li>
-<li><p><strong>Domain:</strong> A categorization of building service or specialization used to characterize equipment or spaces (e.g., HVAC, lighting, plumbing).</p></li>
-<li><p><strong>Connectable:</strong> This is the top level entity that defines the classes that may be connected via ConnectionPoints and Connections. There are three major sub-classes of connectable</p>
-<ul>
-<li><p><strong>DomainSpace:</strong> A portion or entirety of a PhysicalSpace associated with a Domain. Often a DomainSpace is served by a particular piece of equipment, like a single VAV Box, and thus they can be connected to equipment. Multiple DomainSpaces controlled similarly can be grouped together, forming a Zone.</p></li>
-<li><p><strong>Equipment:</strong> A modeling construct used to represent a mechanical device designed to accomplish a specific task (e.g. pump, fan, heat exchanger, luminaire, temperature sensor, flow meter). Equipment may contain and connect to other equipment, allowing detailed modeling of mechanical systems. Certain pieces of equipment (i.e. Sensors, Actuators, Controllers) may have unique relationships to properties to define how they act on the properties of other entities.</p></li>
-<li><p><strong>Junction:</strong> A Junction is a modeling construct used to represent important branching points within a Connection.</p></li>
-</ul>
-</li>
-<li><p><strong>PhysicalSpace:</strong> An architectural concept representing a room, floor, or any physical space in a building. These PhysicalSpaces (e.g. a floor) can contain other PhysicalSpaces (e.g. a room).</p></li>
-<li><p><strong>System:</strong> A task-oriented collection of interacting or interrelated Equipment defined by the modeler.</p></li>
-<li><p><strong>Zone:</strong> A collection of DomainSpaces grouped together based on building services or controls.</p></li>
-<li><p><strong>Properties:</strong> Properties often represent the actuation and measurement points within a buidling. They may be associated with real-time data. They also may define the attributes of other entities (e.g. Equipment, DomainSpaces, Zones). They can be further contextualized using enumerations.</p></li>
-<li><p><strong>Enumerations:</strong> The standard uses enumerations to convey groups of useful values for describing attributes of Properties, Equipment, and other things in the model. For example, the enumeration <code class="docutils literal notranslate"><span class="pre">Role-Cooling</span></code> describes that the equipment in question provides cooling.</p></li>
-<li><p><strong>FunctionBlock:</strong> Is used to model transfer and/or transformation of information (e.g. control algorithms). It has relations to input properties and output properties, that represent input and output data. The actual algorithms that perform the transformations are not described in 223, and can be described using standard 231.</p></li>
-</ul>
-</section>
-</section>
+  <section id="graph-structure">
+<h1>223 Graph Structure<a class="headerlink" href="#graph-structure" title="Permalink to this heading">#</a></h1>
+<p>Standard 223 is represented using the Resource Description Framework (RDF). RDF is a general method for representic semantic information in the form of a triple, which consists of a subject, a predicate, and an object. The subject and object define two entities, which are a instances of some class, and the predicate defines how they are related. A collection of these triples make up a graph. The 223 standard defines classes and relationships relevant to the building space that can then be used to build a multi-graph representing a specific building or group of buildings. For more information about RDF and the other semantic technologies used by the standard, please look at the <a class="reference internal" href="../reference/other-resources.html#other-resources"><span class="std std-ref">reference section</span></a>.</p>
+<p>To create a semantic model of your building using the 223 standard, you create instances that represent the entities in your building, and define them using the classes and relationships defined or referenced by the standard. For example, you may be creating a model of a building in which the air handling unit (ahu-1) contains a fan (fan-1). Your air handling unit (ahu-1) would be modeled as an instance of the 223 class <a class="reference external" href="https://explore.open223.info/s223/AirHandlingUnit.html"><code class="docutils literal notranslate"><span class="pre">s223:AirHandlingUnit</span></code></a>, which describes the general class of things resembling Air Handling Units. Similarly, your fan (fan-1) would be an instance of the 223 class <a class="reference external" href="https://explore.open223.info/s223/Fan.html"><code class="docutils literal notranslate"><span class="pre">s223:Fan</span></code></a>. The idea of containment is defined using the 223 relation <a class="reference external" href="https://explore.open223.info/s223/contains.html"><code class="docutils literal notranslate"><span class="pre">s223:contains</span></code></a>, so your air handling unit would relate to your fan using the relation <code class="docutils literal notranslate"><span class="pre">s223:contains</span></code>. The relationship between an instance and a class is defined using the RDF relation <code class="docutils literal notranslate"><span class="pre">rdf:type</span></code>, so your ahu and fan would relate to <code class="docutils literal notranslate"><span class="pre">s223:AirHandlingUnit</span></code> and <code class="docutils literal notranslate"><span class="pre">s223:Fan</span></code> using that relation. This example is shown in Figure 1.</p>
+<img alt="../_images/ex-1.svg" class="align-center" src="../_images/ex-1.svg" /><div align="center">
+<p><span style="font-size: medium;">Figure 1. 223 Modeling Example</span></p>
+</div></section>
 
     <script type="text/x-thebe-config">
     {
@@ -470,20 +426,20 @@ Examples of a relation are the 223 relation <code class="docutils literal notran
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="223-introduction.html"
+       href="definitions.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Purpose and Scope</p>
+        <p class="prev-next-title">Definitions and Concepts</p>
       </div>
     </a>
     <a class="right-next"
-       href="graph-structure.html"
+       href="223-overview.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">223 Graph Structure</p>
+        <p class="prev-next-title">223 Overview</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -493,21 +449,6 @@ Examples of a relation are the 223 relation <code class="docutils literal notran
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-data-concepts">Graph Data Concepts</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-level-classes">223 Top Level Classes</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
