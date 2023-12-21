@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>ASHRAE Standard 223P &#8212; ASHRAE Standard 223P User Documentation</title>
+    <title>223 Overview &#8212; ASHRAE Standard 223P User Documentation</title>
   
   
   
@@ -62,11 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'explanation/223p';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'explanation/223-overview';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Model Exploration" href="../tutorials/model_exploration.html" />
-    <link rel="prev" title="ASHRAE Standard 223P User Documentation" href="../intro.html" />
+    <link rel="prev" title="223 Graph Structure" href="graph-structure.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -170,7 +170,10 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Explanation</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">ASHRAE Standard 223P</a></li>
+<li class="toctree-l1"><a class="reference internal" href="223-introduction.html">Purpose and Scope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="definitions.html">Definitions and Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graph-structure.html">223 Graph Structure</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">223 Overview</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
@@ -256,7 +259,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/open223/docs.open223.info/issues/new?title=Issue%20on%20page%20%2Fexplanation/223p.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/open223/docs.open223.info/issues/new?title=Issue%20on%20page%20%2Fexplanation/223-overview.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -286,7 +289,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/explanation/223p.md" target="_blank"
+      <li><a href="../_sources/explanation/223-overview.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -370,7 +373,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>ASHRAE Standard 223P</h1>
+    <h1>223 Overview</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -380,7 +383,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#p-top-level-classes">223P Top Level Classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type">Type</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topology">Topology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#composition">Composition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#telemetry">Telemetry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristics">Characteristics</a></li>
 </ul>
             </nav>
         </div>
@@ -392,43 +399,34 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="ashrae-standard-223p">
-<h1>ASHRAE Standard 223P<a class="headerlink" href="#ashrae-standard-223p" title="Permalink to this heading">#</a></h1>
-<p>Standard 223P provides a comprehensive approach to applying semantic formalisms for representing building automation system data and relationships between associated entities such as equipment, physical spaces, and zones. The primary purpose is to enable software applications to automate the discovery and understanding of information related to building systems. This facilitates the development of advanced tools and applications for building analytics and supports the creation of digital twins and optimization of energy usage within building systems. Specific functionalities include automated fault detection, diagnostics, building system commissioning, and interactions with smart grids.</p>
-<p>The standard provides a machine-readable representation of building systems, their associated spaces, and key measurement/control points that can be used to construct semantic models for individual buildings or entire capmuses. It rigorously defines the concepts of the standard using validation and inference rules, helping to ensure that models are created correctly and will be interoperable. This is accomplished using various semantic web technologies, further described in the <a class="reference internal" href="../reference/other-resources.html#other-resources"><span class="std std-ref">reference section</span></a>. The notions of entities, classes, relationships, and graphs are required to understand the standard, and are defined below.</p>
-<p>Definitions</p>
-<!-- borrowed from brick since we use similar terms-->
-<ul class="simple">
-<li><p><strong>Entity:</strong> An entity is an abstraction of any physical, logical or virtual item; the actual “things” in a building. Examples are mechanical equipment such as air handling units, luminaires, spatial elements like rooms, or the area of these rooms served by certain mechanical equipment. Virtual and logical entities may represent the various data points in a BAS system, such as sensing and actuation points, as well as basic representations of controls.</p></li>
-<li><p><strong>Class:</strong> A named category with intensional meaning (a definition) used for grouping entities.
-Classes are organized into a hierarchy, and entities are an instance of a given class. Classes are defined using SHACL shapes ensuring that they are instantiated correctly.</p></li>
-<li><p><strong>Relationship:</strong> Defines the nature of a link between two related entities.
-Examples of relationships are <em>encapsulation</em> (one entity is contained within another), <em>sequence</em> (one entity takes effect before another in some process) and <em>instantiation</em> (one entity’s type is given by another entity).</p></li>
-<li><p><strong>Graph:</strong> An abstract organizational data structure representing a set of entities (nodes) and relationships (edges) described in triple-structure. 223P models are represented by a directed, labeled graph. We recommend reading the <a class="reference external" href="https://en.wikipedia.org/wiki/Graph_(abstract_data_type)">Wikipedia page on the abstract graph data structure</a>.</p></li>
-<li><p><strong>A 223P model:</strong> A 223P model is a digital representation of a building that utilizes the 223P standard. This means that elements of a particular buidling are represented using instances of the classes defined by the 223P standard and use relationships as defined by the rules present in the standard. 223P leverages the semantic web technologies, allowing easy integration with other types of models that utilize RDF.</p></li>
-</ul>
-<section id="p-top-level-classes">
-<h2>223P Top Level Classes<a class="headerlink" href="#p-top-level-classes" title="Permalink to this heading">#</a></h2>
-<p>The 223P standard defines several high level concepts, represented as classes, that are subclassed and composed to create 223P models. All entities in a 223P model are an instance of these classes or one of their subclasses. See the <a class="reference internal" href="../reference/open223-resources.html#open223-resources"><span class="std std-ref">Open223 Resources</span></a> for resources that support working with 223 models.</p>
-<ul class="simple">
-<li><p><strong>Connectable:</strong> An abstract class representing a thing that can be connected via ConnectionPoints and Connections.</p></li>
-<li><p><strong>Connection:</strong> A modeling construct for representing a physical thing (e.g., pipe, duct, wire) that connects and conveys a medium between two Connectable things.</p></li>
-<li><p><strong>ConnectionPoint:</strong> An abstract modeling construct representing the point where one Connectable thing connects to another.</p></li>
-<li><p><strong>Domain:</strong> A categorization of building service or specialization used to characterize equipment or spaces (e.g., HVAC, lighting, plumbing).</p></li>
-<li><p><strong>Connectable:</strong> This is the top level entity that defines the classes that may be connected via ConnectionPoints and Connections. There are three major sub-classes of connectable</p>
-<ul>
-<li><p><strong>DomainSpace:</strong> A portion or entirety of a PhysicalSpace associated with a Domain. Often a DomainSpace is served by a particular piece of equipment, like a single VAV Box, and thus they can be connected to equipment. Multiple DomainSpaces controlled similarly can be grouped together, forming a Zone.</p></li>
-<li><p><strong>Equipment:</strong> A modeling construct used to represent a mechanical device designed to accomplish a specific task (e.g. pump, fan, heat exchanger, luminaire, temperature sensor, flow meter). Equipment may contain and connect to other equipment, allowing detailed modeling of mechanical systems. Certain pieces of equipment (i.e. Sensors, Actuators, Controllers) may have unique relationships to properties to define how they act on the properties of other entities.</p></li>
-<li><p><strong>Junction:</strong> A Junction is a modeling construct used to represent important branching points within a Connection.</p></li>
-</ul>
-</li>
-<li><p><strong>PhysicalSpace:</strong> An architectural concept representing a room, floor, or any physical space in a building. These PhysicalSpaces (e.g. a floor) can contain other PhysicalSpaces (e.g. a room).</p></li>
-<li><p><strong>System:</strong> A task-oriented collection of interacting or interrelated Equipment defined by the modeler.</p></li>
-<li><p><strong>Zone:</strong> A collection of DomainSpaces grouped together based on building services or controls.</p></li>
-<li><p><strong>Properties:</strong> Properties often represent the actuation and measurement points within a buidling. They may be associated with real-time data. They also may define the attributes of other entities (e.g. Equipment, DomainSpaces, Zones). They can be further contextualized using enumerations.</p></li>
-<li><p><strong>Enumerations:</strong> The standard uses enumerations to convey groups of useful values for describing attributes of Properties, Equipment, and other things in the model. For example, the enumeration <code class="docutils literal notranslate"><span class="pre">Role-Cooling</span></code> describes that the equipment in question provides cooling.</p></li>
-<li><p><strong>FunctionBlock:</strong> Is used to model transfer and/or transformation of information (e.g. control algorithms). It has relations to input properties and output properties, that represent input and output data. The actual algorithms that perform the transformations are not described in 223P, and can be described using standard 231P.</p></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="overview">
+<span id="id1"></span><h1>223 Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h1>
+<p>This standard allows users to create semantic models that describe the many entities in their buildings that are relevant to advanced features and applications such as fault detection and diagnostics, demand flexibility, and real time optimization.</p>
+<p>There is a huge amount of information about the many entities within a building that you may want to model. This section will explain what information you should represent in a 223 model and the 223 modeling constructs you will use to do so. Descriptions assume you have some familiarity with RDF graph data and know the <a class="reference internal" href="definitions.html#definitions"><span class="std std-ref">definitions of key terms used in this section</span></a>.</p>
+<section id="type">
+<h2>Type<a class="headerlink" href="#type" title="Permalink to this heading">#</a></h2>
+<p>This standard provides well defined classes used to describe entities relevant to building system information. Entities in 223 models will generally be instances of the many classes defined or referred to by the standard. The classes in the standard provide ‘names’ for the fundamental building blocks used in 223 models (e.g. a fan will be an instance of the class <a class="reference external" href="https://explore.open223.info/s223/Fan.html"><code class="docutils literal notranslate"><span class="pre">s223:Fan</span></code></a>) and also have rules defining how they are used (e.g. a fan must convey air).</p>
+</section>
+<section id="topology">
+<h2>Topology<a class="headerlink" href="#topology" title="Permalink to this heading">#</a></h2>
+<p>This standard can be used to describe the topology of the equipment and spaces in a building, but not the geometric details. Topology refers to the way entities are connected and how some media (e.g. water, air, or electricity) is conveyed between them. There are several different classes used to describe which entities participate in connections and how they connect: <a class="reference external" href="https://explore.open223.info/s223/Connectable.html">Connectables</a>, which include the entities that are capable of connecting to each other; <a class="reference external" href="https://explore.open223.info/s223/ConnectionPoint.html">ConnectionPoints</a>, which model where Connectables can be connected; and <a class="reference external" href="https://explore.open223.info/s223/Connection.html">Connections</a>, which describe physical things through which the medium is conveyed, like pipes or ducts. These <a class="reference external" href="https://explore.open223.info/s223/Substance-Medium.html">Mediums</a> (e.g. gas, electricity, water) are defined as an <a class="reference external" href="https://explore.open223.info/s223/EnumerationKind.html">EnumerationKind</a> in the standard. There are also multiple relations used to describe the details of these connections, and how the multiple entities involved in a connection relate to each other. Figure 1 summarizes these relations. Though there are many relations to describe different perspectives of a connection, only <a class="reference external" href="https://explore.open223.info/s223/cnx.html"><code class="docutils literal notranslate"><span class="pre">s223:cnx</span></code></a> needs to be manually added to the model, and the rest can be automatically added to the model through the process of <a class="reference internal" href="../tutorials/model_inference.html#model-inference"><span class="std std-ref">inference</span></a>.</p>
+<a class="reference internal image-reference" href="../_images/connection-relationships.png"><img alt="../_images/connection-relationships.png" class="align-center" src="../_images/connection-relationships.png" style="width: 700px;" /></a>
+<div align="center">
+<span style="font-size: medium;">Figure 1. Relations expressing different perspectives of connection </span>
+</div>
+</section>
+<section id="composition">
+<h2>Composition<a class="headerlink" href="#composition" title="Permalink to this heading">#</a></h2>
+<p>Composition is about what entities make up what other entities. For example, a piece of mechanical equipment like a VAV may in fact be made up of other pieces of mechanical equipment, such as a damper and a reheat coil. Additionally, a zone may be made up of several different spaces that receive a similar building service, or a floor may be made up of different rooms, corridors, or offices. Several different modeling constructs use the idea of composition. These modeling constructs include include <a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a>, which may contain other equipment (e.g. VAV containing a Damper); <a class="reference external" href="https://explore.open223.info/s223/Zone.html">Zones</a>, which may have <a class="reference external" href="https://explore.open223.info/s223/DomainSpace.html">DomainSpaces</a> that receive a similar building service; <a class="reference external" href="https://explore.open223.info/s223/ZoneGroup.html">ZoneGroups</a>, which group together similarly controlled Zones; <a class="reference external" href="https://explore.open223.info/s223/System.html">Systems</a> that represent a collection of interrelated Equipment; or <a class="reference external" href="https://explore.open223.info/s223/PhysicalSpace.html">PhysicalSpaces</a>, which may contain other PhysicalSpaces as a floor contains multiple rooms. PhysicalSpaces may also enclose DomainSpaces, indicating that the DomainSpace is completely within the PhysicalSpace. For example, an auditorium (a PhysicalSpace) may enclose several different areas served by independently controlled lights (DomainSpaces).</p>
+</section>
+<section id="telemetry">
+<h2>Telemetry<a class="headerlink" href="#telemetry" title="Permalink to this heading">#</a></h2>
+<p>A 223 model does not directly provide telemetric data about the real-time operation or past operation of the building systems. It does provide information about the meaning or context of a given data point and it can link to a source of the data values so that an analytics application can find them. If the building has a BACnet building automation and control system, the model can provide the necessary information for analytics or controls software to learn which BACnet object and property corresponds to the desired piece of information. Data points are represented using Properties. There are multiple types of <a class="reference external" href="https://explore.open223.info/s223/Property.html">Properties</a>, such as control points that can be written to (<a class="reference external" href="https://explore.open223.info/s223/ActuatableProperty.html">ActuatableProperties</a>), sensor points that are observed (<a class="reference external" href="https://explore.open223.info/s223/ObservableProperty.html">ObservableProperties</a>), either of which can refer to enumerated (<a class="reference external" href="https://explore.open223.info/s223/EnumerableProperty.html">EnumerableProperty</a>) or quantified (<a class="reference external" href="https://explore.open223.info/s223/QuantifiableProperty.html">QuantifiableProperty</a>) values. Properties may also be used for mathematical operations, including those that are common in a building such as control logic. This idea is represented using <a class="reference external" href="https://explore.open223.info/s223/FunctionBlock.html">FunctionBlocks</a>. Properties also have many different characteristics which are described by a vocabulary of <a class="reference external" href="https://explore.open223.info/s223/EnumerationKind.html">EnumerationKinds</a>.</p>
+</section>
+<section id="characteristics">
+<h2>Characteristics<a class="headerlink" href="#characteristics" title="Permalink to this heading">#</a></h2>
+<p>A model can also describe the characteristics of the entities in a building. These characteristics express details about entities that are not otherwise expressed by the type, topology, or composition of the entity. Often, these characteristics are linked to specific instances in a model. For example, a characteristic of a pump would be its rated flow. Another pump in the same 223 model may have a different rated flow, but it will use the same 223 class (i.e. <a class="reference external" href="https://explore.open223.info/s223/Pump.html"><code class="docutils literal notranslate"><span class="pre">s223:Pump</span></code></a>). These types of characteristics are modeled using <a class="reference external" href="https://explore.open223.info/s223/Property.html">Properties</a>.</p>
+<p>Properties also have various characteristics including their units, quantity kinds, enumeration kinds, and aspects. <a class="reference external" href="https://www.qudt.org/doc/DOC_VOCAB-UNITS.html">Units</a> describe the unit (e.g. Fahrenheit) of a <a class="reference external" href="https://explore.open223.info/s223/QuantifiableProperty.html">QuantifiableProperty</a> and <a class="reference external" href="https://www.qudt.org/doc/DOC_VOCAB-QUANTITY-KINDS.html">quantity kinds</a> describe the type of quantity that may be stated by means of units (e.g. temperature). These are modeled using <a class="reference external" href="https://qudt.org/">qudt ontologies</a>. <a class="reference external" href="https://explore.open223.info/s223/EnumerableProperty.html">EnumerableProperties</a> do not have units, but they have enumerated values that can be described by <a class="reference external" href="https://explore.open223.info/s223/EnumerationKind.html">EnumerationKinds</a>. Aspects establish the context of a Property. For example, if a Property has a Temperature value of 80.6, aspects are used to state what that represents, such as a Temperature limit during working hours, etc. A Property can have any number of aspects, as needed to establish the context. Any <a class="reference external" href="https://explore.open223.info/s223/EnumerationKind.html">EnumerationKind</a> can be used as an aspect.</p>
 </section>
 </section>
 
@@ -463,12 +461,12 @@ Examples of relationships are <em>encapsulation</em> (one entity is contained wi
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../intro.html"
+       href="graph-structure.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">ASHRAE Standard 223P User Documentation </p>
+        <p class="prev-next-title">223 Graph Structure</p>
       </div>
     </a>
     <a class="right-next"
@@ -495,7 +493,11 @@ Examples of relationships are <em>encapsulation</em> (one entity is contained wi
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#p-top-level-classes">223P Top Level Classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type">Type</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topology">Topology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#composition">Composition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#telemetry">Telemetry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristics">Characteristics</a></li>
 </ul>
   </nav></div>
 

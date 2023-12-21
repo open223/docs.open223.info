@@ -94,3 +94,7 @@ Several other query languages are often used for graph data models. These includ
 
 In example ___ below, a tutorial 
 
+
+<!-- Standard 223P provides a comprehensive ontology and approach to applying semantic formalisms for representing building automation system data and the relationships between associated entities such as equipment, physical spaces, and zones. The primary purpose is to enable software applications to automate the discovery and understanding of information related to building systems. This facilitates the development of advanced tools and applications for building analytics and supports the creation of digital twins and optimization of energy usage within building systems. Specific functionalities include automated fault detection, diagnostics, building system commissioning, and interactions with smart grids.
+
+The standard provides a machine-readable representation of building systems, their associated spaces, and key measurement/control points that can be used to construct semantic models for individual buildings or entire capmuses. It rigorously defines the concepts of the standard using validation and inference rules, helping to ensure that models are created correctly and will be interoperable. Using 223P requires a basic understanding of the RDF data structure and several semantic web technologies. These technologies are briefly described in the [reference section](other-resources). The notions of entities, classes, relationships, and graphs are required to understand the standard, and are defined below. -->
