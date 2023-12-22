@@ -45,7 +45,7 @@ SPARQL is the primary way that users will query data from 223P models. [Query Op
 
 #### Querying Models
 
-SPARQL (SPARQL Protocol and RDF Query Language) querying is a fundamental aspect of interacting with RDF-based semantic models. SPARQL provides a powerful and expressive language for querying RDF data, enabling users to retrieve specific information from semantic graphs, insert data into graphs, or construct new graphs based on query results. With SPARQL, users can construct queries to search, filter, and extract data based on the defined relationships and properties within the RDF model. These queries can range from simple requests for specific data points to complex inquiries involving multiple patterns and conditions. For more information, please view [the SPARQL specification](https://www.w3.org/TR/sparql11-query/). SPARQL plays a key role in extracting meaningful data from 223P models. Several tools support the use of SPARQL queries to interrogate 223P models. RDFLib supports querying and is used both by BuildingMOTIF and Bob. TopBraid Composer and GraphDB both support SPARQL queries, and provide a graphical user interface for exploring semantic models. [Open 223](open223-query) also provides a SPARQL querying tool for use with 223 models.
+Querying is a fundamental aspect of interacting with RDF-based semantic models. SPARQL enables users to retrieve specific information from semantic graphs, insert data into graphs, or construct new graphs based on query results. Queries can range from simple requests for specific data points to complex inquiries involving multiple patterns and conditions. For more information, please view [the SPARQL specification](https://www.w3.org/TR/sparql11-query/). SPARQL plays a key role in extracting meaningful data from 223P models. Several tools support the use of SPARQL queries to interrogate 223P models. RDFLib supports querying and is used both by BuildingMOTIF and Bob. TopBraid Composer and GraphDB both support SPARQL queries, and provide a graphical user interface for exploring semantic models. [Open 223](open223-query) also provides a SPARQL querying tool for use with 223 models.
 
 Several other query languages are often used for graph data models, and can thus be used on 223P models. These include the Cypher language employed by Neo4J and GraphQL. Unlike SPARQL, they are not specifically for RDF.
 
@@ -90,8 +90,9 @@ Fan-- connectedTo -->HeatingCoil
 ## Tools for Working with ASHRAE 223P
 
 The standard is built on Semantic Web technology, and there are many open-source and proprietary tools available to enable creation and validation of 223P models. A selection of several tools are as follows:
-BuildingMOTIF:
-* **SI-builder (Bob)**: This tool has been developed in Python and used in the development of the standard to simplify the creation of 223P building models. It uses an extensive class structure defining data points, equipment, and spaces in terms of 223P modeling constructs, and enables the creation of models using python scripts.
+
+* **BuildingMOTIF**: BuildingMOTIF is a toolset for creating, storing, visualizing, and validating building metadata using Semantic Web technologies. It has built-in support for 223 and aims to bridge the gap between theory and practice by offering easy-to-use APIs and connectors for metadata schemas and sources. For more information, check the [BuildingMOTIF documentation](https://nrel.github.io/BuildingMOTIF/README.html). 
+* **SI-builder (Bob)**: This tool has been developed in Python and used in the development of the standard to simplify the creation of 223P building models. It uses an extensive class structure defining data points, equipment, and spaces in terms of 223P modeling constructs, and enables the creation of models using python scripts [^1].
 * **RDFLib/PySHACL**:  BuildingMOTIF and SI-builder provide user-friendly methods to build and validate 223P models. They both utilize the python libraries RDFLib and PySHACL. RDFLib is a Python library for working with RDF, and it provides functionalities for creating, parsing, querying, and manipulating RDF graphs. PySHACL is a Python library that provides implementation for SHACL validation and inference.
 * **Apache Jena**: An open-source Java-based framework for building semantic web and linked data applications. Jena includes a triplestore and supports RDF processing, SPARQL querying, and reasoning.
 * **TopBraid Composer**:TopBraid Composer is a comprehensive Semantic Web modeling tool that supports the development and visualization of RDF-based ontologies and semantic models. It has been used in the development of the standard and offers both free and paid versions. It also provides an API for utilizing its SHACL validation, which is based on Apache Jena. Apache Jena also provides other tools for interacting with graph data
@@ -100,3 +101,5 @@ BuildingMOTIF:
 * **Neo4J**: Neo4j is a graph database. While not an RDF triplestore, it represents graph data in a triple-like structure, and has extensions that enable RDF-specific functionality. It uses the Cypher query language to express relationships and patterns.
 
 There are other tools available, including many graph databases, but the above list may serve as a place to start.
+
+[^1]: SI-builder documentation not yet public, link to be updated.

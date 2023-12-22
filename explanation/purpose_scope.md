@@ -3,7 +3,7 @@
 
 The Purpose and Scope from from the current standard are provided below to introduce it to users. For more information about the standard, please see the published document [^1].
 
-[^1]: TODO link to public review.
+[^1]: Documentation not yet public, link to be updated.
 
 ## 1. Purpose
 >The purpose of this standard is to define formal knowledge concepts and a methodology to apply them to create interoperable, machine-readable semantic frameworks for representing building automation and control data, and other building system information.
