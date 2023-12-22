@@ -45,15 +45,9 @@ SPARQL is the primary way that users will query data from 223P models. [Query Op
 
 #### Querying Models
 
-SPARQL (SPARQL Protocol and RDF Query Language) querying is a fundamental aspect of interacting with RDF-based semantic models. SPARQL provides a powerful and expressive language for querying RDF data, enabling users to retrieve specific information from semantic graphs, insert data into graphs, or construct new graphs based on query results. With SPARQL, users can construct queries to search, filter, and extract data based on the defined relationships and properties within the RDF model. These queries can range from simple requests for specific data points to complex inquiries involving multiple patterns and conditions. It plays a key role in extracting meaningful data from 223P models. Several tools support the use of SPARQL queries to interrogate 223P models. RDFLib supports querying and is used both by BuildingMOTIF and Bob. TopBraid Composer and GraphDB both support SPARQL queries, and provide a graphical user interface for exploring semantic models.
+SPARQL (SPARQL Protocol and RDF Query Language) querying is a fundamental aspect of interacting with RDF-based semantic models. SPARQL provides a powerful and expressive language for querying RDF data, enabling users to retrieve specific information from semantic graphs, insert data into graphs, or construct new graphs based on query results. With SPARQL, users can construct queries to search, filter, and extract data based on the defined relationships and properties within the RDF model. These queries can range from simple requests for specific data points to complex inquiries involving multiple patterns and conditions. For more information, please view [the SPARQL specification](https://www.w3.org/TR/sparql11-query/). SPARQL plays a key role in extracting meaningful data from 223P models. Several tools support the use of SPARQL queries to interrogate 223P models. RDFLib supports querying and is used both by BuildingMOTIF and Bob. TopBraid Composer and GraphDB both support SPARQL queries, and provide a graphical user interface for exploring semantic models. [Open 223](open223-query) also provides a SPARQL querying tool for use with 223 models.
 
-SPARQL querying basics: The SPARQL querying language is used in SHACL graphs. While SHACL graphs use multiple subject-predicate-object expressions to describe complex relationships. SPARQL is used to query specific information from those complex relationships of SHACL graphs. For example, SPARQL can retrieve SHACL subject-predicate-object expressions with a specific subject, a specific predicate, a specific object, or any combinations of subject, predicate, and object.
-
-In the model usage section TODO ___ below, a tutorial shows how to run SPARQL competency questions on 223P models. Open223 provides these example models and queries, and also allows users to upload their own building models and write their own SPARQL queries for further testing.
-
-Several other query languages are often used for graph data models. These include the Cypher language employed by Neo4J and GraphQL. Unlike SPARQL, which is designed specifically for RDF, they can still be used on 223P models.
-
-In example TODO ___ below, a tutorial
+Several other query languages are often used for graph data models, and can thus be used on 223P models. These include the Cypher language employed by Neo4J and GraphQL. Unlike SPARQL, they are not specifically for RDF.
 
 ### Terse RDF Triple Language (Turtle - TTL)
 
@@ -99,16 +93,10 @@ The standard is built on Semantic Web technology, and there are many open-source
 BuildingMOTIF:
 * **SI-builder (Bob)**: This tool has been developed in Python and used in the development of the standard to simplify the creation of 223P building models. It uses an extensive class structure defining data points, equipment, and spaces in terms of 223P modeling constructs, and enables the creation of models using python scripts.
 * **RDFLib/PySHACL**:  BuildingMOTIF and SI-builder provide user-friendly methods to build and validate 223P models. They both utilize the python libraries RDFLib and PySHACL. RDFLib is a Python library for working with RDF, and it provides functionalities for creating, parsing, querying, and manipulating RDF graphs. PySHACL is a Python library that provides implementation for SHACL validation and inference.
+* **Apache Jena**: An open-source Java-based framework for building semantic web and linked data applications. Jena includes a triplestore and supports RDF processing, SPARQL querying, and reasoning.
 * **TopBraid Composer**:TopBraid Composer is a comprehensive Semantic Web modeling tool that supports the development and visualization of RDF-based ontologies and semantic models. It has been used in the development of the standard and offers both free and paid versions. It also provides an API for utilizing its SHACL validation, which is based on Apache Jena. Apache Jena also provides other tools for interacting with graph data
 * **GraphDB**: GraphDB is a triplestore that provides storage and query capabilities for RDF data. It provides support for SPARQL querying as well as visualization and exploration of semantic models.
-* **Neo4J**: TODO Should reach out to christian about that
-* **pyVis**: TODO What other visualization tools are available?
+* **Protégé**: An open-source ontology editor and framework that supports the creation and editing of RDF data. It is widely used in the development of ontologies and semantic web applications.
+* **Neo4J**: Neo4j is a graph database. While not an RDF triplestore, it represents graph data in a triple-like structure, and has extensions that enable RDF-specific functionality. It uses the Cypher query language to express relationships and patterns.
 
-There are other tools available, but the above list may serve as a place to start.
-
-(builder-tools)=
-## Using Model Building Tools
-
-Link to Bob with description (and note that it's not yet complete)
-
-Link to BMOTIF
+There are other tools available, including many graph databases, but the above list may serve as a place to start.

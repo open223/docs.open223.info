@@ -46,6 +46,7 @@ Clicking on a relation shows which classe are in the domain and range of the rel
 These last two tabs list *all* properties, concepts, classes, etc defined in each ontology loaded into the tool.
 This currently includes 223 as well as its dependencies (e.g., QUDT).
 
+(open223-query)
 ## [Open223 Query](https://query.open223.info/)
 
 This page provides client-side SPARQL query processing using Oxigraph. It contains several example 223 models and several example queries.
