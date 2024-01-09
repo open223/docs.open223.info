@@ -29,7 +29,7 @@ The next three examples showcase how FunctionBlocks, as logical constructs, are 
 
 ![SimpleSwitch](images/guides-SimpleSwitch.png)
 
-The next case examines a scenario where the luminaire logic encapsulated in "FunctionBlock1" takes a combination of inputs: the motion sensor property as before, and a UserSwitchProperty that is set by a smart switch. The function block uses this combination of inputs to determine whether the luminaire is turned on or off.
+The next case examines a scenario where the luminaire logic encapsulated in `FunctionBlock1` takes a combination of inputs: the motion sensor property as before, and a UserSwitchProperty that is set by a smart switch. The function block uses this combination of inputs to determine whether the luminaire is turned on or off.
 
 ![UserSwitch](images/guides-UserSwitch.png)
 
