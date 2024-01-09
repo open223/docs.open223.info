@@ -39,6 +39,7 @@ Finally, the next case pulls the concepts of containment, connectivity and funct
 3. an occupant motion sensor that sets value of `MotionProperty`,
 4. a controller that executes FunctionBlock1 to set the value of the property `LuminaireCommand`, 
 5. and a `UserInputSwitch` that sets the value of `UserInputProperty`. 
+
 On the left of the diagram, you can see the modeling of the electricity that flows from Breaker1, to Relay, then on to the LightBulb. At that point, the medium (not shown) changes from electricity to visible light that flows from the LightBulb, through OpticalPath, to DomainSpace.
 
 ![OffTheShelfSmartSwitch](images/guides-offtheshelf-smart-switch.png)
