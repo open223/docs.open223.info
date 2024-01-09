@@ -32,7 +32,7 @@ from rdflib import Graph
 g = Graph()
 
 # Parse in an RDF file hosted on the Internet
-g.parse("https://models.open223.info/guideline36-2021-4-1.ttl", format="ttl")
+g.parse("https://models.open223.info/guideline36-2021-4.1.ttl", format="ttl")
 ```
 
 Next, we'll explore the model's size by printing the number of triples in it.
