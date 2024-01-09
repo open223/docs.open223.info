@@ -33,7 +33,7 @@ The next case examines a scenario where the luminaire logic encapsulated in "Fun
 
 ![UserSwitch](images/guides-UserSwitch.png)
 
-Finally, the next case pulls the concepts of containment, connectivity and function block together to model a motion-sensitive smart switch that a consumer might buy at a hardware store.
+Finally, the next case pulls the concepts of containment, connectivity and function block together to model a motion-sensitive smart switch that a consumer might buy at a hardware store. The red rectangle delineates the consumer smart switch. The smart switch contains five elements: a relay, a light actuator that activates the relay based on the property LuminaireCommand, an occupant motion sensor that sets value of MotionProperty, a controller that executes FunctionBlock1 to set the value of the property LuminaireCommand, and a UserInputSwitch that sets the value of UserInputProperty. On the left of the diagram, you can see the modeling of the electricity that flows from Breaker1, to Relay, then on to the LightBulb. At that point, the medium (not shown) changes from electricity to visible light that flows from the LightBulb, through OpticalPath, to DomainSpace.
 
 ![OffTheShelfSmartSwitch](images/guides-offtheshelf-smart-switch.png)
 
