@@ -37,7 +37,7 @@ Finally, the next case pulls the concepts of containment, connectivity and funct
 
 ![OffTheShelfSmartSwitch](images/guides-offtheshelf-smart-switch.png)
 
+If all this detail seems overwhelming, remember that you don't need to model all the inner components of the smart switch if you don't want to. The entire model inside the red rectangle can be modeled as simply as shown below.
 
-
-
+![OffTheShelfSmartSwitchUnexpanded](images/guides-smart-switch-unexpanded.png)
 
