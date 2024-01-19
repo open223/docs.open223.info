@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -79,7 +79,6 @@ const thebe_selector_output = ".output, .cell_output"
   <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -120,25 +119,20 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
 
-  <header>
-
 
   <div class="bd-header-announcement container-fluid bd-header-announcement">
     <div class="bd-header-announcement__content"> 🏗️ this site is under active development ⚠️</div>
   </div>
 
   
-    <div class="bd-header navbar navbar-expand-lg bd-navbar">
-    </div>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
-  </header>
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -368,7 +362,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -384,6 +380,23 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents">Contents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simplest-case">Simplest Case</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-two-pieces-of-equipment">Connect two pieces of Equipment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#showing-inferred-relations">Showing inferred relations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#containment">Containment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-use-of-a-functionblock">Simple use of a FunctionBlock</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-functionblock-with-multiple-inputs">A FunctionBlock with multiple inputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-functionblock-containment-and-connectivity">Use of FunctionBlock, Containment and Connectivity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-contained-equipment-is-optional">Modeling contained equipment is OPTIONAL</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -395,21 +408,58 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="modeling-design-patterns">
 <h1>Modeling Design Patterns<a class="headerlink" href="#modeling-design-patterns" title="Permalink to this heading">#</a></h1>
+<section id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><span class="xref myst">Introduction</span></p></li>
+<li><p><span class="xref myst">Simplest Case</span></p></li>
+<li><p><span class="xref myst">Connect two pieces of Equipment</span></p></li>
+<li><p><span class="xref myst">Showing inferred relations</span></p></li>
+<li><p><span class="xref myst">Containment</span></p></li>
+<li><p><span class="xref myst">Simple use of a FunctionBlock</span></p></li>
+<li><p><span class="xref myst">A FunctionBlock with multiple inputs</span></p></li>
+<li><p><span class="xref myst">Use of FunctionBlock, Containment and Connectivity</span></p></li>
+<li><p><span class="xref myst">Modeling contained equipment is OPTIONAL</span></p></li>
+</ul>
+</section>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
 <p>Several modeling tools, such as BuildingMOTIF and Bob, enable modelers to easily reuse design patterns in their models. Both of these tools have pre-existing templates that allow developers to model at a higher level. However, buildings are unique, and developers may need to model pieces of equipment that are not already represented in 223P model creation tools. Thus, this guide provides a step-by-step way to model core ideas in the standard.</p>
 <p>This section guides developers on modeling connectivity and describing the topology between equipment. The topology diagram below illustrates various concepts and relations relevant to establishing connections. Building upon this general diagram, the following sections will detail incremental changes and provide examples to illustrate the progression of complexity. As shown in the topology diagram, predicates are defined at different levels of abstraction. This diagram demonstrates how various concepts in the standard describe connectivity between two Connectables. Some predicates are exclusive to connections between Connectable and ConnectionPoints, such as hasConnectionPoint, while others only apply between ConnectionPoints and Connections, like connectsAt. However, the generic “cnx” relation can describe connectivity between any concept involved, including Connectable, Connection, and ConnectionPoint. It’s crucial to note that all other predicates can be inferred from the “cnx” predicate.</p>
 <p><img alt="TopologyDiagram" src="../_images/guides-TopologyDiagram.png" /></p>
+</section>
+<section id="simplest-case">
+<h2>Simplest Case<a class="headerlink" href="#simplest-case" title="Permalink to this heading">#</a></h2>
 <p>In this example, we demonstrate a straightforward use case: creating the initial element of a connection. This involves attaching the Connectable (Equipment) “A9.return-fan” to its inlet and outlet ConnectionPoints using the “cnx” relation.</p>
 <p><img alt="BasicCnx" src="../_images/guides-BasicCnx.png" /></p>
+</section>
+<section id="connect-two-pieces-of-equipment">
+<h2>Connect two pieces of Equipment<a class="headerlink" href="#connect-two-pieces-of-equipment" title="Permalink to this heading">#</a></h2>
 <p>The following scenario illustrates the connectivity between the equipment “A-9.return-fan” and “A-9.exhaust_air_damper.” The “cnx” sequence originates from the equipment “A-9.return-fan,” extends to its outlet connection point “A9.return-fan.airOutlet,” and connects to the Connection “A-9.return-air” between the two pieces of equipment. It then continues to the neighboring equipment’s inlet connection point “A-9.exhaust_air_damper.airInlet” The inferred relation in this graph is “connectedTo,” which is a directional relation.</p>
 <p><img alt="Connection1" src="../_images/guides-Connection1.png" /></p>
+</section>
+<section id="showing-inferred-relations">
+<h2>Showing inferred relations<a class="headerlink" href="#showing-inferred-relations" title="Permalink to this heading">#</a></h2>
 <p>This next scenario builds upon the previous one and provides additional details about the inferred relations between different instances in this example. For instance, the “hasConnectionPoint” relation between “A-9.return-fan” and “A-9.return-fan.airOutlet” has been inferred based on the “cnx” relation between them. Similarly, the “connectsAt” relation has been established between “A-9.return-air” and “A-9.exhaust_air_damper.airInlet” based on the “cnx” relation between these entities.</p>
 <p><img alt="Connection2" src="../_images/guides-Connection2.png" /></p>
+</section>
+<section id="containment">
+<h2>Containment<a class="headerlink" href="#containment" title="Permalink to this heading">#</a></h2>
 <p>This example describes the notation of containment in the standard. VAVBox1 contains two pieces of equipment: VAVBox1HeatingCoil and VAVBox1MotorizedDamper. Note that these two pieces of equipment are internally connected (as shown by the vertical purple line between them). Also, their connection points map to the inlet and outlet connection points of their container (VAVBox1) using the relation ‘mapsTo.’ This indicates that any incoming connection flow to VAVBox1 will lead to the damper, and any outgoing one will stem from the heating coil.</p>
 <p><img alt="Containment" src="../_images/guides-Containment.png" /></p>
+</section>
+<section id="simple-use-of-a-functionblock">
+<h2>Simple use of a FunctionBlock<a class="headerlink" href="#simple-use-of-a-functionblock" title="Permalink to this heading">#</a></h2>
 <p>The next three examples showcase how FunctionBlocks, as logical constructs, are implemented in the standard. The following example demonstrates how a luminaire can be controlled based on motion occupancy sensing. The FunctionBlock labeled LuminaireLogic takes motion as an input property and provides the LuminaireCommand Property as the output, referred to by the luminaire via commandedByProperty. DumbSwitch simply provides power to the circuit.</p>
 <p><img alt="SimpleSwitch" src="../_images/guides-SimpleSwitch.png" /></p>
+</section>
+<section id="a-functionblock-with-multiple-inputs">
+<h2>A FunctionBlock with multiple inputs<a class="headerlink" href="#a-functionblock-with-multiple-inputs" title="Permalink to this heading">#</a></h2>
 <p>The next case examines a scenario where the luminaire logic encapsulated in <code class="docutils literal notranslate"><span class="pre">FunctionBlock1</span></code> takes a combination of inputs: the motion sensor property as before, and a UserSwitchProperty that is set by a smart switch. The function block uses this combination of inputs to determine whether the luminaire is turned on or off.</p>
 <p><img alt="UserSwitch" src="../_images/guides-UserSwitch.png" /></p>
+</section>
+<section id="use-of-functionblock-containment-and-connectivity">
+<h2>Use of FunctionBlock, Containment and Connectivity<a class="headerlink" href="#use-of-functionblock-containment-and-connectivity" title="Permalink to this heading">#</a></h2>
 <p>Finally, the next case pulls the concepts of containment, connectivity and function block together to model a motion-sensitive smart switch that a consumer might buy at a hardware store. The red rectangle delineates the consumer smart switch. The smart switch contains five elements:</p>
 <ol class="arabic simple">
 <li><p>a relay,</p></li>
@@ -420,8 +470,12 @@ document.write(`
 </ol>
 <p>On the left of the diagram, you can see the modeling of the electricity that flows from Breaker1, to Relay, then on to the LightBulb. At that point, the medium (not shown) changes from electricity to visible light that flows from the LightBulb, through OpticalPath, to DomainSpace.</p>
 <p><img alt="OffTheShelfSmartSwitch" src="../_images/guides-offtheshelf-smart-switch.png" /></p>
+</section>
+<section id="modeling-contained-equipment-is-optional">
+<h2>Modeling contained equipment is OPTIONAL<a class="headerlink" href="#modeling-contained-equipment-is-optional" title="Permalink to this heading">#</a></h2>
 <p>If all this detail seems overwhelming, remember that you don’t need to model all the inner components of the smart switch if you don’t want to. The entire model inside the red rectangle can be modeled as simply as shown below.</p>
 <p><img alt="OffTheShelfSmartSwitchUnexpanded" src="../_images/guides-smart-switch-unexpand.png" /></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -479,7 +533,29 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents">Contents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simplest-case">Simplest Case</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-two-pieces-of-equipment">Connect two pieces of Equipment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#showing-inferred-relations">Showing inferred relations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#containment">Containment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-use-of-a-functionblock">Simple use of a FunctionBlock</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-functionblock-with-multiple-inputs">A FunctionBlock with multiple inputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-functionblock-containment-and-connectivity">Use of FunctionBlock, Containment and Connectivity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-contained-equipment-is-optional">Modeling contained equipment is OPTIONAL</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
@@ -513,8 +589,8 @@ document.write(`
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
