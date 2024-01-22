@@ -18,6 +18,7 @@ parts:
 - caption: Guides
   chapters:
   - file: guides/design-patterns.md
+  - file: guides/brick-rec.md
 - caption: Reference
   chapters:
   - file: reference/open223-resources.md
