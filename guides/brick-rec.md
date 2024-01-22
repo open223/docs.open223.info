@@ -96,7 +96,7 @@ Any 223 `Equipment` can also be annotated with a Brick `Equipment` class, for ex
 bldg:damper a s223:Damper, brick:Supply_Damper .
 ```
 
-## Using RealEstateCore `Space` with 223
+## Using RealEstateCore `Space`s with 223
 
 RealEstateCore's extensive `Space` classes can also be used with 223 to provide human-facing annotations to 223 `PhysicalSpace` instances.
 Simply add the RealEstateCore space type as another type of the desired 223 `PhysicalSpace` entity.
