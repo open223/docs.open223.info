@@ -50,7 +50,7 @@ The Brick class also clearly states the role of the entity.
 The use of the QUDT annotations and Brick types means that this 223 model is also a valid Brick model!
 
 Using Brick can simplify some queries against the model.
-Without Brick, finding the `bldg:air-temp` entity would require this query:
+For example, finding the `bldg:air-temp` entity without Brick would require this query:
 
 ```sparql
 PREFIX bldg: <urn:ex/>
