@@ -31,3 +31,12 @@ Note that the semantic model never depends on the names of the entities to provi
 Here is that more complex example shown with its full structure:
 
 ![240Vstructure](images/guides-240V-60Hz-three-phase-structure.png)
+
+## Querying a model for electrical characteristics
+
+The power of explicitly modeling all the characteristics of the electricity can be seen with some query examples. Here is a query to find in the vocabulary all electrical service that is 3-phase, with a line-neutral voltage of 120V:
+
+![3-phase-query](images/guides-3-phase-query.png)
+
+In a similar way, one can query a specific building model to find the electrical service(s) in use and drill down to determine the voltages and other properties that are present.
+
