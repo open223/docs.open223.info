@@ -66,7 +66,7 @@ SELECT ?damper ?temp WHERE {
 }
 ```
 
-whereas with Brick, the query can be simplified to
+With Brick, the query above can be simplified to the following where the `brick:hasPoint` relationship is inferred automatically.
 
 ```sparql
 PREFIX bldg: <urn:ex/>
