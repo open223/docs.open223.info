@@ -1,7 +1,6 @@
 # Using 223 with Brick and RealEstateCore
 
-The [Brick](https://brickschema.org) and [RealEstateCore](https://realestatecore.io) ontologies can be used to augment 223 models with a richer vocabulary of concepts.
-There are a few reasons to consider doing this:
+The [Brick](https://brickschema.org) and [RealEstateCore](https://realestatecore.io) ontologies can be used to augment 223 models with a richer vocabulary of concepts, which offer the following benefits. 
 
 1. The Brick and RealEstateCore ontologies define a much larger set of concepts than 223, so using these ontologies can provide a 223 model with more specific and higher-level information helpful to consumers of the model
 2. The governance structures of the Brick and RealEstateCore ontologies mean they can evolve much faster than 223 and thus standardize descriptions of new concepts, e.g. as new products emerge onto the market
@@ -51,7 +50,7 @@ The Brick class also clearly states the role of the entity.
 The use of the QUDT annotations and Brick types means that this 223 model is also a valid Brick model!
 
 Using Brick can simplify some queries against the model.
-Without Brick, finding the `bldg:air-temp` entity would require this query:
+For example, finding the `bldg:air-temp` entity without Brick would require this query:
 
 ```sparql
 PREFIX bldg: <urn:ex/>
@@ -67,7 +66,7 @@ SELECT ?damper ?temp WHERE {
 }
 ```
 
-whereas with Brick, the query can be simplified to
+With Brick, the query above can be simplified to the following where the `brick:hasPoint` relationship is inferred automatically.
 
 ```sparql
 PREFIX bldg: <urn:ex/>
@@ -81,12 +80,11 @@ SELECT ?damper ?temp WHERE {
 }
 ```
 
-The `brick:hasPoint` relationship is inferred automatically.
 
 ## Using Brick `Equipment`s with 223
 
 Brick's extensive [`Equipment`](https://explore.open223.info/brick/Equipment.html) classes can also be used with 223.
-Any 223 [`Equipment`](https://explore.open223.info/s223/Equipment.html) can also be annotated with a Brick [`Equipment`](https://explore.open223.info/brick/Equipment.html) class, for example:
+Any 223 [`Equipment`](https://explore.open223.info/s223/Equipment.html) can also be annotated with a Brick [`Equipment`](https://explore.open223.info/brick/Equipment.html) class as shown in the example below
 
 ```turtle
 @prefix bldg: <urn:ex/> .
