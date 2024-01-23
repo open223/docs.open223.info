@@ -19,5 +19,10 @@ Assuming your desired electrical service is listed in the vocabulary, the simple
 
 ![ACServiceExample](images/guides-AC-service-example.png)
 
+## The structure of the electricity vocabulary entries
+Since 223 is a semantic standard, relying on the naming convention is not sufficient to allow for querying of a model. 
+For those who need to go deeper, the following section explains the structure of each of the vocabulary entries for electricity. Shown below is a diagram of that structure:
+
+![110Vstructure](images/guides-110V-60Hz-single-phase-structure.png)
 
 
