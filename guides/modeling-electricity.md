@@ -25,4 +25,7 @@ For those who need to go deeper, the following section explains the structure of
 
 ![110Vstructure](images/guides-110V-60Hz-single-phase-structure.png)
 
+Following the relations, you can see that it is possible to find the numerical values for the frequency, number of phases, and voltage for the service. 
+Note that the semantic model never depends on the names of the entities to provide this information, so that numerical comparisons and calculations are possible.
+
 
