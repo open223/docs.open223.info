@@ -11,8 +11,8 @@ These can serve as another "layer" on top of the rich semantics provided by 223.
 
 ## Using Brick `Point`s with 223
 
-Brick's `Point` class and its subclasses provide a large vocabulary of data sources (e.g., "Input/Output points") within a building management system (BMS).
-These can be used as annotations on 223 `Property` instances.
+Brick's [`Point`](https://explore.open223.info/brick/Point.html) class and its subclasses provide a large vocabulary of data sources (e.g., "Input/Output points") within a building management system (BMS).
+These can be used as annotations on 223 [`Property`](https://explore.open223.info/s223/Property.html) instances.
 
 Consider the following (partial) 223 model with a Brick annotation:
 
@@ -44,7 +44,7 @@ bldg:air-temp a s223:QuantifiableObservableProperty,
     qudt:hasUnit unit:DEG_C .
 ```
 
-By stating that the `bldg:air-temp` entity is also a `brick:Supply_Air_Temperature_Sensor`, Brick-based applications can more easily find the data they are looking for.
+By stating that the `bldg:air-temp` entity is also a [`brick:Supply_Air_Temperature_Sensor`](https://explore.open223.info/brick/Supply_Air_Temperature_Sensor.html), Brick-based applications can more easily find the data they are looking for.
 223 requires multiple annotations be combined in order to model this concept.
 
 The Brick class also clearly states the role of the entity.
@@ -85,8 +85,8 @@ The `brick:hasPoint` relationship is inferred automatically.
 
 ## Using Brick `Equipment`s with 223
 
-Brick's extensive `Equipment` classes can also be used with 223.
-Any 223 `Equipment` can also be annotated with a Brick `Equipment` class, for example:
+Brick's extensive [`Equipment`](https://explore.open223.info/brick/Equipment.html) classes can also be used with 223.
+Any 223 [`Equipment`](https://explore.open223.info/s223/Equipment.html) can also be annotated with a Brick [`Equipment`](https://explore.open223.info/brick/Equipment.html) class, for example:
 
 ```turtle
 @prefix bldg: <urn:ex/> .
@@ -98,8 +98,8 @@ bldg:damper a s223:Damper, brick:Supply_Damper .
 
 ## Using RealEstateCore `Space`s with 223
 
-RealEstateCore's extensive `Space` classes can also be used with 223 to provide human-facing annotations to 223 `PhysicalSpace` instances.
-Simply add the RealEstateCore space type as another type of the desired 223 `PhysicalSpace` entity.
+RealEstateCore's extensive [`Space`](https://dev.realestatecore.io/ontology/Space/Space) classes can also be used with 223 to provide human-facing annotations to 223 [`PhysicalSpace`](https://explore.open223.info/s223/PhysicalSpace) instances.
+Simply add the RealEstateCore space type as another type of the desired 223 [`PhysicalSpace`](https://explore.open223.info/s223/PhysicalSpace) entity.
 This can provide a 223 model with much more descriptive and *machine-readable* information about the role and purpose of physical spaces in the model.
 
 Consider the following example:
