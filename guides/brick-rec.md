@@ -84,7 +84,7 @@ SELECT ?damper ?temp WHERE {
 ## Using Brick `Equipment`s with 223
 
 Brick's extensive `Equipment` classes can also be used with 223.
-Any 223 `Equipment` can also be annotated with a Brick `Equipment` class, for example:
+Any 223 `Equipment` can also be annotated with a Brick `Equipment` class as shown in the example below. 
 
 ```turtle
 @prefix bldg: <urn:ex/> .
