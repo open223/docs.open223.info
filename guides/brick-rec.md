@@ -80,7 +80,6 @@ SELECT ?damper ?temp WHERE {
 }
 ```
 
-The `brick:hasPoint` relationship is inferred automatically.
 
 ## Using Brick `Equipment`s with 223
 
