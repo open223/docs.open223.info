@@ -1,7 +1,6 @@
 # Using 223 with Brick and RealEstateCore
 
-The [Brick](https://brickschema.org) and [RealEstateCore](https://realestatecore.io) ontologies can be used to augment 223 models with a richer vocabulary of concepts.
-There are a few reasons to consider doing this:
+The [Brick](https://brickschema.org) and [RealEstateCore](https://realestatecore.io) ontologies can be used to augment 223 models with a richer vocabulary of concepts, which offer the following benefits. 
 
 1. The Brick and RealEstateCore ontologies define a much larger set of concepts than 223, so using these ontologies can provide a 223 model with more specific and higher-level information helpful to consumers of the model
 2. The governance structures of the Brick and RealEstateCore ontologies mean they can evolve much faster than 223 and thus standardize descriptions of new concepts, e.g. as new products emerge onto the market
