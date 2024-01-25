@@ -19,6 +19,14 @@ Assuming your desired electrical service is listed in the vocabulary, the simple
 
 ![ACServiceExample](images/guides-AC-service-example.png)
 
+## High-Leg-Delta Distribution Panel
+Here's a diagram of a "High-Leg-Delta" distribution panel that provides several different voltages and phases.
+
+...
+
+...and here's the model:
+![HighLegDeltaModel](images/guides-HighLegDelta.png)
+
 ## The structure of the electricity vocabulary entries
 Since 223 is a semantic standard, relying on the naming convention is not sufficient to allow for querying of a model. 
 For those who need to go deeper, the following section explains the structure of each of the vocabulary entries for electricity. Shown below is a diagram of that structure:
