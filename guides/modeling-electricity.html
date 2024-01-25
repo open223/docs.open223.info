@@ -387,6 +387,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-predefined-electrical-service">Using predefined electrical service</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#high-leg-delta-distribution-panel">High-Leg-Delta Distribution Panel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-structure-of-the-electricity-vocabulary-entries">The structure of the electricity vocabulary entries</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#querying-a-model-for-electrical-characteristics">Querying a model for electrical characteristics</a></li>
 </ul>
@@ -415,6 +416,13 @@ a human reader can interpret the service s223:AC-120VLN-1Ph-60Hz to mean “AC e
 <p>A more complex example is s223:AC-240VLL-208VLN-120VLN-3Ph-60Hz, meaning “three-phase, 60Hz AC electricity, with a 240V line-line voltage, a 208V line-neutral voltage and also a 127V line-neutral voltage”.</p>
 <p>Assuming your desired electrical service is listed in the vocabulary, the simplest way to model the electricity in the building is to use the s223:hasMedium relation, as shown below:</p>
 <p><img alt="ACServiceExample" src="../_images/guides-AC-service-example.png" /></p>
+</section>
+<section id="high-leg-delta-distribution-panel">
+<h2>High-Leg-Delta Distribution Panel<a class="headerlink" href="#high-leg-delta-distribution-panel" title="Permalink to this heading">#</a></h2>
+<p>Here’s a diagram of a “High-Leg-Delta” distribution panel that provides several different voltages and phases.</p>
+<p>…</p>
+<p>…and here’s the model:
+<img alt="HighLegDeltaModel" src="../_images/guides-HighLegDelta.png" /></p>
 </section>
 <section id="the-structure-of-the-electricity-vocabulary-entries">
 <h2>The structure of the electricity vocabulary entries<a class="headerlink" href="#the-structure-of-the-electricity-vocabulary-entries" title="Permalink to this heading">#</a></h2>
@@ -481,6 +489,7 @@ Note that the semantic model never depends on the names of the entities to provi
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-predefined-electrical-service">Using predefined electrical service</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#high-leg-delta-distribution-panel">High-Leg-Delta Distribution Panel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-structure-of-the-electricity-vocabulary-entries">The structure of the electricity vocabulary entries</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#querying-a-model-for-electrical-characteristics">Querying a model for electrical characteristics</a></li>
 </ul>
