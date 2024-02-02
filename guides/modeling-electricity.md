@@ -19,7 +19,7 @@ Assuming your desired electrical service is listed in the vocabulary, the simple
 ![ACServiceExample](images/guides-AC-service-example.png)
 
 ## High-Leg-Delta Distribution Panel
-Here's a diagram of a "High-Leg-Delta" distribution panel that provides several different voltages and phases.
+Here's a diagram of a "High-Leg-Delta" distribution panel, which provides several different voltages and phases, and a diagram of the model.
 
 ...
 
