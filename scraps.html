@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Basics of RDF &#8212; ASHRAE Standard 223P User Documentation</title>
   
@@ -29,39 +28,43 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'scraps';</script>
@@ -162,7 +165,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">ASHRAE Standard 223P User Documentation</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -408,7 +422,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="basics-of-rdf">
-<h1>Basics of RDF<a class="headerlink" href="#basics-of-rdf" title="Permalink to this heading">#</a></h1>
+<h1>Basics of RDF<a class="headerlink" href="#basics-of-rdf" title="Link to this heading">#</a></h1>
 <p>Standard 223P uses the resource description framework (RDF) to describe metadata for a building using a subject-predicate-object triple model, otherwise known as a directed, labeled graph model. This model allows us to define how different entities related to building systems (devices, data points, zones, ducts, etc) are related to each other. The subject and object define two entities and the predicate defines how they are related. For example, an air handling unit may contain a fan. This would be described in a 223P model as AHU (subject) contains (predicate) Fan (object) as shown in Figure 1. (Brick does a good job of describing RDF for building people, perhaps  we link some documentation)?</p>
 <div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>---
 title: Figure 1. Simple Triple
@@ -453,17 +467,17 @@ Fan-- connectedTo --&gt;HeatingCoil
 <p>For more about RDF, we recommend and core concepts such as Classes, Relationships, Graph data structure, and more, we recommend visiting (<a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/">https://www.w3.org/TR/rdf11-concepts/</a>)</p>
 </section>
 <section id="basics-of-shacl">
-<h1>Basics of SHACL<a class="headerlink" href="#basics-of-shacl" title="Permalink to this heading">#</a></h1>
+<h1>Basics of SHACL<a class="headerlink" href="#basics-of-shacl" title="Link to this heading">#</a></h1>
 <p>ASHRAE Standard 223P utilizes SHACL for validation and inference. Both validation and inference play a role in creating complete and correct models. Validation ensures that information within the model conforms to rules in the standard, while inference adds information to the graph when a rule’s conditions are met.</p>
 <section id="shacl-validation-rules">
-<h2>SHACL Validation Rules<a class="headerlink" href="#shacl-validation-rules" title="Permalink to this heading">#</a></h2>
+<h2>SHACL Validation Rules<a class="headerlink" href="#shacl-validation-rules" title="Link to this heading">#</a></h2>
 <p><em>Technical Description:</em> These rules are constraints defined in a SHACL shape that are applied to RDF data to ensure it adheres to specific structural and semantic requirements. They are essentially conditions the data must satisfy to be valid according to the defined shape.</p>
 <p><em>Process:</em> Validation rules involve checking properties, types, value ranges, patterns, and other aspects of data nodes against specified criteria in the SHACL shapes. If a node in the RDF graph violates any of these constraints, it is flagged as non-compliant.</p>
 <p><em>Example:</em> Suppose you have a SHACL shape that defines a Person class. The validation rules might specify that each Person must have a name (of datatype string) and an age (of datatype integer and greater than 0). The validation process will check each instance of Person in your RDF data against these rules and identify any instances that don’t conform.</p>
 <p>Further, Standard 223 uses SHACL inference rules (both TripleRules and SPARQLRules, part of SHACL Advanced Features)(ref. <a class="reference external" href="https://w3c.github.io/shacl/shacl-af/">https://w3c.github.io/shacl/shacl-af/</a>).</p>
 </section>
 <section id="shacl-inference-rules">
-<h2>SHACL Inference Rules<a class="headerlink" href="#shacl-inference-rules" title="Permalink to this heading">#</a></h2>
+<h2>SHACL Inference Rules<a class="headerlink" href="#shacl-inference-rules" title="Link to this heading">#</a></h2>
 <p><em>Technical Description:</em> SHACL inference rules are used to derive or infer new RDF triples based on existing data that is logically implied but not explicitly stated.</p>
 <p><em>Process:</em> Inference rules typically use conditions to match certain patterns in the data, and new triples are created when these conditions are met. These rules can add valuable information to a dataset, make implicit relationships explicit, and enhance data interconnectivity.</p>
 <p><em>Example:</em> Consider a dataset describing books and authors. You might have a rule stating, “If a person has written a book, they can be inferred to have the role of an author.” In SHACL, this could be a rule that, upon finding a triple like [:hasWritten :someBook], automatically adds a new triple [:hasRole :Author]. Thus, if John has written “Book A” (expressed as [:John :hasWritten :BookA]), the rule would infer and add [:John :hasRole :Author].
@@ -472,7 +486,7 @@ Models can be validated using BuildingMOTIF and TopBraid Composer. The SHACL rea
 </section>
 </section>
 <section id="querying-models">
-<h1>Querying Models<a class="headerlink" href="#querying-models" title="Permalink to this heading">#</a></h1>
+<h1>Querying Models<a class="headerlink" href="#querying-models" title="Link to this heading">#</a></h1>
 <p>SPARQL (SPARQL Protocol and RDF Query Language) querying is a fundamental aspect of interacting with RDF-based semantic models. SPARQL provides a powerful and expressive language for querying RDF data, enabling users to retrieve specific information from semantic graphs, insert data into graphs, or construct new graphs based on query results. With SPARQL, users can construct queries to search, filter, and extract data based on the defined relationships and properties within the RDF model. These queries can range from simple requests for specific data points to complex inquiries involving multiple patterns and conditions. It plays a key role in extracting meaningful data from 223P models. Several tools support the use of SPARQL queries to interrogate 223P models. RDFLib supports querying and is used both by BuildingMOTIF and Bob. TopBraid Composer and GraphDB both support SPARQL queries, and provide a graphical user interface for exploring semantic models.</p>
 <p>SPARQL querying basics: The SPARQL querying language is used in SHACL graphs. While SHACL graphs use multiple subject-predicate-object expressions to describe complex relationships. SPARQL is used to query specific information from those complex relationships of SHACL graphs. For example, SPARQL can retrieve SHACL subject-predicate-object expressions with a specific subject, a specific predicate, a specific object, or any combinations of subject, predicate, and object.</p>
 <p>In the model usage section ___ below, a tutorial shows how to run SPARQL competency questions on 223P models. Open223 provides these example models and queries, and also allows users to upload their own building models and write their own SPARQL queries for further testing.</p>
@@ -480,7 +494,8 @@ Models can be validated using BuildingMOTIF and TopBraid Composer. The SHACL rea
 <p>In example ___ below, a tutorial</p>
 <!-- Standard 223P provides a comprehensive ontology and approach to applying semantic formalisms for representing building automation system data and the relationships between associated entities such as equipment, physical spaces, and zones. The primary purpose is to enable software applications to automate the discovery and understanding of information related to building systems. This facilitates the development of advanced tools and applications for building analytics and supports the creation of digital twins and optimization of energy usage within building systems. Specific functionalities include automated fault detection, diagnostics, building system commissioning, and interactions with smart grids.
 
-The standard provides a machine-readable representation of building systems, their associated spaces, and key measurement/control points that can be used to construct semantic models for individual buildings or entire capmuses. It rigorously defines the concepts of the standard using validation and inference rules, helping to ensure that models are created correctly and will be interoperable. Using 223P requires a basic understanding of the RDF data structure and several semantic web technologies. These technologies are briefly described in the [reference section](other-resources). The notions of entities, classes, relationships, and graphs are required to understand the standard, and are defined below. --></section>
+The standard provides a machine-readable representation of building systems, their associated spaces, and key measurement/control points that can be used to construct semantic models for individual buildings or entire capmuses. It rigorously defines the concepts of the standard using validation and inference rules, helping to ensure that models are created correctly and will be interoperable. Using 223P requires a basic understanding of the RDF data structure and several semantic web technologies. These technologies are briefly described in the [reference section](other-resources). The notions of entities, classes, relationships, and graphs are required to understand the standard, and are defined below. -->
+</section>
 
     <script type="text/x-thebe-config">
     {

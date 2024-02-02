@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>223 Overview &#8212; ASHRAE Standard 223P User Documentation</title>
   
@@ -29,39 +28,43 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'explanation/223_overview';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -160,7 +163,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">ASHRAE Standard 223P User Documentation</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -403,15 +417,15 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="overview">
-<span id="id1"></span><h1>223 Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h1>
+<span id="id1"></span><h1>223 Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h1>
 <p>This standard allows users to create semantic models that describe the many entities in their buildings that are relevant to advanced features and applications such as fault detection and diagnostics, demand flexibility, and real time optimization.</p>
 <p>There is a huge amount of information about the many entities within a building that you may want to model. This section will explain what information you should represent in a 223 model and the 223 modeling constructs you will use to do so. Descriptions assume you have some familiarity with RDF graph data and know the <a class="reference internal" href="definitions.html#definitions"><span class="std std-ref">definitions of key terms used in this section</span></a>.</p>
 <section id="type">
-<h2>Type<a class="headerlink" href="#type" title="Permalink to this heading">#</a></h2>
+<h2>Type<a class="headerlink" href="#type" title="Link to this heading">#</a></h2>
 <p>This standard provides well defined classes used to describe entities relevant to building system information. Entities in 223 models will generally be instances of the many classes defined or referred to by the standard. The classes in the standard provide ‘names’ for the fundamental building blocks used in 223 models (e.g. a fan will be an instance of the class <a class="reference external" href="https://explore.open223.info/s223/Fan.html"><code class="docutils literal notranslate"><span class="pre">s223:Fan</span></code></a>) and also have rules defining how they are used (e.g. a fan must convey air).</p>
 </section>
 <section id="topology">
-<h2>Topology<a class="headerlink" href="#topology" title="Permalink to this heading">#</a></h2>
+<h2>Topology<a class="headerlink" href="#topology" title="Link to this heading">#</a></h2>
 <p>This standard can be used to describe the topology of the equipment and spaces in a building, but not the geometric details. Topology refers to the way entities are connected and how some media (e.g. water, air, or electricity) is conveyed between them. There are several different classes used to describe which entities participate in connections and how they connect: <a class="reference external" href="https://explore.open223.info/s223/Connectable.html">Connectables</a>, which include the entities that are capable of connecting to each other; <a class="reference external" href="https://explore.open223.info/s223/ConnectionPoint.html">ConnectionPoints</a>, which model where Connectables can be connected; and <a class="reference external" href="https://explore.open223.info/s223/Connection.html">Connections</a>, which describe physical things through which the medium is conveyed, like pipes or ducts. These <a class="reference external" href="https://explore.open223.info/s223/Substance-Medium.html">Mediums</a> (e.g. gas, electricity, water) are defined as an <a class="reference external" href="https://explore.open223.info/s223/EnumerationKind.html">EnumerationKind</a> in the standard. There are also multiple relations used to describe the details of these connections, and how the multiple entities involved in a connection relate to each other. Figure 1 summarizes these relations. Though there are many relations to describe different perspectives of a connection, only <a class="reference external" href="https://explore.open223.info/s223/cnx.html"><code class="docutils literal notranslate"><span class="pre">s223:cnx</span></code></a> needs to be manually added to the model, and the rest can be automatically added to the model through the process of <a class="reference internal" href="../tutorials/model_inference.html#model-inference"><span class="std std-ref">inference</span></a>.</p>
 <a class="reference internal image-reference" href="../_images/connection-relationships.png"><img alt="../_images/connection-relationships.png" class="align-center" src="../_images/connection-relationships.png" style="width: 700px;" /></a>
 <div align="center">
@@ -419,15 +433,15 @@ document.write(`
 </div>
 </section>
 <section id="composition">
-<h2>Composition<a class="headerlink" href="#composition" title="Permalink to this heading">#</a></h2>
+<h2>Composition<a class="headerlink" href="#composition" title="Link to this heading">#</a></h2>
 <p>Composition is about what entities make up what other entities. For example, a piece of mechanical equipment like a VAV may in fact be made up of other pieces of mechanical equipment, such as a damper and a reheat coil. Additionally, a zone may be made up of several different spaces that receive a similar building service, or a floor may be made up of different rooms, corridors, or offices. Several different modeling constructs use the idea of composition. These modeling constructs include include <a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a>, which may contain other equipment (e.g. VAV containing a Damper); <a class="reference external" href="https://explore.open223.info/s223/Zone.html">Zones</a>, which may have <a class="reference external" href="https://explore.open223.info/s223/DomainSpace.html">DomainSpaces</a> that receive a similar building service; <a class="reference external" href="https://explore.open223.info/s223/ZoneGroup.html">ZoneGroups</a>, which group together similarly controlled Zones; <a class="reference external" href="https://explore.open223.info/s223/System.html">Systems</a> that represent a collection of interrelated Equipment; or <a class="reference external" href="https://explore.open223.info/s223/PhysicalSpace.html">PhysicalSpaces</a>, which may contain other PhysicalSpaces as a floor contains multiple rooms. PhysicalSpaces may also enclose DomainSpaces, indicating that the DomainSpace is completely within the PhysicalSpace. For example, an auditorium (a PhysicalSpace) may enclose several different areas served by independently controlled lights (DomainSpaces).</p>
 </section>
 <section id="telemetry">
-<h2>Telemetry<a class="headerlink" href="#telemetry" title="Permalink to this heading">#</a></h2>
+<h2>Telemetry<a class="headerlink" href="#telemetry" title="Link to this heading">#</a></h2>
 <p>A 223 model does not directly provide telemetric data about the real-time operation or past operation of the building systems. It does provide information about the meaning or context of a given data point and it can link to a source of the data values so that an analytics application can find them. If the building has a BACnet building automation and control system, the model can provide the necessary information for analytics or controls software to learn which BACnet object and property corresponds to the desired piece of information. Data points are represented using Properties. There are multiple types of <a class="reference external" href="https://explore.open223.info/s223/Property.html">Properties</a>, such as control points that can be written to (<a class="reference external" href="https://explore.open223.info/s223/ActuatableProperty.html">ActuatableProperties</a>), sensor points that are observed (<a class="reference external" href="https://explore.open223.info/s223/ObservableProperty.html">ObservableProperties</a>), either of which can refer to enumerated (<a class="reference external" href="https://explore.open223.info/s223/EnumerableProperty.html">EnumerableProperty</a>) or quantified (<a class="reference external" href="https://explore.open223.info/s223/QuantifiableProperty.html">QuantifiableProperty</a>) values. Properties may also be used for mathematical operations, including those that are common in a building such as control logic. This idea is represented using <a class="reference external" href="https://explore.open223.info/s223/FunctionBlock.html">FunctionBlocks</a>. Properties also have many different characteristics which are described by a vocabulary of <a class="reference external" href="https://explore.open223.info/s223/EnumerationKind.html">EnumerationKinds</a>.</p>
 </section>
 <section id="characteristics">
-<h2>Characteristics<a class="headerlink" href="#characteristics" title="Permalink to this heading">#</a></h2>
+<h2>Characteristics<a class="headerlink" href="#characteristics" title="Link to this heading">#</a></h2>
 <p>A model can also describe the characteristics of the entities in a building. These characteristics express details about entities that are not otherwise expressed by the type, topology, or composition of the entity. Often, these characteristics are linked to specific instances in a model. For example, a characteristic of a pump would be its rated flow. Another pump in the same 223 model may have a different rated flow, but it will use the same 223 class (i.e. <a class="reference external" href="https://explore.open223.info/s223/Pump.html"><code class="docutils literal notranslate"><span class="pre">s223:Pump</span></code></a>). These types of characteristics are modeled using <a class="reference external" href="https://explore.open223.info/s223/Property.html">Properties</a>.</p>
 <p>Properties also have various characteristics including their units, quantity kinds, enumeration kinds, and aspects. <a class="reference external" href="https://www.qudt.org/doc/DOC_VOCAB-UNITS.html">Units</a> describe the unit (e.g. Fahrenheit) of a <a class="reference external" href="https://explore.open223.info/s223/QuantifiableProperty.html">QuantifiableProperty</a> and <a class="reference external" href="https://www.qudt.org/doc/DOC_VOCAB-QUANTITY-KINDS.html">quantity kinds</a> describe the type of quantity that may be stated by means of units (e.g. temperature). These are modeled using <a class="reference external" href="https://qudt.org/">qudt ontologies</a>. <a class="reference external" href="https://explore.open223.info/s223/EnumerableProperty.html">EnumerableProperties</a> do not have units, but they have enumerated values that can be described by <a class="reference external" href="https://explore.open223.info/s223/EnumerationKind.html">EnumerationKinds</a>. Aspects establish the context of a Property. For example, if a Property has a Temperature value of 80.6, aspects are used to state what that represents, such as a Temperature limit during working hours, etc. A Property can have any number of aspects, as needed to establish the context. Any <a class="reference external" href="https://explore.open223.info/s223/EnumerationKind.html">EnumerationKind</a> can be used as an aspect.</p>
 </section>

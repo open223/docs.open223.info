@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Open223 Resources &#8212; ASHRAE Standard 223P User Documentation</title>
   
@@ -29,39 +28,43 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/open223-resources';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -160,7 +163,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">ASHRAE Standard 223P User Documentation</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -407,10 +421,10 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="open223-resources">
-<span id="id1"></span><h1>Open223 Resources<a class="headerlink" href="#open223-resources" title="Permalink to this heading">#</a></h1>
+<span id="id1"></span><h1>Open223 Resources<a class="headerlink" href="#open223-resources" title="Link to this heading">#</a></h1>
 <p>The <a class="reference external" href="https://github.com/open223">Open223 GitHub organization</a> was created in conjunction with the ASHRAE Standard 223 project committee to develop resources to support the use of Standard. However, it is not an official ASHRAE product or a part of the standard.</p>
 <section id="open223-models">
-<h2><a class="reference external" href="https://models.open223.info/">Open223 Models</a><a class="headerlink" href="#open223-models" title="Permalink to this heading">#</a></h2>
+<h2><a class="reference external" href="https://models.open223.info/">Open223 Models</a><a class="headerlink" href="#open223-models" title="Link to this heading">#</a></h2>
 <p>This site contains the canonical sources for example models.
 Each page listed in the table of contents (on the left-hand side of the page) describes an example building or system modeled in 223.
 On each page you will find the following:</p>
@@ -423,12 +437,12 @@ On each page you will find the following:</p>
 </ul>
 </section>
 <section id="open223-explore">
-<h2><a class="reference external" href="https://explore.open223.info/">Open223 Explore</a><a class="headerlink" href="#open223-explore" title="Permalink to this heading">#</a></h2>
+<h2><a class="reference external" href="https://explore.open223.info/">Open223 Explore</a><a class="headerlink" href="#open223-explore" title="Link to this heading">#</a></h2>
 <p>This page hosts autogenerated documentation of the 223 ontology, emphasizing the availability and correct use of concepts and properties defined by the ontology.
 The Explore tool divides the ontology up across four tabs.</p>
 <p><img alt="" src="../_images/explore-tabs.png" /></p>
 <section id="classes">
-<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this heading">#</a></h3>
+<h3>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h3>
 <p>The classes tab organizes the classes of the standard based on their class hierarchy.
 One can click on the class name to view a description of the class and its constraints, or click on the “+” to the left of the class name to view all the subclasses of that class.
 For example, all 223 classes are a subclass of <code class="docutils literal notranslate"><span class="pre">s223:Concept</span></code>, and can be accessed by clicking the “+” to the left of “Concept”.</p>
@@ -440,19 +454,19 @@ Additionally all links highlighted in yellow on a given class page can be used t
 <p>The definitions listed on the Explore tool are <em>not</em> definitive but instead capture common usage; refer to the standard for the full and complete definition.</p>
 </section>
 <section id="properties">
-<h3>Properties<a class="headerlink" href="#properties" title="Permalink to this heading">#</a></h3>
+<h3>Properties<a class="headerlink" href="#properties" title="Link to this heading">#</a></h3>
 <p>The properties tab organizes the <em>relations</em> of the standard and its dependencies.
 Clicking on a relation shows which classe are in the domain and range of the relation, if available.</p>
 <p><img alt="" src="../_images/explore-properties-connectedTo.png" /></p>
 </section>
 <section id="ontologies-and-files">
-<h3>Ontologies and Files<a class="headerlink" href="#ontologies-and-files" title="Permalink to this heading">#</a></h3>
+<h3>Ontologies and Files<a class="headerlink" href="#ontologies-and-files" title="Link to this heading">#</a></h3>
 <p>These last two tabs list <em>all</em> properties, concepts, classes, etc defined in each ontology loaded into the tool.
 This currently includes 223 as well as its dependencies (e.g., QUDT).</p>
 </section>
 </section>
 <section id="open223-query">
-<h2><a class="reference external" href="https://query.open223.info/">Open223 Query</a><a class="headerlink" href="#open223-query" title="Permalink to this heading">#</a></h2>
+<h2><a class="reference external" href="https://query.open223.info/">Open223 Query</a><a class="headerlink" href="#open223-query" title="Link to this heading">#</a></h2>
 <p>This page provides client-side SPARQL query processing using Oxigraph. It contains several example 223 models and several example queries.
 There are three dropdowns in the top-left corner of the page:</p>
 <p><img alt="" src="../_images/query-open223-loading.png" /></p>
@@ -469,7 +483,7 @@ You can also edit the query box directly to express a SPARQL query.</p>
 <p><img alt="" src="../_images/query-open223-results.png" /></p>
 </section>
 <section id="open223-defs">
-<h2><a class="reference external" href="https://defs.open223.info/">Open223 Defs</a><a class="headerlink" href="#open223-defs" title="Permalink to this heading">#</a></h2>
+<h2><a class="reference external" href="https://defs.open223.info/">Open223 Defs</a><a class="headerlink" href="#open223-defs" title="Link to this heading">#</a></h2>
 <p>This page provides a set of <a class="reference external" href="https://www.w3.org/submissions/CBD/">concise bounded descriptions (CBDs)</a> of 223 concepts, rules, shapes, and entities with permalinks referenced by the 223 standard document.</p>
 </section>
 </section>

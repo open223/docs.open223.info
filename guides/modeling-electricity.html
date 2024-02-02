@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Modeling Electricity &#8212; ASHRAE Standard 223P User Documentation</title>
   
@@ -29,39 +28,43 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'guides/modeling-electricity';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -160,7 +163,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">ASHRAE Standard 223P User Documentation</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -386,10 +400,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-predefined-electrical-service">Using predefined electrical service</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-predefined-electrical-service">Using Predefined Electrical Service</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#high-leg-delta-distribution-panel">High-Leg-Delta Distribution Panel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-structure-of-the-electricity-vocabulary-entries">The structure of the electricity vocabulary entries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#querying-a-model-for-electrical-characteristics">Querying a model for electrical characteristics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-structure-of-the-electricity-vocabulary-entries">The Structure of the Electricity Vocabulary Entries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#querying-a-model-for-electrical-characteristics">Querying a Model for Electrical Characteristics</a></li>
 </ul>
             </nav>
         </div>
@@ -402,11 +416,11 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="modeling-electricity">
-<h1>Modeling Electricity<a class="headerlink" href="#modeling-electricity" title="Permalink to this heading">#</a></h1>
+<h1>Modeling Electricity<a class="headerlink" href="#modeling-electricity" title="Link to this heading">#</a></h1>
 <p>Specifying the electrical service on a wire or circuit warrants a bit of explanation. This guide shows the simple way to specify the electrical characteristics,
 and then goes into more detail about what is “under the hood” interms of modeling it.</p>
 <section id="using-predefined-electrical-service">
-<h2>Using predefined electrical service<a class="headerlink" href="#using-predefined-electrical-service" title="Permalink to this heading">#</a></h2>
+<h2>Using Predefined Electrical Service<a class="headerlink" href="#using-predefined-electrical-service" title="Link to this heading">#</a></h2>
 <p>The 223 standard comes with a predefined vocabulary of common electrical service, so the easiest way to model is simply to pick the appropriate service from the controlled vocabulary.
 Shown below is a small excerpt of available AC electrical service.</p>
 <p><img alt="ACServiceExcerpt" src="../_images/guides-AC-service-excerpt.png" /></p>
@@ -418,14 +432,14 @@ a human reader can interpret the service s223:AC-120VLN-1Ph-60Hz to mean “AC e
 <p><img alt="ACServiceExample" src="../_images/guides-AC-service-example.png" /></p>
 </section>
 <section id="high-leg-delta-distribution-panel">
-<h2>High-Leg-Delta Distribution Panel<a class="headerlink" href="#high-leg-delta-distribution-panel" title="Permalink to this heading">#</a></h2>
+<h2>High-Leg-Delta Distribution Panel<a class="headerlink" href="#high-leg-delta-distribution-panel" title="Link to this heading">#</a></h2>
 <p>Here’s a diagram of a “High-Leg-Delta” distribution panel that provides several different voltages and phases.</p>
 <p>…</p>
 <p>…and here’s the model:
 <img alt="HighLegDeltaModel" src="../_images/guides-HighLegDelta.png" /></p>
 </section>
 <section id="the-structure-of-the-electricity-vocabulary-entries">
-<h2>The structure of the electricity vocabulary entries<a class="headerlink" href="#the-structure-of-the-electricity-vocabulary-entries" title="Permalink to this heading">#</a></h2>
+<h2>The Structure of the Electricity Vocabulary Entries<a class="headerlink" href="#the-structure-of-the-electricity-vocabulary-entries" title="Link to this heading">#</a></h2>
 <p>Since 223 is a semantic standard, relying on the naming convention is not sufficient to allow for querying of a model.
 For those who need to go deeper, the following section explains the structure of each of the vocabulary entries for electricity. Shown below is a diagram of that structure:</p>
 <p><img alt="110Vstructure" src="../_images/guides-110V-60Hz-single-phase-structure.png" /></p>
@@ -435,7 +449,7 @@ Note that the semantic model never depends on the names of the entities to provi
 <p><img alt="240Vstructure" src="../_images/guides-240V-60Hz-three-phase-structure.png" /></p>
 </section>
 <section id="querying-a-model-for-electrical-characteristics">
-<h2>Querying a model for electrical characteristics<a class="headerlink" href="#querying-a-model-for-electrical-characteristics" title="Permalink to this heading">#</a></h2>
+<h2>Querying a Model for Electrical Characteristics<a class="headerlink" href="#querying-a-model-for-electrical-characteristics" title="Link to this heading">#</a></h2>
 <p>The power of explicitly modeling all the characteristics of the electricity can be seen with some query examples. Here is a query to find in the vocabulary all electrical service that is 3-phase, with a line-neutral voltage of 120V:</p>
 <p><img alt="3-phase-query" src="../_images/guides-3-phase-query.png" /></p>
 <p>In a similar way, one can query a specific building model to find the electrical service(s) in use and drill down to determine the voltages and other properties that are present.</p>
@@ -488,10 +502,10 @@ Note that the semantic model never depends on the names of the entities to provi
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-predefined-electrical-service">Using predefined electrical service</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-predefined-electrical-service">Using Predefined Electrical Service</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#high-leg-delta-distribution-panel">High-Leg-Delta Distribution Panel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-structure-of-the-electricity-vocabulary-entries">The structure of the electricity vocabulary entries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#querying-a-model-for-electrical-characteristics">Querying a model for electrical characteristics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-structure-of-the-electricity-vocabulary-entries">The Structure of the Electricity Vocabulary Entries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#querying-a-model-for-electrical-characteristics">Querying a Model for Electrical Characteristics</a></li>
 </ul>
   </nav></div>
 

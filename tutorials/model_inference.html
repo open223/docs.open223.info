@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Model Inference &#8212; ASHRAE Standard 223P User Documentation</title>
   
@@ -29,39 +28,43 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/model_inference';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -160,7 +163,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">ASHRAE Standard 223P User Documentation</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -472,7 +486,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="model-inference">
-<span id="id1"></span><h1>Model Inference<a class="headerlink" href="#model-inference" title="Permalink to this heading">#</a></h1>
+<span id="id1"></span><h1>Model Inference<a class="headerlink" href="#model-inference" title="Link to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The purpose of this tutorial is to show how SHACL inference applied to a 223 model can
@@ -485,7 +499,7 @@ make models easier to write and query. Specifically, this tutorial will teach th
 <p>For this tutorial, we’ll use an existing equipment model of a variable air volume (VAV) terminal unit with cooling only from section 4.1 of ASHRAE Guideline 36-2021.
 This and other example models are available from <a class="reference internal" href="../reference/open223-resources.html#open223-resources"><span class="std std-ref">Open223 Models</span></a>.</p>
 <section id="what-are-shacl-rules">
-<h2>What are SHACL Rules?<a class="headerlink" href="#what-are-shacl-rules" title="Permalink to this heading">#</a></h2>
+<h2>What are SHACL Rules?<a class="headerlink" href="#what-are-shacl-rules" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://www.w3.org/TR/shacl-af/#rules">SHACL rules</a> add implied information to graphs if certain conditions are met, i.e. if certain triples exist in the source graph.
 The process of applying rules to an input model to generate new information (triples) is called <em>inference</em>.
 Inference makes models easier to write because the model author does not have to manually include all the triples necessary to support the desired queries;
@@ -494,7 +508,7 @@ One way to think of inference is a way of normalizing a 223 model.
 Inference assures that the expected properties, types, and other annotations are present so that consumers of the model can make assumptions about what information will be contained within the graph.</p>
 </section>
 <section id="model-parsing">
-<h2>Model Parsing<a class="headerlink" href="#model-parsing" title="Permalink to this heading">#</a></h2>
+<h2>Model Parsing<a class="headerlink" href="#model-parsing" title="Link to this heading">#</a></h2>
 <p>First, we’ll create a new empty graph then parse (load) an existing graph into it using the Python RDFLib library.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -639,7 +653,7 @@ Inference assures that the expected properties, types, and other annotations are
 </div>
 </details>
 <section id="testing-the-model-failed-query">
-<h3>Testing the Model (Failed Query)<a class="headerlink" href="#testing-the-model-failed-query" title="Permalink to this heading">#</a></h3>
+<h3>Testing the Model (Failed Query)<a class="headerlink" href="#testing-the-model-failed-query" title="Link to this heading">#</a></h3>
 <p>Below, we try to run a simple query on our model which asks what the damper in the terminal unit is connected to.
 The <code class="docutils literal notranslate"><span class="pre">s223:connected</span></code> relationship does not exist in the pre-inference model, so this query will not return results.</p>
 <div class="cell docutils container">
@@ -661,7 +675,7 @@ The <code class="docutils literal notranslate"><span class="pre">s223:connected<
 </section>
 </section>
 <section id="loading-the-223-ontology">
-<h2>Loading the 223 Ontology<a class="headerlink" href="#loading-the-223-ontology" title="Permalink to this heading">#</a></h2>
+<h2>Loading the 223 Ontology<a class="headerlink" href="#loading-the-223-ontology" title="Link to this heading">#</a></h2>
 <p>The 223 ontology contains the rules we will use for inference.
 We will load the 223 ontology into a separate graph from the model.
 This is mostly for maintenance: it is easy enough to merge two graphs together into one, but it is much harder to factor them out again.
@@ -679,7 +693,7 @@ By keeping the ontology graph separate from the model graph, we can more easily 
 </div>
 </section>
 <section id="applying-inference-rules">
-<h2>Applying Inference Rules<a class="headerlink" href="#applying-inference-rules" title="Permalink to this heading">#</a></h2>
+<h2>Applying Inference Rules<a class="headerlink" href="#applying-inference-rules" title="Link to this heading">#</a></h2>
 <p>To apply inference rules, we need an <em>inference engine</em>.
 This is a piece of software which knows how to properly interpret and apply the SHACL rules defined in an ontology.
 There are multiple closed-source and open-source implementations of SHACL available; some of these are listed on <a class="reference internal" href="../reference/other-resources.html#other-resources"><span class="std std-ref">this page</span></a>
@@ -718,7 +732,7 @@ like <a class="reference external" href="https://github.com/TopQuadrant/shacl">T
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">pyshacl.validate</span></code> function actually returns a SHACL validation report which can be used to fix
-the model and make it compatible with the 223 ontology. See the <span class="xref myst">Model Validation</span>
+the model and make it compatible with the 223 ontology. See the <a class="reference internal" href="#model_validation"><span class="xref myst">Model Validation</span></a>
 tutorial for how to access and interpret this report.</p>
 </div>
 <details>
@@ -732,7 +746,7 @@ tutorial for how to access and interpret this report.</p>
 </details>
 </section>
 <section id="using-the-new-model">
-<h2>Using the New Model<a class="headerlink" href="#using-the-new-model" title="Permalink to this heading">#</a></h2>
+<h2>Using the New Model<a class="headerlink" href="#using-the-new-model" title="Link to this heading">#</a></h2>
 <p>To demonstrate that the model contains new triples, we can try re-running the query from before.
 We can see that the query returns results this time.</p>
 <div class="cell docutils container">
