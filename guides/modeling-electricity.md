@@ -1,7 +1,6 @@
 # Modeling Electricity
 
-Specifying the electrical service on a wire or circuit warrants a bit of explanation. This guide shows the simple way to specify the electrical characteristics, 
-and then goes into more detail about what is "under the hood" interms of modeling it.
+This guide shows the simple way to specify electrical characteristics by specifying the electrical service on a wire or circuit, and then goes into more detail about what is "under the hood" in terms of modeling it.
 
 ## Using Predefined Electrical Service
 The 223 standard comes with a predefined vocabulary of common electrical service, so the easiest way to model is simply to pick the appropriate service from the controlled vocabulary. 
