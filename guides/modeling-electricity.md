@@ -23,7 +23,6 @@ Here's a diagram of a "High-Leg-Delta" distribution panel, which provides severa
 
 ...
 
-...and here's the model:
 ![HighLegDeltaModel](images/guides-HighLegDelta.png)
 
 ## The Structure of the Electricity Vocabulary Entries
