@@ -1,9 +1,8 @@
 # Modeling Electricity
 
-Specifying the electrical service on a wire or circuit warrants a bit of explanation. This guide shows the simple way to specify the electrical characteristics, 
-and then goes into more detail about what is "under the hood" interms of modeling it.
+This guide shows the simple way to specify electrical characteristics by specifying the electrical service on a wire or circuit, and then goes into more detail about what is "under the hood" in terms of modeling it.
 
-## Using predefined electrical service
+## Using Predefined Electrical Service
 The 223 standard comes with a predefined vocabulary of common electrical service, so the easiest way to model is simply to pick the appropriate service from the controlled vocabulary. 
 Shown below is a small excerpt of available AC electrical service.
 
@@ -20,14 +19,13 @@ Assuming your desired electrical service is listed in the vocabulary, the simple
 ![ACServiceExample](images/guides-AC-service-example.png)
 
 ## High-Leg-Delta Distribution Panel
-Here's a diagram of a "High-Leg-Delta" distribution panel that provides several different voltages and phases.
+Here's a diagram of a "High-Leg-Delta" distribution panel, which provides several different voltages and phases, and a diagram of key parts of the resulting model.
 
 ...
 
-...and here's the model:
 ![HighLegDeltaModel](images/guides-HighLegDelta.png)
 
-## The structure of the electricity vocabulary entries
+## The Structure of the Electricity Vocabulary Entries
 Since 223 is a semantic standard, relying on the naming convention is not sufficient to allow for querying of a model. 
 For those who need to go deeper, the following section explains the structure of each of the vocabulary entries for electricity. Shown below is a diagram of that structure:
 
@@ -40,7 +38,7 @@ Here is that more complex example shown with its full structure:
 
 ![240Vstructure](images/guides-240V-60Hz-three-phase-structure.png)
 
-## Querying a model for electrical characteristics
+## Querying a Model for Electrical Characteristics
 
 The power of explicitly modeling all the characteristics of the electricity can be seen with some query examples. Here is a query to find in the vocabulary all electrical service that is 3-phase, with a line-neutral voltage of 120V:
 
