@@ -53,18 +53,10 @@
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'explanation/223_overview';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -438,7 +430,15 @@ document.write(`
 </section>
 <section id="telemetry">
 <h2>Telemetry<a class="headerlink" href="#telemetry" title="Link to this heading">#</a></h2>
-<p>A 223 model does not directly provide telemetric data about the real-time operation or past operation of the building systems. It does provide information about the meaning or context of a given data point and it can link to a source of the data values so that an analytics application can find them. If the building has a BACnet building automation and control system, the model can provide the necessary information for analytics or controls software to learn which BACnet object and property corresponds to the desired piece of information. Data points are represented using Properties. There are multiple types of <a class="reference external" href="https://explore.open223.info/s223/Property.html">Properties</a>, such as control points that can be written to (<a class="reference external" href="https://explore.open223.info/s223/ActuatableProperty.html">ActuatableProperties</a>), sensor points that are observed (<a class="reference external" href="https://explore.open223.info/s223/ObservableProperty.html">ObservableProperties</a>), either of which can refer to enumerated (<a class="reference external" href="https://explore.open223.info/s223/EnumerableProperty.html">EnumerableProperty</a>) or quantified (<a class="reference external" href="https://explore.open223.info/s223/QuantifiableProperty.html">QuantifiableProperty</a>) values. Properties may also be used for mathematical operations, including those that are common in a building such as control logic. This idea is represented using <a class="reference external" href="https://explore.open223.info/s223/FunctionBlock.html">FunctionBlocks</a>. Properties also have many different characteristics which are described by a vocabulary of <a class="reference external" href="https://explore.open223.info/s223/EnumerationKind.html">EnumerationKinds</a>.</p>
+<p>A 223 model does not directly provide telemetric data about the real-time operation or past operation of the building systems.
+It does provide information about the meaning or context of a given data point and it can link to a source of the data values so that an analytics application can find them.
+If the building has a BACnet building automation and control system, the model can provide the necessary information for analytics or controls software to learn which BACnet object and BACnet property corresponds to the desired piece of information.</p>
+<p>In 223, <em>Properties</em> are representations of some quality or characteristic of the building which might be observable, quantifiable, and/or actuatable.
+Properties may have an <em>external reference</em> which indicates where the information (i.e., data) corresponding to that property may be found – this is commonly a BACnet object, but other types of external references are possible.
+There are multiple types of <a class="reference external" href="https://explore.open223.info/s223/Property.html">Properties</a>, such as control points that can be written to (<a class="reference external" href="https://explore.open223.info/s223/ActuatableProperty.html">ActuatableProperties</a>), sensor points that are observed (<a class="reference external" href="https://explore.open223.info/s223/ObservableProperty.html">ObservableProperties</a>), either of which can refer to enumerated (<a class="reference external" href="https://explore.open223.info/s223/EnumerableProperty.html">EnumerableProperty</a>) or quantified (<a class="reference external" href="https://explore.open223.info/s223/QuantifiableProperty.html">QuantifiableProperty</a>) values. Properties may also be used for mathematical operations, including those that are common in a building such as control logic. This idea is represented using <a class="reference external" href="https://explore.open223.info/s223/FunctionBlock.html">FunctionBlocks</a>. Properties also have many different characteristics which are described by a vocabulary of <a class="reference external" href="https://explore.open223.info/s223/EnumerationKind.html">EnumerationKinds</a>.</p>
+<p>Unlike other ontologies like <a class="reference external" href="https://www.w3.org/TR/vocab-ssn">SSN/SOSA</a>, Properties are <em>not</em> associated with the inherent phenomena.
+In 223, Properties are associated with a <em>single</em> sensor or actuator.
+Think of 223’s Properties as the source of the measurement or value which eventually becomes exposed in the building management system as a “Point”.</p>
 </section>
 <section id="characteristics">
 <h2>Characteristics<a class="headerlink" href="#characteristics" title="Link to this heading">#</a></h2>
