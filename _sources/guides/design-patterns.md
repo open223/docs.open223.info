@@ -25,11 +25,11 @@ This example describes the notation of containment in the standard. VAVBox1 cont
 ![Containment](images/guides-Containment.png)
 
 
-The next three examples showcase how FunctionBlocks, as logical constructs, are implemented in the standard. The following example demonstrates how a luminaire can be controlled based on motion occupancy sensing. The FunctionBlock labeled LuminaireLogic takes motion as an input property and provides the LuminaireCommand Property as the output, referred to by the luminaire via commandedByProperty. DumbSwitch simply provides power to the circuit.
+The next three examples showcase how Functions, as logical constructs, are implemented in the standard. The following example demonstrates how a luminaire can be controlled based on motion occupancy sensing. The Function labeled LuminaireLogic takes motion as an input property and provides the LuminaireCommand Property as the output, referred to by the luminaire via commandedByProperty. DumbSwitch simply provides power to the circuit.
 
 ![SimpleSwitch](images/guides-SimpleSwitch.png)
 
-The next case examines a scenario where the luminaire logic encapsulated in `FunctionBlock1` takes a combination of inputs: the motion sensor property as before, and a UserSwitchProperty that is set by a smart switch. The function block uses this combination of inputs to determine whether the luminaire is turned on or off.
+The next case examines a scenario where the luminaire logic encapsulated in `Function1` takes a combination of inputs: the motion sensor property as before, and a UserSwitchProperty that is set by a smart switch. The function block uses this combination of inputs to determine whether the luminaire is turned on or off.
 
 ![UserSwitch](images/guides-UserSwitch.png)
 
@@ -37,7 +37,7 @@ Finally, the next case pulls the concepts of containment, connectivity and funct
 1. a relay,
 2. a light actuator that activates the relay based on the property `LuminaireCommand`,
 3. an occupant motion sensor that sets value of `MotionProperty`,
-4. a controller that executes FunctionBlock1 to set the value of the property `LuminaireCommand`, 
+4. a controller that executes Function1 to set the value of the property `LuminaireCommand`, 
 5. and a `UserInputSwitch` that sets the value of `UserInputProperty`. 
 
 On the left of the diagram, you can see the modeling of the electricity that flows from Breaker1, to Relay, then on to the LightBulb. At that point, the medium (not shown) changes from electricity to visible light that flows from the LightBulb, through OpticalPath, to DomainSpace.
