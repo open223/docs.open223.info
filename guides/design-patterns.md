@@ -47,4 +47,37 @@ On the left of the diagram, you can see the modeling of the electricity that flo
 If all this detail seems overwhelming, remember that you don't need to model all the inner components of the smart switch if you don't want to. The entire model inside the red rectangle can be modeled as simply as shown below.
 
 ![OffTheShelfSmartSwitchUnexpanded](images/guides-smart-switch-unexpand.png)
+## Branching Connections - Introducing Junction
+There will be times when you want to model a Connection (such as an electric circuit) that does more than connect A to B - it will have branches. There are several ways to model such as Connection, depending on whether the location of, say, a meter requires you to show which branch it is on. First, here is a diagram of the simplest way to model a branched Connection, which just has multiple ConnectionPoints relating to the same Connection.
+![SimpleBranchedConnection](images/guides-SimpleBranch.png)
 
+If you need to be able to talk about each branch specifically, you can split the Connection by using a Junction, as shown below. Here, there are 4 Connections - the initial circuit coming from the Breaker, and 3 branch circuits feeding the 3 Motors.
+![BranchWithJunction](images/guides-BranchWithJunction.png)
+
+Navigating the connectivity is of course different, but a SPARQL query such as the one below can use a transitive s223:cnx path to find all the instances of s223:Connectable (which includes Equipment and Junction) on the circuit.
+```
+SELECT *
+WHERE {
+pt7:Breaker s223:cnx* ?x .
+?x a/rdfs:subClassOf* s223:Connectable .
+}
+```
+...which gives the following results:
+```
+Simple case:
+pt7:Breaker
+pt7:Motor1
+pt7:Motor2
+pt7:Motor3
+```
+Substituting pt8:Breaker in the query gives:
+```
+Case using a Junction:
+pt8:Breaker
+pt8:Junction
+pt8:Motor1
+pt8:Motor2
+pt8:Motor3
+```
+
+Using a query such as this helps maintain interoperability when interpreting a file, regardless of the modeling approach used by the author.
