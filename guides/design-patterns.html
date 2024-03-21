@@ -401,6 +401,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-function-with-multiple-inputs">A Function with Multiple Inputs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-a-store-bought-smart-switch">Modeling a Store-Bought Smart Switch</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#don-t-panic">Don’t Panic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branching-connections-introducing-junction">Branching Connections - Introducing Junction</a></li>
 </ul>
             </nav>
         </div>
@@ -467,6 +468,39 @@ document.write(`
 <h2>Don’t Panic<a class="headerlink" href="#don-t-panic" title="Link to this heading">#</a></h2>
 <p>If all this detail seems overwhelming, remember that you don’t need to model all the inner components of the smart switch if you don’t want to. The entire model inside the red rectangle can be modeled as simply as shown below.</p>
 <p><img alt="OffTheShelfSmartSwitchUnexpanded" src="../_images/guides-smart-switch-unexpand.png" /></p>
+</section>
+<section id="branching-connections-introducing-junction">
+<h2>Branching Connections - Introducing Junction<a class="headerlink" href="#branching-connections-introducing-junction" title="Link to this heading">#</a></h2>
+<p>There will be times when you want to model a Connection (such as an electric circuit) that does more than connect A to B - it will have branches. There are several ways to model such as Connection, depending on whether the location of, say, a meter requires you to show which branch it is on. First, here is a diagram of the simplest way to model a branched Connection, which just has multiple ConnectionPoints relating to the same Connection.
+<img alt="SimpleBranchedConnection" src="../_images/guides-SimpleBranch.png" /></p>
+<p>If you need to be able to talk about each branch specifically, you can split the Connection by using a Junction, as shown below. Here, there are 4 Connections - the initial circuit coming from the Breaker, and 3 branch circuits feeding the 3 Motors.
+<img alt="BranchWithJunction" src="../_images/guides-BranchWithJunction.png" /></p>
+<p>Navigating the connectivity is of course different, but a SPARQL query such as the one below can use a transitive s223:cnx path to find all the instances of s223:Connectable (which includes Equipment and Junction) on the circuit.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
+WHERE {
+pt7:Breaker s223:cnx* ?x .
+?x a/rdfs:subClassOf* s223:Connectable .
+}
+</pre></div>
+</div>
+<p>…which gives the following results:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Simple</span> <span class="n">case</span><span class="p">:</span>
+<span class="n">pt7</span><span class="p">:</span><span class="n">Breaker</span>
+<span class="n">pt7</span><span class="p">:</span><span class="n">Motor1</span>
+<span class="n">pt7</span><span class="p">:</span><span class="n">Motor2</span>
+<span class="n">pt7</span><span class="p">:</span><span class="n">Motor3</span>
+</pre></div>
+</div>
+<p>Substituting pt8:Breaker in the query gives:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Case</span> <span class="n">using</span> <span class="n">a</span> <span class="n">Junction</span><span class="p">:</span>
+<span class="n">pt8</span><span class="p">:</span><span class="n">Breaker</span>
+<span class="n">pt8</span><span class="p">:</span><span class="n">Junction</span>
+<span class="n">pt8</span><span class="p">:</span><span class="n">Motor1</span>
+<span class="n">pt8</span><span class="p">:</span><span class="n">Motor2</span>
+<span class="n">pt8</span><span class="p">:</span><span class="n">Motor3</span>
+</pre></div>
+</div>
+<p>Using a query such as this helps maintain interoperability when interpreting a file, regardless of the modeling approach used by the author.</p>
 </section>
 </section>
 
@@ -543,6 +577,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-function-with-multiple-inputs">A Function with Multiple Inputs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-a-store-bought-smart-switch">Modeling a Store-Bought Smart Switch</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#don-t-panic">Don’t Panic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branching-connections-introducing-junction">Branching Connections - Introducing Junction</a></li>
 </ul>
   </nav></div>
 
