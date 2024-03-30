@@ -9,8 +9,8 @@ parts:
   chapters:
   - file: explanation/purpose_scope_definitions.md
   - file: explanation/concepts.md
-  - file: explanation/223_overview.md
-  - file: explanation/graph_structure.md
+  - file: explanation/overview.md
+  - file: explanation/structure.md
 - caption: Tutorials
   chapters:
   - file: tutorials/model_exploration.md
