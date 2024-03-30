@@ -1,8 +1,8 @@
 
-(definitions)=
-# Definitions and Concepts 
+(concepts)=
+# Concepts
 
-To understand the explanations in this chapter it is important to know the defintions of several concepts. More can be learned about these concepts from the resources linked in the [reference section](open223-resources).
+To understand the explanations in this chapter it is important to know several concepts. More can be learned about these concepts from the resources linked in the [reference section](open223-resources).
 
 ## Graph Data Concepts
 
@@ -15,7 +15,7 @@ Classes are organized into a hierarchy, and entities are an instance of a given 
 Examples of relationships are *encapsulation* (one entity is contained within another), *sequence* (one entity takes effect before another in some process) and *instantiation* (one entity's type is given by another).
 
 - **Relation:** A predicate (RDF property) used to describe a given relationship.
-Examples of a relation are the 223 relation `s223:contains`, which defines the relationship between two pieces of equipment in which one contains another.  
+Examples of a relation are the 223 relation `s223:contains`, which defines the relationship between two pieces of equipment in which one contains another.
 
  - **Graph:** An abstract organizational data structure representing a set of entities (nodes) and relationships (edges) described in triple-structure. 223 models are represented by a directed, labeled graph, and use the RDF standard. We recommend reading the [Wikipedia page on the abstract graph data structure](https://en.wikipedia.org/wiki/Graph_(abstract_data_type)) for more information.
 
@@ -23,7 +23,7 @@ Examples of a relation are the 223 relation `s223:contains`, which defines the r
 
 ## 223 Top Level Classes
 
-The 223 standard defines a hierarchy of classes used to define the entities within a buidling. This section provides a basic definition of the classes at the top level of the hierarchy to help users understand what the standard aims to represent, which is described in the [overview](223-overview). 
+The 223 standard defines a hierarchy of classes used to define the entities within a building. This section provides a basic definition of the classes at the top level of the hierarchy to help users understand what the standard aims to represent, which is described in the [overview](223-overview).
 
  - **Connection:** A modeling construct for representing a physical thing (e.g., pipe, duct, wire) that connects and conveys a medium between two Connectable things.
 
@@ -45,7 +45,7 @@ The 223 standard defines a hierarchy of classes used to define the entities with
 
  - **Zone:** A collection of DomainSpaces grouped together based on building services or controls.
 
- - **Properties:** Properties often represent the actuation and measurement points within a buidling. They may be associated with real-time data. They also may define the attributes of other entities (e.g. Equipment, DomainSpaces, Zones). They can be further contextualized using enumerations.
+ - **Properties:** Properties often represent the actuation and measurement points within a building. They may be associated with real-time data. They also may define the attributes of other entities (e.g. Equipment, DomainSpaces, Zones). They can be further contextualized using enumerations.
 
  - **Enumerations:** The standard uses enumerations to convey groups of useful values for describing attributes of Properties, Equipment, and other things in the model. For example, the enumeration `Role-Cooling` describes that the equipment in question provides cooling.
 

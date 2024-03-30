@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Definitions and Concepts &#8212; ASHRAE Standard 223P User Documentation</title>
+    <title>Concepts &#8212; ASHRAE Standard 223P User Documentation</title>
   
   
   
@@ -380,7 +380,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Definitions and Concepts</h1>
+    <h1>Concepts</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -403,9 +403,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="definitions-and-concepts">
-<span id="definitions"></span><h1>Definitions and Concepts<a class="headerlink" href="#definitions-and-concepts" title="Link to this heading">#</a></h1>
-<p>To understand the explanations in this chapter it is important to know the defintions of several concepts. More can be learned about these concepts from the resources linked in the <a class="reference internal" href="../reference/open223-resources.html#open223-resources"><span class="std std-ref">reference section</span></a>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="concepts">
+<span id="id1"></span><h1>Concepts<a class="headerlink" href="#concepts" title="Link to this heading">#</a></h1>
+<p>To understand the explanations in this chapter it is important to know several concepts. More can be learned about these concepts from the resources linked in the <a class="reference internal" href="../reference/open223-resources.html#open223-resources"><span class="std std-ref">reference section</span></a>.</p>
 <section id="graph-data-concepts">
 <h2>Graph Data Concepts<a class="headerlink" href="#graph-data-concepts" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -422,7 +422,7 @@ Examples of a relation are the 223 relation <code class="docutils literal notran
 </section>
 <section id="top-level-classes">
 <h2>223 Top Level Classes<a class="headerlink" href="#top-level-classes" title="Link to this heading">#</a></h2>
-<p>The 223 standard defines a hierarchy of classes used to define the entities within a buidling. This section provides a basic definition of the classes at the top level of the hierarchy to help users understand what the standard aims to represent, which is described in the <a class="reference internal" href="223_overview.html#overview"><span class="std std-ref">overview</span></a>.</p>
+<p>The 223 standard defines a hierarchy of classes used to define the entities within a building. This section provides a basic definition of the classes at the top level of the hierarchy to help users understand what the standard aims to represent, which is described in the <a class="reference internal" href="223_overview.html#overview"><span class="std std-ref">overview</span></a>.</p>
 <ul class="simple">
 <li><p><strong>Connection:</strong> A modeling construct for representing a physical thing (e.g., pipe, duct, wire) that connects and conveys a medium between two Connectable things.</p></li>
 <li><p><strong>ConnectionPoint:</strong> An abstract modeling construct representing the point where one Connectable thing connects to another.</p></li>
@@ -437,7 +437,7 @@ Examples of a relation are the 223 relation <code class="docutils literal notran
 <li><p><strong>PhysicalSpace:</strong> An architectural concept representing a room, floor, or any physical space in a building. These PhysicalSpaces (e.g. a floor) can contain other PhysicalSpaces (e.g. a room).</p></li>
 <li><p><strong>System:</strong> A task-oriented collection of interacting or interrelated Equipment defined by the modeler.</p></li>
 <li><p><strong>Zone:</strong> A collection of DomainSpaces grouped together based on building services or controls.</p></li>
-<li><p><strong>Properties:</strong> Properties often represent the actuation and measurement points within a buidling. They may be associated with real-time data. They also may define the attributes of other entities (e.g. Equipment, DomainSpaces, Zones). They can be further contextualized using enumerations.</p></li>
+<li><p><strong>Properties:</strong> Properties often represent the actuation and measurement points within a building. They may be associated with real-time data. They also may define the attributes of other entities (e.g. Equipment, DomainSpaces, Zones). They can be further contextualized using enumerations.</p></li>
 <li><p><strong>Enumerations:</strong> The standard uses enumerations to convey groups of useful values for describing attributes of Properties, Equipment, and other things in the model. For example, the enumeration <code class="docutils literal notranslate"><span class="pre">Role-Cooling</span></code> describes that the equipment in question provides cooling.</p></li>
 <li><p><strong>FunctionBlock:</strong> Is used to model transfer and/or transformation of information (e.g. control algorithms). It has relations to input properties and output properties, that represent input and output data. The actual algorithms that perform the transformations are not described in 223, and can be described using standard 231.</p></li>
 </ul>
