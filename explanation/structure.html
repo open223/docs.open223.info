@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>223 Graph Structure &#8212; ASHRAE Standard 223P User Documentation</title>
+    <title>Structure &#8212; ASHRAE Standard 223P User Documentation</title>
   
   
   
@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Model Exploration" href="../tutorials/model_exploration.html" />
-    <link rel="prev" title="223 Overview" href="overview.html" />
+    <link rel="prev" title="Overview" href="overview.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,8 +180,8 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="purpose_scope_definitions.html">Purpose, Scope, and Definitions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="concepts.html">Concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">223 Overview</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">223 Graph Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Structure</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
@@ -380,7 +380,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>223 Graph Structure</h1>
+    <h1>Structure</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -394,8 +394,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="graph-structure">
-<h1>223 Graph Structure<a class="headerlink" href="#graph-structure" title="Link to this heading">#</a></h1>
+  <section id="structure">
+<h1>Structure<a class="headerlink" href="#structure" title="Link to this heading">#</a></h1>
 <p>Standard 223 is represented using the Resource Description Framework (RDF). RDF is a general method for representic semantic information in the form of a triple, which consists of a subject, a predicate, and an object. The subject and object define two entities, which are a instances of some class, and the predicate defines how they are related. A collection of these triples make up a graph. The 223 standard defines classes and relationships relevant to the building space that can then be used to build a multi-graph representing a specific building or group of buildings. For more information about RDF and the other semantic technologies used by the standard, please look at the <a class="reference internal" href="../reference/other-resources.html#other-resources"><span class="std std-ref">reference section</span></a>.</p>
 <p>To create a semantic model of your building using the 223 standard, you create instances that represent the entities in your building, and define them using the classes and relationships defined or referenced by the standard. For example, you may be creating a model of a building in which the air handling unit (ahu-1) contains a fan (fan-1). Your air handling unit (ahu-1) would be modeled as an instance of the 223 class <a class="reference external" href="https://explore.open223.info/s223/AirHandlingUnit.html"><code class="docutils literal notranslate"><span class="pre">s223:AirHandlingUnit</span></code></a>, which describes the general class of things resembling Air Handling Units. Similarly, your fan (fan-1) would be an instance of the 223 class <a class="reference external" href="https://explore.open223.info/s223/Fan.html"><code class="docutils literal notranslate"><span class="pre">s223:Fan</span></code></a>. The idea of containment is defined using the 223 relation <a class="reference external" href="https://explore.open223.info/s223/contains.html"><code class="docutils literal notranslate"><span class="pre">s223:contains</span></code></a>, so your air handling unit would relate to your fan using the relation <code class="docutils literal notranslate"><span class="pre">s223:contains</span></code>. The relationship between an instance and a class is defined using the RDF relation <code class="docutils literal notranslate"><span class="pre">rdf:type</span></code>, so your ahu and fan would relate to <code class="docutils literal notranslate"><span class="pre">s223:AirHandlingUnit</span></code> and <code class="docutils literal notranslate"><span class="pre">s223:Fan</span></code> using that relation. This example is shown in Figure 1.</p>
 <img alt="../_images/ex-1.svg" class="align-center" src="../_images/ex-1.svg" /><div align="center">
@@ -439,7 +439,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">223 Overview</p>
+        <p class="prev-next-title">Overview</p>
       </div>
     </a>
     <a class="right-next"
