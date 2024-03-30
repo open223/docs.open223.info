@@ -393,7 +393,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-data-concepts">Graph Data Concepts</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-level-classes">223 Top Level Classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-level-concepts">223 Top Level Concepts</a></li>
 </ul>
             </nav>
         </div>
@@ -422,13 +422,10 @@ Examples of a relation are the 223 relation <code class="docutils literal notran
 <li><p><strong>A 223 Model:</strong> A 223 model is a digital representation of a building in RDF graph structure that uses the 223 standard. This means that elements of the building are represented using the modeling constructs defined in the standard. The standard leverages semantic web technologies, allowing easy integration with other types of models based on RDF.</p></li>
 </ul>
 </section>
-<section id="top-level-classes">
-<h2>223 Top Level Classes<a class="headerlink" href="#top-level-classes" title="Link to this heading">#</a></h2>
+<section id="top-level-concepts">
+<h2>223 Top Level Concepts<a class="headerlink" href="#top-level-concepts" title="Link to this heading">#</a></h2>
 <p>The 223 standard defines a hierarchy of classes used to define the entities within a building. This section provides a basic definition of the classes at the top level of the hierarchy to help users understand what the standard aims to represent, which is described in the <a class="reference internal" href="overview.html#overview"><span class="std std-ref">overview</span></a>.</p>
 <ul class="simple">
-<li><p><strong>Connection:</strong> A modeling construct for representing a physical thing (e.g., pipe, duct, wire) that connects and conveys a medium between two Connectable things.</p></li>
-<li><p><strong>ConnectionPoint:</strong> An abstract modeling construct representing the point where one Connectable thing connects to another.</p></li>
-<li><p><strong>Domain:</strong> A categorization of building service or specialization used to characterize equipment or spaces (e.g., HVAC, lighting, plumbing).</p></li>
 <li><p><strong>Connectable:</strong> This is the top level entity that defines the classes that may be connected via ConnectionPoints and Connections. There are three major sub-classes of connectable</p>
 <ul>
 <li><p><strong>DomainSpace:</strong> A portion or entirety of a PhysicalSpace associated with a Domain. Often a DomainSpace is served by a particular piece of equipment, like a single VAV Box, and thus they can be connected to equipment. Multiple DomainSpaces controlled similarly can be grouped together, forming a Zone.</p></li>
@@ -436,12 +433,15 @@ Examples of a relation are the 223 relation <code class="docutils literal notran
 <li><p><strong>Junction:</strong> A Junction is a modeling construct used to represent important branching points within a Connection.</p></li>
 </ul>
 </li>
-<li><p><strong>PhysicalSpace:</strong> An architectural concept representing a room, floor, or any physical space in a building. These PhysicalSpaces (e.g. a floor) can contain other PhysicalSpaces (e.g. a room).</p></li>
-<li><p><strong>System:</strong> A task-oriented collection of interacting or interrelated Equipment defined by the modeler.</p></li>
-<li><p><strong>Zone:</strong> A collection of DomainSpaces grouped together based on building services or controls.</p></li>
-<li><p><strong>Properties:</strong> Properties often represent the actuation and measurement points within a building. They may be associated with real-time data. They also may define the attributes of other entities (e.g. Equipment, DomainSpaces, Zones). They can be further contextualized using enumerations.</p></li>
+<li><p><strong>Connection:</strong> A modeling construct for representing a physical thing (e.g., pipe, duct, wire) that connects and conveys a medium between two Connectable things.</p></li>
+<li><p><strong>ConnectionPoint:</strong> An abstract modeling construct representing the point where one Connectable thing connects to another.</p></li>
+<li><p><strong>Domain:</strong> A categorization of building service or specialization used to characterize equipment or spaces (e.g., HVAC, lighting, plumbing).</p></li>
 <li><p><strong>Enumerations:</strong> The standard uses enumerations to convey groups of useful values for describing attributes of Properties, Equipment, and other things in the model. For example, the enumeration <code class="docutils literal notranslate"><span class="pre">Role-Cooling</span></code> describes that the equipment in question provides cooling.</p></li>
 <li><p><strong>FunctionBlock:</strong> Is used to model transfer and/or transformation of information (e.g. control algorithms). It has relations to input properties and output properties, that represent input and output data. The actual algorithms that perform the transformations are not described in 223, and can be described using standard 231.</p></li>
+<li><p><strong>PhysicalSpace:</strong> An architectural concept representing a room, floor, or any physical space in a building. These PhysicalSpaces (e.g. a floor) can contain other PhysicalSpaces (e.g. a room).</p></li>
+<li><p><strong>Properties:</strong> Properties often represent the actuation and measurement points within a building. They may be associated with real-time data. They also may define the attributes of other entities (e.g. Equipment, DomainSpaces, Zones). They can be further contextualized using enumerations.</p></li>
+<li><p><strong>System:</strong> A task-oriented collection of interacting or interrelated Equipment defined by the modeler.</p></li>
+<li><p><strong>Zone:</strong> A collection of DomainSpaces grouped together based on building services or controls.</p></li>
 </ul>
 </section>
 </section>
@@ -511,7 +511,7 @@ Examples of a relation are the 223 relation <code class="docutils literal notran
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-data-concepts">Graph Data Concepts</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-level-classes">223 Top Level Classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-level-concepts">223 Top Level Concepts</a></li>
 </ul>
   </nav></div>
 

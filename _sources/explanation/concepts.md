@@ -21,15 +21,9 @@ Examples of a relation are the 223 relation `s223:contains`, which defines the r
 
  - **A 223 Model:** A 223 model is a digital representation of a building in RDF graph structure that uses the 223 standard. This means that elements of the building are represented using the modeling constructs defined in the standard. The standard leverages semantic web technologies, allowing easy integration with other types of models based on RDF.
 
-## 223 Top Level Classes
+## 223 Top Level Concepts
 
 The 223 standard defines a hierarchy of classes used to define the entities within a building. This section provides a basic definition of the classes at the top level of the hierarchy to help users understand what the standard aims to represent, which is described in the [overview](overview).
-
- - **Connection:** A modeling construct for representing a physical thing (e.g., pipe, duct, wire) that connects and conveys a medium between two Connectable things.
-
- - **ConnectionPoint:** An abstract modeling construct representing the point where one Connectable thing connects to another.
-
- - **Domain:** A categorization of building service or specialization used to characterize equipment or spaces (e.g., HVAC, lighting, plumbing).
 
  - **Connectable:** This is the top level entity that defines the classes that may be connected via ConnectionPoints and Connections. There are three major sub-classes of connectable
 
@@ -39,14 +33,20 @@ The 223 standard defines a hierarchy of classes used to define the entities with
 
     - **Junction:** A Junction is a modeling construct used to represent important branching points within a Connection.
 
- - **PhysicalSpace:** An architectural concept representing a room, floor, or any physical space in a building. These PhysicalSpaces (e.g. a floor) can contain other PhysicalSpaces (e.g. a room).
+ - **Connection:** A modeling construct for representing a physical thing (e.g., pipe, duct, wire) that connects and conveys a medium between two Connectable things.
 
- - **System:** A task-oriented collection of interacting or interrelated Equipment defined by the modeler.
+ - **ConnectionPoint:** An abstract modeling construct representing the point where one Connectable thing connects to another.
 
- - **Zone:** A collection of DomainSpaces grouped together based on building services or controls.
-
- - **Properties:** Properties often represent the actuation and measurement points within a building. They may be associated with real-time data. They also may define the attributes of other entities (e.g. Equipment, DomainSpaces, Zones). They can be further contextualized using enumerations.
+ - **Domain:** A categorization of building service or specialization used to characterize equipment or spaces (e.g., HVAC, lighting, plumbing).
 
  - **Enumerations:** The standard uses enumerations to convey groups of useful values for describing attributes of Properties, Equipment, and other things in the model. For example, the enumeration `Role-Cooling` describes that the equipment in question provides cooling.
 
  - **FunctionBlock:** Is used to model transfer and/or transformation of information (e.g. control algorithms). It has relations to input properties and output properties, that represent input and output data. The actual algorithms that perform the transformations are not described in 223, and can be described using standard 231.
+
+ - **PhysicalSpace:** An architectural concept representing a room, floor, or any physical space in a building. These PhysicalSpaces (e.g. a floor) can contain other PhysicalSpaces (e.g. a room).
+
+- **Properties:** Properties often represent the actuation and measurement points within a building. They may be associated with real-time data. They also may define the attributes of other entities (e.g. Equipment, DomainSpaces, Zones). They can be further contextualized using enumerations.
+
+ - **System:** A task-oriented collection of interacting or interrelated Equipment defined by the modeler.
+
+ - **Zone:** A collection of DomainSpaces grouped together based on building services or controls.
