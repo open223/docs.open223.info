@@ -7,10 +7,10 @@ root: intro
 parts:
 - caption: Explanation
   chapters:
-  - file: explanation/purpose_scope.md
-  - file: explanation/definitions.md
-  - file: explanation/223_overview.md
-  - file: explanation/graph_structure.md
+  - file: explanation/purpose_scope_definitions.md
+  - file: explanation/concepts.md
+  - file: explanation/overview.md
+  - file: explanation/structure.md
 - caption: Tutorials
   chapters:
   - file: tutorials/model_exploration.md
