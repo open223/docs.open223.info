@@ -394,6 +394,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">1 Purpose</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scope">2 Scope</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">3 Definitions</a></li>
 </ul>
             </nav>
         </div>
@@ -407,7 +408,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="purpose-and-scope">
 <span id="purpose-scope"></span><h1>Purpose and Scope<a class="headerlink" href="#purpose-and-scope" title="Link to this heading">#</a></h1>
-<p>The Purpose and Scope from from the current standard are provided below to introduce it to users. For more information about the Standard, please see the draft<a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+<p>The Purpose, Scope, and Definitions from the current Standard are provided below to introduce it to users. For more information about the Standard, please see the draft<a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
 <section id="purpose">
 <h2>1 Purpose<a class="headerlink" href="#purpose" title="Link to this heading">#</a></h2>
 <blockquote>
@@ -425,6 +426,23 @@ document.write(`
 <li><p>optimization of energy use, and</p></li>
 <li><p>smart grid interactions.</p></li>
 </ol>
+</div></blockquote>
+</section>
+<section id="definitions">
+<h2>3 Definitions<a class="headerlink" href="#definitions" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p><strong>Connectable</strong>: an abstract class that represents a thing (Equipment or DomainSpace) that can be connected via ConnectionPoints and Connections.
+<strong>Connection</strong>: the modeling construct used to represent a physical thing (e.g., pipe, duct, or wire) that is used to convey some Medium (e.g., water, air, or electricity) between two Connectable things.
+<strong>ConnectionPoint</strong>: an abstract modeling construct used to represent the fact that one Connectable thing can be connected to another Connectable thing using a Connection. It is the abstract representation of the flange, wire terminal, or other physical feature where a connection is made.
+<strong>Domain</strong>: a categorization of building service or specialization used to characterize equipment or spaces in a building. Example domains include HVAC, lighting, and plumbing.
+<strong>DomainSpace</strong>: a portion or the entirety of a PhysicalSpace that is associated with a Domain, such as lighting, HVAC, or physical security. DomainSpaces can be combined to form a Zone.
+<strong>Duct</strong>: a subclass of Connection that represents a conduit through which air is conveyed.
+<strong>ElectricWire</strong>: a subclass of Connection that represents one or more electrical conductors used to convey electricity.
+<strong>Equipment</strong>: the modeling construct used to represent a mechanical device designed to accomplish a specific task that one might buy from a vendor. Examples include a pump, fan, heat exchanger, luminaire, temperature sensor, or flow meter. A piece of equipment can contain another piece of equipment. For example, an air handling unit can contain a cooling coil.
+<strong>PhysicalSpace</strong>: an architectural concept that can represent a room, a collection of rooms such as a floor, a part of a room, or any physical space that might not even be thought of as a room, such as a patio.
+<strong>Pipe</strong>: a subclass of Connection that represents a hollow cylinder of metal or other material used to convey a Medium.
+<strong>System</strong>: a task-oriented collection of interacting or interrelated Equipment defined by the modeler. Examples of possible systems are an air distribution system, or a hot water system. Systems can contain other Systems.
+<strong>Zone</strong>: a collection of DomainSpaces of a specific domain that are grouped together from the perspective of building services or controls.</p>
 </div></blockquote>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
@@ -502,6 +520,7 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">1 Purpose</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scope">2 Scope</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">3 Definitions</a></li>
 </ul>
   </nav></div>
 
