@@ -1,5 +1,5 @@
 (purpose-scope)=
-# Purpose and Scope
+# Purpose, Scope, and Definitions
 
 The Purpose, Scope, and Definitions from the current Standard are provided below to introduce it to users. For more information about the Standard, please see the draft[^1].
 
