@@ -2,7 +2,7 @@
 (concepts)=
 # Concepts
 
-To understand the explanations in this chapter it is important to know several concepts. More can be learned about these concepts from the resources linked in the [reference section](open223-resources).
+To understand the explanations in this chapter it is important to know several concepts. More can be learned about these concepts from the [Open223 Resources](open223-resources).
 
 ## Graph Data Concepts
 
@@ -23,7 +23,7 @@ Examples of a relation are the 223 relation `s223:contains`, which defines the r
 
 ## 223 Top Level Classes
 
-The 223 standard defines a hierarchy of classes used to define the entities within a building. This section provides a basic definition of the classes at the top level of the hierarchy to help users understand what the standard aims to represent, which is described in the [overview](223-overview).
+The 223 standard defines a hierarchy of classes used to define the entities within a building. This section provides a basic definition of the classes at the top level of the hierarchy to help users understand what the standard aims to represent, which is described in the [overview](overview).
 
  - **Connection:** A modeling construct for representing a physical thing (e.g., pipe, duct, wire) that connects and conveys a medium between two Connectable things.
 
