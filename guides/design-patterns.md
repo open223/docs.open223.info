@@ -43,8 +43,9 @@ Finally, the next case pulls the concepts of containment, connectivity and funct
 On the left of the diagram, you can see the modeling of the electricity that flows from Breaker1, to Relay, then on to the Luminaire. At that point, the medium (not shown) changes from electricity to visible light that flows from the Luminaire, through OpticalPath, to DomainSpace.
 
 ![OffTheShelfSmartSwitch](images/guides-offtheshelf-smart-switch.png)
-## Don't Panic
-If all this detail seems overwhelming, remember that you don't need to model all the inner components of the smart switch if you don't want to. The entire model inside the red rectangle can be modeled as simply as shown below.
+````{margin}
+```{note}
+**Don't Panic** If all this detail seems overwhelming, remember that you don't need to model all the inner components of the smart switch if you don't want to. The entire model inside the red rectangle can be modeled as simply as shown below.
 
 ![OffTheShelfSmartSwitchUnexpanded](images/guides-smart-switch-unexpand.png)
 ## Branching Connections - Introducing Junction
