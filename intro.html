@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Purpose, Scope, and Definitions" href="explanation/purpose_scope_definitions.html" />
+    <link rel="next" title="Purpose and Scope" href="explanation/purpose_scope.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -179,10 +179,10 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Explanation</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="explanation/purpose_scope_definitions.html">Purpose, Scope, and Definitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="explanation/concepts.html">Concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="explanation/overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="explanation/structure.html">Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explanation/purpose_scope.html">Purpose and Scope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explanation/definitions.html">Definitions and Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explanation/223_overview.html">223 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explanation/graph_structure.html">223 Graph Structure</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
@@ -409,38 +409,28 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ashrae-standard-223-user-documentation">
 <span id="landing-page"></span><h1>ASHRAE Standard 223 User Documentation <img alt="Visitors" src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fdocs.open223.info%2F&amp;countColor=%23263759" /><a class="headerlink" href="#ashrae-standard-223-user-documentation" title="Link to this heading">#</a></h1>
-<p>The purpose of this site is to provide documentation for users of the <em>proposed</em> ASHRAE Standard 223 <em><strong>Semantic Data Model for Analytics and Automation Applications in Buildings</strong></em>, which is currently available for public review<a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> per the schedule below.</p>
+<p>The purpose of this site is to provide documentation for users of the <em>proposed</em> ASHRAE Standard 223, <em><strong>Designation and Classification of Semantic Tags for Building Data</strong></em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This site is developed in conjunction with the ASHRAE Standard 223 project committee. However, it is not an official ASHRAE product or a part of the standard.</p>
+</div>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>This site is developed in conjunction with the ASHRAE Standard 223 project committee. However, it is not an official ASHRAE product or a part of the standard.</p>
+<p>The proposed standard is not yet available for public review.</p>
 </div>
 </aside>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-center"><p>Beg Date</p></th>
-<th class="head text-center"><p>End Date</p></th>
-<th class="head text-left"><p>Status</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-center"><p>2024-03-22</p></td>
-<td class="text-center"><p>2024-05-06</p></td>
-<td class="text-left"><p>Advisory Public Review Draft</p></td>
-</tr>
-</tbody>
-</table>
-<p>The documentation uses Diataxis<a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> as a framework for its structure, which is organized into the following sections.</p>
+<p>The documentation uses Diataxis<a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> as a framework for its structure, which is organized into the following sections.</p>
 <section id="table-of-contents">
 <h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Link to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Explanation</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="explanation/purpose_scope_definitions.html">Purpose, Scope, and Definitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="explanation/concepts.html">Concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="explanation/overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="explanation/structure.html">Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explanation/purpose_scope.html">Purpose and Scope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explanation/definitions.html">Definitions and Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explanation/223_overview.html">223 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explanation/graph_structure.html">223 Graph Structure</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -466,12 +456,8 @@ document.write(`
 </div>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id3" role="doc-footnote">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://osr.ashrae.org/">https://osr.ashrae.org/</a></p>
-</aside>
-<aside class="footnote brackets" id="id4" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://diataxis.fr/">https://diataxis.fr/</a></p>
 </aside>
 </aside>
@@ -509,11 +495,11 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="explanation/purpose_scope_definitions.html"
+       href="explanation/purpose_scope.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Purpose, Scope, and Definitions</p>
+        <p class="prev-next-title">Purpose and Scope</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

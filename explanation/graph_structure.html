@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Purpose, Scope, and Definitions &#8212; ASHRAE Standard 223P User Documentation</title>
+    <title>223 Graph Structure &#8212; ASHRAE Standard 223P User Documentation</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'explanation/purpose_scope_definitions';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'explanation/graph_structure';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Concepts" href="concepts.html" />
-    <link rel="prev" title="ASHRAE Standard 223 User Documentation" href="../intro.html" />
+    <link rel="next" title="Model Exploration" href="../tutorials/model_exploration.html" />
+    <link rel="prev" title="223 Overview" href="223_overview.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -178,10 +178,10 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Explanation</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Purpose, Scope, and Definitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="concepts.html">Concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="structure.html">Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="purpose_scope.html">Purpose and Scope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="definitions.html">Definitions and Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="223_overview.html">223 Overview</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">223 Graph Structure</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
@@ -268,7 +268,7 @@
       
       
       
-      <li><a href="https://github.com/open223/docs.open223.info/issues/new?title=Issue%20on%20page%20%2Fexplanation/purpose_scope_definitions.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/open223/docs.open223.info/issues/new?title=Issue%20on%20page%20%2Fexplanation/graph_structure.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -298,7 +298,7 @@
       
       
       
-      <li><a href="../_sources/explanation/purpose_scope_definitions.md" target="_blank"
+      <li><a href="../_sources/explanation/graph_structure.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -369,9 +369,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -382,21 +380,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Purpose, Scope, and Definitions</h1>
+    <h1>223 Graph Structure</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">1 Purpose</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scope">2 Scope</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">3 Definitions</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -406,52 +394,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="purpose-scope-and-definitions">
-<span id="purpose-scope"></span><h1>Purpose, Scope, and Definitions<a class="headerlink" href="#purpose-scope-and-definitions" title="Link to this heading">#</a></h1>
-<p>The Purpose, Scope, and Definitions from the current Standard are provided below to introduce it to users. For more information about the Standard, please see the draft<a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
-<section id="purpose">
-<h2>1 Purpose<a class="headerlink" href="#purpose" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>The purpose of this standard is to define formal knowledge concepts and a methodology to apply them to create interoperable, machine-readable semantic frameworks for representing building automation and control data, and other building system information.</p>
-</div></blockquote>
-</section>
-<section id="scope">
-<h2>2 Scope<a class="headerlink" href="#scope" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>This standard provides a comprehensive way to apply semantic formalisms to represent the context of building system data and relationships between the associated building mechanical system components so that software applications can find and understand the information in an automated way. It is intended to facilitate the development and implementation of building analytics tools and enterprise knowledge applications that can implement many building system functions, including:</p>
-<ol class="arabic simple">
-<li><p>automated fault detection and diagnostics,</p></li>
-<li><p>building system commissioning,</p></li>
-<li><p>digital twins,</p></li>
-<li><p>optimization of energy use, and</p></li>
-<li><p>smart grid interactions.</p></li>
-</ol>
-</div></blockquote>
-</section>
-<section id="definitions">
-<h2>3 Definitions<a class="headerlink" href="#definitions" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p><strong>Connectable</strong>: an abstract class that represents a thing (Equipment or DomainSpace) that can be connected via ConnectionPoints and Connections.</p>
-<p><strong>Connection</strong>: the modeling construct used to represent a physical thing (e.g., pipe, duct, or wire) that is used to convey some Medium (e.g., water, air, or electricity) between two Connectable things.</p>
-<p><strong>ConnectionPoint</strong>: an abstract modeling construct used to represent the fact that one Connectable thing can be connected to another Connectable thing using a Connection. It is the abstract representation of the flange, wire terminal, or other physical feature where a connection is made.</p>
-<p><strong>Domain</strong>: a categorization of building service or specialization used to characterize equipment or spaces in a building. Example domains include HVAC, lighting, and plumbing.</p>
-<p><strong>DomainSpace</strong>: a portion or the entirety of a PhysicalSpace that is associated with a Domain, such as lighting, HVAC, or physical security. DomainSpaces can be combined to form a Zone.</p>
-<p><strong>Duct</strong>: a subclass of Connection that represents a conduit through which air is conveyed.</p>
-<p><strong>ElectricWire</strong>: a subclass of Connection that represents one or more electrical conductors used to convey electricity.</p>
-<p><strong>Equipment</strong>: the modeling construct used to represent a mechanical device designed to accomplish a specific task that one might buy from a vendor. Examples include a pump, fan, heat exchanger, luminaire, temperature sensor, or flow meter. A piece of equipment can contain another piece of equipment. For example, an air handling unit can contain a cooling coil.</p>
-<p><strong>PhysicalSpace</strong>: an architectural concept that can represent a room, a collection of rooms such as a floor, a part of a room, or any physical space that might not even be thought of as a room, such as a patio.</p>
-<p><strong>Pipe</strong>: a subclass of Connection that represents a hollow cylinder of metal or other material used to convey a Medium.</p>
-<p><strong>System</strong>: a task-oriented collection of interacting or interrelated Equipment defined by the modeler. Examples of possible systems are an air distribution system, or a hot water system. Systems can contain other Systems.</p>
-<p><strong>Zone</strong>: a collection of DomainSpaces of a specific domain that are grouped together from the perspective of building services or controls.</p>
-</div></blockquote>
-<hr class="footnotes docutils" />
-<aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id2" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://osr.ashrae.org/">https://osr.ashrae.org/</a></p>
-</aside>
-</aside>
-</section>
+  <section id="graph-structure">
+<h1>223 Graph Structure<a class="headerlink" href="#graph-structure" title="Link to this heading">#</a></h1>
+<p>Standard 223 is represented using the Resource Description Framework (RDF). RDF is a general method for representic semantic information in the form of a triple, which consists of a subject, a predicate, and an object. The subject and object define two entities, which are a instances of some class, and the predicate defines how they are related. A collection of these triples make up a graph. The 223 standard defines classes and relationships relevant to the building space that can then be used to build a multi-graph representing a specific building or group of buildings. For more information about RDF and the other semantic technologies used by the standard, please look at the <a class="reference internal" href="../reference/other-resources.html#other-resources"><span class="std std-ref">reference section</span></a>.</p>
+<p>To create a semantic model of your building using the 223 standard, you create instances that represent the entities in your building, and define them using the classes and relationships defined or referenced by the standard. For example, you may be creating a model of a building in which the air handling unit (ahu-1) contains a fan (fan-1). Your air handling unit (ahu-1) would be modeled as an instance of the 223 class <a class="reference external" href="https://explore.open223.info/s223/AirHandlingUnit.html"><code class="docutils literal notranslate"><span class="pre">s223:AirHandlingUnit</span></code></a>, which describes the general class of things resembling Air Handling Units. Similarly, your fan (fan-1) would be an instance of the 223 class <a class="reference external" href="https://explore.open223.info/s223/Fan.html"><code class="docutils literal notranslate"><span class="pre">s223:Fan</span></code></a>. The idea of containment is defined using the 223 relation <a class="reference external" href="https://explore.open223.info/s223/contains.html"><code class="docutils literal notranslate"><span class="pre">s223:contains</span></code></a>, so your air handling unit would relate to your fan using the relation <code class="docutils literal notranslate"><span class="pre">s223:contains</span></code>. The relationship between an instance and a class is defined using the RDF relation <code class="docutils literal notranslate"><span class="pre">rdf:type</span></code>, so your ahu and fan would relate to <code class="docutils literal notranslate"><span class="pre">s223:AirHandlingUnit</span></code> and <code class="docutils literal notranslate"><span class="pre">s223:Fan</span></code> using that relation. This example is shown in Figure 1.</p>
+<img alt="../_images/ex-1.svg" class="align-center" src="../_images/ex-1.svg" /><div align="center">
+<p><span style="font-size: medium;">Figure 1. 223 Modeling Example</span></p>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -485,20 +434,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../intro.html"
+       href="223_overview.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">ASHRAE Standard 223 User Documentation </p>
+        <p class="prev-next-title">223 Overview</p>
       </div>
     </a>
     <a class="right-next"
-       href="concepts.html"
+       href="../tutorials/model_exploration.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Concepts</p>
+        <p class="prev-next-title">Model Exploration</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -509,22 +458,7 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">1 Purpose</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scope">2 Scope</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">3 Definitions</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
+                <div class="bd-sidebar-secondary bd-toc"></div>
               
             
           </div>
