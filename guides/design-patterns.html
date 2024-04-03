@@ -467,39 +467,38 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p><strong>Don’t Panic</strong> If all this detail seems overwhelming, remember that you don’t need to model all the inner components of the smart switch if you don’t want to. The entire model inside the red rectangle can be modeled as simply as shown below.</p>
 <p><img alt="OffTheShelfSmartSwitchUnexpanded" src="../_images/guides-smart-switch-unexpand.png" /></p>
+</div>
 <h2 class="rubric" id="branching-connections-introducing-junction">Branching Connections - Introducing Junction</h2>
 <p>There will be times when you want to model a Connection (such as an electric circuit) that does more than connect A to B - it will have branches. There are several ways to model such as Connection, depending on whether the location of, say, a meter requires you to show which branch it is on. First, here is a diagram of the simplest way to model a branched Connection, which just has multiple ConnectionPoints relating to the same Connection.
 <img alt="SimpleBranchedConnection" src="../_images/guides-SimpleBranch.png" /></p>
 <p>If you need to be able to talk about each branch specifically, you can split the Connection by using a Junction, as shown below. Here, there are 4 Connections - the initial circuit coming from the Breaker, and 3 branch circuits feeding the 3 Motors.
 <img alt="BranchWithJunction" src="../_images/guides-BranchWithJunction.png" /></p>
 <p>Navigating the connectivity is of course different, but a SPARQL query such as the one below can use a transitive s223:cnx path to find all the instances of s223:Connectable (which includes Equipment and Junction) on the circuit.</p>
-</div>
-<p>SELECT *
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT *
 WHERE {
 pt7:Breaker s223:cnx* ?x .
 ?x a/rdfs:subClassOf* s223:Connectable .
-}</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span><span class="n">which</span> <span class="n">gives</span> <span class="n">the</span> <span class="n">following</span> <span class="n">results</span><span class="p">:</span>
+}
 </pre></div>
 </div>
-<p>Simple case:
-pt7:Breaker
-pt7:Motor1
-pt7:Motor2
-pt7:Motor3</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Substituting</span> <span class="n">pt8</span><span class="p">:</span><span class="n">Breaker</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">query</span> <span class="n">gives</span><span class="p">:</span>
+<p>…which gives the following results:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Simple</span> <span class="n">case</span><span class="p">:</span>
+<span class="n">pt7</span><span class="p">:</span><span class="n">Breaker</span>
+<span class="n">pt7</span><span class="p">:</span><span class="n">Motor1</span>
+<span class="n">pt7</span><span class="p">:</span><span class="n">Motor2</span>
+<span class="n">pt7</span><span class="p">:</span><span class="n">Motor3</span>
 </pre></div>
 </div>
-<p>Case using a Junction:
-pt8:Breaker
-pt8:Junction
-pt8:Motor1
-pt8:Motor2
-pt8:Motor3</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-<span class="n">Using</span> <span class="n">a</span> <span class="n">query</span> <span class="n">such</span> <span class="k">as</span> <span class="n">this</span> <span class="n">helps</span> <span class="n">maintain</span> <span class="n">interoperability</span> <span class="n">when</span> <span class="n">interpreting</span> <span class="n">a</span> <span class="n">file</span><span class="p">,</span> <span class="n">regardless</span> <span class="n">of</span> <span class="n">the</span> <span class="n">modeling</span> <span class="n">approach</span> <span class="n">used</span> <span class="n">by</span> <span class="n">the</span> <span class="n">author</span><span class="o">.</span>
+<p>Substituting pt8:Breaker in the query gives:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Case</span> <span class="n">using</span> <span class="n">a</span> <span class="n">Junction</span><span class="p">:</span>
+<span class="n">pt8</span><span class="p">:</span><span class="n">Breaker</span>
+<span class="n">pt8</span><span class="p">:</span><span class="n">Junction</span>
+<span class="n">pt8</span><span class="p">:</span><span class="n">Motor1</span>
+<span class="n">pt8</span><span class="p">:</span><span class="n">Motor2</span>
+<span class="n">pt8</span><span class="p">:</span><span class="n">Motor3</span>
 </pre></div>
 </div>
+<p>Using a query such as this helps maintain interoperability when interpreting a file, regardless of the modeling approach used by the author.</p>
 </aside>
 </section>
 </section>
