@@ -33,7 +33,7 @@ The next case examines a scenario where the luminaire logic encapsulated in `Fun
 
 ![UserSwitch](images/guides-UserSwitch.png)
 ## Modeling a Store-Bought Smart Switch
-Finally, the next case pulls the concepts of containment, connectivity and function block together to model a motion-sensitive smart switch that a consumer might buy at a hardware store. The red rectangle delineates the consumer smart switch. The smart switch contains five elements: 
+Finally, the next case pulls the concepts of containment, connectivity and function together to model a motion-sensitive smart switch that a consumer might buy at a hardware store. The red rectangle delineates the consumer smart switch. The smart switch contains five elements: 
 1. a relay,
 2. a light actuator that activates the relay based on the property `LuminaireCommand`,
 3. an occupant motion sensor that sets value of `MotionProperty`,
