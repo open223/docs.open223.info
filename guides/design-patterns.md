@@ -42,7 +42,6 @@ Finally, the next case pulls the concepts of containment, connectivity and funct
 
 On the left of the diagram, you can see the modeling of the electricity that flows from Breaker1, to Relay, then on to the Luminaire. At that point, the medium (not shown) changes from electricity to visible light that flows from the Luminaire, through OpticalPath, to DomainSpace.
 
-![OffTheShelfSmartSwitch](images/guides-offtheshelf-smart-switch.png)
 ````{margin}
 ```{note}
 **Don't Panic** If all this detail seems overwhelming, remember that you don't need to model all the inner components of the smart switch if you don't want to. The entire model inside the red rectangle can be modeled as simply as shown below.
@@ -51,6 +50,8 @@ On the left of the diagram, you can see the modeling of the electricity that flo
 ```
 
 ````
+
+![OffTheShelfSmartSwitch](images/guides-offtheshelf-smart-switch.png)
 
 ## Branching Connections - Introducing Junction
 There will be times when you want to model a Connection (such as an electric circuit) that does more than connect A to B - it will have branches. There are several ways to model such as Connection, depending on whether the location of, say, a meter requires you to show which branch it is on. First, here is a diagram of the simplest way to model a branched Connection, which just has multiple ConnectionPoints relating to the same Connection.
