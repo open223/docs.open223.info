@@ -50,6 +50,8 @@ On the left of the diagram, you can see the modeling of the electricity that flo
 ![OffTheShelfSmartSwitchUnexpanded](images/guides-smart-switch-unexpand.png)
 ```
 
+````
+
 ## Branching Connections - Introducing Junction
 There will be times when you want to model a Connection (such as an electric circuit) that does more than connect A to B - it will have branches. There are several ways to model such as Connection, depending on whether the location of, say, a meter requires you to show which branch it is on. First, here is a diagram of the simplest way to model a branched Connection, which just has multiple ConnectionPoints relating to the same Connection.
 ![SimpleBranchedConnection](images/guides-SimpleBranch.png)
