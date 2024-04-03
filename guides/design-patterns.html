@@ -400,6 +400,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-functions">Using Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-function-with-multiple-inputs">A Function with Multiple Inputs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-a-store-bought-smart-switch">Modeling a Store-Bought Smart Switch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branching-connections-introducing-junction">Branching Connections - Introducing Junction</a></li>
 </ul>
             </nav>
         </div>
@@ -468,7 +469,10 @@ document.write(`
 <p><strong>Don’t Panic</strong> If all this detail seems overwhelming, remember that you don’t need to model all the inner components of the smart switch if you don’t want to. The entire model inside the red rectangle can be modeled as simply as shown below.</p>
 <p><img alt="OffTheShelfSmartSwitchUnexpanded" src="../_images/guides-smart-switch-unexpand.png" /></p>
 </div>
-<h2 class="rubric" id="branching-connections-introducing-junction">Branching Connections - Introducing Junction</h2>
+</aside>
+</section>
+<section id="branching-connections-introducing-junction">
+<h2>Branching Connections - Introducing Junction<a class="headerlink" href="#branching-connections-introducing-junction" title="Link to this heading">#</a></h2>
 <p>There will be times when you want to model a Connection (such as an electric circuit) that does more than connect A to B - it will have branches. There are several ways to model such as Connection, depending on whether the location of, say, a meter requires you to show which branch it is on. First, here is a diagram of the simplest way to model a branched Connection, which just has multiple ConnectionPoints relating to the same Connection.
 <img alt="SimpleBranchedConnection" src="../_images/guides-SimpleBranch.png" /></p>
 <p>If you need to be able to talk about each branch specifically, you can split the Connection by using a Junction, as shown below. Here, there are 4 Connections - the initial circuit coming from the Breaker, and 3 branch circuits feeding the 3 Motors.
@@ -499,7 +503,6 @@ pt7:Breaker s223:cnx* ?x .
 </pre></div>
 </div>
 <p>Using a query such as this helps maintain interoperability when interpreting a file, regardless of the modeling approach used by the author.</p>
-</aside>
 </section>
 </section>
 
@@ -575,6 +578,7 @@ pt7:Breaker s223:cnx* ?x .
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-functions">Using Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-function-with-multiple-inputs">A Function with Multiple Inputs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-a-store-bought-smart-switch">Modeling a Store-Bought Smart Switch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branching-connections-introducing-junction">Branching Connections - Introducing Junction</a></li>
 </ul>
   </nav></div>
 
