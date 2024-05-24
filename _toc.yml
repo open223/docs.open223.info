@@ -11,6 +11,8 @@ parts:
   - file: explanation/definitions.md
   - file: explanation/223_overview.md
   - file: explanation/graph_structure.md
+  - file: explanation/units_of_measure.md
+  - file: explanation/closed_world.md
 - caption: Tutorials
   chapters:
   - file: tutorials/model_exploration.md
