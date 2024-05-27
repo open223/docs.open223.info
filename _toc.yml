@@ -11,8 +11,7 @@ parts:
   - file: explanation/definitions.md
   - file: explanation/223_overview.md
   - file: explanation/graph_structure.md
-  - file: explanation/units_of_measure.md
-  - file: explanation/closed_world.md
+  - file: explanation/closed_world_assumption.md
 - caption: Tutorials
   chapters:
   - file: tutorials/model_exploration.md
@@ -23,5 +22,6 @@ parts:
   - file: guides/brick-rec.md
 - caption: Reference
   chapters:
+  - file: reference/units_of_measure.md
   - file: reference/open223-resources.md
   - file: reference/other-resources.md
