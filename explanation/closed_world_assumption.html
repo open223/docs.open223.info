@@ -398,20 +398,11 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="closed-world-assumption">
 <span id="closed-world"></span><h1>Closed World Assumption<a class="headerlink" href="#closed-world-assumption" title="Link to this heading">#</a></h1>
-<p>The 223 standard adopts a closed world assumption, which is believed by many to be more appropriate in an industrial or commercial application. Under this assumption, it becomes possible to reason about the absence of a piece of information. Accordingly, the 223 standard constrains the use of relations to those specifically declared as appropriate for any given class. The validation rule to enforce this informational constraint applies only to instances of s223: and qudt: that use a property for which a SHACL shape has not been defined for the defining class (or superclass). The intention is not to stop users from attaching additional properties defined in other ontologies. Such occurrences will be flagged as informational SHACL notifications, not SHACL violations.</p>
-<p>It is best practice to explicitly declare those additional properties to be used by a target s223 class by providing a SHACL shape stating that as an extension for your applications. It can be as simple as the following example for two externally defined properties:</p>
-<div class="highlight-ttl notranslate"><div class="highlight"><pre><span></span><span class="nv">myPrefix</span>:<span class="nv">MyPropertyShapes</span>
-<span class="w">    </span><span class="nv">sh</span>:<span class="nv">property</span><span class="w"> </span>[
-<span class="w">        </span><span class="nv">sh</span>:<span class="nv">path</span><span class="w"> </span><span class="nv">myPrefix</span>:<span class="nv">myProperty1</span><span class="w"> </span><span class="c1">;</span>
-<span class="w">    </span>]<span class="w"> </span><span class="c1">;</span>
-<span class="w">    </span><span class="nv">sh</span>:<span class="nv">property</span><span class="w"> </span>[
-<span class="w">        </span><span class="nv">sh</span>:<span class="nv">path</span><span class="w"> </span><span class="nv">myPrefix</span>:<span class="nv">myProperty2</span><span class="w"> </span><span class="c1">;</span>
-<span class="w">    </span>]<span class="w"> </span><span class="c1">;</span>
-<span class="w">    </span><span class="nv">sh</span>:<span class="nv">targetClass</span><span class="w"> </span><span class="nv">s223</span>:<span class="nv">Concept</span><span class="w"> </span><span class="c1">;</span>
-.
-</pre></div>
-</div>
-<p>Doing this will eliminate the notifications for the two externally defined properties. A further advantage of explicitly declaring your properties is these definitions advertise to other parties how your applications deviate from strict conformance to s223, helping with interoperability issues.</p>
+<p>The 223 standard adopts a closed world assumption, which is believed by many to be more appropriate in an industrial or commercial application. Under this assumption, it becomes possible to reason about the absence of a piece of information. Accordingly, the 223 standard constrains the use of relations to those specifically declared as appropriate for any given class.</p>
+<p>The validation rule to enforce this informational constraint applies only to instances of s223: classes that use an s223: or qudt: property that lacks a relevant SHACL shape.
+Therefore, using a property with a namespace other than s223: or qudt: will not be flagged by the validation rule. A modeler is free to attach relations defined in other ontologies such as Brick, etc., assuming your application
+imports the necessary definitions, or at least declares the non-s223 properties that are used.</p>
+<p>Declaring these additional imports or explicitly declaring your non-s223 properties advertises to other parties how your applications deviate from strict conformance to s223, helping with interoperability issues.</p>
 </section>
 
     <script type="text/x-thebe-config">
