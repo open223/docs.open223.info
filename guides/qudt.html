@@ -406,8 +406,15 @@ application. This is the recommended method because it ensures nothing changes w
 user. Alternatively, one can dynamically load the QUDT graphs into an application from the internet via the
 graph URIs identified in the import statements of the 223 standard, such as <a class="reference external" href="http://qudt.org/2.1/vocab/unit">http://qudt.org/2.1/vocab/unit</a>.
 This approach will always load the latest version of QUDT, but note that this approach loads the OWL schema
-for QUDT rather than the SHACL schema.
-See the <a class="reference external" href="https://github.com/qudt/qudt-public-repo#protege-users">installation instructions</a> for more details.</p>
+for QUDT rather than the SHACL schema. As described in the
+<a class="reference external" href="https://github.com/qudt/qudt-public-repo#protege-users">Protege Users instructions</a>, the imports
+specified in the “facade” file that is resolvable on the web (<a class="reference external" href="http://qudt.org/2.1/schema/facade/qudt">http://qudt.org/2.1/schema/facade/qudt</a>) is  configured to load the OWL schema rather than the SHACL schema. To use the SHACL schema in the dynamic loading method, a local copy of the facade file must be downloaded first and edited as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Change</span> <span class="n">this</span> <span class="n">line</span><span class="p">:</span>
+  <span class="n">owl</span><span class="p">:</span><span class="n">imports</span> <span class="o">&lt;</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">qudt</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">2.1</span><span class="o">/</span><span class="n">schema</span><span class="o">/</span><span class="n">qudt</span><span class="o">&gt;</span> <span class="p">;</span>  
+<span class="n">To</span><span class="p">:</span>
+  <span class="n">owl</span><span class="p">:</span><span class="n">imports</span> <span class="o">&lt;</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">qudt</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">2.1</span><span class="o">/</span><span class="n">schema</span><span class="o">/</span><span class="n">shacl</span><span class="o">/</span><span class="n">qudt</span><span class="o">&gt;</span> <span class="p">;</span>
+</pre></div>
+</div>
 <p>A useful resource for the modeler is the QUDT catalog found <a class="reference external" href="https://www.qudt.org/2.1/catalog/qudt-catalog.html">here</a>, where all the units, quantity kinds and other concepts are listed. Each concept is fully dereferenceable, so for example, the Ampere has the URI <a class="reference external" href="http://qudt.org/vocab/unit/A">http://qudt.org/vocab/unit/A</a>. Using content negotiation, this link resolves to an HTML page for a human reader, and to interpretable code for a machine.</p>
 </section>
 
