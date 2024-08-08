@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Units of Measure &#8212; ASHRAE Standard 223P User Documentation</title>
+    <title>Using 223 with QUDT &#8212; ASHRAE Standard 223P User Documentation</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/units_of_measure';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'guides/qudt';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Open223 Resources" href="open223-resources.html" />
-    <link rel="prev" title="Using 223 with Brick and RealEstateCore" href="../guides/brick-rec.html" />
+    <link rel="next" title="Using 223 with Brick and RealEstateCore" href="brick-rec.html" />
+    <link rel="prev" title="Modeling Design Patterns" href="design-patterns.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -190,15 +190,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/model_inference.html">Model Inference</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../guides/design-patterns.html">Modeling Design Patterns</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/brick-rec.html">Using 223 with Brick and RealEstateCore</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="design-patterns.html">Modeling Design Patterns</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Using 223 with QUDT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brick-rec.html">Using 223 with Brick and RealEstateCore</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Units of Measure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="open223-resources.html">Open223 Resources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="other-resources.html">Other Resources</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reference/open223-resources.html">Open223 Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/other-resources.html">Other Resources</a></li>
 </ul>
 
     </div>
@@ -270,7 +270,7 @@
       
       
       
-      <li><a href="https://github.com/open223/docs.open223.info/issues/new?title=Issue%20on%20page%20%2Freference/units_of_measure.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/open223/docs.open223.info/issues/new?title=Issue%20on%20page%20%2Fguides/qudt.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -300,7 +300,7 @@
       
       
       
-      <li><a href="../_sources/reference/units_of_measure.md" target="_blank"
+      <li><a href="../_sources/guides/qudt.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -382,7 +382,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Units of Measure</h1>
+    <h1>Using 223 with QUDT</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -396,9 +396,18 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="units-of-measure">
-<span id="id1"></span><h1>Units of Measure<a class="headerlink" href="#units-of-measure" title="Link to this heading">#</a></h1>
-<p>Because this standard includes references to measurements of physical properties, it is necessary to provide a model representation of units of measure as well as what those units are quantifying (e.g. temperature, power, etc.). This standard builds upon the “Quantities, Units, Dimensions and Types” (QUDT) ontology which is the leading open-source model of units and related concepts expressed in RDF/SHACL. The QUDT model is documented at <a class="reference external" href="https://qudt.org">https://qudt.org</a>. The key concepts used here are the classes Unit and QuantityKind.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="using-223-with-qudt">
+<span id="qudt"></span><h1>Using 223 with QUDT<a class="headerlink" href="#using-223-with-qudt" title="Link to this heading">#</a></h1>
+<p>Because this standard includes references to measurements of physical properties, it is necessary to provide a model representation of units of measure as well as what those units are quantifying (e.g. temperature, power, etc.). This standard builds upon the “Quantities, Units, Dimensions and Types” (QUDT) ontology which is the leading open-source model of units and related concepts expressed in RDF/SHACL. The QUDT model is documented at <a class="reference external" href="https://qudt.org">https://qudt.org</a>. The key concepts used here are the classes Unit and QuantityKind. The 223 standard is compatible with Version 2.1.41 of QUDT and is expected to be compatible with
+all newer versions as well.</p>
+<p>If a user wants control over which version of QUDT is used, they can download any specific version at
+<a class="github reference external" href="https://github.com/qudt/qudt-public-repo/releases">qudt/qudt-public-repo</a> for use within their
+application. This is the recommended method because it ensures nothing changes without the knowledge of the
+user. Alternatively, one can dynamically load the QUDT graphs into an application from the internet via the
+graph URIs identified in the import statements of the 223 standard, such as <a class="reference external" href="http://qudt.org/2.1/vocab/unit">http://qudt.org/2.1/vocab/unit</a>.
+This approach will always load the latest version of QUDT, but note that this approach loads the OWL schema
+for QUDT rather than the SHACL schema. See the documentation at
+<a class="github reference external" href="https://github.com/qudt/qudt-public-repo#protege-users">qudt/qudt-public-repo</a> for more details.</p>
 <p>A useful resource for the modeler is the QUDT catalog found <a class="reference external" href="https://www.qudt.org/2.1/catalog/qudt-catalog.html">here</a>, where all the units, quantity kinds and other concepts are listed. Each concept is fully dereferenceable, so for example, the Ampere has the URI <a class="reference external" href="http://qudt.org/vocab/unit/A">http://qudt.org/vocab/unit/A</a>. Using content negotiation, this link resolves to an HTML page for a human reader, and to interpretable code for a machine.</p>
 </section>
 
@@ -415,7 +424,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./reference"
+            path: "./guides"
         },
         predefinedOutput: true
     }
@@ -433,20 +442,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../guides/brick-rec.html"
+       href="design-patterns.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Using 223 with Brick and RealEstateCore</p>
+        <p class="prev-next-title">Modeling Design Patterns</p>
       </div>
     </a>
     <a class="right-next"
-       href="open223-resources.html"
+       href="brick-rec.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Open223 Resources</p>
+        <p class="prev-next-title">Using 223 with Brick and RealEstateCore</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
