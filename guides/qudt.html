@@ -398,16 +398,16 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="using-223-with-qudt">
 <span id="qudt"></span><h1>Using 223 with QUDT<a class="headerlink" href="#using-223-with-qudt" title="Link to this heading">#</a></h1>
-<p>Because this standard includes references to measurements of physical properties, it is necessary to provide a model representation of units of measure as well as what those units are quantifying (e.g. temperature, power, etc.). This standard builds upon the “Quantities, Units, Dimensions and Types” (QUDT) ontology which is the leading open-source model of units and related concepts expressed in RDF/SHACL. The QUDT model is documented at <a class="reference external" href="https://qudt.org">https://qudt.org</a>. The key concepts used here are the classes Unit and QuantityKind. The 223 standard is compatible with Version 2.1.41 of QUDT and is expected to be compatible with
+<p>Because this standard includes references to measurements of physical properties, it is necessary to provide a model representation of units of measure as well as what those units are quantifying (e.g. temperature, power, etc.). This standard builds upon the “Quantities, Units, Dimensions and Types” (QUDT) ontology which is the leading open-source model of units and related concepts expressed in RDF/SHACL. The QUDT model is documented at the <a class="reference external" href="https://qudt.org">QUDT website</a>. The key concepts used here are the classes Unit and QuantityKind. The 223 standard is compatible with Version 2.1.41 of QUDT and is expected to be compatible with
 all newer versions as well.</p>
-<p>If a user wants control over which version of QUDT is used, they can download any specific version at
-<a class="github reference external" href="https://github.com/qudt/qudt-public-repo/releases">qudt/qudt-public-repo</a> for use within their
+<p>If a user wants control over which version of QUDT is used, they can download any specific version at the
+<a class="reference external" href="https://github.com/qudt/qudt-public-repo/releases">QUDT Github Release page</a> for use within their
 application. This is the recommended method because it ensures nothing changes without the knowledge of the
 user. Alternatively, one can dynamically load the QUDT graphs into an application from the internet via the
 graph URIs identified in the import statements of the 223 standard, such as <a class="reference external" href="http://qudt.org/2.1/vocab/unit">http://qudt.org/2.1/vocab/unit</a>.
 This approach will always load the latest version of QUDT, but note that this approach loads the OWL schema
-for QUDT rather than the SHACL schema. See the documentation at
-<a class="github reference external" href="https://github.com/qudt/qudt-public-repo#protege-users">qudt/qudt-public-repo</a> for more details.</p>
+for QUDT rather than the SHACL schema.
+See the <a class="reference external" href="https://github.com/qudt/qudt-public-repo#protege-users">installation instructions</a> for more details.</p>
 <p>A useful resource for the modeler is the QUDT catalog found <a class="reference external" href="https://www.qudt.org/2.1/catalog/qudt-catalog.html">here</a>, where all the units, quantity kinds and other concepts are listed. Each concept is fully dereferenceable, so for example, the Ampere has the URI <a class="reference external" href="http://qudt.org/vocab/unit/A">http://qudt.org/vocab/unit/A</a>. Using content negotiation, this link resolves to an HTML page for a human reader, and to interpretable code for a machine.</p>
 </section>
 
