@@ -1,6 +1,6 @@
 # https://github.com/github/gitignore/blob/main/Python.gitignore
 
-
+.DS_Store
 
 # Sphinx documentation
 _build/
