@@ -19,9 +19,9 @@ parts:
 - caption: Guides
   chapters:
   - file: guides/design-patterns.md
+  - file: guides/qudt.md
   - file: guides/brick-rec.md
 - caption: Reference
   chapters:
-  - file: reference/units_of_measure.md
   - file: reference/open223-resources.md
   - file: reference/other-resources.md
