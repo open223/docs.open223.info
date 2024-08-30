@@ -59,7 +59,10 @@ PREFIX qudt: <http://qudt.org/schema/qudt/>
 PREFIX qudtqk: <http://qudt.org/vocab/quantitykind/>
 SELECT ?damper ?temp WHERE {
     ?damper a s223:Damper ;
-        s223:hasProperty ?temp.
+      s233:cnx [
+        s223:hasMedium s223:Medium-Air ;
+        s223:hasProperty ?temp
+      ].
     ?temp a s223:QuantifiableObservableProperty ;
         qudt:hasQuantityKind qudtqk:Temperature ;
         s223:hasAspect s223:Role-Supply .
