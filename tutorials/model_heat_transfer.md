@@ -1,4 +1,4 @@
-# Modeling heat transfer equipment
+# Modeling Heat Transfer Equipment
 
 A variety of Equipment subclasses are defined in the 223 standard. The names of the classes are 
 intended to align with common names in the field as much as possible, but the technical distinctions 
