@@ -57,8 +57,14 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'scraps';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -425,10 +431,10 @@ graph LR
     AHU-- contains --&gt;Fan
 </pre></div>
 </div>
-<div class="mermaid">
-            graph LR
+<pre  class="mermaid">
+        graph LR
     AHU-- contains --&gt;Fan
-        </div><p>TODO: put later in design pattern section</p>
+    </pre><p>TODO: put later in design pattern section</p>
 <p>There are many figures depicting snippets of 223P models in this user guide. These figures should be read as a series of triples, rather than as a flow chart. Figure 1 shows an example of a 223P model. The direction of the arrow indicates how the subject relates to the object. In the case of Figure 1, the AHU is the subject, and it relates to the Fan using the predicate contains. Triples are generally textualized using the Terse RDF Triple Language (TTL) (cite). Figure 2 shows an example of a series of triples both as a picture and as text in TTL format.  (should maybe make the figure in top braid since many others in this user guide will be in that style)</p>
 <div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>---
 title: Figure 2a. Triples as diagram 
@@ -442,12 +448,12 @@ Fan-- connectedTo --&gt;HeatingCoil
 <div align="center">
 <p><span style="font-size: larger;">Figure 2a. Triples as diagram</span></p>
 </div>
-<div class="mermaid">
-            graph LR
+<pre  class="mermaid">
+        graph LR
 AHU-- contains --&gt;Fan
 AHU-- contains --&gt;HeatingCoil
 Fan-- connectedTo --&gt;HeatingCoil
-        </div><div align="center">
+    </pre><div align="center">
 <p><span style="font-size: larger;">Figure 2b. Triples as TTL textual format</span></p>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@prefix</span> <span class="n">ex</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">urn</span><span class="p">:</span><span class="n">example</span><span class="o">/&gt;</span> <span class="o">.</span>
