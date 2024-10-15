@@ -57,11 +57,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/model_heat_transfer';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'explanation/model_heat_transfer';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Modeling Design Patterns" href="../guides/design-patterns.html" />
-    <link rel="prev" title="Model Inference" href="model_inference.html" />
+    <link rel="next" title="Model Exploration" href="../tutorials/model_exploration.html" />
+    <link rel="prev" title="Closed World Assumption" href="closed_world_assumption.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -177,18 +177,18 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Explanation</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../explanation/purpose_scope.html">Purpose and Scope</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../explanation/definitions.html">Definitions and Concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../explanation/223_overview.html">223 Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../explanation/graph_structure.html">223 Graph Structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../explanation/closed_world_assumption.html">Closed World Assumption</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="purpose_scope.html">Purpose and Scope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="definitions.html">Definitions and Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="223_overview.html">223 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graph_structure.html">223 Graph Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="closed_world_assumption.html">Closed World Assumption</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Modeling Heat Transfer Equipment</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="model_exploration.html">Model Exploration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model_inference.html">Model Inference</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Modeling Heat Transfer Equipment</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/model_exploration.html">Model Exploration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/model_inference.html">Model Inference</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides</span></p>
 <ul class="nav bd-sidenav">
@@ -271,7 +271,7 @@
       
       
       
-      <li><a href="https://github.com/open223/docs.open223.info/issues/new?title=Issue%20on%20page%20%2Ftutorials/model_heat_transfer.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/open223/docs.open223.info/issues/new?title=Issue%20on%20page%20%2Fexplanation/model_heat_transfer.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -301,7 +301,7 @@
       
       
       
-      <li><a href="../_sources/tutorials/model_heat_transfer.md" target="_blank"
+      <li><a href="../_sources/explanation/model_heat_transfer.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -407,14 +407,14 @@ the directionality and number of ConnectionPoints. A diagram summarizing all Equ
 are involved in the transfer of heat is shown below. Note that instances of all of the classes shown
 will have a role of Role-HeatTransfer in addition to other possible roles. Role-HeatTransfer is added
 automatically using an inference rule.</p>
-<p><img alt="HeatExchangeConstraints" src="../_images/tutorials-HeatExchangers-constraints.png" /></p>
+<p><img alt="HeatExchangeConstraints" src="../_images/explanation-HeatExchangers-constraints.png" /></p>
 <p>While the constraints indicated in the figure are the defining characteristics of each of the classes,
 it is easier to see how they are used by consulting the second figure that shows examples of
 equipment commonly found in the field.</p>
-<p><img alt="HeatExchangeExamples" src="../_images/tutorials-HeatExchangers-examples.png" /></p>
+<p><img alt="HeatExchangeExamples" src="../_images/explanation-HeatExchangers-examples.png" /></p>
 <p>The figure below shows a ground loop from <a class="reference external" href="https://models.open223.info/examples/nist-bdg1-1.html#">NIST Example Building 1 Model 1</a>. The ground loop is modeled as
 a Coil matching Pattern 2 of the constraints listed in the first figure above.</p>
-<p><img alt="GroundLoopCoil" src="../_images/tutorials-GroundLoopExample.png" /></p>
+<p><img alt="GroundLoopCoil" src="../_images/explanation-GroundLoopExample.png" /></p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -430,7 +430,7 @@ a Coil matching Pattern 2 of the constraints listed in the first figure above.</
         },
         kernelOptions: {
             name: "python3",
-            path: "./tutorials"
+            path: "./explanation"
         },
         predefinedOutput: true
     }
@@ -448,20 +448,20 @@ a Coil matching Pattern 2 of the constraints listed in the first figure above.</
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="model_inference.html"
+       href="closed_world_assumption.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Model Inference</p>
+        <p class="prev-next-title">Closed World Assumption</p>
       </div>
     </a>
     <a class="right-next"
-       href="../guides/design-patterns.html"
+       href="../tutorials/model_exploration.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Modeling Design Patterns</p>
+        <p class="prev-next-title">Model Exploration</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

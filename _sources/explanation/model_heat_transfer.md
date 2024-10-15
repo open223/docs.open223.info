@@ -9,16 +9,16 @@ are involved in the transfer of heat is shown below. Note that instances of all 
 will have a role of Role-HeatTransfer in addition to other possible roles. Role-HeatTransfer is added 
 automatically using an inference rule.
 
-![HeatExchangeConstraints](images/tutorials-HeatExchangers-constraints.png)
+![HeatExchangeConstraints](_static/images/explanation-HeatExchangers-constraints.png)
 
 While the constraints indicated in the figure are the defining characteristics of each of the classes, 
 it is easier to see how they are used by consulting the second figure that shows examples of 
 equipment commonly found in the field.
 
-![HeatExchangeExamples](images/tutorials-HeatExchangers-examples.png)
+![HeatExchangeExamples](_static/images/explanation-HeatExchangers-examples.png)
 
 The figure below shows a ground loop from [NIST Example Building 1 Model 1](https://models.open223.info/examples/nist-bdg1-1.html#). The ground loop is modeled as 
 a Coil matching Pattern 2 of the constraints listed in the first figure above. 
 
-![GroundLoopCoil](images/tutorials-GroundLoopExample.png)
+![GroundLoopCoil](_static/images/explanation-GroundLoopExample.png)
 
