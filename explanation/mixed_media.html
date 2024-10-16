@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Modeling Heat Transfer Equipment &#8212; ASHRAE Standard 223P User Documentation</title>
+    <title>Modeling Mixtures of medium &#8212; ASHRAE Standard 223P User Documentation</title>
   
   
   
@@ -57,7 +57,7 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'explanation/model_heat_transfer';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'explanation/mixed_media';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Model Exploration" href="../tutorials/model_exploration.html" />
@@ -183,7 +183,7 @@
 <li class="toctree-l1"><a class="reference internal" href="223_overview.html">223 Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="graph_structure.html">223 Graph Structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="closed_world_assumption.html">Closed World Assumption</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Modeling Heat Transfer Equipment</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Modeling Mixtures of medium</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
@@ -271,7 +271,7 @@
       
       
       
-      <li><a href="https://github.com/open223/docs.open223.info/issues/new?title=Issue%20on%20page%20%2Fexplanation/model_heat_transfer.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/open223/docs.open223.info/issues/new?title=Issue%20on%20page%20%2Fexplanation/mixed_media.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -301,7 +301,7 @@
       
       
       
-      <li><a href="../_sources/explanation/model_heat_transfer.md" target="_blank"
+      <li><a href="../_sources/explanation/mixed_media.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -383,7 +383,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Modeling Heat Transfer Equipment</h1>
+    <h1>Modeling Mixtures of medium</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -397,24 +397,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="modeling-heat-transfer-equipment">
-<h1>Modeling Heat Transfer Equipment<a class="headerlink" href="#modeling-heat-transfer-equipment" title="Link to this heading">#</a></h1>
-<p>A variety of Equipment subclasses are defined in the 223 standard. The names of the classes are
-intended to align with common names in the field as much as possible, but the technical distinctions
-among them are defined in terms of the constraints they must satisfy. These constraints primarily
-concern the patterns of allowed ConnectionPoints, both in terms of the Medium flowing and in terms of
-the directionality and number of ConnectionPoints. A diagram summarizing all Equipment subclasses that
-are involved in the transfer of heat is shown below. Note that instances of all of the classes shown
-will have a role of Role-HeatTransfer in addition to other possible roles. Role-HeatTransfer is added
-automatically using an inference rule.</p>
-<p><img alt="HeatExchangeConstraints" src="../_images/explanation-HeatExchangers-constraints.png" /></p>
-<p>While the constraints indicated in the figure are the defining characteristics of each of the classes,
-it is easier to see how they are used by consulting the second figure that shows examples of
-equipment commonly found in the field.</p>
-<p><img alt="HeatExchangeExamples" src="../_images/explanation-HeatExchangers-examples.png" /></p>
-<p>The figure below shows a ground loop from <a class="reference external" href="https://models.open223.info/examples/nist-bdg1-1.html#">NIST Example Building 1 Model 1</a>. The ground loop is modeled as
-a Coil matching Pattern 2 of the constraints listed in the first figure above.</p>
-<p><img alt="GroundLoopCoil" src="../_images/explanation-GroundLoopExample.png" /></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="modeling-mixtures-of-medium">
+<h1>Modeling Mixtures of medium<a class="headerlink" href="#modeling-mixtures-of-medium" title="Link to this heading">#</a></h1>
+<p>The 223 standard includes a large set of enumerations, defined as a hierarchy of subclasses under the class s223:EnumerationKind.
+One important piece of this hierarchy is the class s223:EnumerationKind-Substance and its direct subclass Substance-Medium.
+It is this branch of the hierarchy where you can find what you would expect to be flowing in a building, such as water, air and electricity. It is important to understand how a medium is modeled, especially when that medium is a mixture. The diagram below sketches the structure of the hierarchy. The names of the classes are abbreviated for clarity, so Substance-Medium is shown as Medium for example. In the standard, each of the names follows the hyphenated naming convention of &lt;parent class&gt;-&lt;local class&gt;.
+<img alt="MixedMedium" src="../_images/mixed_medium.png" />
+Note in the figure that there is a division of the Medium class into Mix and Constituent. The Mix class is further divided into Fluid and Power&amp;Signal. Fluid means what you might think - a liquid or gas that typically flows inside some sort of conduit like a duct or a pipe. You can find Water and Air here. To capture the description of what is in a mixture, the model contains the class Constituent and its subclasses. These subclasses are intended to identify the constituents of a mixture. So, for example, a water-glycol mixture would be defined as Water-GlycolSolution, with two Properties via the relation s223:composedOf. Each of these Properties has a relation s223:ofConstituent that identifies one of the constituents from the Medium-Constituent hierarchy. Each Property also captures any other defining information. This is illustrated in the following figure for a 30%  Water-Glycol mixture.
+<img alt="GlycolExample" src="../_images/glycol_example.png" />
+Mixtures (s223:Medium-Mix) and constituents (s223:Medium-Constituent) are modeled this way to allow for compatibility validation among ConnectionPoints and Connections. Two mediums are deemed compatible if they share at least one common constituent.</p>
 </section>
 
     <script type="text/x-thebe-config">
