@@ -12,7 +12,7 @@ parts:
   - file: explanation/223_overview.md
   - file: explanation/graph_structure.md
   - file: explanation/closed_world_assumption.md
-  - file: explanation/model_heat_transfer.md
+  - file: explanation/heat_transfer_equipment.md
   - file: explanation/medium_mixtures.md
 - caption: Tutorials
   chapters:
