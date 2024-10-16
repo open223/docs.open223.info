@@ -1,4 +1,4 @@
-# Modeling Mixtures of medium
+# Modeling Mixtures of Medium
 
 The 223 standard includes a large set of enumerations, defined as a hierarchy of subclasses under the class s223:EnumerationKind.
 One important piece of this hierarchy is the class s223:EnumerationKind-Substance and its direct subclass Substance-Medium. 
