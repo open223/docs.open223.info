@@ -12,7 +12,7 @@ parts:
   - file: explanation/223_overview.md
   - file: explanation/graph_structure.md
   - file: explanation/closed_world_assumption.md
-  - file: explanation/mixed_media.md
+  - file: explanation/medium_mixtures.md
 - caption: Tutorials
   chapters:
   - file: tutorials/model_exploration.md
