@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Modeling Mixtures of Medium &#8212; ASHRAE Standard 223P User Documentation</title>
+    <title>Medium Mixtures &#8212; ASHRAE Standard 223P User Documentation</title>
   
   
   
@@ -57,11 +57,9 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'explanation/mixed_media';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'explanation/medium_mixtures';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Model Exploration" href="../tutorials/model_exploration.html" />
-    <link rel="prev" title="Closed World Assumption" href="closed_world_assumption.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -127,6 +125,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -177,13 +177,12 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Explanation</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="purpose_scope.html">Purpose and Scope</a></li>
 <li class="toctree-l1"><a class="reference internal" href="definitions.html">Definitions and Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="223_overview.html">223 Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="graph_structure.html">223 Graph Structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="closed_world_assumption.html">Closed World Assumption</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Modeling Mixtures of Medium</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
@@ -271,7 +270,7 @@
       
       
       
-      <li><a href="https://github.com/open223/docs.open223.info/issues/new?title=Issue%20on%20page%20%2Fexplanation/mixed_media.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/open223/docs.open223.info/issues/new?title=Issue%20on%20page%20%2Fexplanation/medium_mixtures.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -301,7 +300,7 @@
       
       
       
-      <li><a href="../_sources/explanation/mixed_media.md" target="_blank"
+      <li><a href="../_sources/explanation/medium_mixtures.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -383,7 +382,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Modeling Mixtures of Medium</h1>
+    <h1>Medium Mixtures</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -397,15 +396,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="modeling-mixtures-of-medium">
-<h1>Modeling Mixtures of Medium<a class="headerlink" href="#modeling-mixtures-of-medium" title="Link to this heading">#</a></h1>
-<p>The 223 standard includes a large set of enumerations, defined as a hierarchy of subclasses under the class s223:EnumerationKind.
-One important piece of this hierarchy is the class s223:EnumerationKind-Substance and its direct subclass Substance-Medium.
-It is this branch of the hierarchy where you can find what you would expect to be flowing in a building, such as water, air and electricity. It is important to understand how a medium is modeled, especially when that medium is a mixture. The diagram below sketches the structure of the hierarchy. The names of the classes are abbreviated for clarity, so Substance-Medium is shown as Medium for example. In the standard, each of the names follows the hyphenated naming convention of &lt;parent class&gt;-&lt;local class&gt;.
-<img alt="MixedMedium" src="../_images/mixed_medium.png" />
-Note in the figure that there is a division of the Medium class into Mix and Constituent. The Mix class is further divided into Fluid and Power&amp;Signal. Fluid means what you might think - a liquid or gas that typically flows inside some sort of conduit like a duct or a pipe. You can find Water and Air here. To capture the description of what is in a mixture, the model contains the class Constituent and its subclasses. These subclasses are intended to identify the constituents of a mixture. So, for example, a water-glycol mixture would be defined as Water-GlycolSolution, with two Properties via the relation s223:composedOf. Each of these Properties has a relation s223:ofConstituent that identifies one of the constituents from the Medium-Constituent hierarchy. Each Property also captures any other defining information. This is illustrated in the following figure for a 30%  Water-Glycol mixture.
-<img alt="GlycolExample" src="../_images/glycol_example.png" />
-Mixtures (s223:Medium-Mix) and constituents (s223:Medium-Constituent) are modeled this way to allow for compatibility validation among ConnectionPoints and Connections. Two mediums are deemed compatible if they share at least one common constituent.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="medium-mixtures">
+<h1>Medium Mixtures<a class="headerlink" href="#medium-mixtures" title="Link to this heading">#</a></h1>
+<p>The 223 standard includes a large set of enumerations, defined as a hierarchy of subclasses under the class <code class="docutils literal notranslate"><span class="pre">s223:EnumerationKind</span></code>.
+One important piece of this hierarchy is the class <code class="docutils literal notranslate"><span class="pre">s223:EnumerationKind-Substance</span></code> and its direct subclass <code class="docutils literal notranslate"><span class="pre">s223:Substance-Medium</span></code>.
+It is this branch of the hierarchy where you can find what you would expect to be flowing in a building, such as water, air and electricity. It is important to understand how a medium is modeled, especially when that medium is a mixture. The diagram below sketches the structure of the hierarchy. The names of the classes are abbreviated for clarity, so <code class="docutils literal notranslate"><span class="pre">s223:Substance-Medium</span></code> is shown as Medium for example. In the standard, each of the names follows the hyphenated naming convention of &lt;parent class&gt;-&lt;local class&gt;.</p>
+<p><img alt="MixedMedium" src="explanation/_static/images/mixed_medium.png" /></p>
+<p>Note in the figure that there is a division of the Medium class into Mix and Constituent. The Mix class is further divided into Fluid and Power&amp;Signal. Fluid means what you might think - a liquid or gas that typically flows inside some sort of conduit like a duct or a pipe. You can find Water and Air here. To capture the description of what is in a mixture, the model contains the class Constituent and its subclasses. These subclasses are intended to identify the constituents of a mixture. So, for example, a water-glycol mixture would be defined as <code class="docutils literal notranslate"><span class="pre">s223:Water-GlycolSolution</span></code>, with two Properties via the relation <code class="docutils literal notranslate"><span class="pre">s223:composedOf</span></code>. Each of these Properties has a relation <code class="docutils literal notranslate"><span class="pre">s223:ofConstituent</span></code> that identifies one of the constituents from the Medium-Constituent hierarchy. Each Property also captures any other defining information. This is illustrated in the following figure for a 30%  Water-Glycol mixture.</p>
+<p><img alt="GlycolExample" src="explanation/_static/images/glycol_example.png" /></p>
+<p>Mixtures (<code class="docutils literal notranslate"><span class="pre">s223:Medium-Mix</span></code>) and constituents (<code class="docutils literal notranslate"><span class="pre">s223:Medium-Constituent</span></code>) are modeled this way to allow for compatibility validation among ConnectionPoints and Connections. Two mediums are deemed compatible if they share at least one common constituent.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -438,24 +437,6 @@ Mixtures (s223:Medium-Mix) and constituents (s223:Medium-Constituent) are modele
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="closed_world_assumption.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Closed World Assumption</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../tutorials/model_exploration.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Model Exploration</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
