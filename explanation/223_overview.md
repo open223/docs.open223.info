@@ -14,7 +14,7 @@ This standard provides well defined classes used to describe entities relevant t
 This standard can be used to describe the topology of the equipment and spaces in a building, but not the geometric details. Topology refers to the way entities are connected and how some media (e.g. water, air, or electricity) is conveyed between them. There are several different classes used to describe which entities participate in connections and how they connect: [Connectables](https://explore.open223.info/s223/Connectable.html), which include the entities that are capable of connecting to each other; [ConnectionPoints](https://explore.open223.info/s223/ConnectionPoint.html), which model where Connectables can be connected; and [Connections](https://explore.open223.info/s223/Connection.html), which describe physical things through which the medium is conveyed, like pipes or ducts. These [Mediums](https://explore.open223.info/s223/Substance-Medium.html) (e.g. gas, electricity, water) are defined as an [EnumerationKind](https://explore.open223.info/s223/EnumerationKind.html) in the standard. There are also multiple relations used to describe the details of these connections, and how the multiple entities involved in a connection relate to each other. Figure 1 summarizes these relations. Though there are many relations to describe different perspectives of a connection, only [`s223:cnx`](https://explore.open223.info/s223/cnx.html) needs to be manually added to the model, and the rest can be automatically added to the model through the process of [inference](model-inference). 
 
 
-```{image} _static/images/connection-relationships.png
+```{image} images/connection-relationships.png
 :align: center
 :width: 700px
 ```
