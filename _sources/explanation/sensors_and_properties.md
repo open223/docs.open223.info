@@ -5,7 +5,9 @@ The 223 standard defines a variety of specialized sensors defined as a hierarchy
 ## Sensors versus Sensor Platforms
 The standard constrains an instance of a Sensor to observe a single `s223:ObservableProperty`. Usually it is an instance of the subclass `s223:QuantifiableObservableProperty` that has a numerical value, but some sensors do generate non-numerical values such as alarms or presence, in which case the property is an instance of `s223:EnumeratedObservableProperty`. 
 
-Equipment that produces multiple kinds of observations, say temperature and humidity, is modeled as an instance of `s223:Equipment` that contains (`s223:contains`) an instance of `s223:TemperatureSensor` and `s223:HumiditySensor` respectively. Note that if any of the sensors have `s223:ConnectionPoint`s, the pattern described [here](https://docs.open223.info/guides/design-patterns.html#containment) must also be followed. This might be the case for a flow sensor, for example.
+Equipment that observes multiple kinds of properties, say temperature and humidity, is modeled as an instance of `s223:Equipment` that contains (`s223:contains`) an instance of `s223:TemperatureSensor` and `s223:HumiditySensor` respectively. Note that if any of the sensors have `s223:ConnectionPoint`s, the pattern described [here](https://docs.open223.info/guides/design-patterns.html#containment) must also be followed. This might be the case for a flow sensor, for example.
+
+![SensorPlatform](images/sensor_platform.png)
 
 ## Derived Properties
 Another constraint in the 223 standard is that an `s223:ObservableProperty` must be associated with a `s223:Sensor` that observes a phenomenon and generates the value of the property. The sensor `s223:observes` the property. 
@@ -16,3 +18,4 @@ In this way, a model may contain the computed temperature of a room based on som
 
 An example is the `psm:VAV1OutletTemperature` property from the example model found [here](https://models.open223.info/examples/nist-bdg1-1.html).
 
+![DerivedProperty](images/derived_property.png)
