@@ -69,5 +69,5 @@ The 223 standard defines a hierarchy of classes used to define the entities with
 ```
 
 <div align="center">
-<span style="font-size: medium;">Figure 1. Meta level classes for Standard 223 entities </span>
+<span style="font-size: medium;">Figure 1. Partial view of meta level classes for Standard 223 entities </span>
 </div>
