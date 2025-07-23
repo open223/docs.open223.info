@@ -50,3 +50,18 @@ The 223 standard defines a hierarchy of classes used to define the entities with
  - **Enumerations:** The standard uses enumerations to convey groups of useful values for describing attributes of Properties, Equipment, and other things in the model. For example, the enumeration `Role-Cooling` describes that the equipment in question provides cooling.
 
  - **FunctionBlock:** Is used to model transfer and/or transformation of information (e.g. control algorithms). It has relations to input properties and output properties, that represent input and output data. The actual algorithms that perform the transformations are not described in 223, and can be described using standard 231.
+
+ ## 223 Top Meta Level Partitioning
+
+ Disclaimer: Most model developers won't need to read this section. 
+ 
+ If you really need to understand the meta level model, the figure shown below should help. All s223 classes are instances (rdf:type) of s223:Class, except for s223:Class itself. All s223 relations are instances of s223:Relation. s223:Class and s223:Relation are subclasses of s223:Concept. All s223 classes are also direct or indirect subclasses of s223:Concept. A developer can extend the 223 standard with their own subclasses or subproperties. Those extensions should not be declared as instances of s223:Class or s223:Relation. In this way, any user can distinguish what classes and properties used in a model are part of the 223 standard, and which are extensions.
+
+ ```{image} images/explanation-top-level-metaclasses.png
+:align: center
+:width: 700px
+```
+
+<div align="center">
+<span style="font-size: medium;">Figure 1. Meta level classes for Standard 223 entities </span>
+</div>
