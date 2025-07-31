@@ -41,7 +41,7 @@ from rdflib import Graph
 # Create a Graph
 model = Graph()
 # Parse in an RDF file hosted on the Internet
-model.parse("https://models.open223.info/guideline36-2021-4-1.ttl", format="ttl")
+model.parse("https://models.open223.info/guideline36-2021-A-1.ttl", format="ttl")
 print(f"The model contains {len(model)} triples")
 ```
 
