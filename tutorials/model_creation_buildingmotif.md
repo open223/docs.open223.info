@@ -40,7 +40,6 @@ from rdflib import Namespace
 from buildingmotif import BuildingMOTIF
 from buildingmotif.dataclasses import Library, Model
 from buildingmotif.model_builder import TemplateBuilderContext as ModelBuilder
-import ontoenv
 import logging
 
 # Create a BuildingMOTIF object. If you do not have Java installed, remove the "shacl_engine" parameter
