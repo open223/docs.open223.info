@@ -10,3 +10,16 @@ dependencies = [
     "rdflib>=7.1.3",
     "sphinxcontrib-mermaid>=1.0.0",
 ]
+[project]
+name = "open223-book"
+version = "0.1.0"
+description = "Jupyter Book for Open223"
+requires-python = ">=3.9"
+dependencies = [
+    "jupyter-book",
+    "myst_parser",
+    "pyshacl",
+    "rdflib",
+    "sphinxcontrib-mermaid",
+    "ipykernel",
+]

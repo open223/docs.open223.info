@@ -20,17 +20,14 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - uses: actions/setup-python@v4
-      with:
-        python-version: 3.11
+    - name: Setup uv
+      uses: astral-sh/setup-uv@v1
 
-    - name: install dependencies
-      run: |
-        pip install -r requirements.txt
+    - name: Create Jupyter Kernel
+      run: uv run python -m ipykernel install --user --name open223-book --display-name "open223-book"
 
     - name: build jupyter book
-      run: |
-        jupyter-book build .
+      run: uv run jupyter-book build .
 
     - name: fix CNAME
       run: |
