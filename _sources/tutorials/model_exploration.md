@@ -6,9 +6,9 @@ jupytext:
     extension: .md
     format_name: myst
 kernelspec:
-  display_name: Python 3
+  display_name: open223-book
   language: python
-  name: python3
+  name: open223-book
 ---
 
 # Model Exploration
@@ -32,7 +32,7 @@ from rdflib import Graph
 g = Graph()
 
 # Parse in an RDF file hosted on the Internet
-g.parse("https://models.open223.info/guideline36-2021-4.1.ttl", format="ttl")
+g.parse("https://models.open223.info/guideline36-2021-A-1.ttl", format="ttl")
 ```
 
 Next, we'll explore the model's size by printing the number of triples in it.

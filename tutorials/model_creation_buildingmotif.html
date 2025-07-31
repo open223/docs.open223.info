@@ -1,0 +1,1200 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Creating a Model with BuildingMOTIF &#8212; ASHRAE Standard 223P User Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/model_creation_buildingmotif';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Modeling Design Patterns" href="../guides/design-patterns.html" />
+    <link rel="prev" title="Model Inference" href="model_inference.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content"> 🏗️ this site is under active development ⚠️</div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">ASHRAE Standard 223P User Documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    ASHRAE Standard 223 User Documentation 
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Explanation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../explanation/purpose_scope.html">Purpose and Scope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explanation/definitions.html">Definitions and Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explanation/223_overview.html">223 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explanation/graph_structure.html">223 Graph Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explanation/closed_world_assumption.html">Closed World Assumption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explanation/heat_transfer_equipment.html">Heat Transfer Equipment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explanation/medium_mixtures.html">Medium Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explanation/sensors_and_properties.html">Sensors and Properties</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="model_exploration.html">Model Exploration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model_inference.html">Model Inference</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Creating a Model with BuildingMOTIF</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../guides/design-patterns.html">Modeling Design Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/qudt.html">Using 223 with QUDT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/brick-rec.html">Using 223 with Brick and RealEstateCore</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reference/open223-resources.html">Open223 Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/other-resources.html">Other Resources</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/open223/docs.open223.info/main?urlpath=tree/tutorials/model_creation_buildingmotif.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/open223/docs.open223.info" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/open223/docs.open223.info/issues/new?title=Issue%20on%20page%20%2Ftutorials/model_creation_buildingmotif.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/tutorials/model_creation_buildingmotif.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../_sources/tutorials/model_creation_buildingmotif.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Creating a Model with BuildingMOTIF</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-buildingmotif">Setting up BuildingMOTIF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-model">Building the Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compiling-the-model">Compiling the Model</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="creating-a-model-with-buildingmotif">
+<h1>Creating a Model with BuildingMOTIF<a class="headerlink" href="#creating-a-model-with-buildingmotif" title="Link to this heading">#</a></h1>
+<p><a class="reference external" href="https://github.com/NREL/BuildingMOTIF">BuildingMOTIF</a> is a Python SDK for creating, manipulating, and validating semantic building models.
+Here, we will demonstrate how to create a simple ASHRAE 223P model using BuildingMOTIF.</p>
+<p>We will create a model that includes a simple HVAC system with a VAV terminal unit serving a zone.
+This will use BuildingMOTIF <a class="reference external" href="https://buildingmotif.readthedocs.io/en/latest/explanations/templates.html">Templates</a>, which are reusable components that encapsulate common patterns in building modeling.</p>
+<section id="setting-up-buildingmotif">
+<h2>Setting up BuildingMOTIF<a class="headerlink" href="#setting-up-buildingmotif" title="Link to this heading">#</a></h2>
+<details>
+<summary>Downloading the NREL 223P templates library</summary><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>git<span class="w"> </span>clone<span class="w"> </span>--filter<span class="o">=</span>blob:none<span class="w"> </span>--no-checkout<span class="w"> </span>https://github.com/NREL/BuildingMOTIF
+<span class="o">!</span><span class="nb">pushd</span><span class="w"> </span>BuildingMOTIF<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>sparse-checkout<span class="w"> </span>init<span class="w"> </span>--cone
+<span class="o">!</span><span class="nb">pushd</span><span class="w"> </span>BuildingMOTIF<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>sparse-checkout<span class="w"> </span><span class="nb">set</span><span class="w"> </span>libraries/ashrae/223p/nrel-templates
+<span class="o">!</span><span class="nb">pushd</span><span class="w"> </span>BuildingMOTIF<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>checkout
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cloning into &#39;BuildingMOTIF&#39;...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>remote: Enumerating objects: 16827, done.
+remote: Counting objects:   0% (1/1646)
+remote: Counting objects:   1% (17/1646)
+remote: Counting objects:   2% (33/1646)
+remote: Counting objects:   3% (50/1646)
+remote: Counting objects:   4% (66/1646)
+remote: Counting objects:   5% (83/1646)
+remote: Counting objects:   6% (99/1646)
+remote: Counting objects:   7% (116/1646)
+remote: Counting objects:   8% (132/1646)
+remote: Counting objects:   9% (149/1646)
+remote: Counting objects:  10% (165/1646)
+remote: Counting objects:  11% (182/1646)
+remote: Counting objects:  12% (198/1646)
+remote: Counting objects:  13% (214/1646)
+remote: Counting objects:  14% (231/1646)
+remote: Counting objects:  15% (247/1646)
+remote: Counting objects:  16% (264/1646)
+remote: Counting objects:  17% (280/1646)
+remote: Counting objects:  18% (297/1646)
+remote: Counting objects:  19% (313/1646)
+remote: Counting objects:  20% (330/1646)
+remote: Counting objects:  21% (346/1646)
+remote: Counting objects:  22% (363/1646)
+remote: Counting objects:  23% (379/1646)
+remote: Counting objects:  24% (396/1646)
+remote: Counting objects:  25% (412/1646)
+remote: Counting objects:  26% (428/1646)
+remote: Counting objects:  27% (445/1646)
+remote: Counting objects:  28% (461/1646)
+remote: Counting objects:  29% (478/1646)
+remote: Counting objects:  30% (494/1646)
+remote: Counting objects:  31% (511/1646)
+remote: Counting objects:  32% (527/1646)
+remote: Counting objects:  33% (544/1646)
+remote: Counting objects:  34% (560/1646)
+remote: Counting objects:  35% (577/1646)
+remote: Counting objects:  36% (593/1646)
+remote: Counting objects:  37% (610/1646)
+remote: Counting objects:  38% (626/1646)
+remote: Counting objects:  39% (642/1646)
+remote: Counting objects:  40% (659/1646)
+remote: Counting objects:  41% (675/1646)
+remote: Counting objects:  42% (692/1646)
+remote: Counting objects:  43% (708/1646)
+remote: Counting objects:  44% (725/1646)
+remote: Counting objects:  45% (741/1646)
+remote: Counting objects:  46% (758/1646)
+remote: Counting objects:  47% (774/1646)
+remote: Counting objects:  48% (791/1646)
+remote: Counting objects:  49% (807/1646)
+remote: Counting objects:  50% (823/1646)
+remote: Counting objects:  51% (840/1646)
+remote: Counting objects:  52% (856/1646)
+remote: Counting objects:  53% (873/1646)
+remote: Counting objects:  54% (889/1646)
+remote: Counting objects:  55% (906/1646)
+remote: Counting objects:  56% (922/1646)
+remote: Counting objects:  57% (939/1646)
+remote: Counting objects:  58% (955/1646)
+remote: Counting objects:  59% (972/1646)
+remote: Counting objects:  60% (988/1646)
+remote: Counting objects:  61% (1005/1646)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>remote: Counting objects:  62% (1021/1646)
+remote: Counting objects:  63% (1037/1646)
+remote: Counting objects:  64% (1054/1646)
+remote: Counting objects:  65% (1070/1646)
+remote: Counting objects:  66% (1087/1646)
+remote: Counting objects:  67% (1103/1646)
+remote: Counting objects:  68% (1120/1646)
+remote: Counting objects:  69% (1136/1646)
+remote: Counting objects:  70% (1153/1646)
+remote: Counting objects:  71% (1169/1646)
+remote: Counting objects:  72% (1186/1646)
+remote: Counting objects:  73% (1202/1646)
+remote: Counting objects:  74% (1219/1646)
+remote: Counting objects:  75% (1235/1646)
+remote: Counting objects:  76% (1251/1646)
+remote: Counting objects:  77% (1268/1646)
+remote: Counting objects:  78% (1284/1646)
+remote: Counting objects:  79% (1301/1646)
+remote: Counting objects:  80% (1317/1646)
+remote: Counting objects:  81% (1334/1646)
+remote: Counting objects:  82% (1350/1646)
+remote: Counting objects:  83% (1367/1646)
+remote: Counting objects:  84% (1383/1646)
+remote: Counting objects:  85% (1400/1646)
+remote: Counting objects:  86% (1416/1646)
+remote: Counting objects:  87% (1433/1646)
+remote: Counting objects:  88% (1449/1646)
+remote: Counting objects:  89% (1465/1646)
+remote: Counting objects:  90% (1482/1646)
+remote: Counting objects:  91% (1498/1646)
+remote: Counting objects:  92% (1515/1646)
+remote: Counting objects:  93% (1531/1646)
+remote: Counting objects:  94% (1548/1646)
+remote: Counting objects:  95% (1564/1646)
+remote: Counting objects:  96% (1581/1646)
+remote: Counting objects:  97% (1597/1646)
+remote: Counting objects:  98% (1614/1646)
+remote: Counting objects:  99% (1630/1646)
+remote: Counting objects: 100% (1646/1646)
+remote: Counting objects: 100% (1646/1646), done.
+remote: Compressing objects:   0% (1/567)
+remote: Compressing objects:   1% (6/567)
+remote: Compressing objects:   2% (12/567)
+remote: Compressing objects:   3% (18/567)
+remote: Compressing objects:   4% (23/567)
+remote: Compressing objects:   5% (29/567)
+remote: Compressing objects:   6% (35/567)
+remote: Compressing objects:   7% (40/567)
+remote: Compressing objects:   8% (46/567)
+remote: Compressing objects:   9% (52/567)
+remote: Compressing objects:  10% (57/567)
+remote: Compressing objects:  11% (63/567)
+remote: Compressing objects:  12% (69/567)
+remote: Compressing objects:  13% (74/567)
+remote: Compressing objects:  14% (80/567)
+remote: Compressing objects:  15% (86/567)
+remote: Compressing objects:  16% (91/567)
+remote: Compressing objects:  17% (97/567)
+remote: Compressing objects:  18% (103/567)
+remote: Compressing objects:  19% (108/567)
+remote: Compressing objects:  20% (114/567)
+remote: Compressing objects:  21% (120/567)
+remote: Compressing objects:  22% (125/567)
+remote: Compressing objects:  23% (131/567)
+remote: Compressing objects:  24% (137/567)
+remote: Compressing objects:  25% (142/567)
+remote: Compressing objects:  26% (148/567)
+remote: Compressing objects:  27% (154/567)
+remote: Compressing objects:  28% (159/567)
+remote: Compressing objects:  29% (165/567)
+remote: Compressing objects:  30% (171/567)
+remote: Compressing objects:  31% (176/567)
+remote: Compressing objects:  32% (182/567)
+remote: Compressing objects:  33% (188/567)
+remote: Compressing objects:  34% (193/567)
+remote: Compressing objects:  35% (199/567)
+remote: Compressing objects:  36% (205/567)
+remote: Compressing objects:  37% (210/567)
+remote: Compressing objects:  38% (216/567)
+remote: Compressing objects:  39% (222/567)
+remote: Compressing objects:  40% (227/567)
+remote: Compressing objects:  41% (233/567)
+remote: Compressing objects:  42% (239/567)
+remote: Compressing objects:  43% (244/567)
+remote: Compressing objects:  44% (250/567)
+remote: Compressing objects:  45% (256/567)
+remote: Compressing objects:  46% (261/567)
+remote: Compressing objects:  47% (267/567)
+remote: Compressing objects:  48% (273/567)
+remote: Compressing objects:  49% (278/567)
+remote: Compressing objects:  50% (284/567)
+remote: Compressing objects:  51% (290/567)
+remote: Compressing objects:  52% (295/567)
+remote: Compressing objects:  53% (301/567)
+remote: Compressing objects:  54% (307/567)
+remote: Compressing objects:  55% (312/567)
+remote: Compressing objects:  56% (318/567)
+remote: Compressing objects:  57% (324/567)
+remote: Compressing objects:  58% (329/567)
+remote: Compressing objects:  59% (335/567)
+remote: Compressing objects:  60% (341/567)
+remote: Compressing objects:  61% (346/567)
+remote: Compressing objects:  62% (352/567)
+remote: Compressing objects:  63% (358/567)
+remote: Compressing objects:  64% (363/567)
+remote: Compressing objects:  65% (369/567)
+remote: Compressing objects:  66% (375/567)
+remote: Compressing objects:  67% (380/567)
+remote: Compressing objects:  68% (386/567)
+remote: Compressing objects:  69% (392/567)
+remote: Compressing objects:  70% (397/567)
+remote: Compressing objects:  71% (403/567)
+remote: Compressing objects:  72% (409/567)
+remote: Compressing objects:  73% (414/567)
+remote: Compressing objects:  74% (420/567)
+remote: Compressing objects:  75% (426/567)
+remote: Compressing objects:  76% (431/567)
+remote: Compressing objects:  77% (437/567)
+remote: Compressing objects:  78% (443/567)
+remote: Compressing objects:  79% (448/567)
+remote: Compressing objects:  80% (454/567)
+remote: Compressing objects:  81% (460/567)
+remote: Compressing objects:  82% (465/567)
+remote: Compressing objects:  83% (471/567)
+remote: Compressing objects:  84% (477/567)
+remote: Compressing objects:  85% (482/567)
+remote: Compressing objects:  86% (488/567)
+remote: Compressing objects:  87% (494/567)
+remote: Compressing objects:  88% (499/567)
+remote: Compressing objects:  89% (505/567)
+remote: Compressing objects:  90% (511/567)
+remote: Compressing objects:  91% (516/567)
+remote: Compressing objects:  92% (522/567)
+remote: Compressing objects:  93% (528/567)
+remote: Compressing objects:  94% (533/567)
+remote: Compressing objects:  95% (539/567)
+remote: Compressing objects:  96% (545/567)
+remote: Compressing objects:  97% (550/567)
+remote: Compressing objects:  98% (556/567)
+remote: Compressing objects:  99% (562/567)
+remote: Compressing objects: 100% (567/567)
+remote: Compressing objects: 100% (567/567), done.
+Receiving objects:   0% (1/16827)
+Receiving objects:   1% (169/16827)
+Receiving objects:   2% (337/16827)
+Receiving objects:   3% (505/16827)
+Receiving objects:   4% (674/16827)
+Receiving objects:   5% (842/16827)
+Receiving objects:   6% (1010/16827)
+Receiving objects:   7% (1178/16827)
+Receiving objects:   8% (1347/16827)
+Receiving objects:   9% (1515/16827)
+Receiving objects:  10% (1683/16827)
+Receiving objects:  11% (1851/16827)
+Receiving objects:  12% (2020/16827)
+Receiving objects:  13% (2188/16827)
+Receiving objects:  14% (2356/16827)
+Receiving objects:  15% (2525/16827)
+Receiving objects:  16% (2693/16827)
+Receiving objects:  17% (2861/16827)
+Receiving objects:  18% (3029/16827)
+Receiving objects:  19% (3198/16827)
+Receiving objects:  20% (3366/16827)
+Receiving objects:  21% (3534/16827)
+Receiving objects:  22% (3702/16827)
+Receiving objects:  23% (3871/16827)
+Receiving objects:  24% (4039/16827)
+Receiving objects:  25% (4207/16827)
+Receiving objects:  26% (4376/16827)
+Receiving objects:  27% (4544/16827)
+Receiving objects:  28% (4712/16827)
+Receiving objects:  29% (4880/16827)
+Receiving objects:  30% (5049/16827)
+Receiving objects:  31% (5217/16827)
+Receiving objects:  32% (5385/16827)
+Receiving objects:  33% (5553/16827)
+Receiving objects:  34% (5722/16827)
+Receiving objects:  35% (5890/16827)
+Receiving objects:  36% (6058/16827)
+Receiving objects:  37% (6226/16827)
+Receiving objects:  38% (6395/16827)
+Receiving objects:  39% (6563/16827)
+Receiving objects:  40% (6731/16827)
+Receiving objects:  41% (6900/16827)
+Receiving objects:  42% (7068/16827)
+Receiving objects:  43% (7236/16827)
+Receiving objects:  44% (7404/16827)
+Receiving objects:  45% (7573/16827)
+Receiving objects:  46% (7741/16827)
+Receiving objects:  47% (7909/16827)
+Receiving objects:  48% (8077/16827)
+Receiving objects:  49% (8246/16827)
+Receiving objects:  50% (8414/16827)
+Receiving objects:  51% (8582/16827)
+Receiving objects:  52% (8751/16827)
+Receiving objects:  53% (8919/16827)
+Receiving objects:  54% (9087/16827)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  55% (9255/16827)
+Receiving objects:  56% (9424/16827)
+Receiving objects:  57% (9592/16827)
+Receiving objects:  58% (9760/16827)
+Receiving objects:  59% (9928/16827)
+Receiving objects:  60% (10097/16827)
+Receiving objects:  61% (10265/16827)
+Receiving objects:  62% (10433/16827)
+Receiving objects:  63% (10602/16827)
+Receiving objects:  64% (10770/16827)
+Receiving objects:  65% (10938/16827)
+Receiving objects:  66% (11106/16827)
+Receiving objects:  67% (11275/16827)
+Receiving objects:  68% (11443/16827)
+Receiving objects:  69% (11611/16827)
+Receiving objects:  70% (11779/16827)
+Receiving objects:  71% (11948/16827)
+Receiving objects:  72% (12116/16827)
+Receiving objects:  73% (12284/16827)
+Receiving objects:  74% (12452/16827)
+Receiving objects:  75% (12621/16827)
+Receiving objects:  76% (12789/16827)
+Receiving objects:  77% (12957/16827)
+Receiving objects:  78% (13126/16827)
+Receiving objects:  79% (13294/16827)
+Receiving objects:  80% (13462/16827)
+Receiving objects:  81% (13630/16827)
+Receiving objects:  82% (13799/16827)
+Receiving objects:  83% (13967/16827)
+Receiving objects:  84% (14135/16827)
+Receiving objects:  85% (14303/16827)
+Receiving objects:  86% (14472/16827)
+Receiving objects:  87% (14640/16827)
+Receiving objects:  88% (14808/16827)
+Receiving objects:  89% (14977/16827)
+Receiving objects:  90% (15145/16827)
+Receiving objects:  91% (15313/16827)
+Receiving objects:  92% (15481/16827)
+Receiving objects:  93% (15650/16827)
+Receiving objects:  94% (15818/16827)
+Receiving objects:  95% (15986/16827)
+remote: Total 16827 (delta 1312), reused 1132 (delta 1074), pack-reused 15181 (from 3)
+Receiving objects:  96% (16154/16827)
+Receiving objects:  97% (16323/16827)
+Receiving objects:  98% (16491/16827)
+Receiving objects:  99% (16659/16827)
+Receiving objects: 100% (16827/16827)
+Receiving objects: 100% (16827/16827), 2.03 MiB | 34.67 MiB/s, done.
+Resolving deltas:   0% (0/8910)
+Resolving deltas:   1% (90/8910)
+Resolving deltas:   2% (179/8910)
+Resolving deltas:   3% (268/8910)
+Resolving deltas:   4% (357/8910)
+Resolving deltas:   5% (446/8910)
+Resolving deltas:   6% (535/8910)
+Resolving deltas:   7% (624/8910)
+Resolving deltas:   8% (713/8910)
+Resolving deltas:   9% (802/8910)
+Resolving deltas:  10% (891/8910)
+Resolving deltas:  11% (981/8910)
+Resolving deltas:  12% (1070/8910)
+Resolving deltas:  13% (1159/8910)
+Resolving deltas:  14% (1248/8910)
+Resolving deltas:  15% (1337/8910)
+Resolving deltas:  16% (1426/8910)
+Resolving deltas:  17% (1515/8910)
+Resolving deltas:  18% (1604/8910)
+Resolving deltas:  19% (1693/8910)
+Resolving deltas:  20% (1782/8910)
+Resolving deltas:  21% (1872/8910)
+Resolving deltas:  22% (1961/8910)
+Resolving deltas:  23% (2050/8910)
+Resolving deltas:  24% (2139/8910)
+Resolving deltas:  25% (2228/8910)
+Resolving deltas:  26% (2317/8910)
+Resolving deltas:  27% (2407/8910)
+Resolving deltas:  28% (2496/8910)
+Resolving deltas:  29% (2584/8910)
+Resolving deltas:  30% (2673/8910)
+Resolving deltas:  31% (2763/8910)
+Resolving deltas:  32% (2852/8910)
+Resolving deltas:  33% (2941/8910)
+Resolving deltas:  34% (3030/8910)
+Resolving deltas:  35% (3119/8910)
+Resolving deltas:  36% (3209/8910)
+Resolving deltas:  37% (3297/8910)
+Resolving deltas:  38% (3386/8910)
+Resolving deltas:  39% (3475/8910)
+Resolving deltas:  40% (3564/8910)
+Resolving deltas:  41% (3654/8910)
+Resolving deltas:  42% (3743/8910)
+Resolving deltas:  43% (3832/8910)
+Resolving deltas:  44% (3921/8910)
+Resolving deltas:  45% (4010/8910)
+Resolving deltas:  46% (4099/8910)
+Resolving deltas:  47% (4189/8910)
+Resolving deltas:  48% (4278/8910)
+Resolving deltas:  49% (4366/8910)
+Resolving deltas:  50% (4455/8910)
+Resolving deltas:  51% (4545/8910)
+Resolving deltas:  52% (4634/8910)
+Resolving deltas:  53% (4723/8910)
+Resolving deltas:  54% (4812/8910)
+Resolving deltas:  55% (4901/8910)
+Resolving deltas:  56% (4990/8910)
+Resolving deltas:  57% (5079/8910)
+Resolving deltas:  58% (5168/8910)
+Resolving deltas:  59% (5257/8910)
+Resolving deltas:  60% (5346/8910)
+Resolving deltas:  61% (5436/8910)
+Resolving deltas:  62% (5525/8910)
+Resolving deltas:  63% (5614/8910)
+Resolving deltas:  64% (5703/8910)
+Resolving deltas:  65% (5792/8910)
+Resolving deltas:  66% (5881/8910)
+Resolving deltas:  67% (5970/8910)
+Resolving deltas:  68% (6059/8910)
+Resolving deltas:  69% (6148/8910)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Resolving deltas:  70% (6237/8910)
+Resolving deltas:  71% (6327/8910)
+Resolving deltas:  72% (6416/8910)
+Resolving deltas:  73% (6505/8910)
+Resolving deltas:  74% (6594/8910)
+Resolving deltas:  75% (6683/8910)
+Resolving deltas:  76% (6772/8910)
+Resolving deltas:  77% (6861/8910)
+Resolving deltas:  78% (6951/8910)
+Resolving deltas:  79% (7039/8910)
+Resolving deltas:  80% (7128/8910)
+Resolving deltas:  81% (7218/8910)
+Resolving deltas:  82% (7307/8910)
+Resolving deltas:  83% (7396/8910)
+Resolving deltas:  84% (7485/8910)
+Resolving deltas:  85% (7576/8910)
+Resolving deltas:  86% (7663/8910)
+Resolving deltas:  87% (7752/8910)
+Resolving deltas:  88% (7841/8910)
+Resolving deltas:  89% (7930/8910)
+Resolving deltas:  90% (8019/8910)
+Resolving deltas:  91% (8109/8910)
+Resolving deltas:  92% (8199/8910)
+Resolving deltas:  93% (8287/8910)
+Resolving deltas:  94% (8376/8910)
+Resolving deltas:  95% (8465/8910)
+Resolving deltas:  96% (8554/8910)
+Resolving deltas:  97% (8643/8910)
+Resolving deltas:  98% (8732/8910)
+Resolving deltas:  99% (8821/8910)
+Resolving deltas: 100% (8910/8910)
+Resolving deltas: 100% (8910/8910), done.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>~/work/docs.open223.info/docs.open223.info/tutorials/BuildingMOTIF ~/work/docs.open223.info/docs.open223.info/tutorials
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>~/work/docs.open223.info/docs.open223.info/tutorials/BuildingMOTIF ~/work/docs.open223.info/docs.open223.info/tutorials
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>~/work/docs.open223.info/docs.open223.info/tutorials/BuildingMOTIF ~/work/docs.open223.info/docs.open223.info/tutorials
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>remote: Enumerating objects: 19, done.
+remote: Counting objects:  14% (1/7)
+remote: Counting objects:  28% (2/7)
+remote: Counting objects:  42% (3/7)
+remote: Counting objects:  57% (4/7)
+remote: Counting objects:  71% (5/7)
+remote: Counting objects:  85% (6/7)
+remote: Counting objects: 100% (7/7)
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects:  14% (1/7)
+remote: Compressing objects:  28% (2/7)
+remote: Compressing objects:  42% (3/7)
+remote: Compressing objects:  57% (4/7)
+remote: Compressing objects:  71% (5/7)
+remote: Compressing objects:  85% (6/7)
+remote: Compressing objects: 100% (7/7)
+remote: Compressing objects: 100% (7/7), done.
+Receiving objects:   5% (1/19)
+Receiving objects:  10% (2/19)
+Receiving objects:  15% (3/19)
+Receiving objects:  21% (4/19)
+Receiving objects:  26% (5/19)
+Receiving objects:  31% (6/19)
+Receiving objects:  36% (7/19)
+Receiving objects:  42% (8/19)
+Receiving objects:  47% (9/19)
+Receiving objects:  52% (10/19)
+Receiving objects:  57% (11/19)
+Receiving objects:  63% (12/19)
+Receiving objects:  68% (13/19)
+Receiving objects:  73% (14/19)
+Receiving objects:  78% (15/19)
+Receiving objects:  84% (16/19)
+Receiving objects:  89% (17/19)
+Receiving objects:  94% (18/19)
+remote: Total 19 (delta 0), reused 0 (delta 0), pack-reused 12 (from 2)
+Receiving objects: 100% (19/19)
+Receiving objects: 100% (19/19), 116.37 KiB | 5.82 MiB/s, done.
+Resolving deltas:   0% (0/1)
+Resolving deltas: 100% (1/1)
+Resolving deltas: 100% (1/1), done.
+Your branch is up to date with &#39;origin/develop&#39;.
+</pre></div>
+</div>
+</div>
+</div>
+</details>
+<p>The following code sets up a temporary (in-memory) BuildingMOTIF instance, loads the necessary libraries, and creates an (empty) model to hold our building data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">rdflib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Namespace</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">buildingmotif</span><span class="w"> </span><span class="kn">import</span> <span class="n">BuildingMOTIF</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">buildingmotif.dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">Library</span><span class="p">,</span> <span class="n">Model</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">buildingmotif.model_builder</span><span class="w"> </span><span class="kn">import</span> <span class="n">TemplateBuilderContext</span> <span class="k">as</span> <span class="n">ModelBuilder</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ontoenv</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+
+<span class="c1"># Create a BuildingMOTIF object. If you do not have Java installed, remove the &quot;shacl_engine&quot; parameter</span>
+<span class="n">bm</span> <span class="o">=</span> <span class="n">BuildingMOTIF</span><span class="p">(</span><span class="s1">&#39;sqlite://&#39;</span><span class="p">,</span> <span class="n">shacl_engine</span><span class="o">=</span><span class="s1">&#39;topquadrant&#39;</span><span class="p">,</span> <span class="n">log_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">ERROR</span><span class="p">)</span>
+
+<span class="c1"># load 223P library and some dependencies. We will load a recent copy from the open223.info</span>
+<span class="n">s223</span> <span class="o">=</span> <span class="n">Library</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">ontology_graph</span><span class="o">=</span><span class="s2">&quot;https://open223.info/223p.ttl&quot;</span><span class="p">)</span>
+<span class="n">unit</span> <span class="o">=</span> <span class="n">Library</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">ontology_graph</span><span class="o">=</span><span class="s2">&quot;http://qudt.org/3.1.1/vocab/unit&quot;</span><span class="p">)</span>
+<span class="n">quantitykind</span> <span class="o">=</span> <span class="n">Library</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">ontology_graph</span><span class="o">=</span><span class="s2">&quot;http://qudt.org/3.1.1/vocab/quantitykind&quot;</span><span class="p">)</span>
+<span class="n">templates</span> <span class="o">=</span> <span class="n">Library</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s2">&quot;BuildingMOTIF/libraries/ashrae/223p/nrel-templates&quot;</span><span class="p">)</span>
+
+<span class="c1"># create a Model to hold our building model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;urn:example&quot;</span><span class="p">)</span>
+<span class="n">BLDG</span> <span class="o">=</span> <span class="n">Namespace</span><span class="p">(</span><span class="s2">&quot;urn:example/&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">buildingmotif.dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">Library</span><span class="p">,</span> <span class="n">Model</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span><span class="w"> </span><span class="nn">buildingmotif.model_builder</span><span class="w"> </span><span class="kn">import</span> <span class="n">TemplateBuilderContext</span> <span class="k">as</span> <span class="n">ModelBuilder</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">import</span><span class="w"> </span><span class="nn">ontoenv</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># Create a BuildingMOTIF object. If you do not have Java installed, remove the &quot;shacl_engine&quot; parameter</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;ontoenv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="building-the-model">
+<h2>Building the Model<a class="headerlink" href="#building-the-model" title="Link to this heading">#</a></h2>
+<p>Now, we load the templates into a <code class="docutils literal notranslate"><span class="pre">ModelBuilder</span></code> context, which allows us to use the templates to create our model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">builder</span> <span class="o">=</span> <span class="n">ModelBuilder</span><span class="p">(</span><span class="n">BLDG</span><span class="p">)</span>
+<span class="n">builder</span><span class="o">.</span><span class="n">add_templates_from_library</span><span class="p">(</span><span class="n">templates</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will create a reheat VAV terminal unit serving a physical space</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a VAV terminal unit with reheat</span>
+<span class="n">vav</span> <span class="o">=</span> <span class="n">builder</span><span class="p">[</span><span class="s2">&quot;vav-reheat&quot;</span><span class="p">](</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;my_vav&quot;</span><span class="p">)</span>
+<span class="c1"># we can give names to the sensors inside the VAV</span>
+<span class="n">vav</span><span class="p">[</span><span class="s2">&quot;sup-air-temp-sensor&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;BLDG_VAV:SAT&quot;</span>
+<span class="n">vav</span><span class="p">[</span><span class="s2">&quot;sup-air-flow-sensor&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;BLDG_VAV:SAF&quot;</span>
+
+<span class="c1"># create the physical space</span>
+<span class="n">zone</span> <span class="o">=</span> <span class="n">builder</span><span class="p">[</span><span class="s2">&quot;hvac-space&quot;</span><span class="p">](</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;my_zone&quot;</span><span class="p">)</span>
+
+<span class="c1"># connect the VAV terminal unit to the zone using a duct</span>
+<span class="n">duct2zone</span> <span class="o">=</span> <span class="n">builder</span><span class="p">[</span><span class="s2">&quot;duct&quot;</span><span class="p">](</span><span class="n">a</span><span class="o">=</span><span class="n">vav</span><span class="p">[</span><span class="s1">&#39;air-out&#39;</span><span class="p">],</span> <span class="n">b</span><span class="o">=</span><span class="n">zone</span><span class="p">[</span><span class="s1">&#39;in&#39;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;duct2zone&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When we are done, compile the “builder” into the model</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">add_graph</span><span class="p">(</span><span class="n">builder</span><span class="o">.</span><span class="n">compile</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Model has </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">graph</span><span class="p">)</span><span class="si">}</span><span class="s2"> triples&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The model is now ready and contains the VAV terminal unit and the physical space it serves:</p>
+<details>
+<summary>223P model generated from templates</summary><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">serialize</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+</details>
+</section>
+<section id="compiling-the-model">
+<h2>Compiling the Model<a class="headerlink" href="#compiling-the-model" title="Link to this heading">#</a></h2>
+<p>The generated model is the “pre-inference” model, as described in <a class="reference internal" href="model_inference.html"><span class="std std-doc">model_inference.md</span></a>.
+To apply inference rules to this model, we will need to load the 223P ontology and apply the inference rules as described in that document.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">compiled_model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">([</span><span class="n">s223</span><span class="o">.</span><span class="n">get_shape_collection</span><span class="p">(),</span> <span class="n">unit</span><span class="o">.</span><span class="n">get_shape_collection</span><span class="p">(),</span> <span class="n">quantitykind</span><span class="o">.</span><span class="n">get_shape_collection</span><span class="p">()])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Compiled model has </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">compiled_model</span><span class="o">.</span><span class="n">graph</span><span class="p">)</span><span class="si">}</span><span class="s2"> triples&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details>
+<summary>223P model with all inferred triples</summary><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">compiled_model</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">serialize</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+</details></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "open223/docs.open223.info",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "open223-book"
+        },
+        kernelOptions: {
+            name: "open223-book",
+            path: "./tutorials"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'open223-book'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="model_inference.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Model Inference</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../guides/design-patterns.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Modeling Design Patterns</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-buildingmotif">Setting up BuildingMOTIF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-model">Building the Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compiling-the-model">Compiling the Model</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

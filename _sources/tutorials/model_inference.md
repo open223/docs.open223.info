@@ -6,9 +6,9 @@ jupytext:
     extension: .md
     format_name: myst
 kernelspec:
-  display_name: Python 3
+  display_name: open223-book
   language: python
-  name: python3
+  name: open223-book
 ---
 (model-inference)=
 # Model Inference
@@ -41,7 +41,7 @@ from rdflib import Graph
 # Create a Graph
 model = Graph()
 # Parse in an RDF file hosted on the Internet
-model.parse("https://models.open223.info/guideline36-2021-4-1.ttl", format="ttl")
+model.parse("https://models.open223.info/guideline36-2021-A-1.ttl", format="ttl")
 print(f"The model contains {len(model)} triples")
 ```
 
@@ -56,16 +56,15 @@ print(model.serialize())
 
 ### Testing the Model (Failed Query)
 
-Below, we try to run a simple query on our model which asks what the damper in the terminal unit is connected to.
+Below, we try to run a simple query on our model which asks what the terminal unit is connected to.
 The `s223:connected` relationship does not exist in the pre-inference model, so this query will not return results.
 
 ```{code-cell}
 parts_query = """
-PREFIX bldg: <urn:ex/>
+PREFIX bldg: <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#>
 PREFIX s223: <http://data.ashrae.org/standard223#>
-SELECT ?parts WHERE {
-    bldg:vav-cooling-only s223:contains ?damper .
-    ?damper s223:connected ?parts
+SELECT ?physical_space WHERE {
+    bldg:VAVCoolingOnly s223:connected ?physical_space .
 }"""
 
 for row in model.query(parts_query):
@@ -100,22 +99,18 @@ and our 223 graph (*shape graph* in PySHACL parlance).
 ```{code-cell}
 import pyshacl
 
-# skolemizing the s223 graph lets us remove blank nodes after inference
-skolemized_s223 = s223.skolemize()
-
-pyshacl.validate(model,
-    shacl_graph=skolemized_s223,     # pass in the 223 graph object here
-    ont_graph=skolemized_s223,       # pass in the 223 graph object here
-    allow_infos=True,     # don't fail if we get an INFO message
-    allow_warnings=True,  # don't fail if we get a WARNING message
-    abort_on_first=False, # allow errors to happen during execution
-    advanced=True,        # allow SHACL rules to execute
-    inplace=True          # update the 'model' object with the inferred triples
-)
-# remove the skolemized s223 graph from the model
-model -= skolemized_s223
-# de-skolemize the ret of the model
-model = model.de_skolemize()
+combined = model+s223
+for _ in range(5):
+    pyshacl.validate(combined,
+        allow_infos=True,     # don't fail if we get an INFO message
+        allow_warnings=True,  # don't fail if we get a WARNING message
+        abort_on_first=False, # allow errors to happen during execution
+        advanced=True,        # allow SHACL rules to execute
+        iterate_rules=True,  # allow rules to be applied multiple times
+        inplace=True          # update the 'model' object with the inferred triples
+    )
+# remove the s223 graph from the model
+model = combined - s223
 print(f"The model now contains {len(model)} triples")
 ```
 
@@ -147,13 +142,12 @@ We can see that the query returns results this time.
 
 ```{code-cell}
 query = """
-PREFIX bldg: <urn:ex/>
+PREFIX bldg: <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#>
 PREFIX s223: <http://data.ashrae.org/standard223#>
-SELECT ?damper ?part WHERE {
-    bldg:vav-cooling-only s223:contains ?damper .
-    ?damper s223:connected ?part
+SELECT ?physical_space WHERE {
+    bldg:VAVCoolingOnly s223:connected ?physical_space .
 }"""
 
 for row in model.query(query):
-    print(f"{row.get('damper')} connected to {row.get('part')}")
+    print('\t'.join(row))
 ```
