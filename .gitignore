@@ -14,7 +14,8 @@ _build/
 #   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
 poetry.lock
 
-
+tutorials/BuildingMOTIF
 
 # Environments
 .venv
+

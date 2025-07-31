@@ -19,6 +19,7 @@ parts:
   chapters:
   - file: tutorials/model_exploration.md
   - file: tutorials/model_inference.md
+  - file: tutorials/model_creation_buildingmotif.md
 - caption: Guides
   chapters:
   - file: guides/design-patterns.md

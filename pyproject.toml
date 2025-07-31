@@ -2,7 +2,7 @@
 name = "open223-book"
 version = "0.1.0"
 description = "Jupyter Book for Open223"
-requires-python = ">=3.9"
+requires-python = ">=3.11"
 dependencies = [
     "jupyter-book",
     "myst_parser",
@@ -10,4 +10,8 @@ dependencies = [
     "rdflib",
     "sphinxcontrib-mermaid",
     "ipykernel",
+    "buildingmotif",
 ]
+
+[tool.uv.sources]
+buildingmotif = { git = "https://github.com/NREL/buildingmotif.git", rev = "develop" }

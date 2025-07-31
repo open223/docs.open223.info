@@ -12,6 +12,7 @@ exclude_patterns            :
 # Execution settings
 execute:
   execute_notebooks: force
+  timeout: 600  # seconds
 
 # Parse and render settings
 parse:
