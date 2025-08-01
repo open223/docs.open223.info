@@ -95,12 +95,13 @@ Below, we will be using the open-source [PySHACL](https://github.com/RDFLib/pySH
 
 We import the PySHACL library and then invoke the `validate` function on our model graph (*data graph* in PySHACL parlance)
 and our 223 graph (*shape graph* in PySHACL parlance).
+We run this several times to ensure that all the rules are applied.
 
 ```{code-cell}
 import pyshacl
 
 combined = model+s223
-for _ in range(5):
+for _ in range(3):
     pyshacl.validate(combined,
         allow_infos=True,     # don't fail if we get an INFO message
         allow_warnings=True,  # don't fail if we get a WARNING message
