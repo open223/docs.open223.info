@@ -16,10 +16,23 @@ A more complex example is s223:AC-240VLL-208VLN-120VLN-3Ph-60Hz, meaning "three-
 
 Assuming your desired electrical service is listed in the vocabulary, the simplest way to model the electricity in the building is to use the s223:hasMedium relation, as shown below:
 
+```
+psm:ElectricBreaker1
+  a s223:ElectricityBreaker ;
+  s223:hasConnectionPoint psm:BR1OutletConnectionPoint ;
+  rdfs:label "Electric breaker1" ;
+.
+psm:BR1OutletConnectionPoint
+  a s223:OutletConnectionPoint ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+  rdfs:label "BR1Outlet connection point" ;
+.
+```
+
 ![ACServiceExample](images/explanation-AC-service-example.png)
 
 ## High-Leg-Delta Distribution Panel
-Here's a diagram of a "High-Leg-Delta" distribution panel, which provides several different voltages and phases, and a diagram of key parts of the resulting model.
+Here's a diagram of a "High-Leg-Delta" distribution panel, which provides several different voltages and phases. Here is a diagram of key parts of the resulting model. The code snippet for this example is [here](code-snippets/srr-highlegdelta.ttl).
 
 ...
 
