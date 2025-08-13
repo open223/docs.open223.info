@@ -185,6 +185,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../explanation/closed_world_assumption.html">Closed World Assumption</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../explanation/heat_transfer_equipment.html">Heat Transfer Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../explanation/medium_mixtures.html">Medium Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explanation/modeling_electrical_service.html">Modeling Electrical Service</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../explanation/sensors_and_properties.html">Sensors and Properties</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
@@ -504,7 +505,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Graph identifier=Ne55c60c8ee404277b2f6c8c13d630da9 (&lt;class &#39;rdflib.graph.Graph&#39;&gt;)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Graph identifier=N99c1f883d217424d95b2935c6c0eed9b (&lt;class &#39;rdflib.graph.Graph&#39;&gt;)&gt;
 </pre></div>
 </div>
 </div>
@@ -518,7 +519,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph g has 101 statements.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph g has 102 statements.
 </pre></div>
 </div>
 </div>
@@ -533,7 +534,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>@prefix g36: &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#&gt; .
-@prefix mysystem1: &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#&gt; .
+@prefix mysystem: &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
 @prefix qudt: &lt;http://qudt.org/schema/qudt/&gt; .
 @prefix qudtqk: &lt;http://qudt.org/vocab/quantitykind/&gt; .
@@ -541,129 +542,130 @@ document.write(`
 @prefix s223: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix unit: &lt;http://qudt.org/vocab/unit/&gt; .
 
-mysystem1: a owl:Ontology ;
+mysystem: a owl:Ontology ;
     rdfs:label &quot;&quot; ;
     owl:imports &lt;http://data.ashrae.org/standard223/1.0/model/all&gt; .
 
-mysystem1:PhysicalSpace a s223:PhysicalSpace ;
+mysystem:PhysicalSpace a s223:PhysicalSpace ;
     rdfs:label &quot;Physicalspace&quot; ;
-    s223:encloses mysystem1:PhysicalSpace-hvac-domain .
+    s223:encloses mysystem:PhysicalSpace-hvac-domain .
 
-mysystem1:VAVCoolingOnly a s223:SingleDuctTerminal,
+mysystem:VAVCoolingOnly a s223:SingleDuctTerminal,
         g36:VAV ;
     rdfs:label &quot;Vavcoolingonly&quot; ;
-    s223:cnx mysystem1:VAVCoolingOnly-in,
-        mysystem1:VAVCoolingOnly-out ;
-    s223:contains mysystem1:VAVCoolingOnly-damper .
+    s223:cnx mysystem:VAVCoolingOnly-in,
+        mysystem:VAVCoolingOnly-out ;
+    s223:contains mysystem:VAVCoolingOnly-damper .
 
-mysystem1:VAVCoolingOnly-damper-actuator a s223:Actuator ;
+mysystem:VAVCoolingOnly-damper-actuator a s223:Actuator ;
     rdfs:label &quot;Vavcoolingonly Damper Actuator&quot; ;
-    s223:actuatedByProperty mysystem1:VAVCoolingOnly-damper-command ;
-    s223:actuates mysystem1:VAVCoolingOnly-damper .
+    s223:actuatedByProperty mysystem:VAVCoolingOnly-damper-command ;
+    s223:actuates mysystem:VAVCoolingOnly-damper .
 
-mysystem1:VAVCoolingOnly-discharge-air-flow-sensor a s223:Sensor ;
+mysystem:VAVCoolingOnly-discharge-air-flow-sensor a s223:Sensor ;
     rdfs:label &quot;Vavcoolingonly Discharge Air Flow Sensor&quot; ;
-    s223:hasObservationLocation mysystem1:VAVCoolingOnly-out ;
-    s223:observes mysystem1:VAVCoolingOnly-discharge-air-flow .
+    s223:hasObservationLocation mysystem:VAVCoolingOnly-out ;
+    s223:observes mysystem:VAVCoolingOnly-discharge-air-flow .
 
-mysystem1:VAVCoolingOnly-duct-after-damper a s223:Connection,
+mysystem:VAVCoolingOnly-duct-after-damper a s223:Connection,
         s223:Duct ;
     rdfs:label &quot;Vavcoolingonly Duct After Damper&quot; ;
     s223:hasMedium s223:Fluid-Air .
 
-mysystem1:VAVCoolingOnly-duct-before-damper a s223:Connection,
+mysystem:VAVCoolingOnly-duct-before-damper a s223:Connection,
         s223:Duct ;
     rdfs:label &quot;Vavcoolingonly Duct Before Damper&quot; ;
     s223:hasMedium s223:Fluid-Air .
 
-mysystem1:zone a s223:Zone,
+mysystem:zone a s223:Zone,
         g36:Zone ;
     rdfs:label &quot;Zone&quot; ;
     s223:hasDomain s223:Domain-HVAC ;
-    s223:hasDomainSpace mysystem1:PhysicalSpace-hvac-domain ;
-    s223:hasProperty mysystem1:zone-co2-concentration,
-        mysystem1:zone-temp .
+    s223:hasDomainSpace mysystem:PhysicalSpace-hvac-domain ;
+    s223:hasProperty mysystem:zone-co2-concentration,
+        mysystem:zone-temp .
 
-mysystem1:PhysicalSpace-hvac-domain-in a s223:InletConnectionPoint ;
+mysystem:PhysicalSpace-hvac-domain-in a s223:InletConnectionPoint ;
     rdfs:label &quot;Physicalspace Hvac Domain In&quot; ;
-    s223:cnx mysystem1:vav-supply-to-room-connection ;
+    s223:cnx mysystem:vav-supply-to-room-connection ;
     s223:hasMedium s223:Fluid-Air .
 
-mysystem1:PhysicalSpace-hvac-domain-out a s223:OutletConnectionPoint ;
+mysystem:PhysicalSpace-hvac-domain-out a s223:OutletConnectionPoint ;
     rdfs:label &quot;Physicalspace Hvac Domain Out&quot; ;
-    s223:cnx mysystem1:room-return-to-vav-connection ;
+    s223:cnx mysystem:room-return-to-vav-connection ;
     s223:hasMedium s223:Fluid-Air .
 
-mysystem1:VAVCoolingOnly-damper-in a s223:InletConnectionPoint ;
+mysystem:VAVCoolingOnly-damper-in a s223:InletConnectionPoint ;
     rdfs:label &quot;Vavcoolingonly Damper In&quot; ;
     s223:hasMedium s223:Fluid-Air ;
-    s223:mapsTo mysystem1:VAVCoolingOnly-in .
+    s223:mapsTo mysystem:VAVCoolingOnly-in .
 
-mysystem1:VAVCoolingOnly-damper-out a s223:OutletConnectionPoint ;
+mysystem:VAVCoolingOnly-damper-out a s223:OutletConnectionPoint ;
     rdfs:label &quot;Vavcoolingonly Damper Out&quot; ;
     s223:hasMedium s223:Fluid-Air ;
-    s223:mapsTo mysystem1:VAVCoolingOnly-out .
+    s223:mapsTo mysystem:VAVCoolingOnly-out .
 
-mysystem1:VAVCoolingOnly-damper-position a s223:QuantifiableObservableProperty ;
+mysystem:VAVCoolingOnly-damper-position a s223:QuantifiableObservableProperty ;
     rdfs:label &quot;Vavcoolingonly Damper Position&quot; ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
-mysystem1:zone-co2-concentration a s223:QuantifiableObservableProperty ;
+mysystem:zone-co2-concentration a s223:QuantifiableObservableProperty ;
     rdfs:label &quot;Zone Co2 Concentration&quot; ;
+    s223:ofMedium s223:Fluid-Air ;
     s223:ofSubstance s223:Constituent-CO2 ;
     qudt:hasQuantityKind qudtqk:MoleFraction ;
     qudt:hasUnit unit:PPM .
 
-mysystem1:zone-temp a s223:QuantifiableObservableProperty ;
+mysystem:zone-temp a s223:QuantifiableObservableProperty ;
     rdfs:label &quot;Zone Temp&quot; ;
     qudt:hasQuantityKind qudtqk:Temperature ;
     qudt:hasUnit unit:DEG_C .
 
-mysystem1:PhysicalSpace-hvac-domain a s223:DomainSpace ;
+mysystem:PhysicalSpace-hvac-domain a s223:DomainSpace ;
     rdfs:label &quot;Physicalspace Hvac Domain&quot; ;
-    s223:cnx mysystem1:PhysicalSpace-hvac-domain-in,
-        mysystem1:PhysicalSpace-hvac-domain-out ;
+    s223:cnx mysystem:PhysicalSpace-hvac-domain-in,
+        mysystem:PhysicalSpace-hvac-domain-out ;
     s223:hasDomain s223:Domain-HVAC .
 
-mysystem1:VAVCoolingOnly-damper a s223:Damper,
+mysystem:VAVCoolingOnly-damper a s223:Damper,
         g36:Damper ;
     rdfs:label &quot;Vavcoolingonly Damper&quot; ;
-    s223:cnx mysystem1:VAVCoolingOnly-damper-in,
-        mysystem1:VAVCoolingOnly-damper-out ;
-    s223:hasProperty mysystem1:VAVCoolingOnly-damper-command,
-        mysystem1:VAVCoolingOnly-damper-position .
+    s223:cnx mysystem:VAVCoolingOnly-damper-in,
+        mysystem:VAVCoolingOnly-damper-out ;
+    s223:hasProperty mysystem:VAVCoolingOnly-damper-command,
+        mysystem:VAVCoolingOnly-damper-position .
 
-mysystem1:VAVCoolingOnly-damper-command a s223:QuantifiableActuatableProperty ;
+mysystem:VAVCoolingOnly-damper-command a s223:QuantifiableActuatableProperty ;
     rdfs:label &quot;Vavcoolingonly Damper Command&quot; ;
-    s223:hasAspect s223:EnumerationKind-Position ;
+    s223:hasAspect s223:Binary-Position ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
-mysystem1:VAVCoolingOnly-discharge-air-flow a s223:QuantifiableObservableProperty ;
+mysystem:VAVCoolingOnly-discharge-air-flow a s223:QuantifiableObservableProperty ;
     rdfs:label &quot;Vavcoolingonly Discharge Air Flow&quot; ;
     s223:hasAspect s223:Role-Discharge ;
     qudt:hasQuantityKind qudtqk:VolumeFlowRate ;
     qudt:hasUnit unit:FT3-PER-MIN .
 
-mysystem1:VAVCoolingOnly-in a s223:InletConnectionPoint ;
+mysystem:VAVCoolingOnly-in a s223:InletConnectionPoint ;
     rdfs:label &quot;Vavcoolingonly In&quot; ;
-    s223:cnx mysystem1:room-return-to-vav-connection ;
+    s223:cnx mysystem:room-return-to-vav-connection ;
     s223:hasMedium s223:Fluid-Air .
 
-mysystem1:room-return-to-vav-connection a s223:Connection ;
+mysystem:room-return-to-vav-connection a s223:Connection ;
     rdfs:label &quot;Room Return To Vav Connection&quot; ;
     s223:hasMedium s223:Fluid-Air .
 
-mysystem1:vav-supply-to-room-connection a s223:Connection ;
+mysystem:vav-supply-to-room-connection a s223:Connection ;
     rdfs:label &quot;Vav Supply To Room Connection&quot; ;
     s223:hasMedium s223:Fluid-Air .
 
-mysystem1:VAVCoolingOnly-out a s223:OutletConnectionPoint ;
+mysystem:VAVCoolingOnly-out a s223:OutletConnectionPoint ;
     rdfs:label &quot;Vavcoolingonly Out&quot; ;
-    s223:cnx mysystem1:vav-supply-to-room-connection ;
+    s223:cnx mysystem:vav-supply-to-room-connection ;
     s223:hasMedium s223:Fluid-Air ;
-    s223:hasProperty mysystem1:VAVCoolingOnly-discharge-air-flow .
+    s223:hasProperty mysystem:VAVCoolingOnly-discharge-air-flow .
 </pre></div>
 </div>
 </div>
