@@ -14,6 +14,7 @@ parts:
   - file: explanation/closed_world_assumption.md
   - file: explanation/heat_transfer_equipment.md
   - file: explanation/medium_mixtures.md
+  - file: explanation/modeling_electrical_service.md
   - file: explanation/sensors_and_properties.md
 - caption: Tutorials
   chapters:
