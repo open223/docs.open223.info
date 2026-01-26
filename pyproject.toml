@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Jupyter Book for Open223"
 requires-python = ">=3.11"
 dependencies = [
-    "jupyter-book",
+    "jupyter-book>=2",
     "myst_parser",
     "pyshacl",
     "rdflib",
