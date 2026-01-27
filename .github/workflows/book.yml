@@ -31,11 +31,11 @@ jobs:
 
     - name: fix CNAME
       run: |
-        cp CNAME _build/html/
+        cp CNAME _build/site/public
 
     # Push the book's HTML to github-pages
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./_build/html
+        publish_dir: ./_build/site/public
