@@ -27,7 +27,7 @@ jobs:
       run: uv run python -m ipykernel install --user --name open223-book --display-name "open223-book"
 
     - name: build jupyter book
-      run: uv run jupyter-book build .
+      run: uv run jupyter-book build --html
 
     - name: fix CNAME
       run: |
