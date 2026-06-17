@@ -52,4 +52,7 @@
   <url>
     <loc>http://localhost:3000/other-resources</loc>
   </url>
+  <url>
+    <loc>http://localhost:3000/related-standards</loc>
+  </url>
 </urlset>
