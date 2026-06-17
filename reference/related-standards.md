@@ -55,10 +55,9 @@ Organizations implementing portfolio-scale building intelligence systems that ne
 [ISO 8000](https://www.iso.org/standard/56025.html) is the international standard for data quality.
 It defines a framework for data quality dimensions including accuracy, completeness, consistency, and timeliness.
 
-SHACL conformance validation in 223P assesses *structural* validity (whether a model is correctly formed according to the ontology).
-Structural validity is necessary but not sufficient for fitness for purpose in analytics applications.
-A structurally conformant 223P model may still contain inaccurate sensor readings, an incomplete equipment inventory, or stale data that no longer reflects installed conditions.
-ISO 8000 provides a framework for reasoning about these data quality dimensions independently of any specific standard, and practitioners should consult it when assessing whether a model is fit for its intended analytics purpose.
+SHACL conformance validation in 223P assesses structural validity (whether a model is correctly formed according to the ontology) and semantic validity (whether the data values conform to the expected types and constraints).
+A validating 223P model may still contain inaccurate sensor readings, an incomplete equipment inventory, or stale data that no longer reflects installed conditions.
+ISO 8000 provides a framework for reasoning about these data quality dimensions independently of any specific standard, and practitioners can consult it when assessing whether a model is fit for its intended analytics purpose.
 
 ## Semantic Web Standards
 
