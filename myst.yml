@@ -33,6 +33,7 @@ project:
       children:
         - file: reference/open223-resources.md
         - file: reference/other-resources.md
+        - file: reference/related-standards.md
 
 site:
   template: book-theme
