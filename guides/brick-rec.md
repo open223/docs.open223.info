@@ -11,7 +11,7 @@ These can serve as another "layer" on top of the rich semantics provided by 223.
 ## Using Brick `Point`s with 223
 
 Brick's [`Point`](https://explore.open223.info/brick/Point.html) class and its subclasses provide a large vocabulary of data sources (e.g., "Input/Output points") within a building management system (BMS).
-These can be used as annotations on 223 [`Property`](https://explore.open223.info/s223/Property.html) instances.
+These can be used as annotations on 223 [`Property`](https://explore.open223.info/#s223:Property) instances.
 
 Consider the following (partial) 223 model with a Brick annotation:
 
@@ -84,7 +84,7 @@ SELECT ?damper ?temp WHERE {
 ## Using Brick `Equipment`s with 223
 
 Brick's extensive [`Equipment`](https://explore.open223.info/brick/Equipment.html) classes can also be used with 223.
-Any 223 [`Equipment`](https://explore.open223.info/s223/Equipment.html) can also be annotated with a Brick [`Equipment`](https://explore.open223.info/brick/Equipment.html) class as shown in the example below
+Any 223 [`Equipment`](https://explore.open223.info/#s223:Equipment) can also be annotated with a Brick [`Equipment`](https://explore.open223.info/brick/Equipment.html) class as shown in the example below
 
 ```turtle
 @prefix bldg: <urn:ex/> .
@@ -96,8 +96,8 @@ bldg:damper a s223:Damper, brick:Supply_Damper .
 
 ## Using RealEstateCore `Space`s with 223
 
-RealEstateCore's extensive [`Space`](https://dev.realestatecore.io/ontology/Space/Space) classes can also be used with 223 to provide human-facing annotations to 223 [`PhysicalSpace`](https://explore.open223.info/s223/PhysicalSpace) instances.
-Simply add the RealEstateCore space type as another type of the desired 223 [`PhysicalSpace`](https://explore.open223.info/s223/PhysicalSpace) entity.
+RealEstateCore's extensive [`Space`](https://dev.realestatecore.io/ontology/Space/Space) classes can also be used with 223 to provide human-facing annotations to 223 [`PhysicalSpace`](https://explore.open223.info/#s223:PhysicalSpace) instances.
+Simply add the RealEstateCore space type as another type of the desired 223 [`PhysicalSpace`](https://explore.open223.info/#s223:PhysicalSpace) entity.
 This can provide a 223 model with much more descriptive and *machine-readable* information about the role and purpose of physical spaces in the model.
 
 Consider the following example:
