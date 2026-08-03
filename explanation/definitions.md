@@ -49,4 +49,4 @@ The 223 standard defines a hierarchy of classes used to define the entities with
 
  - **Enumerations:** The standard uses enumerations to convey groups of useful values for describing attributes of Properties, Equipment, and other things in the model. For example, the enumeration [`s223:Role-Cooling`](https://explore.open223.info/#s223:Role-Cooling) describes that the equipment in question provides cooling.
 
- - **FunctionBlock:** Is used to model transfer and/or transformation of information (e.g. control algorithms). It has relations to input properties and output properties, that represent input and output data. The actual algorithms that perform the transformations are not described in 223, and can be described using standard 231.
+ - **Functions:** Is used to model transfer and/or transformation of information (e.g. control algorithms). It has relations to input properties and output properties, that represent input and output data. The actual algorithms that perform the transformations are not described in 223, and can be described using standard 231.
