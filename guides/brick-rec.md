@@ -66,7 +66,7 @@ SELECT ?damper ?temp WHERE {
 }
 ```
 
-With Brick, the query above can be simplified to the following where the `brick:hasPoint` relationship is inferred automatically.
+With Brick, the query above can be simplified to the following where the [`brick:hasPoint`](https://ontology.brickschema.org/brick/hasPoint.html) relationship is inferred automatically.
 
 ```sparql
 PREFIX bldg: <urn:ex/>
