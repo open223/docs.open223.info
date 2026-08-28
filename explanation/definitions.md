@@ -15,7 +15,7 @@ Classes are organized into a hierarchy, and entities are an instance of a given 
 Examples of relationships are *encapsulation* (one entity is contained within another), *sequence* (one entity takes effect before another in some process) and *instantiation* (one entity's type is given by another).
 
 - **Relation:** A predicate (RDF property) used to describe a given relationship.
-Examples of a relation are the 223 relation `s223:contains`, which defines the relationship between two pieces of equipment in which one contains another.  
+Examples of a relation are the 223 relation [`s223:contains`](https://explore.open223.info/#s223:contains), which defines the relationship between two pieces of equipment in which one contains another.  
 
  - **Graph:** An abstract organizational data structure representing a set of entities (nodes) and relationships (edges) described in triple-structure. 223 models are represented by a directed, labeled graph, and use the RDF standard. We recommend reading the [Wikipedia page on the abstract graph data structure](https://en.wikipedia.org/wiki/Graph_(abstract_data_type)) for more information.
 
@@ -47,6 +47,6 @@ The 223 standard defines a hierarchy of classes used to define the entities with
 
  - **Properties:** Properties often represent the actuation and measurement points within a buidling. They may be associated with real-time data. They also may define the attributes of other entities (e.g. Equipment, DomainSpaces, Zones). They can be further contextualized using enumerations.
 
- - **Enumerations:** The standard uses enumerations to convey groups of useful values for describing attributes of Properties, Equipment, and other things in the model. For example, the enumeration `Role-Cooling` describes that the equipment in question provides cooling.
+ - **Enumerations:** The standard uses enumerations to convey groups of useful values for describing attributes of Properties, Equipment, and other things in the model. For example, the enumeration [`s223:Role-Cooling`](https://explore.open223.info/#s223:Role-Cooling) describes that the equipment in question provides cooling.
 
- - **FunctionBlock:** Is used to model transfer and/or transformation of information (e.g. control algorithms). It has relations to input properties and output properties, that represent input and output data. The actual algorithms that perform the transformations are not described in 223, and can be described using standard 231.
+ - **Functions:** Is used to model transfer and/or transformation of information (e.g. control algorithms). It has relations to input properties and output properties, that represent input and output data. The actual algorithms that perform the transformations are not described in 223, and can be described using standard 231.

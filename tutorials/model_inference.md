@@ -57,7 +57,7 @@ print(model.serialize())
 ### Testing the Model (Failed Query)
 
 Below, we try to run a simple query on our model which asks what the terminal unit is connected to.
-The `s223:connected` relationship does not exist in the pre-inference model, so this query will not return results.
+The [`s223:connected`](https://explore.open223.info/#s223:connected) relationship does not exist in the pre-inference model, so this query will not return results.
 
 ```{code-cell}
 parts_query = """

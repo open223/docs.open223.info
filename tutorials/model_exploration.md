@@ -54,8 +54,8 @@ print(g.serialize(format="turtle"))
 After exploring the model to get a sense for what it contains, let's query the model using RDFLib (this can also be done with [Open223 Query](open223-resources)). For this tutorial, we'll query the model for all the VAV terminal's points, which are instances of the following classes:
 
 [Open223 Explore links](open223-resources):
-- [QuantifiableActuatableProperty](https://explore.open223.info/s223/QuantifiableActuatableProperty.html)
-- [QuantifiableObservableProperty](https://explore.open223.info/s223/QuantifiableObservableProperty.html)
+- [QuantifiableActuatableProperty](https://explore.open223.info/#s223:QuantifiableActuatableProperty)
+- [QuantifiableObservableProperty](https://explore.open223.info/#s223:QuantifiableObservableProperty)
 
 ```{code-cell}
 # Query the data in g using SPARQL

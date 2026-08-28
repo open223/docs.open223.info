@@ -10,11 +10,11 @@ Shown below is a small excerpt of available AC electrical service.
 
 There is a naming convention to help the human reader in understanding each option, but note that later in this guide we will show how all the 
 properties of the service are queryable without resorting to parsing the name of the service. With that disclaimer, 
-a human reader can interpret the service s223:AC-120VLN-1Ph-60Hz to mean "AC electricity, carrying 120 volts between Line and Neutral, single-phase, at 60Hz frequency".
+a human reader can interpret the service [`s223:AC-120VLN-1Ph-60Hz`](https://explore.open223.info/#s223:AC-120VLN-1Ph-60Hz) to mean "AC electricity, carrying 120 volts between Line and Neutral, single-phase, at 60Hz frequency".
 
-A more complex example is s223:AC-240VLL-208VLN-120VLN-3Ph-60Hz, meaning "three-phase, 60Hz AC electricity, with a 240V line-line voltage, a 208V line-neutral voltage and also a 127V line-neutral voltage".
+A more complex example is [`s223:AC-240VLL-208VLN-120VLN-3Ph-60Hz`](https://explore.open223.info/#s223:AC-240VLL-208VLN-120VLN-3Ph-60Hz), meaning "three-phase, 60Hz AC electricity, with a 240V line-line voltage, a 208V line-neutral voltage and also a 127V line-neutral voltage".
 
-Assuming your desired electrical service is listed in the vocabulary, the simplest way to model the electricity in the building is to use the s223:hasMedium relation, as shown below:
+Assuming your desired electrical service is listed in the vocabulary, the simplest way to model the electricity in the building is to use the [`s223:hasMedium`](https://explore.open223.info/#s223:hasMedium) relation, as shown below:
 
 ![ACServiceExample](images/guides-AC-service-example.png)
 
